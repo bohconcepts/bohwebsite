@@ -1,0 +1,16 @@
+.marker-text {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.marker-text-blue {
+  fill: #3B82F6;
+}
+
+.marker-text-orange {
+  fill: #F59E0B;
+}
+
+.map-iframe {
+  border: 0;
+}

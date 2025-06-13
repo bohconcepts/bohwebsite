@@ -1,0 +1,88 @@
+/* Custom styles for the map tooltips */
+.custom-tooltip {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
+  font-size: 12px !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Override Leaflet's default tooltip style */
+.leaflet-tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  color: white;
+  font-weight: 500;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Continent card styles */
+.continent-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.continent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.continent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.continent-card:hover::before {
+  opacity: 1;
+}
+
+.continent-card.active {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Continent card icon animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.continent-card .text-3xl {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom map marker animation */
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+.leaflet-marker-icon {
+  transition: transform 0.3s ease;
+}
+
+.leaflet-marker-icon:hover {
+  transform: scale(1.2);
+}

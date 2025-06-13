@@ -1,0 +1,45 @@
+/* About page styles */
+.video-container {
+  height: 300px;
+}
+
+@media (min-width: 640px) {
+  .video-container {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .video-container {
+    height: 500px;
+  }
+}
+
+/* Social media link styles */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tab content responsive styles */
+@media (max-width: 640px) {
+  .about-tab-content {
+    padding: 1rem !important;
+  }
+  
+  .about-icon-container {
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .about-heading {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .about-text {
+    font-size: 0.875rem !important;
+  }
+}

@@ -1,0 +1,73 @@
+/* Image Cards Styling */
+.image-card {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.image-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover .image-card-img {
+  transform: scale(1.05);
+}
+
+.image-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: white;
+}
+
+.image-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.image-card-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card {
+    height: 200px;
+  }
+  
+  .image-card-overlay {
+    padding: 15px;
+  }
+  
+  .image-card-title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .image-card-text {
+    font-size: 0.85rem;
+  }
+}
