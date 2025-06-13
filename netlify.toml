@@ -1,7 +1,6 @@
-# netlify.toml
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
