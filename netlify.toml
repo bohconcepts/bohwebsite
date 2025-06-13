@@ -1,15 +1,16 @@
-# netlify.toml
-# This file tells Netlify how to handle routes for a single-page application
+import path from 'path';
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-[build]
-  # Directory to publish (relative to root of your repo)
-  publish = "dist"
-  # Default build command
-  command = "npm run build"
-
-# The following redirect is intended for use with single-page applications (SPA)
-# where the app handles routing internally.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+export default defineConfig({
+  base: '/', // ✅ important for Netlify deploys
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
+});
