@@ -396,8 +396,8 @@ export const enConstants: LocalizedConstants = {
       id: "1",
       content:
         "Back of House Concepts adequately fortifies our staffing needs of 100 employees in stewarding, housekeeping, and engineering. Due to their firm understanding of our needs and the partnership they foster, I do not see us changing staffing partners.",
-      author: "John Smith",
-      position: "General Manager, Hilton Atlanta",
+      author: "Luxury Hotel General Manager",
+      position: "Greater Seattle Area",
       image: "/images/testimonials/testimonial-1.jpg",
     },
     {
