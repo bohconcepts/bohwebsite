@@ -1,16 +1,9 @@
-import path from 'path';
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+# netlify.toml
+[build]
+  publish = "dist"
+  command = "npm run build"
 
-export default defineConfig({
-  base: '/', // ✅ important for Netlify deploys
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
-});
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
