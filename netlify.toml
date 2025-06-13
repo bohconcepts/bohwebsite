@@ -1,7 +1,25 @@
-[build]
-  command = "npm ci --legacy-peer-deps && npm run build"
-  publish = "dist"
+# netlify.toml
+# This file tells Netlify how to handle routes for a single-page application
 
+[build]
+  # Directory to publish (relative to root of your repo)
+  publish = "dist"
+  # Default build command
+  command = "npm run build"
+
+# Environment variables (non-sensitive ones only)
+# For sensitive variables like API keys, use Netlify UI instead
+[context.production.environment]
+  VITE_APP_ENV = "production"
+
+[context.deploy-preview.environment]
+  VITE_APP_ENV = "preview"
+
+[context.branch-deploy.environment]
+  VITE_APP_ENV = "branch"
+
+# The following redirect is intended for use with single-page applications (SPA)
+# where the app handles routing internally.
 [[redirects]]
   from = "/*"
   to = "/index.html"

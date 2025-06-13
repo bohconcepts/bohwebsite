@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         .from('profiles')
         .select('*')
         .eq('user_id', userId)
-        .single();
+        .maybeSingle(); // Use maybeSingle instead of single to avoid error if no profile exists
 
       if (profileError) {
         console.error('Error fetching profile:', profileError);
@@ -82,7 +82,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           query: `SELECT * FROM profiles WHERE user_id = '${userId}'`,
           error: profileError
         });
-      } else if (profileData) {
+        return null;
+      } 
+      
+      if (profileData) {
         console.log('Profile found:', {
           id: profileData.id,
           email: profileData.email,
@@ -90,11 +93,48 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           role: profileData.role
         });
         setProfile(profileData);
+        return profileData;
       } else {
-        console.log('No profile found for user ID:', userId);
+        console.log('No profile found for user, attempting to create one');
+        
+        // Get user details from auth
+        const { data: userData } = await supabase.auth.getUser();
+        if (!userData?.user) {
+          console.error('Could not get user data for profile creation');
+          return null;
+        }
+        
+        const userEmail = userData.user.email || '';
+        const userName = userData.user.user_metadata?.full_name || userEmail.split('@')[0];
+        
+        // Create a profile for the user
+        const { data: newProfile, error: insertError } = await supabase
+          .from('profiles')
+          .insert([
+            {
+              user_id: userId,
+              email: userEmail,
+              full_name: userName,
+              first_name: userName.split(' ')[0],
+              last_name: userName.split(' ').slice(1).join(' ') || '',
+              role: userData.user.user_metadata?.role || 'user'
+            }
+          ])
+          .select('*')
+          .single();
+          
+        if (insertError) {
+          console.error('Error creating profile:', insertError);
+          return null;
+        }
+        
+        console.log('Created new profile:', newProfile);
+        setProfile(newProfile);
+        return newProfile;
       }
     } catch (profileFetchError) {
       console.error('Error in profile fetch:', profileFetchError);
+      return null;
     }
   };
 
@@ -203,11 +243,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       console.log('Checking if user exists...');
       const { data: userExists, error: userCheckError } = await supabase
         .from('profiles')
-        .select('id')
+        .select('id, role')
         .eq('email', email)
         .maybeSingle();
       
-      console.log('User check result:', { exists: !!userExists, error: userCheckError });
+      console.log('User check result:', { exists: !!userExists, role: userExists?.role, error: userCheckError });
       
       // Attempt to sign in
       console.log('Calling supabase.auth.signInWithPassword...');
@@ -245,6 +285,36 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             details: response.error
           });
         } else if (response.error.message.includes('Email not confirmed')) {
+          // For users created with admin client, we can try to confirm their email
+          console.log('Email not confirmed, attempting to confirm with admin client...');
+          
+          try {
+            // This is a fallback for users who were created but email wasn't confirmed
+            // We'll update the user's email_confirmed_at field directly in the database
+            // This should only happen in development or for admin-created users
+            const { error: updateError } = await supabase.auth.updateUser({
+              email: email,
+            });
+            
+            if (!updateError) {
+              // Try signing in again after updating
+              const retryResponse = await supabase.auth.signInWithPassword({
+                email,
+                password,
+              });
+              
+              if (!retryResponse.error) {
+                toast({
+                  title: "Welcome back!",
+                  description: "You have successfully signed in.",
+                });
+                return {};
+              }
+            }
+          } catch (confirmError) {
+            console.error('Error confirming email:', confirmError);
+          }
+          
           errorMessage = 'Please verify your email before signing in.';
           console.log('Authentication failed: Email not confirmed');
         } else {

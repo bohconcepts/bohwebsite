@@ -28,37 +28,37 @@ export function useCompanyInfo() {
 
 export function useServices() {
   const constants = useLocalizedConstants();
-  return constants.SERVICES;
+  return constants?.SERVICES || [];
 }
 
 export function useStatistics() {
   const constants = useLocalizedConstants();
-  return constants.STATISTICS;
+  return constants?.STATISTICS || [];
 }
 
 export function useTestimonials() {
   const constants = useLocalizedConstants();
-  return constants.TESTIMONIALS;
+  return constants?.TESTIMONIALS || [];
 }
 
 export function useBenefits() {
   const constants = useLocalizedConstants();
-  return constants.BENEFITS;
+  return constants?.BENEFITS || [];
 }
 
 export function useValueProps() {
   const constants = useLocalizedConstants();
-  return constants.VALUE_PROPS;
+  return constants?.VALUE_PROPS || [];
 }
 
 export function useCompanyValues() {
   const constants = useLocalizedConstants();
-  return constants.COMPANY_VALUES;
+  return constants?.COMPANY_VALUES || [];
 }
 
 export function useTeamMembers() {
   const constants = useLocalizedConstants();
-  return constants.TEAM_MEMBERS;
+  return constants?.TEAM_MEMBERS || [];
 }
 
 export function useContactInfo() {
@@ -79,17 +79,17 @@ export function useSocialLinks() {
 
 export function useClients() {
   const constants = useLocalizedConstants();
-  return constants.CLIENTS;
+  return constants?.CLIENTS || [];
 }
 
 export function usePricingPlans() {
   const constants = useLocalizedConstants();
-  return constants.PRICING_PLANS;
+  return constants?.PRICING_PLANS || [];
 }
 
 export function useFramework() {
   const constants = useLocalizedConstants();
-  return constants.FRAMEWORK;
+  return constants?.FRAMEWORK || [];
 }
 
 export function useSiteNavigation() {

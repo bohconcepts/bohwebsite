@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useAuth } from '@/contexts/AuthContext';
+// Auth context no longer needed as we use adminService directly
 import { ArrowLeft } from 'lucide-react';
 import { PolarBearAnimation } from '@/components/auth/PolarBearAnimation';
 import { Link } from 'react-router-dom';
+import { adminService } from '@/integrations/supabase/services/adminService';
+import { toast } from '@/components/ui/use-toast';
 
 const AdminLoginForm: React.FC = () => {
   const [credentials, setCredentials] = useState({
@@ -17,7 +19,6 @@ const AdminLoginForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState('');
   const [focusedField, setFocusedField] = useState<'username' | 'password' | null>(null);
-  const { adminLogin, signIn } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,56 +33,36 @@ const AdminLoginForm: React.FC = () => {
     });
     
     try {
-      // Check if we're using email login or username login
-      const isEmail = credentials.username.includes('@');
-      console.log('Login type:', isEmail ? 'Email-based' : 'Username-based');
+      // Use adminService directly to bypass AuthContext
+      console.log('Attempting direct admin service login...');
+      const success = await adminService.login(credentials.username, credentials.password);
       
-      // If it's an email, try to use the regular signIn function
-      if (isEmail) {
-        console.log('Attempting email-based login with Supabase...');
-        const { error } = await signIn(credentials.username, credentials.password);
+      if (success) {
+        console.log('Admin login successful');
+        toast({
+          title: "Login Successful",
+          description: "Welcome back, admin!",
+        });
         
-        if (error) {
-          console.log('Email-based login failed:', error);
-          setLoginError('Invalid username or password');
-        } else {
-          console.log('Email-based admin login successful');
-          
-          // Manually set localStorage for admin authentication
-          localStorage.setItem('boh_admin_auth', 'true');
-          
-          // Store current user info
-          localStorage.setItem('boh_admin_current_user', JSON.stringify({
-            username: credentials.username,
-            fullName: 'Admin User',
-            email: credentials.username,
-            role: 'Administrator'
-          }));
-          
-          console.log('Admin authentication set in localStorage');
-          console.log('Redirecting to dashboard...');
-          
-          // Force a page reload to ensure all auth states are updated
-          window.location.href = '/admin/dashboard';
-        }
+        // Redirect to dashboard
+        console.log('Redirecting to dashboard...');
+        window.location.href = '/admin/dashboard';
       } else {
-        // Use the adminLogin function for username-based login
-        console.log('Attempting username-based login...');
-        const success = await adminLogin(credentials.username, credentials.password);
-        
-        if (success) {
-          console.log('Username-based admin login successful');
-          console.log('Redirecting to dashboard...');
-          
-          // Force a page reload to ensure all auth states are updated
-          window.location.href = '/admin/dashboard';
-        } else {
-          console.log('Username-based admin login failed');
-          setLoginError('Invalid username or password');
-        }
+        console.log('Admin login failed');
+        toast({
+          title: "Login Failed",
+          description: "Invalid username or password",
+          variant: "destructive",
+        });
+        setLoginError('Invalid username or password');
       }
     } catch (error) {
       console.error('Login error:', error);
+      toast({
+        title: "Login Error",
+        description: "An unexpected error occurred",
+        variant: "destructive",
+      });
       setLoginError('An error occurred during login');
     } finally {
       setIsLoading(false);

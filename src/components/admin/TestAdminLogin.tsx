@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { useAuth } from '@/contexts/AuthContext';
+import { adminService } from '@/integrations/supabase/services/adminService';
+import { toast } from '@/components/ui/use-toast';
 
 const TestAdminLogin = () => {
-  const { adminLogin } = useAuth();
   const [credentials, setCredentials] = useState({
     username: '',
     password: '',
@@ -21,21 +21,36 @@ const TestAdminLogin = () => {
     // Simulate network delay
     setTimeout(async () => {
       try {
-        const success = await adminLogin(credentials.username, credentials.password);
+        console.log('Attempting direct admin service login...');
+        const success = await adminService.login(credentials.username, credentials.password);
         
         if (success) {
           setLoginSuccess(true);
           console.log('Login successful, redirecting...');
+          toast({
+            title: "Login Successful",
+            description: "Welcome back, admin!",
+          });
           // Redirect after a short delay to show success message
           setTimeout(() => {
             window.location.href = '/admin/dashboard';
           }, 1000);
         } else {
           setLoginError('Invalid username or password');
+          toast({
+            title: "Login Failed",
+            description: "Invalid username or password",
+            variant: "destructive",
+          });
         }
       } catch (error) {
         console.error('Login error:', error);
         setLoginError('An error occurred during login');
+        toast({
+          title: "Login Error",
+          description: "An unexpected error occurred",
+          variant: "destructive",
+        });
       } finally {
         setIsLoading(false);
       }

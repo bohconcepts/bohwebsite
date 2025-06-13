@@ -9,7 +9,7 @@ import { QuoteIcon } from 'lucide-react';
 
 const Testimonials = () => {
   const { t } = useLanguage();
-  const testimonials = useTestimonials();
+  const testimonials = useTestimonials() || [];
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -41,16 +41,18 @@ const Testimonials = () => {
           animate={inView ? "visible" : "hidden"}
           className="max-w-4xl mx-auto"
         >
-          <Tabs defaultValue={testimonials[0].id} className="w-full">
+          <Tabs defaultValue={testimonials.length > 0 ? testimonials[0].id : 'default'} className="w-full">
             <TabsList className="grid grid-cols-3 mb-8">
-              {testimonials.map((testimonial) => (
+              {testimonials.length > 0 ? testimonials.map((testimonial) => (
                 <TabsTrigger key={testimonial.id} value={testimonial.id} className="data-[state=active]:bg-brand-orange data-[state=active]:text-white">
                   {testimonial.author}
                 </TabsTrigger>
-              ))}
+              )) : (
+                <TabsTrigger value="default">No Testimonials</TabsTrigger>
+              )}
             </TabsList>
             
-            {testimonials.map((testimonial) => (
+            {testimonials.length > 0 ? testimonials.map((testimonial) => (
               <TabsContent key={testimonial.id} value={testimonial.id}>
                 <Card className="border-none shadow-lg bg-white">
                   <CardContent className="pt-6">
@@ -67,7 +69,7 @@ const Testimonials = () => {
                         <AvatarImage src={testimonial.image} alt={testimonial.author} />
                       ) : null}
                       <AvatarFallback className="bg-brand-blue text-white">
-                        {testimonial.author.split(' ').map((n) => n[0]).join('')}
+                        {testimonial.author?.split(' ')?.map((n) => n[0])?.join('') || ''}
                       </AvatarFallback>
                     </Avatar>
                     <div className="text-center">
@@ -79,7 +81,15 @@ const Testimonials = () => {
                   </CardFooter>
                 </Card>
               </TabsContent>
-            ))}
+            )) : (
+              <TabsContent value="default">
+                <Card className="border-none shadow-lg bg-white">
+                  <CardContent className="pt-6 text-center">
+                    <p>No testimonials available at this time.</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            )}
           </Tabs>
         </motion.div>
       </div>

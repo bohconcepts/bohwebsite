@@ -18,6 +18,7 @@ const AdminDashboard = lazy(() => import("@/pages/AdminDashboard"));
 const AdminMessages = lazy(() => import("@/pages/AdminMessages"));
 const AdminUsers = lazy(() => import("@/pages/AdminUsers"));
 const AdminSettings = lazy(() => import("@/pages/AdminSettings"));
+const AdminSetup = lazy(() => import("@/pages/AdminSetup"));
 
 // Protected route component
 interface ProtectedRouteProps {
@@ -74,6 +75,7 @@ const AdminRoutes = () => {
               </ProtectedRoute>
             }
           />
+          <Route path="setup" element={<AdminSetup />} />
           <Route path="" element={<Navigate to="/admin/login" replace />} />
           <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
