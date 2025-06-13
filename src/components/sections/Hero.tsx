@@ -42,7 +42,7 @@ const Hero = () => {
   }, [slides.length]);
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {/* Commented out video
@@ -71,7 +71,7 @@ const Hero = () => {
             <img
               src={slide.image}
               alt={`BOH Concepts - ${index + 1}`}
-              className="w-full h-full object-cover brightness-150 contrast-110 saturate-110"
+              className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
             />
           </div>
         ))}
