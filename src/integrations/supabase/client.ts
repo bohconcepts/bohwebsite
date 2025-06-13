@@ -1,9 +1,18 @@
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "./types/index";
 
-// Use the actual Supabase project values
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// IMPORTANT: Using direct values as a temporary solution since environment variables aren't loading
+// In production, these should come from environment variables for security
+const SUPABASE_URL = "https://krbkwdkluhyxpgddnqwr.supabase.co";
+const SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyYmt3ZGtsdWh5eHBnZGRucXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3NTE4MTcsImV4cCI6MjA2NTMyNzgxN30.cqcg9G8PsfP2xFTVdKToktzGcA0zv-LZXxgQO8__aaw";
+
+// NOTE: Replace the values above with your actual Supabase project details
+// You can find these in your Supabase dashboard under Project Settings > API
+
+// Add console logs for debugging
+console.log("Supabase URL being used:", SUPABASE_URL);
+console.log("Supabase ANON KEY available:", !!SUPABASE_ANON_KEY);
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
