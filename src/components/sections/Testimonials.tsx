@@ -42,9 +42,12 @@ const Testimonials = () => {
           className="max-w-4xl mx-auto"
         >
           <Tabs defaultValue={testimonials.length > 0 ? testimonials[0].id : 'default'} className="w-full">
-            <TabsList className="grid grid-cols-3 mb-8">
+            <TabsList className="flex flex-wrap gap-2 mb-8 justify-center">
               {testimonials.length > 0 ? testimonials.map((testimonial) => (
-                <TabsTrigger key={testimonial.id} value={testimonial.id} className="data-[state=active]:bg-brand-orange data-[state=active]:text-white">
+                <TabsTrigger 
+                  key={testimonial.id} 
+                  value={testimonial.id} 
+                  className="data-[state=active]:bg-brand-orange data-[state=active]:text-white px-3 py-1.5 text-sm whitespace-nowrap flex-grow sm:flex-grow-0">
                   {testimonial.author}
                 </TabsTrigger>
               )) : (
