@@ -702,17 +702,55 @@ export const adminService = {
     }
   },
   
-  // Settings management
-  getSettings: (): Settings => {
-    return initializeSettings();
-  },
-  
-  updateSettings: (updates: Partial<Settings>): Settings => {
-    const currentSettings = initializeSettings();
-    const updatedSettings = { ...currentSettings, ...updates };
-    
-    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(updatedSettings));
-    return updatedSettings;
+  // Change user password
+  changePassword: async (userId: string, currentPassword: string, newPassword: string): Promise<boolean> => {
+    try {
+      console.log('Changing password for user ID:', userId);
+      
+      // Get user_id from profiles
+      const { data: profileData, error: fetchError } = await supabaseAdmin
+        .from('profiles')
+        .select('user_id, email')
+        .eq('id', userId)
+        .single();
+      
+      if (fetchError || !profileData) {
+        console.error('Error fetching user_id for password change:', fetchError);
+        return false;
+      }
+      
+      console.log('Found user_id for password change:', profileData.user_id);
+      
+      // First verify the current password
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: profileData.email,
+        password: currentPassword,
+      });
+      
+      if (signInError) {
+        console.error('Current password verification failed:', signInError);
+        return false;
+      }
+      
+      console.log('Current password verified successfully');
+      
+      // Update the password using admin API
+      const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(
+        profileData.user_id,
+        { password: newPassword }
+      );
+      
+      if (updateError) {
+        console.error('Error updating password:', updateError);
+        return false;
+      }
+      
+      console.log('Password changed successfully');
+      return true;
+    } catch (error) {
+      console.error('Error in changePassword:', error);
+      return false;
+    }
   },
   
   // Update the Contact form submission to save messages directly to Supabase
