@@ -145,23 +145,20 @@ const WhoWeArePage: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              className="flex flex-col space-y-6"
             >
-              <img
-                src="/images/whoweare/IMG_3370.jpeg"
-                alt="Pink Chair Event"
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-              <img
-                src="/images/whoweare/IMG_3422.jpeg"
-                alt="Team Member with Boxing Gloves"
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-              <img
-                src="/images/whoweare/IMG_3385.jpeg"
-                alt="Team at Breast Cancer Event"
-                className="w-full col-span-2 h-48 object-cover rounded-lg shadow-md"
-              />
+              <div className="grid grid-cols-2 gap-6">
+                <img
+                  src="/images/whoweare/IMG_3370.jpeg"
+                  alt="Pink Chair Event"
+                  className="w-full h-72 object-cover rounded-lg shadow-md"
+                />
+                <img
+                  src="/images/whoweare/IMG_3422.jpeg"
+                  alt="Team Member with Boxing Gloves"
+                  className="w-full h-72 object-cover rounded-lg shadow-md"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -193,7 +190,7 @@ const WhoWeArePage: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="order-2 md:order-1"
+              className="order-1"
             >
               <img
                 src="/images/whoweare/IMG_5281.jpeg"
@@ -207,7 +204,7 @@ const WhoWeArePage: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="space-y-6 order-1 md:order-2"
+              className="space-y-6 order-2"
             >
               <h3 className="text-2xl font-bold">
                 Celebrating Culture & Heritage
