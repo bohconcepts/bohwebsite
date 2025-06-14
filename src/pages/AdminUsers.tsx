@@ -15,6 +15,7 @@ import {
   Shield,
   Eye,
   PenSquare,
+  Key,
 } from "lucide-react";
 
 import {
@@ -64,6 +65,7 @@ const AdminUsers = () => {
   const [showAddUserDialog, setShowAddUserDialog] = useState(false);
   const [showEditUserDialog, setShowEditUserDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [showResetPasswordDialog, setShowResetPasswordDialog] = useState(false);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [newUser, setNewUser] = useState({
     username: "",
@@ -73,6 +75,9 @@ const AdminUsers = () => {
     role: "Viewer" as "Administrator" | "Editor" | "Viewer",
     active: true,
   });
+  
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
   // Check authentication
@@ -245,6 +250,45 @@ const AdminUsers = () => {
     loadUsers();
     setShowDeleteDialog(false);
     setCurrentUser(null);
+  };
+  
+  // Handle password reset
+  const handleResetPassword = async () => {
+    if (!currentUser) return;
+    
+    // Validate passwords
+    if (!newPassword) {
+      setFormErrors({ password: "Password is required" });
+      return;
+    }
+    
+    if (newPassword.length < 6) {
+      setFormErrors({ password: "Password must be at least 6 characters" });
+      return;
+    }
+    
+    if (newPassword !== confirmPassword) {
+      setFormErrors({ confirmPassword: "Passwords do not match" });
+      return;
+    }
+    
+    try {
+      const success = await adminService.resetUserPassword(currentUser.id, newPassword);
+      
+      if (success) {
+        toast.success(`Password reset successfully for ${currentUser.fullName}`);
+        setShowResetPasswordDialog(false);
+        setCurrentUser(null);
+        setNewPassword("");
+        setConfirmPassword("");
+        setFormErrors({});
+      } else {
+        toast.error("Failed to reset password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error resetting password:", error);
+      toast.error("An error occurred while resetting the password.");
+    }
   };
 
   // Handle toggle user status
@@ -462,6 +506,20 @@ const AdminUsers = () => {
                               ) : (
                                 <CheckCircle className="h-4 w-4 text-green-500" />
                               )}
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              onClick={() => {
+                                setCurrentUser(user);
+                                setShowResetPasswordDialog(true);
+                                setNewPassword("");
+                                setConfirmPassword("");
+                                setFormErrors({});
+                              }}
+                              title="Reset password"
+                            >
+                              <Key className="h-4 w-4 text-amber-500" />
                             </Button>
                             <Button
                               variant="ghost"
@@ -772,6 +830,69 @@ const AdminUsers = () => {
               <Button variant="destructive" onClick={handleDeleteUser}>
                 Delete User
               </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+        
+        {/* Reset Password Dialog */}
+        <Dialog open={showResetPasswordDialog} onOpenChange={setShowResetPasswordDialog}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Reset Password</DialogTitle>
+              <DialogDescription>
+                Set a new password for this user. They will be able to use this password to log in.
+              </DialogDescription>
+            </DialogHeader>
+            {currentUser && (
+              <div className="space-y-4 py-4">
+                <div className="bg-gray-100 p-4 rounded-md mb-4">
+                  <p className="font-medium">{currentUser.fullName}</p>
+                  <p className="text-sm text-gray-500">{currentUser.email}</p>
+                  <p className="text-xs text-gray-400">@{currentUser.username}</p>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="new-password">New Password</Label>
+                  <Input
+                    id="new-password"
+                    type="password"
+                    placeholder="••••••••"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                  {formErrors.password && (
+                    <p className="text-sm text-red-500">{formErrors.password}</p>
+                  )}
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="confirm-password">Confirm Password</Label>
+                  <Input
+                    id="confirm-password"
+                    type="password"
+                    placeholder="••••••••"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                  {formErrors.confirmPassword && (
+                    <p className="text-sm text-red-500">{formErrors.confirmPassword}</p>
+                  )}
+                </div>
+              </div>
+            )}
+            <DialogFooter>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowResetPasswordDialog(false);
+                  setNewPassword("");
+                  setConfirmPassword("");
+                  setFormErrors({});
+                }}
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleResetPassword}>Reset Password</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

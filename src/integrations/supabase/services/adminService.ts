@@ -413,6 +413,44 @@ export const adminService = {
     return await fetchUsers();
   },
   
+  // Reset user password
+  resetUserPassword: async (userId: string, newPassword: string): Promise<boolean> => {
+    try {
+      console.log('Resetting password for user ID:', userId);
+      
+      // Get user_id from profiles
+      const { data, error: fetchError } = await supabaseAdmin
+        .from('profiles')
+        .select('user_id')
+        .eq('id', userId)
+        .single();
+      
+      if (fetchError || !data) {
+        console.error('Error fetching user_id for password reset:', fetchError);
+        return false;
+      }
+      
+      console.log('Found user_id for password reset:', data.user_id);
+      
+      // Reset password using admin API
+      const { error: resetError } = await supabaseAdmin.auth.admin.updateUserById(
+        data.user_id,
+        { password: newPassword }
+      );
+      
+      if (resetError) {
+        console.error('Error resetting user password:', resetError);
+        return false;
+      }
+      
+      console.log('Password reset successful');
+      return true;
+    } catch (error) {
+      console.error('Error in resetUserPassword:', error);
+      return false;
+    }
+  },
+  
   getUserById: async (id: string): Promise<User | null> => {
     try {
       // Use admin client to bypass RLS
