@@ -20,7 +20,7 @@ interface WorkforceLocation {
   country: string;
   city: string;
   position: [number, number]; // [latitude, longitude]
-  count: number;
+  count?: number; // Made optional
 }
 
 const GlobalWorkforceMap: React.FC = () => {
@@ -51,42 +51,42 @@ const GlobalWorkforceMap: React.FC = () => {
   
   // Workforce data for all global locations
   const africaLocations: WorkforceLocation[] = [
-    { id: 1, country: 'Ghana', city: 'Accra', position: [5.6037, -0.1870], count: 250 },
-    { id: 2, country: 'Ghana', city: 'Kumasi', position: [6.6885, -1.6244], count: 180 },
-    { id: 3, country: 'Nigeria', city: 'Lagos', position: [6.5244, 3.3792], count: 120 },
-    { id: 4, country: 'Burkina Faso', city: 'Ouagadougou', position: [12.3714, -1.5197], count: 85 }
+    { id: 1, country: 'Ghana', city: 'Accra', position: [5.6037, -0.1870] },
+    { id: 2, country: 'Ghana', city: 'Kumasi', position: [6.6885, -1.6244] },
+    { id: 3, country: 'Nigeria', city: 'Lagos', position: [6.5244, 3.3792]},
+    { id: 4, country: 'Burkina Faso', city: 'Ouagadougou', position: [12.3714, -1.5197] }
   ];
   
   const usLocations: WorkforceLocation[] = [
-    { id: 5, country: 'USA', city: 'Cambridge, Maryland', position: [38.5632, -76.0788], count: 120 },
-    { id: 6, country: 'USA', city: 'Maui, Hawaii', position: [20.7984, -156.3319], count: 150 },
-    { id: 7, country: 'USA', city: 'Kauai, Hawaii', position: [22.0964, -159.5261], count: 85 },
-    { id: 8, country: 'USA', city: 'Kihei, Hawaii', position: [20.7645, -156.4450], count: 95 },
-    { id: 9, country: 'USA', city: 'Kahului, Hawaii', position: [20.8893, -156.4729], count: 110 },
-    { id: 10, country: 'USA', city: 'Bellevue, Washington', position: [47.6101, -122.2015], count: 130 },
-    { id: 11, country: 'USA', city: 'Seattle, Washington', position: [47.6062, -122.3321], count: 175 },
-    { id: 12, country: 'USA', city: 'Stowe, Vermont', position: [44.4654, -72.6874], count: 90 },
+    { id: 5, country: 'USA', city: 'Cambridge, Maryland', position: [38.5632, -76.0788] },
+    { id: 6, country: 'USA', city: 'Maui, Hawaii', position: [20.7984, -156.3319] },
+    { id: 7, country: 'USA', city: 'Kauai, Hawaii', position: [22.0964, -159.5261] },
+    { id: 8, country: 'USA', city: 'Kihei, Hawaii', position: [20.7645, -156.4450] },
+    { id: 9, country: 'USA', city: 'Kahului, Hawaii', position: [20.8893, -156.4729] },
+    { id: 10, country: 'USA', city: 'Bellevue, Washington', position: [47.6101, -122.2015] },
+    { id: 11, country: 'USA', city: 'Seattle, Washington', position: [47.6062, -122.3321] },
+    { id: 12, country: 'USA', city: 'Stowe, Vermont', position: [44.4654, -72.6874] },
   ];
   
   const asiaLocations: WorkforceLocation[] = [
-    { id: 13, country: 'China', city: 'Beijing', position: [39.9042, 116.4074], count: 140 },
-    { id: 14, country: 'Malaysia', city: 'Kuala Lumpur', position: [3.1390, 101.6869], count: 95 },
-    { id: 15, country: 'Mongolia', city: 'Ulaanbaatar', position: [47.8864, 106.9057], count: 65 },
-    { id: 16, country: 'Taiwan', city: 'Taipei', position: [25.0330, 121.5654], count: 110 },
-    { id: 17, country: 'Thailand', city: 'Bangkok', position: [13.7563, 100.5018], count: 125 },
-    { id: 18, country: 'Jordan', city: 'Amman', position: [31.9454, 35.9284], count: 80 }
+    { id: 13, country: 'China', city: 'Beijing', position: [39.9042, 116.4074] },
+    { id: 14, country: 'Malaysia', city: 'Kuala Lumpur', position: [3.1390, 101.6869] },
+    { id: 15, country: 'Mongolia', city: 'Ulaanbaatar', position: [47.8864, 106.9057] },
+    { id: 16, country: 'Taiwan', city: 'Taipei', position: [25.0330, 121.5654] },
+    { id: 17, country: 'Thailand', city: 'Bangkok', position: [13.7563, 100.5018] },
+    { id: 18, country: 'Jordan', city: 'Amman', position: [31.9454, 35.9284] }
   ];
   
   const europeLocations: WorkforceLocation[] = [
-    { id: 19, country: 'Poland', city: 'Warsaw', position: [52.2297, 21.0122], count: 105 },
-    { id: 20, country: 'Romania', city: 'Bucharest', position: [44.4268, 26.1025], count: 90 },
-    { id: 21, country: 'Kosovo', city: 'Pristina', position: [42.6629, 21.1655], count: 70 }
+    { id: 19, country: 'Poland', city: 'Warsaw', position: [52.2297, 21.0122] },
+    { id: 20, country: 'Romania', city: 'Bucharest', position: [44.4268, 26.1025] },
+    { id: 21, country: 'Kosovo', city: 'Pristina', position: [42.6629, 21.1655] }
   ];
   
   const caribbeanLocations: WorkforceLocation[] = [
-    { id: 22, country: 'Dominican Republic', city: 'Santo Domingo', position: [18.4861, -69.9312], count: 115 },
-    { id: 23, country: 'Jamaica', city: 'Kingston', position: [18.0179, -76.8099], count: 100 },
-    { id: 24, country: 'Ecuador', city: 'Quito', position: [-0.1807, -78.4678], count: 85 }
+    { id: 22, country: 'Dominican Republic', city: 'Santo Domingo', position: [18.4861, -69.9312] },
+    { id: 23, country: 'Jamaica', city: 'Kingston', position: [18.0179, -76.8099] },
+    { id: 24, country: 'Ecuador', city: 'Quito', position: [-0.1807, -78.4678] }
   ];
   
   // Locations are configured above and displayed on the map
@@ -194,7 +194,7 @@ const GlobalWorkforceMap: React.FC = () => {
                 <Popup>
                   <div className="text-center">
                     <h3 className="font-semibold">{location.city}, {location.country}</h3>
-                    <p className="text-sm">{location.count} employees</p>
+                    {location.count && <p className="text-sm">{location.count} employees</p>}
                   </div>
                 </Popup>
               </Marker>
@@ -217,7 +217,7 @@ const GlobalWorkforceMap: React.FC = () => {
                 <Popup>
                   <div className="text-center">
                     <h3 className="font-semibold">{location.city}, {location.country}</h3>
-                    <p className="text-sm">{location.count} employees</p>
+                    {location.count && <p className="text-sm">{location.count} employees</p>}
                   </div>
                 </Popup>
               </Marker>
@@ -240,7 +240,7 @@ const GlobalWorkforceMap: React.FC = () => {
                 <Popup>
                   <div className="text-center">
                     <h3 className="font-semibold">{location.city}, {location.country}</h3>
-                    <p className="text-sm">{location.count} employees</p>
+                    {location.count && <p className="text-sm">{location.count} employees</p>}
                   </div>
                 </Popup>
               </Marker>
@@ -263,7 +263,7 @@ const GlobalWorkforceMap: React.FC = () => {
                 <Popup>
                   <div className="text-center">
                     <h3 className="font-semibold">{location.city}, {location.country}</h3>
-                    <p className="text-sm">{location.count} employees</p>
+                    {location.count && <p className="text-sm">{location.count} employees</p>}
                   </div>
                 </Popup>
               </Marker>
@@ -286,7 +286,7 @@ const GlobalWorkforceMap: React.FC = () => {
                 <Popup>
                   <div className="text-center">
                     <h3 className="font-semibold">{location.city}, {location.country}</h3>
-                    <p className="text-sm">{location.count} employees</p>
+                    {location.count && <p className="text-sm">{location.count} employees</p>}
                   </div>
                 </Popup>
               </Marker>
