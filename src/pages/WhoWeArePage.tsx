@@ -79,9 +79,20 @@ const WhoWeArePage: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4 text-brand-blue">
               {t("about_section_heading")}
             </h2>
-            <p className="text-lg text-gray-700">{t("about_paragraph_1")}</p>
-            <p className="text-lg text-gray-700 mt-4">
-              {t("about_paragraph_2")}
+            <p className="text-lg text-gray-700 mb-4">
+              Committed to Community Impact
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              At Back of House Concepts, we go beyond hospitality staffing. As a premier agency connecting exceptional talent with top-tier hotels, resorts, restaurants, and event venues, we're also deeply committed to corporate social responsibility.
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              Each October, we proudly support Breast Cancer Awareness Month through education, wellness initiatives, and advocacy that promote early detection and support for affected individuals in our industry.
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              In February, we celebrate Black History Month by honoring the rich legacy of Black professionals in hospitality. We amplify diverse voices, support Black-owned businesses, and champion inclusive hiring and advancement practices all year long.
+            </p>
+            <p className="text-lg text-gray-700">
+              With decades of industry experience, our team blends deep expertise with innovative strategies to deliver reliable, flexible staffing solutions—while making a difference where it matters most.
             </p>
           </motion.div>
         </div>
