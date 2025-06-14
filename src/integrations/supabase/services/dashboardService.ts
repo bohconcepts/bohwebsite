@@ -1,5 +1,3 @@
-// Import only what we use
-import { PostgrestError } from '@supabase/supabase-js';
 import { supabaseAdmin } from '../adminClient';
 
 // Dashboard statistics interface
@@ -61,24 +59,19 @@ export const dashboardService = {
         throw usersError;
       }
       
-      // Fetch recent activities
-      let activities = [];
-      try {
-        const { data, error } = await supabaseAdmin
-          .from('activities')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(10);
-        
-        if (error) {
-          console.error('Error fetching activities:', error);
-        } else if (data) {
-          activities = data;
-        }
-      } catch (err) {
-        console.error('Exception when fetching activities:', err);
-        // If activities table doesn't exist, we'll use the empty array
+      // Fetch recent activities - we now have a proper activities table
+      const { data: activities, error: activitiesError } = await supabaseAdmin
+        .from('activities')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(10);
+      
+      if (activitiesError) {
+        console.error('Error fetching activities:', activitiesError);
+        // Continue execution even if activities fetch fails
       }
+      
+      console.log('Activities data:', activities);
       
       // Calculate message stats
       const totalMessages = messages?.length || 0;
@@ -269,30 +262,25 @@ export const dashboardService = {
   // Log a new activity
   logActivity: async (activity: Omit<Activity, 'id' | 'timestamp'>): Promise<boolean> => {
     try {
-      // Try to insert into activities table if it exists
-      let error: PostgrestError | null = null;
-      try {
-        const result = await supabaseAdmin
-          .from('activities')
-          .insert({
-            type: activity.type,
-            description: activity.description,
-            user_id: activity.userId,
-            metadata: activity.metadata,
-            created_at: new Date().toISOString()
-          });
-        
-        error = result.error;
-      } catch (err) {
-        // If activities table doesn't exist, just continue
-        console.log('Exception in logActivity, possibly table does not exist:', err);
-      }
+      console.log('Logging activity:', activity);
+      
+      // Insert into activities table
+      const { error } = await supabaseAdmin
+        .from('activities')
+        .insert({
+          type: activity.type,
+          description: activity.description,
+          user_id: activity.userId,
+          metadata: activity.metadata,
+          created_at: new Date().toISOString()
+        });
       
       if (error) {
         console.error('Error logging activity:', error);
         return false;
       }
       
+      console.log('Activity logged successfully');
       return true;
     } catch (error) {
       console.error('Error in logActivity:', error);

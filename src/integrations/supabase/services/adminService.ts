@@ -510,65 +510,111 @@ export const adminService = {
   
   updateUser: async (id: string, updates: Partial<User>): Promise<boolean> => {
     try {
+      console.log('Updating user with ID:', id, 'Updates:', JSON.stringify(updates, null, 2));
+      
       // Map role from UI format to database format
       let mappedRole = undefined;
       if (updates.role) {
         if (updates.role === 'Administrator') mappedRole = 'admin';
         else if (updates.role === 'Editor') mappedRole = 'editor';
         else mappedRole = 'viewer';
+        console.log(`Mapping role ${updates.role} to ${mappedRole}`);
       }
       
-      // Update profile
-      const { error: profileError } = await supabaseAdmin
-        .from('profiles')
-        .update({
-          ...(updates.fullName ? { full_name: updates.fullName } : {}),
-          ...(updates.email ? { email: updates.email } : {}),
-          ...(mappedRole ? { role: mappedRole } : {}),
-          ...(updates.active !== undefined ? { is_active: updates.active } : {})
-        })
-        .eq('id', id);
-      
-      if (profileError) {
-        console.error('Error updating user profile:', profileError);
-        return false;
-      }
-      
-      // Get user_id from profiles
-      const { data, error: fetchError } = await supabaseAdmin
+      // Get user_id from profiles first
+      const { data: profileData, error: fetchError } = await supabaseAdmin
         .from('profiles')
         .select('user_id')
         .eq('id', id)
         .single();
       
-      if (fetchError || !data) {
+      if (fetchError || !profileData) {
         console.error('Error fetching user_id for update:', fetchError);
         return false;
       }
       
+      console.log('Found user_id:', profileData.user_id);
+      
+      // Prepare profile updates
+      const profileUpdates: Record<string, any> = {};
+      
+      if (updates.fullName !== undefined) profileUpdates.full_name = updates.fullName;
+      if (updates.email !== undefined) profileUpdates.email = updates.email;
+      if (mappedRole !== undefined) profileUpdates.role = mappedRole;
+      if (updates.active !== undefined) profileUpdates.is_active = updates.active;
+      
+      console.log('Profile updates to apply:', profileUpdates);
+      
+      // Only update if there are changes to make
+      if (Object.keys(profileUpdates).length > 0) {
+        // Update profile with admin client to bypass RLS
+        const { error: profileError } = await supabaseAdmin
+          .from('profiles')
+          .update(profileUpdates)
+          .eq('id', id);
+        
+        if (profileError) {
+          console.error('Error updating user profile:', profileError);
+          return false;
+        }
+        
+        console.log('Profile updated successfully');
+      } else {
+        console.log('No profile updates to apply');
+      }
+      
       // Update auth user if email changed
       if (updates.email) {
+        console.log('Updating user email to:', updates.email);
+        
         const { error: authError } = await supabaseAdmin.auth.admin.updateUserById(
-          data.user_id,
+          profileData.user_id,
           { email: updates.email }
         );
         
         if (authError) {
-          console.error('Error updating auth user:', authError);
+          console.error('Error updating auth user email:', authError);
           return false;
         }
+        
+        console.log('User email updated successfully');
       }
       
       // Update password if provided
       if (updates.password) {
+        console.log('Updating user password');
+        
         const { error: passwordError } = await supabaseAdmin.auth.admin.updateUserById(
-          data.user_id,
+          profileData.user_id,
           { password: updates.password }
         );
         
         if (passwordError) {
           console.error('Error updating user password:', passwordError);
           return false;
+        }
+        
+        console.log('User password updated successfully');
+      }
+      
+      // Update user metadata with role if changed
+      if (mappedRole) {
+        console.log('Updating user metadata with role:', mappedRole);
+        
+        const { error: metadataError } = await supabaseAdmin.auth.admin.updateUserById(
+          profileData.user_id,
+          { 
+            user_metadata: { 
+              role: mappedRole 
+            } 
+          }
+        );
+        
+        if (metadataError) {
+          console.error('Error updating user metadata:', metadataError);
+          // Continue anyway as this is not critical
+        } else {
+          console.log('User metadata updated successfully');
         }
       }
       
