@@ -1,6 +1,11 @@
 import { supabase } from '../client';
 import { supabaseAdmin } from '../adminClient';
 
+// Local storage keys
+const ADMIN_AUTH_KEY = 'boh_admin_auth';
+const CURRENT_USER_KEY = 'boh_admin_current_user';
+const SETTINGS_STORAGE_KEY = 'boh_admin_settings';
+
 // Interfaces
 export interface Message {
   id: string;
@@ -48,12 +53,7 @@ const defaultSettings: Settings = {
   messageRetentionDays: 30
 };
 
-// Local storage keys
-const ADMIN_AUTH_KEY = 'boh_admin_auth';
-const CURRENT_USER_KEY = 'boh_admin_current_user';
-const SETTINGS_STORAGE_KEY = 'boh_admin_settings';
-
-// Fetch real data from Supabase
+// Fetch messages from Supabase
 const fetchMessages = async (): Promise<Message[]> => {
   try {
     // Fetch messages from the contact_messages table or equivalent
@@ -67,18 +67,15 @@ const fetchMessages = async (): Promise<Message[]> => {
       return [];
     }
     
-    if (!data) return [];
-    
-    // Transform to match our Message interface
-    return data.map(msg => ({
-      id: msg.id,
-      name: msg.name || '',
-      email: msg.email || '',
-      subject: msg.subject || 'No Subject',
-      message: msg.message || '',
-      createdAt: new Date(msg.created_at),
-      read: msg.read || false,
-      archived: msg.archived || false
+    return data.map(item => ({
+      id: item.id,
+      name: item.name,
+      email: item.email,
+      subject: item.subject,
+      message: item.message,
+      createdAt: new Date(item.created_at),
+      read: item.read || false,
+      archived: item.archived || false
     }));
   } catch (error) {
     console.error('Error in fetchMessages:', error);
@@ -86,32 +83,32 @@ const fetchMessages = async (): Promise<Message[]> => {
   }
 };
 
+// Fetch users from Supabase
 const fetchUsers = async (): Promise<User[]> => {
   try {
-    // Fetch users from the profiles table
-    const { data, error } = await supabase
+    console.log('Fetching users with admin client to bypass RLS');
+    
+    // Use admin client to bypass RLS and fetch all profiles
+    const { data, error } = await supabaseAdmin
       .from('profiles')
-      .select('*')
-      .order('created_at', { ascending: false });
-      
+      .select('id, user_id, email, full_name, role, is_active, created_at, updated_at');
+    
     if (error) {
       console.error('Error fetching users:', error);
       return [];
     }
     
-    if (!data) return [];
+    console.log(`Fetched ${data?.length || 0} users`);
     
-    // Transform to match our User interface
-    return data.map(user => ({
-      id: user.id,
-      username: user.email || '',
-      fullName: user.full_name || '',
-      email: user.email || '',
-      role: user.role === 'admin' ? 'Administrator' : 
-            user.role === 'operator' ? 'Editor' : 'Viewer',
-      active: user.is_active !== false, // Default to true if not specified
-      lastLogin: user.last_login ? new Date(user.last_login) : undefined,
-      createdAt: user.created_at ? new Date(user.created_at) : new Date()
+    return data.map(profile => ({
+      id: profile.id,
+      username: profile.email,
+      fullName: profile.full_name,
+      email: profile.email,
+      role: profile.role || 'Viewer',
+      active: profile.is_active !== false, // Default to true if undefined
+      lastLogin: undefined, // No last_login field in the database
+      createdAt: new Date(profile.created_at)
     }));
   } catch (error) {
     console.error('Error in fetchUsers:', error);
@@ -119,6 +116,7 @@ const fetchUsers = async (): Promise<User[]> => {
   }
 };
 
+// Initialize settings from localStorage or defaults
 const initializeSettings = (): Settings => {
   const storedSettings = localStorage.getItem(SETTINGS_STORAGE_KEY);
   if (!storedSettings) {
@@ -142,7 +140,7 @@ export const adminService = {
         email_confirm: true,
         user_metadata: {
           full_name: fullName,
-          role: 'admin',
+          role: 'admin'
         }
       });
       
@@ -151,106 +149,95 @@ export const adminService = {
         return false;
       }
       
-      console.log('Admin user created successfully:', authData.user.id);
+      if (!authData?.user) {
+        console.error('No user returned from creation');
+        return false;
+      }
       
-      // Create profile for the admin user
+      // Create profile for the user
       const { error: profileError } = await supabaseAdmin
         .from('profiles')
-        .insert([
-          {
-            user_id: authData.user.id,
-            email: email,
-            full_name: fullName,
-            first_name: fullName.split(' ')[0],
-            last_name: fullName.split(' ').slice(1).join(' '),
-            role: 'admin'
-            // Removed status field as it doesn't exist in the profiles table
-          }
-        ]);
+        .insert({
+          user_id: authData.user.id,
+          email: email,
+          full_name: fullName,
+          role: 'admin',
+          active: true
+        });
       
       if (profileError) {
         console.error('Error creating admin profile:', profileError);
         return false;
       }
       
-      console.log('Admin profile created successfully');
+      console.log('Admin user created successfully');
       return true;
     } catch (error) {
       console.error('Error in createAdminUser:', error);
       return false;
     }
   },
+  
   // Authentication
   login: async (email: string, password: string): Promise<boolean> => {
     try {
       console.log('Admin service login attempt:', { email, passwordLength: password?.length || 0 });
       
-      // First, check if the user exists and has admin role
-      const { data: profile, error: profileError } = await supabase
+      // First, verify the password by attempting a sign-in
+      const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      
+      if (signInError) {
+        console.error('Password verification failed:', signInError);
+        return false;
+      }
+      
+      if (!signInData?.user) {
+        console.error('No user returned from sign-in');
+        return false;
+      }
+      
+      console.log('Sign-in successful, checking if user is admin');
+      
+      // Use the admin client to bypass RLS and check if the user has admin role
+      const { data: profile, error: profileError } = await supabaseAdmin
         .from('profiles')
-        .select('user_id, role, full_name, email')
-        .eq('email', email)
-        .eq('role', 'admin')
+        .select('id, user_id, role, full_name, email')
+        .eq('user_id', signInData.user.id)
         .single();
       
-      if (profileError || !profile) {
-        console.error('Error fetching admin profile or user is not an admin:', profileError);
+      if (profileError) {
+        console.error('Error fetching user profile with admin client:', profileError);
         return false;
       }
       
-      console.log('Found admin profile:', { userId: profile.user_id, role: profile.role });
-      
-      try {
-        // For security, we'll verify the password by attempting a sign-in
-        const { error: signInError } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-        
-        if (signInError) {
-          console.error('Password verification failed:', signInError);
-          
-          // If we get a database error, we'll try to use the admin client as a fallback
-          if (signInError.message.includes('Database error')) {
-            console.log('Database error detected, using admin verification...');
-            
-            // Use the admin client to check if the user exists
-            const { data: adminAuthData, error: adminAuthError } = await supabaseAdmin.auth.admin.listUsers();
-            
-            if (adminAuthError) {
-              console.error('Admin auth error:', adminAuthError);
-              return false;
-            }
-            
-            const matchingUser = adminAuthData.users.find(u => u.email === email);
-            if (!matchingUser) {
-              console.error('User not found in auth.users table');
-              return false;
-            }
-            
-            console.log('Found user with admin client:', matchingUser.email);
-          } else {
-            // Any other sign-in error means authentication failed
-            return false;
-          }
-        }
-        
-        // Store admin authentication status in localStorage
-        localStorage.setItem(ADMIN_AUTH_KEY, 'true');
-        localStorage.setItem(CURRENT_USER_KEY, JSON.stringify({
-          id: profile.user_id,
-          username: profile.email,
-          fullName: profile.full_name,
-          email: profile.email,
-          role: profile.role
-        }));
-        
-        console.log('Admin authentication successful');
-        return true;
-      } catch (signInError) {
-        console.error('Error during sign-in attempt:', signInError);
+      if (!profile) {
+        console.error('No profile found for user');
         return false;
       }
+      
+      // Check if the user has admin role
+      if (profile.role !== 'admin') {
+        console.error('User does not have admin role:', profile.role);
+        return false;
+      }
+      
+      console.log('Confirmed user has admin role:', { userId: profile.user_id, role: profile.role });
+      
+      // Store admin authentication status in localStorage
+      localStorage.setItem(ADMIN_AUTH_KEY, 'true');
+      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify({
+        id: profile.id,
+        username: profile.email,
+        fullName: profile.full_name,
+        email: profile.email,
+        role: profile.role
+      }));
+      
+      console.log('Admin authentication successful');
+      return true;
     } catch (error) {
       console.error('Error in admin login:', error);
       return false;
@@ -266,37 +253,62 @@ export const adminService = {
     return localStorage.getItem(ADMIN_AUTH_KEY) === 'true';
   },
   
+  getCurrentUser: (): User | null => {
+    try {
+      // Check if we're authenticated first
+      if (!localStorage.getItem(ADMIN_AUTH_KEY)) {
+        console.log('Not authenticated, no current user');
+        return null;
+      }
+      
+      const userJson = localStorage.getItem(CURRENT_USER_KEY);
+      if (!userJson) {
+        console.log('No user data in localStorage');
+        
+        // Fallback: Try to get the current authenticated user from Supabase
+        // This is async but we can't make this function async without breaking the interface
+        // So we'll return null for now and the UI should handle refreshing
+        return null;
+      }
+      
+      return JSON.parse(userJson);
+    } catch (error) {
+      console.error('Error getting current user:', error);
+      return null;
+    }
+  },
+  
   // Message management
   getMessages: async (): Promise<Message[]> => {
     return await fetchMessages();
   },
   
-  getMessageById: async (id: string): Promise<Message | undefined> => {
+  getMessageById: async (id: string): Promise<Message | null> => {
     try {
       const { data, error } = await supabase
         .from('contacts')
         .select('*')
         .eq('id', id)
         .single();
-        
+      
       if (error || !data) {
         console.error('Error fetching message by ID:', error);
-        return undefined;
+        return null;
       }
       
       return {
         id: data.id,
-        name: data.name || '',
-        email: data.email || '',
-        subject: data.subject || 'No Subject',
-        message: data.message || '',
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
         createdAt: new Date(data.created_at),
         read: data.read || false,
         archived: data.archived || false
       };
     } catch (error) {
       console.error('Error in getMessageById:', error);
-      return undefined;
+      return null;
     }
   },
   
@@ -306,7 +318,7 @@ export const adminService = {
         .from('contacts')
         .update({ read: true })
         .eq('id', id);
-        
+      
       if (error) {
         console.error('Error marking message as read:', error);
         return false;
@@ -325,7 +337,7 @@ export const adminService = {
         .from('contacts')
         .update({ archived: true })
         .eq('id', id);
-        
+      
       if (error) {
         console.error('Error archiving message:', error);
         return false;
@@ -344,7 +356,7 @@ export const adminService = {
         .from('contacts')
         .delete()
         .eq('id', id);
-        
+      
       if (error) {
         console.error('Error deleting message:', error);
         return false;
@@ -363,7 +375,7 @@ export const adminService = {
         .from('contacts')
         .update({ archived: false })
         .eq('id', id);
-        
+      
       if (error) {
         console.error('Error restoring message:', error);
         return false;
@@ -376,69 +388,58 @@ export const adminService = {
     }
   },
   
-  getStats: async (): Promise<{total: number; unread: number; archived: number; activeUsers: number; totalUsers: number}> => {
+  // Stats and analytics
+  getStats: async (): Promise<any> => {
     try {
       const messages = await fetchMessages();
-      const users = await fetchUsers();
       
       return {
-        total: messages.length,
-        unread: messages.filter(m => !m.read).length,
-        archived: messages.filter(m => m.archived).length,
-        activeUsers: users.filter(u => u.active).length,
-        totalUsers: users.length
+        totalMessages: messages.length,
+        unreadMessages: messages.filter(m => !m.read).length,
+        archivedMessages: messages.filter(m => m.archived).length
       };
-    } catch (error: any) {
-      console.error('Error getting stats:', error);
+    } catch (error) {
+      console.error('Error in getStats:', error);
       return {
-        total: 0,
-        unread: 0,
-        archived: 0,
-        activeUsers: 0,
-        totalUsers: 0
+        totalMessages: 0,
+        unreadMessages: 0,
+        archivedMessages: 0
       };
     }
   },
   
   // User management
   getUsers: async (): Promise<User[]> => {
-    try {
-      const users = await fetchUsers();
-      console.log('Fetched users:', users); // Debug log
-      return Array.isArray(users) ? users : [];
-    } catch (error: any) {
-      console.error('Error in getUsers:', error);
-      return [];
-    }
+    return await fetchUsers();
   },
   
-  getUser: async (id: string): Promise<User | undefined> => {
+  getUserById: async (id: string): Promise<User | null> => {
     try {
-      const { data, error } = await supabase
+      // Use admin client to bypass RLS
+      const { data, error } = await supabaseAdmin
         .from('profiles')
-        .select('*')
+        .select('id, user_id, email, full_name, role, is_active, created_at, updated_at')
         .eq('id', id)
         .single();
-        
+      
       if (error || !data) {
         console.error('Error fetching user by ID:', error);
-        return undefined;
+        return null;
       }
       
       return {
         id: data.id,
-        username: data.email || '',
-        fullName: data.full_name || '',
-        email: data.email || '',
-        role: data.role === 'admin' ? 'Administrator' : 
-              data.role === 'operator' ? 'Editor' : 'Viewer',
-        active: data.is_active !== false,
-        lastLogin: data.last_login ? new Date(data.last_login) : undefined,
-        createdAt: data.created_at ? new Date(data.created_at) : new Date()
+        username: data.email,
+        fullName: data.full_name,
+        email: data.email,
+        role: data.role || 'Viewer',
+        active: data.is_active !== false, // Default to true if undefined,
+        lastLogin: undefined, // No last_login field in the database
+        createdAt: new Date(data.created_at)
       };
     } catch (error) {
-      console.error('Error in getUser:', error);
-      return undefined;
+      console.error('Error in getUserById:', error);
+      return null;
     }
   },
   
@@ -447,63 +448,59 @@ export const adminService = {
       console.log('Creating new user with admin client:', { email: user.email, fullName: user.fullName, role: user.role });
       
       // Generate a secure random password if not provided
-      const password = user.password || Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8).toUpperCase() + '!1';
+      const password = user.password || Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8).toUpperCase() + '!';
       
-      // Create user with admin privileges (no email verification required)
+      // Map role from UI format to database format
+      let mappedRole = 'viewer';
+      if (user.role === 'Administrator') mappedRole = 'admin';
+      else if (user.role === 'Editor') mappedRole = 'editor';
+      
+      // Create user with admin client
       const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
         email: user.email,
         password: password,
-        email_confirm: true, // Skip email verification
-        user_metadata: {
-          full_name: user.fullName,
-          role: user.role === 'Administrator' ? 'admin' : 
-                user.role === 'Editor' ? 'operator' : 'staff',
-        }
+        email_confirm: true,
+        user_metadata: { full_name: user.fullName, role: mappedRole }
       });
       
       if (authError) {
-        console.error('Error creating auth user with admin client:', authError);
+        console.error('Error creating user:', authError);
         return false;
       }
       
-      console.log('Auth user creation response:', authData);
-      
-      if (!authData.user) {
-        console.error('No user returned from admin createUser');
+      if (!authData?.user) {
+        console.error('No user returned from creation');
         return false;
       }
       
-      // Check if profile was automatically created by the Supabase trigger
-      // If not, create it manually
-      const { data: existingProfile } = await supabase
+      console.log('Auth user created successfully, creating profile');
+      
+      // Create profile for the user
+      const { error: profileError } = await supabaseAdmin
         .from('profiles')
-        .select('id')
-        .eq('user_id', authData.user.id)
-        .single();
+        .insert({
+          user_id: authData.user.id,
+          email: user.email,
+          full_name: user.fullName,
+          role: mappedRole,
+          is_active: user.active
+        });
       
-      if (!existingProfile) {
-        console.log('Creating profile manually for user:', authData.user.id);
-        const { error: profileError } = await supabaseAdmin
+      if (profileError) {
+        console.error('Error creating user profile:', profileError);
+        // Check if profile already exists (could happen if trigger created it)
+        const { data: existingProfile } = await supabaseAdmin
           .from('profiles')
-          .insert({
-            user_id: authData.user.id,
-            email: user.email,
-            full_name: user.fullName,
-            role: user.role === 'Administrator' ? 'admin' : 
-                  user.role === 'Editor' ? 'operator' : 'staff',
-            is_active: user.active,
-            created_at: new Date().toISOString()
-          });
-        
-        if (profileError) {
-          console.error('Error creating user profile:', profileError);
+          .select('id')
+          .eq('user_id', authData.user.id)
+          .single();
+          
+        if (!existingProfile) {
           return false;
         }
-      } else {
-        console.log('Profile already exists for user:', authData.user.id);
       }
       
-      console.log('User created successfully without email verification');
+      console.log('User created successfully');
       return true;
     } catch (error) {
       console.error('Error in addUser:', error);
@@ -513,32 +510,66 @@ export const adminService = {
   
   updateUser: async (id: string, updates: Partial<User>): Promise<boolean> => {
     try {
-      // Get the profile first
-      const { data, error: fetchError } = await supabase
+      // Map role from UI format to database format
+      let mappedRole = undefined;
+      if (updates.role) {
+        if (updates.role === 'Administrator') mappedRole = 'admin';
+        else if (updates.role === 'Editor') mappedRole = 'editor';
+        else mappedRole = 'viewer';
+      }
+      
+      // Update profile
+      const { error: profileError } = await supabaseAdmin
         .from('profiles')
-        .select('*')
+        .update({
+          ...(updates.fullName ? { full_name: updates.fullName } : {}),
+          ...(updates.email ? { email: updates.email } : {}),
+          ...(mappedRole ? { role: mappedRole } : {}),
+          ...(updates.active !== undefined ? { is_active: updates.active } : {})
+        })
+        .eq('id', id);
+      
+      if (profileError) {
+        console.error('Error updating user profile:', profileError);
+        return false;
+      }
+      
+      // Get user_id from profiles
+      const { data, error: fetchError } = await supabaseAdmin
+        .from('profiles')
+        .select('user_id')
         .eq('id', id)
         .single();
       
       if (fetchError || !data) {
-        console.error('Error fetching user for update:', fetchError);
+        console.error('Error fetching user_id for update:', fetchError);
         return false;
       }
       
-      // Update the profile
-      const { error: updateError } = await supabase
-        .from('profiles')
-        .update({
-          full_name: updates.fullName || data.full_name,
-          role: updates.role === 'Administrator' ? 'admin' : 
-                updates.role === 'Editor' ? 'operator' : 'viewer',
-          is_active: updates.active !== undefined ? updates.active : data.is_active
-        })
-        .eq('id', id);
+      // Update auth user if email changed
+      if (updates.email) {
+        const { error: authError } = await supabaseAdmin.auth.admin.updateUserById(
+          data.user_id,
+          { email: updates.email }
+        );
+        
+        if (authError) {
+          console.error('Error updating auth user:', authError);
+          return false;
+        }
+      }
       
-      if (updateError) {
-        console.error('Error updating user:', updateError);
-        return false;
+      // Update password if provided
+      if (updates.password) {
+        const { error: passwordError } = await supabaseAdmin.auth.admin.updateUserById(
+          data.user_id,
+          { password: updates.password }
+        );
+        
+        if (passwordError) {
+          console.error('Error updating user password:', passwordError);
+          return false;
+        }
       }
       
       return true;
@@ -551,7 +582,7 @@ export const adminService = {
   deleteUser: async (id: string): Promise<boolean> => {
     try {
       // Get user_id from profiles
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabaseAdmin
         .from('profiles')
         .select('user_id')
         .eq('id', id)
@@ -563,7 +594,7 @@ export const adminService = {
       }
       
       // Delete the auth user
-      const { error: authError } = await supabase.auth.admin.deleteUser(data.user_id);
+      const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(data.user_id);
       
       if (authError) {
         console.error('Error deleting auth user:', authError);
@@ -571,7 +602,7 @@ export const adminService = {
       }
       
       // Profile should be deleted by cascade, but just in case
-      const { error: profileError } = await supabase
+      const { error: profileError } = await supabaseAdmin
         .from('profiles')
         .delete()
         .eq('id', id);
@@ -598,30 +629,31 @@ export const adminService = {
     
     localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(updatedSettings));
     return updatedSettings;
-  }
-};
-
-// Update the Contact form submission to save messages directly to Supabase
-export const saveContactMessage = async (formData: { name: string; email: string; subject: string; message: string }): Promise<boolean> => {
-  try {
-    const { error } = await supabase.from('contacts').insert({
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      created_at: new Date().toISOString(),
-      read: false,
-      archived: false
-    });
-    
-    if (error) {
-      console.error('Error saving contact message:', error);
+  },
+  
+  // Update the Contact form submission to save messages directly to Supabase
+  saveContactMessage: async (formData: { name: string; email: string; subject: string; message: string }): Promise<boolean> => {
+    try {
+      const { error } = await supabase
+        .from('contacts')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          read: false,
+          archived: false
+        });
+      
+      if (error) {
+        console.error('Error saving contact message:', error);
+        return false;
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error in saveContactMessage:', error);
       return false;
     }
-    
-    return true;
-  } catch (error) {
-    console.error('Error in saveContactMessage:', error);
-    return false;
   }
 };
