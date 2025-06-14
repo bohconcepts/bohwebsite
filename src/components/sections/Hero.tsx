@@ -66,15 +66,13 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <div 
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 overflow-hidden ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
-            <div className="relative w-full h-full">
-              <img
-                src={slide.image}
-                alt={`BOH Concepts - ${index + 1}`}
-                className="absolute top-0 left-1/2 -translate-x-1/2 h-full max-w-none min-w-full object-center brightness-110 contrast-110 saturate-110"
-              />
-            </div>
+            <img
+              src={slide.image}
+              alt={`BOH Concepts - ${index + 1}`}
+              className="w-full h-full object-contain sm:object-cover md:object-cover brightness-110 contrast-110 saturate-110"
+            />
           </div>
         ))}
 
