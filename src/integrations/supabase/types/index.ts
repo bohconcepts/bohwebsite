@@ -4,6 +4,7 @@ import { Job, JobInsert, JobUpdate } from './jobs';
 import { JobApplication, JobApplicationInsert, JobApplicationUpdate } from './job-applications';
 import { Contact, ContactInsert, ContactUpdate } from './contacts';
 import { DocumentTypes } from './documentTypes';
+import { ChatTypes } from './chatTypes';
 
 // Re-export all types
 export * from './profiles';
@@ -11,6 +12,7 @@ export * from './jobs';
 export * from './job-applications';
 export * from './contacts';
 export * from './documentTypes';
+export * from './chatTypes';
 
 // Common JSON type used in Supabase
 export type Json =
@@ -49,6 +51,21 @@ export interface Database {
         Row: DocumentTypes['Row'];
         Insert: DocumentTypes['Insert'];
         Update: DocumentTypes['Update'];
+      };
+      chat_sessions: {
+        Row: ChatTypes['Sessions']['Row'];
+        Insert: ChatTypes['Sessions']['Insert'];
+        Update: ChatTypes['Sessions']['Update'];
+      };
+      chat_messages: {
+        Row: ChatTypes['Messages']['Row'];
+        Insert: ChatTypes['Messages']['Insert'];
+        Update: ChatTypes['Messages']['Update'];
+      };
+      document_embeddings: {
+        Row: ChatTypes['Embeddings']['Row'];
+        Insert: ChatTypes['Embeddings']['Insert'];
+        Update: ChatTypes['Embeddings']['Update'];
       };
     };
     Views: {

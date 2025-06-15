@@ -7,6 +7,7 @@ import Statistics from '@/components/sections/Statistics';
 import Testimonials from '@/components/sections/Testimonials';
 import ClientsSection from '@/components/sections/ClientsSection';
 import CtaSection from '@/components/sections/CtaSection';
+import DocumentChat from '@/components/ui/document-chat';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -23,6 +24,7 @@ const Home = () => {
       <Testimonials />
       <ClientsSection />
       <CtaSection />
+      <DocumentChat />
     </>
   );
 };
