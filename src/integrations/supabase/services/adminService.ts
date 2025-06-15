@@ -753,6 +753,19 @@ export const adminService = {
     }
   },
   
+  // Settings management
+  getSettings: (): Settings => {
+    return initializeSettings();
+  },
+  
+  updateSettings: (updates: Partial<Settings>): Settings => {
+    const currentSettings = initializeSettings();
+    const updatedSettings = { ...currentSettings, ...updates };
+    
+    localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(updatedSettings));
+    return updatedSettings;
+  },
+  
   // Update the Contact form submission to save messages directly to Supabase
   saveContactMessage: async (formData: { name: string; email: string; subject: string; message: string }): Promise<boolean> => {
     try {

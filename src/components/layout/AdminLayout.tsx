@@ -53,6 +53,12 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
       active: currentPath === "/admin/users",
     },
     {
+      name: "Documents",
+      href: "/admin/documents",
+      icon: FileText,
+      active: currentPath === "/admin/documents",
+    },
+    {
       name: "Content",
       href: "/admin/content",
       icon: FileText,
