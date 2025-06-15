@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../ui/button';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '../ui/use-toast';
+import documentProcessingService from '../../integrations/ai/services/documentProcessingService';
 
-const DocumentProcessor: React.FC = () => {
+interface DocumentProcessorProps {
+  onProcessingComplete?: () => void;
+}
+
+const DocumentProcessor: React.FC<DocumentProcessorProps> = ({ onProcessingComplete }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [result, setResult] = useState<string | null>(null);
   const { toast } = useToast();
@@ -13,29 +18,30 @@ const DocumentProcessor: React.FC = () => {
       setIsProcessing(true);
       setResult(null);
       
-      const response = await fetch('/api/process-documents', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      // Process all unprocessed documents directly using the service
+      const processedCount = await documentProcessingService.processAllUnprocessedDocuments();
       
-      const data = await response.json();
-      
-      if (data.success) {
+      if (processedCount > 0) {
         toast({
           title: 'Success',
-          description: `Successfully processed ${data.processedCount} documents`,
+          description: `Successfully processed ${processedCount} documents`,
           variant: 'default',
         });
-        setResult(`Successfully processed ${data.processedCount} documents`);
+        setResult(`Successfully processed ${processedCount} documents`);
+      } else if (processedCount === 0) {
+        toast({
+          title: 'Information',
+          description: 'No unprocessed documents found',
+          variant: 'default',
+        });
+        setResult('No unprocessed documents found');
       } else {
         toast({
           title: 'Error',
-          description: data.message || 'Failed to process documents',
+          description: 'Failed to process documents',
           variant: 'destructive',
         });
-        setResult(`Error: ${data.message}`);
+        setResult('Error: Failed to process documents');
       }
     } catch (error) {
       console.error('Error processing documents:', error);
@@ -47,6 +53,10 @@ const DocumentProcessor: React.FC = () => {
       setResult(`Error: ${(error as Error).message}`);
     } finally {
       setIsProcessing(false);
+      // Call the callback if provided to refresh the parent component
+      if (onProcessingComplete) {
+        onProcessingComplete();
+      }
     }
   };
 

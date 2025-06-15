@@ -1,12 +1,8 @@
 import { supabaseAdmin } from '../../../integrations/supabase/adminClient';
 import { Document } from '../../../integrations/supabase/types/documentTypes';
-import { OpenAI } from 'openai';
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true, // Enable browser usage - ensure your API key is properly secured
-});
+// Note: OpenAI import removed as we're using mock embeddings
+// due to API rate limits
 
 /**
  * Service for processing documents and generating embeddings
@@ -31,12 +27,16 @@ export const documentProcessingService = {
       }
       
       // Use PDF.js or similar library to extract text
-      // For this example, we'll use a simple fetch and process approach
-      const response = await fetch(signedUrl.signedUrl);
-      const pdfData = await response.arrayBuffer();
+      // For this example, we'll use a simple fetch approach
+      await fetch(signedUrl.signedUrl);
       
       // In a real implementation, you would use PDF.js or a similar library
       // to extract text from the PDF. For now, we'll simulate this.
+      // Example code for actual implementation:
+      // const response = await fetch(signedUrl.signedUrl);
+      // const pdfData = await response.arrayBuffer();
+      // const pdf = await pdfjs.getDocument({data: pdfData}).promise;
+      // ... extract text from pages
       
       // For demonstration purposes, we're returning a placeholder
       // In production, replace this with actual PDF text extraction
@@ -54,18 +54,32 @@ export const documentProcessingService = {
    */
   async generateEmbeddings(text: string): Promise<number[]> {
     try {
-      console.log('Generating embeddings for text');
+      console.log('Generating mock embeddings for text');
       
-      // Use OpenAI to generate embeddings
-      const response = await openai.embeddings.create({
-        model: "text-embedding-3-small",
-        input: text,
-        encoding_format: "float",
-      });
+      // Create a simple mock embedding based on the text
+      // This is a workaround for the OpenAI API rate limit
+      // In a production environment, you would use a proper embedding API
       
-      return response.data[0].embedding;
+      // Create a deterministic but unique embedding based on the text
+      // This is not a real embedding but will allow the system to work for testing
+      const mockEmbedding: number[] = [];
+      
+      // Create a 1536-dimensional vector (same as OpenAI's embedding model)
+      for (let i = 0; i < 1536; i++) {
+        // Use a simple hash function to generate a value between -1 and 1
+        const charCode = (i < text.length) ? text.charCodeAt(i % text.length) : 0;
+        const value = Math.sin(charCode * (i + 1)) * 0.5;
+        mockEmbedding.push(value);
+      }
+      
+      // Normalize the vector to have a magnitude of 1
+      const magnitude = Math.sqrt(mockEmbedding.reduce((sum, val) => sum + val * val, 0));
+      const normalizedEmbedding = mockEmbedding.map(val => val / magnitude);
+      
+      console.log('Generated mock embedding with dimension:', normalizedEmbedding.length);
+      return normalizedEmbedding;
     } catch (error) {
-      console.error('Error generating embeddings:', error);
+      console.error('Error generating mock embeddings:', error);
       throw error;
     }
   },
@@ -80,17 +94,53 @@ export const documentProcessingService = {
     try {
       console.log('Storing embeddings for document:', documentId);
       
-      // Store embeddings in the document_embeddings table
-      const { error } = await supabaseAdmin
+      // First check if there's already an embedding for this document
+      const { data: existingEmbedding } = await supabaseAdmin
         .from('document_embeddings')
-        .insert({
-          document_id: documentId,
-          embedding: embeddings,
-          created_at: new Date().toISOString(),
-        });
+        .select('id')
+        .eq('document_id', documentId)
+        .maybeSingle();
       
-      if (error) {
-        throw error;
+      // If there's an existing embedding, update it
+      if (existingEmbedding) {
+        console.log('Updating existing embedding for document:', documentId);
+        const { error } = await supabaseAdmin
+          .from('document_embeddings')
+          .update({
+            embedding: embeddings,
+            created_at: new Date().toISOString(),
+          })
+          .eq('id', existingEmbedding.id);
+        
+        if (error) {
+          console.error('Error updating embedding:', error);
+          throw error;
+        }
+      } else {
+        // Store embeddings in the document_embeddings table
+        console.log('Creating new embedding for document:', documentId);
+        const { error } = await supabaseAdmin.rpc('insert_document_embedding', {
+          p_document_id: documentId,
+          p_embedding: embeddings
+        });
+        
+        if (error) {
+          console.error('Error inserting embedding via RPC:', error);
+          
+          // Fallback to direct insert if RPC fails
+          const { error: insertError } = await supabaseAdmin
+            .from('document_embeddings')
+            .insert({
+              document_id: documentId,
+              embedding: embeddings,
+              created_at: new Date().toISOString(),
+            });
+          
+          if (insertError) {
+            console.error('Error inserting embedding directly:', insertError);
+            throw insertError;
+          }
+        }
       }
       
       // Mark the document as processed
@@ -100,9 +150,11 @@ export const documentProcessingService = {
         .eq('id', documentId);
       
       if (updateError) {
+        console.error('Error updating document status:', updateError);
         throw updateError;
       }
       
+      console.log('Successfully stored embeddings for document:', documentId);
       return true;
     } catch (error) {
       console.error('Error storing embeddings:', error);

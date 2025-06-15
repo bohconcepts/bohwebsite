@@ -1,10 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "./button";
 import { Input } from "./input";
-import { Loader2, Send, X, MessageSquare, Phone, FileText } from "lucide-react";
+import { Loader2, Send, X, MessageSquare, Phone, FileText, Trash2 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";
 import { useLanguage } from '../../contexts/LanguageContext';
-import { chatService, ChatMessage } from '../../integrations/ai/services/chatService';
+import { chatService } from '../../integrations/ai/services/chatService';
+
+// Define a simplified API chat message type for UI purposes
+interface APIChatMessage {
+  role: "user" | "assistant" | "system";
+  content: string;
+}
 
 interface DocumentChatProps {
   className?: string;
@@ -17,7 +23,7 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<APIChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [chatMethod, setChatMethod] = useState<ChatMethod>('direct');
   const [sources, setSources] = useState<
@@ -36,7 +42,12 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
           setSessionId(existingSessionId);
           // Load existing messages
           const history = await chatService.getChatHistory(existingSessionId);
-          setMessages(history);
+          // Convert DB messages to API messages format
+          const apiMessages = history.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }));
+          setMessages(apiMessages);
         } else {
           // Create new session
           const newSessionId = await chatService.createChatSession();
@@ -70,6 +81,27 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
     setInput(e.target.value);
   };
 
+  // Clear chat history
+  const handleClearChat = async () => {
+    if (!sessionId) return;
+    
+    try {
+      setLoading(true);
+      // Clear chat history in the database
+      const success = await chatService.clearChatHistory(sessionId);
+      
+      if (success) {
+        // Clear messages in the UI
+        setMessages([]);
+        setSources([]);
+      }
+    } catch (error) {
+      console.error('Error clearing chat history:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -85,7 +117,7 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
     }
 
     // Continue with direct chat
-    const userMessage: ChatMessage = {
+    const userMessage: APIChatMessage = {
       role: "user",
       content: input,
     };
@@ -96,14 +128,19 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
     setLoading(true);
 
     try {
-      // Save user message
-      await chatService.saveChatMessage(sessionId, userMessage);
+      // Save user message to database with required fields
+      if (sessionId) {
+        await chatService.saveChatMessage(sessionId, {
+          role: userMessage.role,
+          content: userMessage.content
+        });
+      }
 
       // Generate response
       const response = await chatService.generateResponse(messages, input);
 
       // Add assistant message to chat
-      const assistantMessage: ChatMessage = {
+      const assistantMessage: APIChatMessage = {
         role: "assistant",
         content: response.answer,
       };
@@ -111,8 +148,13 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
       setMessages((prev) => [...prev, assistantMessage]);
       setSources(response.sources);
 
-      // Save assistant message
-      await chatService.saveChatMessage(sessionId, assistantMessage);
+      // Save assistant message to database with required fields
+      if (sessionId) {
+        await chatService.saveChatMessage(sessionId, {
+          role: assistantMessage.role,
+          content: assistantMessage.content
+        });
+      }
     } catch (error) {
       console.error("Error generating response:", error);
 
@@ -168,13 +210,23 @@ const DocumentChat: React.FC<DocumentChatProps> = ({ className }) => {
               </svg>
               <h3 className="font-medium">{t("Chat with us")}</h3>
             </div>
-            <button
-              onClick={handleChatClose}
-              className="text-white hover:text-gray-200"
-              aria-label={t("Close chat")}
-            >
-              <X className="h-5 w-5" />
-            </button>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={handleClearChat}
+                className="text-white hover:text-gray-200"
+                aria-label={t("Clear chat history")}
+                disabled={loading || messages.length === 0}
+              >
+                <Trash2 className="h-5 w-5" />
+              </button>
+              <button
+                onClick={handleChatClose}
+                className="text-white hover:text-gray-200"
+                aria-label={t("Close chat")}
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
           {/* Messages */}

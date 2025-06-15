@@ -15,6 +15,7 @@ const Sitemap = lazy(() => import("@/pages/Sitemap"));
 const WhyChooseUsPage = lazy(() => import("@/pages/WhyChooseUsPage"));
 const MarketsPage = lazy(() => import("@/pages/MarketsPage"));
 const Auth = lazy(() => import("@/pages/Auth"));
+const TestDocumentProcessing = lazy(() => import("@/pages/TestDocumentProcessing"));
 
 // About section pages
 const TeamsPage = lazy(() => import("@/pages/TeamsPage"));
@@ -71,6 +72,7 @@ const AppRoutes = () => {
         <Route path="/terms" element={<Terms />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/test-document-processing" element={<TestDocumentProcessing />} />
         
         {/* Supabase authentication redirect routes */}
         <Route path="/confirm-password" element={<Auth />} />
