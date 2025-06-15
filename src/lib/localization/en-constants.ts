@@ -734,7 +734,7 @@ export const enConstants: LocalizedConstants = {
       dropdown: [
         { title: "Why Choose Us", href: "/why-choose-us" },
         { title: "Our Clients", href: "/our-clients" },
-        { title: "Testimonials", href: "/our-clients#testimonials" },
+        // { title: "Testimonials", href: "/testimonials" },
       ],
     },
     { title: "Pricing", href: "/pricing" },
@@ -748,8 +748,10 @@ export const enConstants: LocalizedConstants = {
     "Meet the exceptional team behind BOH Concepts. Our diverse professionals are dedicated to transforming hospitality staffing across Africa and the United States.",
   mission_meta_description:
     "Discover BOH Concepts' mission and vision. We're redefining hospitality staffing through excellence, diversity, and sustainable partnerships.",
-  values_meta_description: "Explore the core values that guide all our operations at BOH Concepts.",
-  values_description: "Our core values form the foundation of everything we do at BOH Concepts, guiding our decisions, shaping our culture, and defining our approach to hospitality staffing excellence. Our commitment to excellence, diversity, and accountability shapes everything we do.",
+  values_meta_description:
+    "Explore the core values that guide all our operations at BOH Concepts.",
+  values_description:
+    "Our core values form the foundation of everything we do at BOH Concepts, guiding our decisions, shaping our culture, and defining our approach to hospitality staffing excellence. Our commitment to excellence, diversity, and accountability shapes everything we do.",
 
   // About page content
   about_section_heading: "Our Commitment to Community",
@@ -792,5 +794,6 @@ export const enConstants: LocalizedConstants = {
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Meet Our Exceptional Team",
   team_page_tag: "OUR TEAM",
-  team_description: "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
+  team_description:
+    "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
 };

@@ -3,49 +3,66 @@ import { LocalizedConstants } from "./types";
 // Spanish constants
 export const esConstants: LocalizedConstants = {
   // Meta descriptions for SEO
-  about_meta_description: "Conozca el compromiso de BOH Concepts con la responsabilidad social corporativa a través de iniciativas comunitarias, concientización sobre el cáncer de mama y celebraciones culturales.",
-  teams_meta_description: "Conozca a nuestro equipo de profesionales dedicados que hacen posible BOH Concepts.",
-  mission_meta_description: "Descubra la misión y visión que impulsa a BOH Concepts en la industria hotelera.",
-  values_meta_description: "Explore los valores fundamentales que guían todas nuestras operaciones en BOH Concepts.",
-  
+  about_meta_description:
+    "Conozca el compromiso de BOH Concepts con la responsabilidad social corporativa a través de iniciativas comunitarias, concientización sobre el cáncer de mama y celebraciones culturales.",
+  teams_meta_description:
+    "Conozca a nuestro equipo de profesionales dedicados que hacen posible BOH Concepts.",
+  mission_meta_description:
+    "Descubra la misión y visión que impulsa a BOH Concepts en la industria hotelera.",
+  values_meta_description:
+    "Explore los valores fundamentales que guían todas nuestras operaciones en BOH Concepts.",
+
   // About page content
   about_section_heading: "Nuestro Compromiso con la Comunidad",
-  about_section_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  about_section_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   about_page_title: "Responsabilidad Social Corporativa",
   about_page_tag: "SOBRE NOSOTROS",
-  about_paragraph_1: "Back of House Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria.",
-  about_paragraph_2: "A través de nuestras campañas de concientización sobre el cáncer de mama y las celebraciones del Mes de la Historia Negra, nos esforzamos por generar un impacto positivo y fomentar una cultura de inclusión y apoyo.",
-  about_paragraph_3: "Con iniciativas en más de 4 continentes, estamos comprometidos a crear un cambio significativo y apoyar a diversas comunidades en todo el mundo.",
-  
+  about_paragraph_1:
+    "Back of House Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria.",
+  about_paragraph_2:
+    "A través de nuestras campañas de concientización sobre el cáncer de mama y las celebraciones del Mes de la Historia Negra, nos esforzamos por generar un impacto positivo y fomentar una cultura de inclusión y apoyo.",
+  about_paragraph_3:
+    "Con iniciativas en más de 4 continentes, estamos comprometidos a crear un cambio significativo y apoyar a diversas comunidades en todo el mundo.",
+
   // Mission & Vision
   mission_heading: "Nuestra Misión y Visión",
-  mission_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
+  mission_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
   mission_page_title: "Nuestra Misión y Visión",
   mission_page_tag: "MISIÓN Y VISIÓN",
   mission_title: "Nuestra Misión",
-  mission_description: "Proporcionar soluciones de personal excepcionales que permitan a nuestros socios de la industria hotelera ofrecer experiencias de clase mundial a sus huéspedes.",
-  mission_overview_description: "Estamos dedicados a transformar la dotación de personal en la hospitalidad a través de soluciones innovadoras que conectan talento excepcional con establecimientos de primer nivel, creando valor tanto para empresas como para profesionales.",
+  mission_description:
+    "Proporcionar soluciones de personal excepcionales que permitan a nuestros socios de la industria hotelera ofrecer experiencias de clase mundial a sus huéspedes.",
+  mission_overview_description:
+    "Estamos dedicados a transformar la dotación de personal en la hospitalidad a través de soluciones innovadoras que conectan talento excepcional con establecimientos de primer nivel, creando valor tanto para empresas como para profesionales.",
   vision_title: "Nuestra Visión",
-  vision_description: "Ser reconocidos globalmente como el estándar de oro en soluciones de personal para la industria hotelera, conocidos por nuestra calidad, innovación y compromiso con la excelencia.",
-  
+  vision_description:
+    "Ser reconocidos globalmente como el estándar de oro en soluciones de personal para la industria hotelera, conocidos por nuestra calidad, innovación y compromiso con la excelencia.",
+
   // Values
   values_heading: "Nuestros Valores",
-  values_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  values_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   values_page_title: "Nuestros Valores Fundamentales",
   values_page_tag: "VALORES",
-  values_description: "Nuestros valores fundamentales forman la base de todo lo que hacemos en BOH Concepts, guiando nuestras decisiones, dando forma a nuestra cultura y definiendo nuestro enfoque hacia la excelencia en la dotación de personal para la hospitalidad.",
-  
+  values_description:
+    "Nuestros valores fundamentales forman la base de todo lo que hacemos en BOH Concepts, guiando nuestras decisiones, dando forma a nuestra cultura y definiendo nuestro enfoque hacia la excelencia en la dotación de personal para la hospitalidad.",
+
   // Team
   team_heading: "Nuestro Equipo",
-  team_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  team_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Nuestro Equipo",
   team_page_tag: "EQUIPO",
-  team_description: "Nuestro diverso equipo de profesionales de la hospitalidad aporta décadas de experiencia y una pasión por la excelencia a cada solución de personal que proporcionamos.",
-  
+  team_description:
+    "Nuestro diverso equipo de profesionales de la hospitalidad aporta décadas de experiencia y una pasión por la excelencia a cada solución de personal que proporcionamos.",
+
   // Global Workforce Map
   global_workforce_tag: "Fuerza Laboral Global",
   global_workforce_title: "Nuestra Presencia Global",
-  global_workforce_description: "Descubra el alcance global de nuestra fuerza laboral, con profesionales talentosos tanto de África como de Estados Unidos contribuyendo a nuestro éxito.",
+  global_workforce_description:
+    "Descubra el alcance global de nuestra fuerza laboral, con profesionales talentosos tanto de África como de Estados Unidos contribuyendo a nuestro éxito.",
   workforce_distribution: "Distribución de la Fuerza Laboral",
   africa_workforce_count: "Fuerza laboral basada en África: {count} empleados",
   us_workforce_count: "Fuerza laboral basada en EE. UU.: {count} empleados",
@@ -57,8 +74,8 @@ export const esConstants: LocalizedConstants = {
   employees: "empleados",
   street_view: "Vista de Calle",
   satellite_view: "Vista Satelital",
-  map_data_note: "Nota: Los datos del mapa son aproximados y solo con fines ilustrativos.",
-  
+  map_data_note:
+    "Nota: Los datos del mapa son aproximados y solo con fines ilustrativos.",
 
   COMPANY_NAME: "BOH Concepts",
   COMPANY_TAGLINE: "¡Personal de Hospitalidad Redefinido!",
@@ -467,12 +484,11 @@ export const esConstants: LocalizedConstants = {
       image: "/images/testimonials/testimonial-3.jpg",
     },
   ],
-  CLIENTS: [],
 
   SITE_NAVIGATION: [
     { title: "Inicio", href: "/" },
-    { 
-      title: "Acerca de", 
+    {
+      title: "Acerca de",
       href: "/about",
       dropdown: [
         { title: "Quiénes Somos", href: "/about/who-we-are" },
@@ -488,8 +504,6 @@ export const esConstants: LocalizedConstants = {
       dropdown: [
         { title: "Por Qué Elegirnos", href: "/why-choose-us" },
         { title: "Nuestros Clientes", href: "/our-clients" },
-        { title: "Precios", href: "/pricing" },
-        { title: "Nuestro Proceso", href: "/our-process" },
       ],
     },
     { title: "Mercados", href: "/markets" },
@@ -673,8 +687,7 @@ export const esConstants: LocalizedConstants = {
     {
       id: "3",
       title: "Apasionado",
-      description:
-        "Siempre amando lo que hacemos y haciendo lo que amamos.",
+      description: "Siempre amando lo que hacemos y haciendo lo que amamos.",
     },
     {
       id: "4",
@@ -726,16 +739,53 @@ export const esConstants: LocalizedConstants = {
     address: "2018 156th Ave NE Building F, Bellevue WA, 98007",
   },
   csr_breast_cancer_title: "Concientización sobre el Cáncer de Mama",
-  csr_breast_cancer_description: "Apoyando la investigación y concientización sobre el cáncer de mama a través de recaudación de fondos y esfuerzos voluntarios.",
+  csr_breast_cancer_description:
+    "Apoyando la investigación y concientización sobre el cáncer de mama a través de recaudación de fondos y esfuerzos voluntarios.",
   csr_black_history_title: "Mes de la Historia Negra",
-  csr_black_history_description: "Honrando la diversidad a través de eventos y promoviendo la inclusión en el lugar de trabajo.",
+  csr_black_history_description:
+    "Honrando la diversidad a través de eventos y promoviendo la inclusión en el lugar de trabajo.",
   csr_global_impact_title: "Impacto Global",
-  csr_global_impact_description: "Marcando la diferencia en más de 4 continentes a través de nuestras asociaciones y programas de alcance comunitario.",
-  
+  csr_global_impact_description:
+    "Marcando la diferencia en más de 4 continentes a través de nuestras asociaciones y programas de alcance comunitario.",
+
   SOCIAL_LINKS: {
     facebook: "https://www.facebook.com/share/1FwYWyqPpw/?mibextid=wwXIfr",
     linkedin: "https://www.linkedin.com/company/bohconcepts/",
-    instagram: "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
+    instagram:
+      "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
     youtube: "https://www.youtube.com/bohconcepts",
   },
+
+  CLIENTS: [
+    {
+      id: "1",
+      name: "Hyatt Hotels",
+      logo: "/images/clients/Hyatt.png",
+      website: "https://www.hyatt.com",
+    },
+    {
+      id: "2",
+      name: "Hilton Hotels",
+      logo: "/images/clients/Hilton-Logo-4.png",
+      website: "https://www.hilton.com",
+    },
+    {
+      id: "3",
+      name: "Thompson Hotels",
+      logo: "/images/clients/Thompson.jpg",
+      website: "https://www.hyatt.com/brands/thompson-hotels",
+    },
+    {
+      id: "4",
+      name: "Waldorf Astoria",
+      logo: "/images/clients/Waldorf.png",
+      website: "https://www.waldorfastoria.com",
+    },
+    {
+      id: "5",
+      name: "Destination Hotels",
+      logo: "/images/clients/destination.png",
+      website: "https://www.marriott.com",
+    },
+  ],
 };
