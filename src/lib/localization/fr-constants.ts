@@ -3,49 +3,66 @@ import { LocalizedConstants } from "./types";
 // French constants
 export const frConstants: LocalizedConstants = {
   // Meta descriptions for SEO
-  about_meta_description: "Découvrez l'engagement de BOH Concepts envers la responsabilité sociale d'entreprise à travers des initiatives communautaires, la sensibilisation au cancer du sein et des célébrations culturelles.",
-  teams_meta_description: "Rencontrez notre équipe de professionnels dévoués qui rendent BOH Concepts possible.",
-  mission_meta_description: "Découvrez la mission et la vision qui animent BOH Concepts dans l'industrie hôtelière.",
-  values_meta_description: "Explorez les valeurs fondamentales qui guident toutes nos opérations chez BOH Concepts.",
-  
+  about_meta_description:
+    "Découvrez l'engagement de BOH Concepts envers la responsabilité sociale d'entreprise à travers des initiatives communautaires, la sensibilisation au cancer du sein et des célébrations culturelles.",
+  teams_meta_description:
+    "Rencontrez notre équipe de professionnels dévoués qui rendent BOH Concepts possible.",
+  mission_meta_description:
+    "Découvrez la mission et la vision qui animent BOH Concepts dans l'industrie hôtelière.",
+  values_meta_description:
+    "Explorez les valeurs fondamentales qui guident toutes nos opérations chez BOH Concepts.",
+
   // About page content
   about_section_heading: "Notre Engagement Envers la Communauté",
-  about_section_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  about_section_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   about_page_title: "Responsabilité Sociale d'Entreprise",
   about_page_tag: "À PROPOS DE NOUS",
-  about_paragraph_1: "Back of House Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur.",
-  about_paragraph_2: "Grâce à nos campagnes de sensibilisation au cancer du sein et à nos célébrations du Mois de l'histoire des Noirs, nous nous efforçons d'avoir un impact positif et de favoriser une culture d'inclusion et de soutien.",
-  about_paragraph_3: "Avec des initiatives sur plus de 4 continents, nous nous engageons à créer un changement significatif et à soutenir diverses communautés dans le monde entier.",
-  
+  about_paragraph_1:
+    "Back of House Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur.",
+  about_paragraph_2:
+    "Grâce à nos campagnes de sensibilisation au cancer du sein et à nos célébrations du Mois de l'histoire des Noirs, nous nous efforçons d'avoir un impact positif et de favoriser une culture d'inclusion et de soutien.",
+  about_paragraph_3:
+    "Avec des initiatives sur plus de 4 continents, nous nous engageons à créer un changement significatif et à soutenir diverses communautés dans le monde entier.",
+
   // Mission & Vision
   mission_heading: "Notre Mission et Vision",
-  mission_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
+  mission_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
   mission_page_title: "Notre Mission et Vision",
   mission_page_tag: "NOTRE MISSION",
   mission_title: "Notre Mission",
-  mission_description: "Chez BOH Staffing Solutions, notre mission est de révolutionner l'industrie hôtelière en fournissant des solutions de personnel exceptionnelles qui autonomisent à la fois les entreprises et les professionnels. Nous nous engageons à combler le fossé entre les travailleurs talentueux de l'hôtellerie et les établissements de qualité, créant des opportunités d'emploi significatives tout en aidant les entreprises à prospérer.",
-  mission_overview_description: "Nous nous consacrons à transformer le personnel hôtelier grâce à des solutions innovantes qui connectent des talents exceptionnels avec des établissements de premier plan, créant de la valeur tant pour les entreprises que pour les professionnels.",
+  mission_description:
+    "Chez BOH Staffing Solutions, notre mission est de révolutionner l'industrie hôtelière en fournissant des solutions de personnel exceptionnelles qui autonomisent à la fois les entreprises et les professionnels. Nous nous engageons à combler le fossé entre les travailleurs talentueux de l'hôtellerie et les établissements de qualité, créant des opportunités d'emploi significatives tout en aidant les entreprises à prospérer.",
+  mission_overview_description:
+    "Nous nous consacrons à transformer le personnel hôtelier grâce à des solutions innovantes qui connectent des talents exceptionnels avec des établissements de premier plan, créant de la valeur tant pour les entreprises que pour les professionnels.",
   vision_title: "Notre Vision",
-  vision_description: "Être reconnu mondialement comme la référence en matière de solutions de personnel pour l'industrie hôtelière, connu pour notre qualité, notre innovation et notre engagement envers l'excellence.",
-  
+  vision_description:
+    "Être reconnu mondialement comme la référence en matière de solutions de personnel pour l'industrie hôtelière, connu pour notre qualité, notre innovation et notre engagement envers l'excellence.",
+
   // Values
   values_heading: "Nos Valeurs",
-  values_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  values_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   values_page_title: "Les Valeurs Qui Nous Guident",
   values_page_tag: "NOS VALEURS",
-  values_description: "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
-  
+  values_description:
+    "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
+
   // Team
   team_heading: "Notre Équipe",
-  team_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  team_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Rencontrez Notre Équipe Exceptionnelle",
   team_page_tag: "NOTRE ÉQUIPE",
-  team_description: "Notre équipe diversifiée de professionnels de l'hôtellerie apporte des décennies d'expérience et une passion pour l'excellence à chaque solution de personnel que nous fournissons.",
-  
+  team_description:
+    "Notre équipe diversifiée de professionnels de l'hôtellerie apporte des décennies d'expérience et une passion pour l'excellence à chaque solution de personnel que nous fournissons.",
+
   // Global Workforce Map
   global_workforce_tag: "Main-d'œuvre Mondiale",
   global_workforce_title: "Notre Présence Mondiale",
-  global_workforce_description: "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
+  global_workforce_description:
+    "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
   workforce_distribution: "Distribution de la Main-d'œuvre",
   africa_workforce_count: "Main-d'œuvre basée en Afrique: {count} employés",
   us_workforce_count: "Main-d'œuvre basée aux États-Unis: {count} employés",
@@ -57,57 +74,72 @@ export const frConstants: LocalizedConstants = {
   employees: "employés",
   street_view: "Vue de la Rue",
   satellite_view: "Vue Satellite",
-  map_data_note: "Remarque: Les données cartographiques sont approximatives et à titre illustratif uniquement.",
+  map_data_note:
+    "Remarque: Les données cartographiques sont approximatives et à titre illustratif uniquement.",
   COMPANY_NAME: "BOH Concepts",
   COMPANY_TAGLINE: "La Restauration Redéfinie!",
   COMPANY_DESCRIPTION:
     "Chez Back of House Concepts, nous redéfinissons le personnel de l'hôtellerie avec une main-d'œuvre diversifiée, équitable et inclusive qui assure la cohérence et l'engagement envers les objectifs de tous nos clients.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
-  
+
   // Service position descriptions
-  long_term_talents_description: "Nous fournissons les postes à long terme suivants avec des collègues bien vérifiés et qualifiés qui exécutent selon les normes et les attentes de votre propriété et de vos normes de marque.",
-  seasonal_talents_description: "Nous fournissons les postes saisonniers suivants avec des collègues bien vérifiés et qualifiés qui exécutent selon les normes et les attentes de votre propriété et de vos normes de marque.",
+  long_term_talents_description:
+    "Nous fournissons les postes à long terme suivants avec des collègues bien vérifiés et qualifiés qui exécutent selon les normes et les attentes de votre propriété et de vos normes de marque.",
+  seasonal_talents_description:
+    "Nous fournissons les postes saisonniers suivants avec des collègues bien vérifiés et qualifiés qui exécutent selon les normes et les attentes de votre propriété et de vos normes de marque.",
   show_more: "Voir plus",
   show_less: "Voir moins",
   available_positions: "Postes disponibles",
-  
+
   // Long-term positions
-  position_housekeeping_leadership_long: "Direction de l'entretien ménager - Gouvernantes exécutives, Gouvernantes exécutives adjointes, Superviseurs et Inspecteurs de chambres",
-  position_housekeeping_attendants: "Préposés à l'entretien ménager - Préposés aux chambres, Préposés à la maison, Portiers de hall et Préposés aux demandes des clients",
+  position_housekeeping_leadership_long:
+    "Direction de l'entretien ménager - Gouvernantes exécutives, Gouvernantes exécutives adjointes, Superviseurs et Inspecteurs de chambres",
+  position_housekeeping_attendants:
+    "Préposés à l'entretien ménager - Préposés aux chambres, Préposés à la maison, Portiers de hall et Préposés aux demandes des clients",
   position_laundry: "Blanchisserie - Préposés et Superviseurs",
-  position_food_beverage_long: "Aliments et boissons - Superviseurs de restaurant, Serveurs, Assistants serveurs, Hôtes d'accueil et Baristas",
+  position_food_beverage_long:
+    "Aliments et boissons - Superviseurs de restaurant, Serveurs, Assistants serveurs, Hôtes d'accueil et Baristas",
   position_stewarding: "Intendance - Préposés et Superviseurs",
   position_convention_services: "Services de congrès - Homme de maison",
   position_culinary: "Cuisine - Cuisiniers préparateurs",
-  position_maintenance: "Techniciens de maintenance - Niveau débutant à intermédiaire",
-  
+  position_maintenance:
+    "Techniciens de maintenance - Niveau débutant à intermédiaire",
+
   // Why Choose Us section
   why_choose_us: "Pourquoi Nous Choisir",
   our_services_card: "Nos Services",
-  our_services_description: "Explorez notre gamme complète de solutions de dotation en personnel pour l'hôtellerie.",
+  our_services_description:
+    "Explorez notre gamme complète de solutions de dotation en personnel pour l'hôtellerie.",
   our_clients_card: "Nos Clients",
-  our_clients_card_description: "Découvrez les propriétés et marques prestigieuses qui font confiance à nos services.",
+  our_clients_card_description:
+    "Découvrez les propriétés et marques prestigieuses qui font confiance à nos services.",
   pricing_module_card: "Module de Tarification",
-  pricing_module_description: "Options de tarification transparentes et flexibles adaptées à vos besoins.",
+  pricing_module_description:
+    "Options de tarification transparentes et flexibles adaptées à vos besoins.",
   our_process_card: "Notre Processus",
   our_process_card_description:
     "Découvrez notre méthodologie éprouvée pour l'excellence en matière de dotation en personnel.",
-  our_process_detailed_description: "Nous travaillons en votre nom pour trouver du personnel de qualité vérifié dans votre région. Nous tenons tous nos associés aux mêmes normes d'excellence et appliquons un ensemble standardisé de procédures opérationnelles, ce qui signifie que, si vous travaillez avec nous, vous saurez toujours exactement à quoi vous attendre.",
-  
+  our_process_detailed_description:
+    "Nous travaillons en votre nom pour trouver du personnel de qualité vérifié dans votre région. Nous tenons tous nos associés aux mêmes normes d'excellence et appliquons un ensemble standardisé de procédures opérationnelles, ce qui signifie que, si vous travaillez avec nous, vous saurez toujours exactement à quoi vous attendre.",
+
   // Our Clients Page
   our_clients: "Nos Clients",
-  our_clients_page_description: "Approuvé par les principales marques hôtelières du monde entier.",
+  our_clients_page_description:
+    "Approuvé par les principales marques hôtelières du monde entier.",
   trusted_by_industry_leaders: "Approuvé par les Leaders de l'Industrie",
-  client_trust_description: "Nous sommes fiers de nous associer à certains des noms les plus prestigieux de l'industrie hôtelière.",
+  client_trust_description:
+    "Nous sommes fiers de nous associer à certains des noms les plus prestigieux de l'industrie hôtelière.",
   what_our_clients_say: "Ce que Disent Nos Clients",
-  testimonial_description: "Écoutez directement nos clients parler de leur expérience de travail avec BOH Concepts.",
+  testimonial_description:
+    "Écoutez directement nos clients parler de leur expérience de travail avec BOH Concepts.",
   become_our_client: "Devenez Notre Client",
-  client_partnership_description: "Rejoignez notre liste croissante de clients satisfaits et découvrez la différence BOH Concepts.",
+  client_partnership_description:
+    "Rejoignez notre liste croissante de clients satisfaits et découvrez la différence BOH Concepts.",
   contact_us_today: "Contactez-Nous Aujourd'hui",
-  
+
   // Pricing Page - Older entries removed to avoid duplicates
-  
+
   // Our Process Page
   our_process: "Notre Processus",
   how_we_work: "Comment Nous Travaillons",
@@ -122,59 +154,76 @@ export const frConstants: LocalizedConstants = {
     "Contactez-nous aujourd'hui pour commencer notre processus éprouvé et transformer votre expérience de personnel hôtelier.",
   get_started_today: "Commencez Aujourd'hui",
   TAILORED_SOLUTIONS: "SOLUTIONS PERSONNALISÉES",
-  
+
   // Process steps
   process_step1_title: "Consultation Initiale",
-  process_step1_description: "Nous commençons par comprendre vos besoins spécifiques en personnel, la culture de votre entreprise et vos attentes pour créer une solution sur mesure.",
+  process_step1_description:
+    "Nous commençons par comprendre vos besoins spécifiques en personnel, la culture de votre entreprise et vos attentes pour créer une solution sur mesure.",
   process_step2_title: "Recherche de Talents",
-  process_step2_description: "Notre équipe de recrutement identifie des candidats qualifiés grâce à notre vaste réseau et à notre processus de sélection rigoureux.",
+  process_step2_description:
+    "Notre équipe de recrutement identifie des candidats qualifiés grâce à notre vaste réseau et à notre processus de sélection rigoureux.",
   process_step3_title: "Vérification Approfondie",
-  process_step3_description: "Chaque candidat fait l'objet de vérifications d'antécédents, d'évaluation des compétences et d'évaluation de la personnalité pour s'assurer qu'ils répondent à nos normes élevées.",
+  process_step3_description:
+    "Chaque candidat fait l'objet de vérifications d'antécédents, d'évaluation des compétences et d'évaluation de la personnalité pour s'assurer qu'ils répondent à nos normes élevées.",
   process_step4_title: "Formation et Préparation",
-  process_step4_description: "Les candidats sélectionnés reçoivent une formation spécialisée adaptée à vos exigences spécifiques et aux normes de l'hôtellerie.",
+  process_step4_description:
+    "Les candidats sélectionnés reçoivent une formation spécialisée adaptée à vos exigences spécifiques et aux normes de l'hôtellerie.",
   process_step5_title: "Intégration Parfaite",
-  process_step5_description: "Nous présentons soigneusement le personnel à votre équipe et fournissons un soutien continu pour assurer une transition en douceur.",
+  process_step5_description:
+    "Nous présentons soigneusement le personnel à votre équipe et fournissons un soutien continu pour assurer une transition en douceur.",
   process_step6_title: "Soutien Continu",
-  process_step6_description: "Notre relation ne se termine pas avec le placement. Nous fournissons une gestion continue, des retours d'information et un soutien pour assurer le succès à long terme.",
-  
+  process_step6_description:
+    "Notre relation ne se termine pas avec le placement. Nous fournissons une gestion continue, des retours d'information et un soutien pour assurer le succès à long terme.",
+
   // Process benefits
   benefit_time_efficiency: "Efficacité Temporelle",
-  benefit_time_efficiency_description: "Notre processus rationalisé vous fait gagner un temps précieux dans la recherche et l'intégration de personnel qualifié.",
+  benefit_time_efficiency_description:
+    "Notre processus rationalisé vous fait gagner un temps précieux dans la recherche et l'intégration de personnel qualifié.",
   benefit_quality_assurance: "Assurance Qualité",
-  benefit_quality_assurance_description: "Notre vérification rigoureuse garantit que seuls les candidats de la plus haute qualité rejoignent votre équipe.",
+  benefit_quality_assurance_description:
+    "Notre vérification rigoureuse garantit que seuls les candidats de la plus haute qualité rejoignent votre équipe.",
   benefit_ongoing_support: "Soutien Continu",
-  benefit_ongoing_support_description: "Nous fournissons une gestion et un soutien continus pour assurer le succès et la satisfaction à long terme.",
-  
+  benefit_ongoing_support_description:
+    "Nous fournissons une gestion et un soutien continus pour assurer le succès et la satisfaction à long terme.",
+
   // Pricing Page
   pricing: "Tarification",
-  pricing_description: "Options de tarification transparentes adaptées à vos besoins en personnel hôtelier",
+  pricing_description:
+    "Options de tarification transparentes adaptées à vos besoins en personnel hôtelier",
   flexible_pricing_options: "Options de Tarification Flexibles",
-  pricing_plans_description: "Choisissez le plan qui convient le mieux à vos besoins en personnel hôtelier. Tous les plans incluent notre engagement fondamental envers des solutions de personnel de qualité.",
+  pricing_plans_description:
+    "Choisissez le plan qui convient le mieux à vos besoins en personnel hôtelier. Tous les plans incluent notre engagement fondamental envers des solutions de personnel de qualité.",
   frequently_asked_questions: "Questions Fréquemment Posées",
-  faq_description: "Trouvez des réponses aux questions courantes sur nos prix et services.",
+  faq_description:
+    "Trouvez des réponses aux questions courantes sur nos prix et services.",
   ready_to_get_started: "Prêt à Commencer?",
-  contact_for_quote: "Contactez-nous aujourd'hui pour un devis personnalisé adapté à vos besoins spécifiques.",
+  contact_for_quote:
+    "Contactez-nous aujourd'hui pour un devis personnalisé adapté à vos besoins spécifiques.",
   request_a_quote: "Demander un Devis",
   get_a_quote: "Obtenir un Devis",
   most_popular: "Le Plus Populaire",
   faq_pricing_question: "Comment les prix sont-ils déterminés?",
-  faq_pricing_answer: "Nos prix sont personnalisés en fonction de vos besoins spécifiques en personnel, de la taille de votre propriété, de l'emplacement et des exigences de service. Nous fournissons des devis détaillés après une consultation initiale.",
+  faq_pricing_answer:
+    "Nos prix sont personnalisés en fonction de vos besoins spécifiques en personnel, de la taille de votre propriété, de l'emplacement et des exigences de service. Nous fournissons des devis détaillés après une consultation initiale.",
   faq_contracts_question: "Y a-t-il des contrats à long terme?",
-  faq_contracts_answer: "Nous offrons des options de contrat flexibles pour répondre à vos besoins. Bien que certains clients préfèrent des accords à long terme, nous fournissons également des services à court terme et basés sur des projets.",
+  faq_contracts_answer:
+    "Nous offrons des options de contrat flexibles pour répondre à vos besoins. Bien que certains clients préfèrent des accords à long terme, nous fournissons également des services à court terme et basés sur des projets.",
   faq_upgrade_question: "Puis-je mettre à niveau mon plan plus tard?",
-  faq_upgrade_answer: "Absolument! Vous pouvez mettre à niveau votre plan de service à tout moment à mesure que les besoins de votre entreprise évoluent. Notre équipe travaillera avec vous pour assurer une transition en douceur.",
-  
+  faq_upgrade_answer:
+    "Absolument! Vous pouvez mettre à niveau votre plan de service à tout moment à mesure que les besoins de votre entreprise évoluent. Notre équipe travaillera avec vous pour assurer une transition en douceur.",
+
   // Pricing plan names
   standard_plan: "Standard",
   premium_plan: "Premium",
   enterprise_plan: "Entreprise",
-  
+
   // Pricing plan descriptions
-  perfect_for_small_properties: "Parfait pour les petites et moyennes propriétés",
+  perfect_for_small_properties:
+    "Parfait pour les petites et moyennes propriétés",
   ideal_for_luxury_hotels: "Idéal pour les hôtels et complexes de luxe",
   for_hotel_chains: "Pour les chaînes hôtelières et les grandes propriétés",
   custom_quote: "Devis Personnalisé",
-  
+
   // Pricing plans array
   PRICING_PLANS: [
     {
@@ -187,9 +236,9 @@ export const frConstants: LocalizedConstants = {
         "background_checks_included",
         "basic_training_provided",
         "standard_response_time",
-        "support_8_5"
+        "support_8_5",
       ],
-      isPopular: false
+      isPopular: false,
     },
     {
       id: "2",
@@ -202,9 +251,9 @@ export const frConstants: LocalizedConstants = {
         "advanced_training_included",
         "priority_response_time",
         "support_24_7",
-        "dedicated_account_manager"
+        "dedicated_account_manager",
       ],
-      isPopular: true
+      isPopular: true,
     },
     {
       id: "3",
@@ -217,12 +266,12 @@ export const frConstants: LocalizedConstants = {
         "performance_analytics",
         "strategic_staffing_consultation",
         "multi_location_support",
-        "executive_reporting"
+        "executive_reporting",
       ],
-      isPopular: false
-    }
+      isPopular: false,
+    },
   ],
-  
+
   // Pricing plan features
   vetted_hospitality_staff: "Personnel hôtelier vérifié",
   background_checks_included: "Vérifications d'antécédents incluses",
@@ -241,10 +290,12 @@ export const frConstants: LocalizedConstants = {
   strategic_staffing_consultation: "Consultation stratégique en personnel",
   multi_location_support: "Support multi-sites",
   executive_reporting: "Rapports exécutifs",
-  
+
   // Seasonal positions
-  position_housekeeping_leadership_seasonal: "Direction de l'entretien ménager - Superviseurs et Inspecteurs de chambres",
-  position_food_beverage_seasonal: "Aliments et boissons - Superviseurs, Serveurs, Assistants serveurs, Hôtes d'accueil et Baristas",
+  position_housekeeping_leadership_seasonal:
+    "Direction de l'entretien ménager - Superviseurs et Inspecteurs de chambres",
+  position_food_beverage_seasonal:
+    "Aliments et boissons - Superviseurs, Serveurs, Assistants serveurs, Hôtes d'accueil et Baristas",
   testimonials_title: "Ce Que Disent Nos Partenaires",
   testimonials_subtitle:
     "Découvrez pourquoi les grandes marques et professionnels de l'hôtellerie font confiance à BOH Concepts pour leurs besoins en personnel.",
@@ -431,11 +482,10 @@ export const frConstants: LocalizedConstants = {
       image: "/images/testimonials/testimonial-3.jpg",
     },
   ],
-  CLIENTS: [],
   SITE_NAVIGATION: [
     { title: "Accueil", href: "/" },
-    { 
-      title: "À Propos", 
+    {
+      title: "À Propos",
       href: "/about",
       dropdown: [
         { title: "Qui Nous Sommes", href: "/about/who-we-are" },
@@ -445,15 +495,13 @@ export const frConstants: LocalizedConstants = {
       ],
     },
     { title: "Notre Approche", href: "/our-approach" },
-    { 
-      title: "Pourquoi Nous Choisir", 
+    {
+      title: "Pourquoi Nous Choisir",
       href: "/why-choose-us",
       dropdown: [
         { title: "Pourquoi Nous Choisir", href: "/why-choose-us" },
         { title: "Nos Clients", href: "/our-clients" },
-        { title: "Tarification", href: "/pricing" },
-        { title: "Notre Processus", href: "/our-process" }
-      ]
+      ],
     },
     { title: "Marchés", href: "/markets" },
     { title: "Contact", href: "/contact" },
@@ -689,16 +737,53 @@ export const frConstants: LocalizedConstants = {
     address: "2018 156th Ave NE Building F, Bellevue WA, 98007",
   },
   csr_breast_cancer_title: "Sensibilisation au Cancer du Sein",
-  csr_breast_cancer_description: "Soutenir la recherche et la sensibilisation au cancer du sein par le biais de collectes de fonds et d'efforts bénévoles.",
+  csr_breast_cancer_description:
+    "Soutenir la recherche et la sensibilisation au cancer du sein par le biais de collectes de fonds et d'efforts bénévoles.",
   csr_black_history_title: "Mois de l'Histoire des Noirs",
-  csr_black_history_description: "Honorer la diversité à travers des événements et promouvoir l'inclusion sur le lieu de travail.",
+  csr_black_history_description:
+    "Honorer la diversité à travers des événements et promouvoir l'inclusion sur le lieu de travail.",
   csr_global_impact_title: "Impact Mondial",
-  csr_global_impact_description: "Faire la différence sur plus de 4 continents grâce à nos partenariats et programmes de sensibilisation communautaire.",
-  
+  csr_global_impact_description:
+    "Faire la différence sur plus de 4 continents grâce à nos partenariats et programmes de sensibilisation communautaire.",
+
   SOCIAL_LINKS: {
     facebook: "https://www.facebook.com/share/1FwYWyqPpw/?mibextid=wwXIfr",
     linkedin: "https://www.linkedin.com/company/bohconcepts/",
-    instagram: "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
+    instagram:
+      "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
     youtube: "https://www.youtube.com/bohconcepts",
   },
+
+  CLIENTS: [
+    {
+      id: "1",
+      name: "Hyatt Hotels",
+      logo: "/images/clients/Hyatt.png",
+      website: "https://www.hyatt.com",
+    },
+    {
+      id: "2",
+      name: "Hilton Hotels",
+      logo: "/images/clients/Hilton-Logo-4.png",
+      website: "https://www.hilton.com",
+    },
+    {
+      id: "3",
+      name: "Thompson Hotels",
+      logo: "/images/clients/Thompson.jpg",
+      website: "https://www.hyatt.com/brands/thompson-hotels",
+    },
+    {
+      id: "4",
+      name: "Waldorf Astoria",
+      logo: "/images/clients/Waldorf.png",
+      website: "https://www.waldorfastoria.com",
+    },
+    {
+      id: "5",
+      name: "Destination Hotels",
+      logo: "/images/clients/destination.png",
+      website: "https://www.marriott.com",
+    },
+  ],
 };

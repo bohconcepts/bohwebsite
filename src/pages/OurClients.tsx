@@ -1,11 +1,15 @@
 import { FC } from "react";
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useCompanyInfo, useClients, useTestimonials } from '@/hooks/useLocalizedConstants';
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  useCompanyInfo,
+  useClients,
+  useTestimonials,
+} from "@/hooks/useLocalizedConstants";
 import { ArrowRight } from "lucide-react";
 
 const OurClientsPage: FC = () => {
@@ -13,18 +17,22 @@ const OurClientsPage: FC = () => {
   const companyInfo = useCompanyInfo();
   const clients = useClients();
   const testimonials = useTestimonials();
-  
+
   // Animation variants
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const { ref: titleRef } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  
+
   const { ref: clientsRef, inView: clientsInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -33,7 +41,9 @@ const OurClientsPage: FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t("our_clients")} | {companyInfo.name}</title>
+        <title>
+          {t("our_clients")} | {companyInfo.name}
+        </title>
         <meta name="description" content={t("our_clients_page_description")} />
       </Helmet>
 
@@ -44,7 +54,7 @@ const OurClientsPage: FC = () => {
         </div>
 
         <div className="container relative z-10">
-          <motion.div 
+          <motion.div
             ref={titleRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +62,7 @@ const OurClientsPage: FC = () => {
             className="max-w-3xl"
           >
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
-              {t('TAILORED_SOLUTIONS')}
+              {t("TAILORED_SOLUTIONS")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {t("our_clients")}
@@ -68,22 +78,28 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t("trusted_by_industry_leaders")}</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              {t("trusted_by_industry_leaders")}
+            </h2>
             <p className="text-gray-600">{t("client_trust_description")}</p>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             ref={clientsRef}
             initial="hidden"
             animate={clientsInView ? "visible" : "hidden"}
             variants={fadeInUpVariants}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center"
+          >
             {clients.map((client) => (
-              <div key={client.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-full">
-                <img 
-                  src={client.logo} 
-                  alt={client.name} 
-                  className="max-h-16 max-w-full object-contain" 
+              <div
+                key={client.id}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-32 w-full"
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="max-h-16 max-w-full object-contain"
                 />
               </div>
             ))}
@@ -95,7 +111,9 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("what_our_clients_say")}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {t("what_our_clients_say")}
+            </h2>
             <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {t("testimonial_description")}
@@ -104,21 +122,24 @@ const OurClientsPage: FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.slice(0, 3).map((testimonial) => (
-              <div key={testimonial.id} className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300">
+              <div
+                key={testimonial.id}
+                className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300"
+              >
                 <div className="flex items-center mb-6">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author} 
-                    className="w-12 h-12 rounded-full object-cover" 
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    className="w-12 h-12 rounded-full object-cover"
                   />
                   <div className="ml-4">
                     <h4 className="font-semibold">{testimonial.author}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.position}</p>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.position}
+                    </p>
                   </div>
                 </div>
-                <p className="text-gray-600 italic">
-                  {t(testimonial.content)}
-                </p>
+                <p className="text-gray-600 italic">{t(testimonial.content)}</p>
               </div>
             ))}
           </div>
@@ -129,7 +150,9 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-brand-blue text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">{t("become_our_client")}</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              {t("become_our_client")}
+            </h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               {t("client_partnership_description")}
             </p>
