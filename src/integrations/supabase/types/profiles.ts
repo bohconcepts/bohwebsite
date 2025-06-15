@@ -4,6 +4,8 @@ export interface Profile extends BaseRecord {
   user_id: string;
   first_name: string;
   last_name: string;
+  full_name?: string | null;
+  email?: string | null;
   phone: string | null;
   address: string | null;
   city: string | null;
@@ -12,17 +14,18 @@ export interface Profile extends BaseRecord {
   country: string | null;
   bio: string | null;
   avatar_url: string | null;
-  role?: "admin" | "viewer" | "staff";
-  email?: string;
-  full_name?: string;
-  is_active?: boolean;
-  employee_id?: string;
+  role?: "admin" | "editor" | "viewer" | null;
+  is_active?: boolean | null;
+  employee_id?: string | null;
+  // created_at and updated_at are inherited from BaseRecord
 }
 
 export interface ProfileInsert extends BaseInsert {
   user_id: string;
   first_name: string;
   last_name: string;
+  full_name?: string | null;
+  email?: string | null;
   phone?: string | null;
   address?: string | null;
   city?: string | null;
@@ -31,17 +34,17 @@ export interface ProfileInsert extends BaseInsert {
   country?: string | null;
   bio?: string | null;
   avatar_url?: string | null;
-  role?: "admin" | "viewer" | "staff";
-  email?: string;
-  full_name?: string;
-  is_active?: boolean;
-  employee_id?: string;
+  role?: "admin" | "editor" | "viewer" | null;
+  is_active?: boolean | null;
+  employee_id?: string | null;
 }
 
 export interface ProfileUpdate extends BaseUpdate {
   user_id?: string;
   first_name?: string;
   last_name?: string;
+  full_name?: string | null;
+  email?: string | null;
   phone?: string | null;
   address?: string | null;
   city?: string | null;
@@ -50,9 +53,7 @@ export interface ProfileUpdate extends BaseUpdate {
   country?: string | null;
   bio?: string | null;
   avatar_url?: string | null;
-  role?: "admin" | "viewer" | "staff";
-  email?: string;
-  full_name?: string;
-  is_active?: boolean;
-  employee_id?: string;
+  role?: "admin" | "editor" | "viewer" | null;
+  is_active?: boolean | null;
+  employee_id?: string | null;
 }

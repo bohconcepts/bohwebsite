@@ -399,7 +399,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const isAdminAuthenticated = (): boolean => {
-    return adminService.isAuthenticated();
+    // Check both the admin service authentication and if the current user has admin role
+    const adminServiceAuth = adminService.isAuthenticated();
+    
+    // Also check if the current user has admin role in their profile
+    const hasAdminRole = profile?.role === 'admin';
+    
+    console.log('Admin authentication check:', { 
+      adminServiceAuth, 
+      hasAdminRole, 
+      profile: profile ? { id: profile.id, role: profile.role } : null 
+    });
+    
+    // Return true if either condition is met
+    return adminServiceAuth || hasAdminRole;
   };
 
   const value = {

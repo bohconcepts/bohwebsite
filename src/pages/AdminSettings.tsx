@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { Helmet } from "react-helmet-async";
 import {
   Save,
@@ -68,9 +69,55 @@ const AdminSettings = () => {
   useEffect(() => {
     if (!adminService.isAuthenticated()) {
       navigate("/admin/login");
+      return;
+    }
+    
+    // Load settings
+    loadSettings();
+    
+    // Get current user safely
+    const user = adminService.getCurrentUser();
+    
+    if (user) {
+      setCurrentUser(user);
     } else {
-      loadSettings();
-      setCurrentUser(adminService.getCurrentUser());
+      // If getCurrentUser returns null, try to get the current user from Supabase
+      console.log('Getting current user from Supabase auth');
+      
+      // Use the current authenticated user from Supabase
+      supabase.auth.getUser().then(({ data }) => {
+        if (data?.user) {
+          // Get profile data
+          supabase.from('profiles')
+            .select('*')
+            .eq('user_id', data.user.id)
+            .single()
+            .then(({ data: profile }) => {
+              if (profile) {
+                // Create a user object from profile data
+                const userData = {
+                  id: profile.id,
+                  username: profile.email,
+                  fullName: profile.full_name,
+                  email: profile.email,
+                  role: profile.role === 'admin' ? 'Administrator' : 
+                        profile.role === 'operator' ? 'Editor' : 'Viewer',
+                  active: profile.is_active,
+                  createdAt: new Date(profile.created_at)
+                };
+                
+                setCurrentUser(userData);
+                console.log('Set current user from Supabase profile:', userData);
+              } else {
+                console.error('No profile found for current user');
+                navigate("/admin/login");
+              }
+            });
+        } else {
+          console.error('No authenticated user found');
+          navigate("/admin/login");
+        }
+      });
     }
   }, [navigate]);
 

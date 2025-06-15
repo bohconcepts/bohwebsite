@@ -19,6 +19,8 @@ const AdminMessages = lazy(() => import("@/pages/AdminMessages"));
 const AdminUsers = lazy(() => import("@/pages/AdminUsers"));
 const AdminSettings = lazy(() => import("@/pages/AdminSettings"));
 const AdminSetup = lazy(() => import("@/pages/AdminSetup"));
+const AdminDocuments = lazy(() => import("@/pages/AdminDocuments"));
+const AdminDocumentManager = lazy(() => import("@/pages/AdminDocumentManager"));
 
 // Protected route component
 interface ProtectedRouteProps {
@@ -72,6 +74,22 @@ const AdminRoutes = () => {
             element={
               <ProtectedRoute>
                 <AdminSettings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="documents"
+            element={
+              <ProtectedRoute>
+                <AdminDocuments />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="document-manager"
+            element={
+              <ProtectedRoute>
+                <AdminDocumentManager />
               </ProtectedRoute>
             }
           />
