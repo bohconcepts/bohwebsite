@@ -76,22 +76,6 @@ const AdminRoutes = () => {
               </ProtectedRoute>
             }
           />
-          {/* <Route
-            path="documents"
-            element={
-              <ProtectedRoute>
-                <AdminDocuments />
-              </ProtectedRoute>
-            }
-          /> */}
-          {/* <Route
-            path="document-manager"
-            element={
-              <ProtectedRoute>
-                <AdminDocumentManager />
-              </ProtectedRoute>
-            }
-          /> */}
           <Route path="setup" element={<AdminSetup />} />
           <Route path="" element={<Navigate to="/admin/login" replace />} />
           <Route path="*" element={<Navigate to="/admin/login" replace />} />
