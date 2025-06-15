@@ -24,7 +24,7 @@ import {
   useServices,
   useLocalizedConstants,
 } from "@/hooks/useLocalizedConstants";
-import { Service } from "@/types/types";
+import { Service } from "@/types/Index";
 
 // Icon mapping for service icons
 const iconMap: Record<string, React.ElementType> = {
@@ -101,7 +101,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
               }`}
             >
               <div className="space-y-3">
-                {service.positions.map((position, index) => (
+                {service.positions.map((position: string, index: number) => (
                   <div
                     key={index}
                     className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors"

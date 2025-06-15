@@ -121,6 +121,7 @@ export type LocalizedConstants = {
   mission_page_tag: string;
   mission_title: string;
   mission_description: string;
+  mission_overview_description: string;
   vision_title: string;
   vision_description: string;
   
@@ -129,12 +130,14 @@ export type LocalizedConstants = {
   values_heading_color: string;
   values_page_title: string;
   values_page_tag: string;
+  values_description: string;
   
   // Team
   team_heading: string;
   team_heading_color: string;
   team_page_title: string;
   team_page_tag: string;
+  team_description: string;
   testimonial_description: string;
   become_our_client: string;
   client_partnership_description: string;

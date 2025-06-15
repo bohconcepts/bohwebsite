@@ -35,11 +35,14 @@ const ValuesPage = () => {
             className="max-w-3xl"
           >
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
-              {t('OUR VALUES')}
+              {t('values_page_tag')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-              The Values That Guide Us
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+              {t('values_page_title')}
             </h1>
+            <p className="text-lg text-white/90 max-w-2xl mb-6">
+              {t("values_description")}
+            </p>
           </motion.div>
         </div>
       </div>
