@@ -15,7 +15,7 @@ const Sitemap = lazy(() => import("@/pages/Sitemap"));
 const WhyChooseUsPage = lazy(() => import("@/pages/WhyChooseUsPage"));
 const MarketsPage = lazy(() => import("@/pages/MarketsPage"));
 const Auth = lazy(() => import("@/pages/Auth"));
-const TestDocumentProcessing = lazy(() => import("@/pages/TestDocumentProcessing"));
+//const TestDocumentProcessing = lazy(() => import("@/pages/TestDocumentProcessing"));
 
 // About section pages
 const TeamsPage = lazy(() => import("@/pages/TeamsPage"));
@@ -64,7 +64,10 @@ const AppRoutes = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/our-process" element={<OurProcess />} />
         {/* Keep old route for backward compatibility */}
-        <Route path="/services" element={<Navigate to="/our-approach" replace />} />
+        <Route
+          path="/services"
+          element={<Navigate to="/our-approach" replace />}
+        />
         <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
         <Route path="/markets" element={<MarketsPage />} />
         <Route path="/contact" element={<Contact />} />
@@ -72,8 +75,8 @@ const AppRoutes = () => {
         <Route path="/terms" element={<Terms />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/test-document-processing" element={<TestDocumentProcessing />} />
-        
+        {/* <Route path="/test-document-processing" element={<TestDocumentProcessing />} /> */}
+
         {/* Supabase authentication redirect routes */}
         <Route path="/confirm-password" element={<Auth />} />
         <Route path="/reset-password" element={<Auth />} />
