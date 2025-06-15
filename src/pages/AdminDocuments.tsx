@@ -58,15 +58,22 @@ const AdminDocuments = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [showEditDialog, setShowEditDialog] = useState(false);
   const [currentDocument, setCurrentDocument] = useState<Document | null>(null);
   const [uploadData, setUploadData] = useState({
     title: "",
     description: "",
     file: null as File | null,
   });
+  const [editData, setEditData] = useState({
+    title: "",
+    description: "",
+    is_active: true,
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isUploading, setIsUploading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   // Check authentication
   useEffect(() => {
@@ -230,6 +237,87 @@ const AdminDocuments = () => {
     }
   };
 
+  // Open edit dialog with document data
+  const openEditDialog = (document: Document) => {
+    setCurrentDocument(document);
+    setEditData({
+      title: document.title,
+      description: document.description || "",
+      is_active: document.is_active
+    });
+    setErrors({});
+    setShowEditDialog(true);
+  };
+
+  // Handle edit form change
+  const handleEditFormChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setEditData({
+      ...editData,
+      [name]: value,
+    });
+    
+    // Clear error for this field
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: "",
+      });
+    }
+  };
+
+  // Handle checkbox change
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+    setEditData({
+      ...editData,
+      [name]: checked,
+    });
+  };
+
+  // Validate edit form
+  const validateEditForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!editData.title.trim()) {
+      newErrors.title = "Title is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle document update
+  const handleUpdate = async () => {
+    if (!validateEditForm() || !currentDocument) return;
+    
+    setIsEditing(true);
+    
+    try {
+      const success = await documentService.updateDocument(currentDocument.id, {
+        title: editData.title,
+        description: editData.description,
+        is_active: editData.is_active
+      });
+      
+      if (success) {
+        toast.success("Document updated successfully");
+        setShowEditDialog(false);
+        setCurrentDocument(null);
+        loadDocuments();
+      } else {
+        toast.error("Failed to update document");
+      }
+    } catch (error) {
+      console.error("Error updating document:", error);
+      toast.error("An error occurred while updating the document");
+    } finally {
+      setIsEditing(false);
+    }
+  };
+
   // Handle document download
   const handleDownload = async (document: Document) => {
     try {
@@ -343,6 +431,14 @@ const AdminDocuments = () => {
                               title="Download"
                             >
                               <Download className="h-4 w-4 text-gray-500" />
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => openEditDialog(doc)}
+                              title="Edit"
+                            >
+                              <FileText className="h-4 w-4 text-blue-500" />
                             </Button>
                             <Button
                               variant="outline"
@@ -579,6 +675,105 @@ const AdminDocuments = () => {
                     <Trash2 className="h-4 w-4 mr-2" />
                     Delete
                   </>
+                )}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+
+        {/* Edit Dialog */}
+        <Dialog open={showEditDialog} onOpenChange={setShowEditDialog}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Edit Document</DialogTitle>
+              <DialogDescription>
+                Update document details
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 py-4">
+              <div className="space-y-2">
+                <Label htmlFor="edit-title">Document Title</Label>
+                <Input
+                  id="edit-title"
+                  name="title"
+                  placeholder="Enter document title"
+                  value={editData.title}
+                  onChange={handleEditFormChange}
+                />
+                {errors.title && (
+                  <p className="text-sm text-red-500">{errors.title}</p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="edit-description">Description (Optional)</Label>
+                <Textarea
+                  id="edit-description"
+                  name="description"
+                  placeholder="Enter document description"
+                  value={editData.description}
+                  onChange={handleEditFormChange}
+                  rows={3}
+                />
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="is_active"
+                  name="is_active"
+                  checked={editData.is_active}
+                  onChange={handleCheckboxChange}
+                  className="h-4 w-4 rounded border-gray-300 text-brand-blue focus:ring-brand-blue"
+                />
+                <Label htmlFor="is_active" className="text-sm font-medium">
+                  Active (visible to users)
+                </Label>
+              </div>
+
+              {currentDocument && (
+                <div className="mt-4 bg-gray-50 p-3 rounded-md">
+                  <h4 className="text-sm font-medium text-gray-700">Document Info</h4>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-gray-500">
+                    <div>
+                      <span className="font-medium">Size:</span>{" "}
+                      {formatFileSize(currentDocument.file_size)}
+                    </div>
+                    <div>
+                      <span className="font-medium">Type:</span>{" "}
+                      {currentDocument.file_type}
+                    </div>
+                    <div>
+                      <span className="font-medium">Uploaded:</span>{" "}
+                      {currentDocument.created_at.toLocaleDateString()}
+                    </div>
+                    <div>
+                      <span className="font-medium">Status:</span>{" "}
+                      {currentDocument.is_processed ? "Processed" : "Pending"}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            <DialogFooter>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setShowEditDialog(false);
+                  setCurrentDocument(null);
+                }}
+                disabled={isEditing}
+              >
+                Cancel
+              </Button>
+              <Button onClick={handleUpdate} disabled={isEditing}>
+                {isEditing ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Saving...
+                  </>
+                ) : (
+                  <>Save Changes</>
                 )}
               </Button>
             </DialogFooter>

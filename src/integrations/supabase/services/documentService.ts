@@ -95,7 +95,7 @@ export const documentService = {
     try {
       console.log('Fetching all documents');
       
-      const { data, error } = await supabase
+      const { data, error } = await supabaseAdmin
         .from('documents')
         .select('*')
         .order('created_at', { ascending: false });
@@ -123,7 +123,7 @@ export const documentService = {
     try {
       console.log('Fetching document by ID:', id);
       
-      const { data, error } = await supabase
+      const { data, error } = await supabaseAdmin
         .from('documents')
         .select('*')
         .eq('id', id)
@@ -155,7 +155,7 @@ export const documentService = {
     try {
       console.log('Updating document:', id, updates);
       
-      const { error } = await supabase
+      const { error } = await supabaseAdmin
         .from('documents')
         .update(updates)
         .eq('id', id);
@@ -178,8 +178,8 @@ export const documentService = {
     try {
       console.log('Deleting document:', id);
       
-      // Get the document to find the file path
-      const { data: document, error: fetchError } = await supabase
+      // Get the document to find the file path using admin client to bypass RLS
+      const { data: document, error: fetchError } = await supabaseAdmin
         .from('documents')
         .select('file_path')
         .eq('id', id)
@@ -200,8 +200,8 @@ export const documentService = {
         return false;
       }
       
-      // Delete the document metadata
-      const { error: deleteError } = await supabase
+      // Delete the document metadata using admin client to bypass RLS
+      const { error: deleteError } = await supabaseAdmin
         .from('documents')
         .delete()
         .eq('id', id);
@@ -246,7 +246,7 @@ export const documentService = {
     try {
       console.log('Marking document as processed:', id);
       
-      const { error } = await supabase
+      const { error } = await supabaseAdmin
         .from('documents')
         .update({ is_processed: true })
         .eq('id', id);
