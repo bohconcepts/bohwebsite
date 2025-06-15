@@ -23,7 +23,7 @@ export const registerUser = async (
   email: string,
   password: string,
   fullName: string,
-  role: string = "staff"
+  role: string = "editor"
 ): Promise<SignupResponse> => {
   try {
     // First, sign up the user with Supabase Auth
@@ -57,7 +57,7 @@ export const registerUser = async (
       full_name: fullName,
       first_name: firstName,
       last_name: lastName,
-      role: role as "admin" | "viewer" | "staff",
+      role: role as "admin" | "viewer" | "editor",
       is_active: true,
     };
 
