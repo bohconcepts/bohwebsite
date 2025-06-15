@@ -5,7 +5,7 @@ import type { Database } from "./types/index";
 const SUPABASE_URL = "https://krbkwdkluhyxpgddnqwr.supabase.co";
 const SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyYmt3ZGtsdWh5eHBnZGRucXdyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTc1MTgxNywiZXhwIjoyMDY1MzI3ODE3fQ.Tc-N4YP8lA2rxjiDu0HejcDBNsteJuTN-N6G2TTl2wk";
 
-// Add console logs for debugging
+// Add console logs for debugging today
 console.log("Admin - Supabase URL being used:", SUPABASE_URL);
 console.log(
   "Admin - Supabase SERVICE ROLE KEY available:",
