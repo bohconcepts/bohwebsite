@@ -9,7 +9,7 @@ import { AuthProvider } from '@/contexts/AuthContext';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+//update
   useEffect(() => {
     // Simulate loading of resources
     const timer = setTimeout(() => {
