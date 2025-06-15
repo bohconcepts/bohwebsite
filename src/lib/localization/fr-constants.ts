@@ -23,7 +23,8 @@ export const frConstants: LocalizedConstants = {
   mission_page_title: "Notre Mission et Vision",
   mission_page_tag: "NOTRE MISSION",
   mission_title: "Notre Mission",
-  mission_description: "Fournir des solutions de personnel exceptionnelles qui permettent à nos partenaires de l'industrie hôtelière d'offrir des expériences de classe mondiale à leurs invités.",
+  mission_description: "Chez BOH Staffing Solutions, notre mission est de révolutionner l'industrie hôtelière en fournissant des solutions de personnel exceptionnelles qui autonomisent à la fois les entreprises et les professionnels. Nous nous engageons à combler le fossé entre les travailleurs talentueux de l'hôtellerie et les établissements de qualité, créant des opportunités d'emploi significatives tout en aidant les entreprises à prospérer.",
+  mission_overview_description: "Nous nous consacrons à transformer le personnel hôtelier grâce à des solutions innovantes qui connectent des talents exceptionnels avec des établissements de premier plan, créant de la valeur tant pour les entreprises que pour les professionnels.",
   vision_title: "Notre Vision",
   vision_description: "Être reconnu mondialement comme la référence en matière de solutions de personnel pour l'industrie hôtelière, connu pour notre qualité, notre innovation et notre engagement envers l'excellence.",
   
@@ -32,12 +33,14 @@ export const frConstants: LocalizedConstants = {
   values_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   values_page_title: "Les Valeurs Qui Nous Guident",
   values_page_tag: "NOS VALEURS",
+  values_description: "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
   
   // Team
   team_heading: "Notre Équipe",
   team_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Rencontrez Notre Équipe Exceptionnelle",
   team_page_tag: "NOTRE ÉQUIPE",
+  team_description: "Notre équipe diversifiée de professionnels de l'hôtellerie apporte des décennies d'expérience et une passion pour l'excellence à chaque solution de personnel que nous fournissons.",
   
   // Global Workforce Map
   global_workforce_tag: "Main-d'œuvre Mondiale",

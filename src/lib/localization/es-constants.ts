@@ -24,6 +24,7 @@ export const esConstants: LocalizedConstants = {
   mission_page_tag: "MISIÓN Y VISIÓN",
   mission_title: "Nuestra Misión",
   mission_description: "Proporcionar soluciones de personal excepcionales que permitan a nuestros socios de la industria hotelera ofrecer experiencias de clase mundial a sus huéspedes.",
+  mission_overview_description: "Estamos dedicados a transformar la dotación de personal en la hospitalidad a través de soluciones innovadoras que conectan talento excepcional con establecimientos de primer nivel, creando valor tanto para empresas como para profesionales.",
   vision_title: "Nuestra Visión",
   vision_description: "Ser reconocidos globalmente como el estándar de oro en soluciones de personal para la industria hotelera, conocidos por nuestra calidad, innovación y compromiso con la excelencia.",
   
@@ -32,12 +33,14 @@ export const esConstants: LocalizedConstants = {
   values_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   values_page_title: "Nuestros Valores Fundamentales",
   values_page_tag: "VALORES",
+  values_description: "Nuestros valores fundamentales forman la base de todo lo que hacemos en BOH Concepts, guiando nuestras decisiones, dando forma a nuestra cultura y definiendo nuestro enfoque hacia la excelencia en la dotación de personal para la hospitalidad.",
   
   // Team
   team_heading: "Nuestro Equipo",
   team_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Nuestro Equipo",
   team_page_tag: "EQUIPO",
+  team_description: "Nuestro diverso equipo de profesionales de la hospitalidad aporta décadas de experiencia y una pasión por la excelencia a cada solución de personal que proporcionamos.",
   
   // Global Workforce Map
   global_workforce_tag: "Fuerza Laboral Global",

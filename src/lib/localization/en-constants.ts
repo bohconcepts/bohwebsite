@@ -96,8 +96,8 @@ export const enConstants: LocalizedConstants = {
   faq_description:
     "Find answers to common questions about our pricing and services.",
   ready_to_get_started: "Ready to Get Started?",
-  contact_for_quote: "Contact us today for a personalized quote tailored to your specific needs.",
-  
+  contact_for_quote:
+    "Contact us today for a personalized quote tailored to your specific needs.",
 
   request_a_quote: "Request a Quote",
   get_a_quote: "Get a Quote",
@@ -152,9 +152,9 @@ export const enConstants: LocalizedConstants = {
         "background_checks_included",
         "basic_training_provided",
         "standard_response_time",
-        "support_8_5"
+        "support_8_5",
       ],
-      isPopular: false
+      isPopular: false,
     },
     {
       id: "premium",
@@ -396,7 +396,7 @@ export const enConstants: LocalizedConstants = {
       id: "1",
       content:
         "Back of House Concepts adequately fortifies our staffing needs of 100 employees in stewarding, housekeeping, and engineering. Due to their firm understanding of our needs and the partnership they foster, I do not see us changing staffing partners.",
-      author: "Luxury Hotel General Manager",
+      author: "GM-Luxury Hotel",
       position: "Greater Seattle Area",
       image: "/images/testimonials/testimonial-1.jpg",
     },
@@ -556,15 +556,18 @@ export const enConstants: LocalizedConstants = {
   // Global Workforce Map
   global_workforce_tag: "GLOBAL PRESENCE",
   global_workforce_title: "Our Diverse Global Workforce",
-  global_workforce_description: "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
+  global_workforce_description:
+    "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
   workforce_distribution: "Workforce Distribution",
   africa_workforce_count: "Africa-based workforce: {count} employees",
   us_workforce_count: "US-based workforce: {count} employees",
   workforce_highlights: "Workforce Highlights",
   workforce_highlight_1: "Diverse talent pool spanning two continents",
   workforce_highlight_2: "Multilingual staff speaking over 15 languages",
-  workforce_highlight_3: "Cultural expertise in international hospitality standards",
-  workforce_highlight_4: "Specialized training in regional hospitality practices",
+  workforce_highlight_3:
+    "Cultural expertise in international hospitality standards",
+  workforce_highlight_4:
+    "Specialized training in regional hospitality practices",
   employees: "employees",
   street_view: "Street View",
   satellite_view: "Satellite View",
@@ -637,8 +640,7 @@ export const enConstants: LocalizedConstants = {
     {
       id: "3",
       title: "Passionate",
-      description:
-        "Always loving what we do and doing what we love.",
+      description: "Always loving what we do and doing what we love.",
     },
     {
       id: "4",
@@ -649,8 +651,7 @@ export const enConstants: LocalizedConstants = {
     {
       id: "5",
       title: "Innovative",
-      description:
-        "To Build Partnerships that Promote Diversity for All",
+      description: "To Build Partnerships that Promote Diversity for All",
     },
     {
       id: "6",
@@ -689,23 +690,27 @@ export const enConstants: LocalizedConstants = {
     address: "2018 156th Ave NE Building F, Bellevue WA, 98007",
   },
   csr_breast_cancer_title: "Breast Cancer Awareness",
-  csr_breast_cancer_description: "Supporting breast cancer research and awareness through fundraising and volunteer efforts.",
+  csr_breast_cancer_description:
+    "Supporting breast cancer research and awareness through fundraising and volunteer efforts.",
   csr_black_history_title: "Black History Month",
-  csr_black_history_description: "Honoring diversity through events and promoting inclusivity in the workplace.",
+  csr_black_history_description:
+    "Honoring diversity through events and promoting inclusivity in the workplace.",
   csr_global_impact_title: "Global Impact",
-  csr_global_impact_description: "Making a difference across 4+ continents through our partnerships and community outreach programs.",
-  
+  csr_global_impact_description:
+    "Making a difference across 4+ continents through our partnerships and community outreach programs.",
+
   SOCIAL_LINKS: {
     facebook: "https://www.facebook.com/share/1FwYWyqPpw/?mibextid=wwXIfr",
     linkedin: "https://www.linkedin.com/company/bohconcepts/",
-    instagram: "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
+    instagram:
+      "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
     youtube: "https://www.youtube.com/bohconcepts",
   },
 
   SITE_NAVIGATION: [
     { title: "Home", href: "/" },
-    { 
-      title: "About", 
+    {
+      title: "About",
       href: "/about",
       dropdown: [
         { title: "Who We Are", href: "/about/who-we-are" },
@@ -714,8 +719,8 @@ export const enConstants: LocalizedConstants = {
         { title: "Our Values", href: "/about/values" },
       ],
     },
-    { 
-      title: "Services", 
+    {
+      title: "Services",
       href: "/our-approach",
       dropdown: [
         { title: "Our Approach", href: "/our-approach" },
@@ -735,41 +740,57 @@ export const enConstants: LocalizedConstants = {
     { title: "Pricing", href: "/pricing" },
     { title: "Contact", href: "/contact" },
   ],
-  
+
   // About section pages meta descriptions
-  about_meta_description: "Learn about BOH Concepts' commitment to corporate social responsibility through community initiatives, breast cancer awareness, and cultural celebrations.",
-  teams_meta_description: "Meet the exceptional team behind BOH Concepts. Our diverse professionals are dedicated to transforming hospitality staffing across Africa and the United States.",
-  mission_meta_description: "Discover BOH Concepts' mission and vision. We're redefining hospitality staffing through excellence, diversity, and sustainable partnerships.",
-  values_meta_description: "Learn about the core values that guide BOH Concepts. Our commitment to excellence, diversity, and accountability shapes everything we do.",
-  
+  about_meta_description:
+    "Learn about BOH Concepts' commitment to corporate social responsibility through community initiatives, breast cancer awareness, and cultural celebrations.",
+  teams_meta_description:
+    "Meet the exceptional team behind BOH Concepts. Our diverse professionals are dedicated to transforming hospitality staffing across Africa and the United States.",
+  mission_meta_description:
+    "Discover BOH Concepts' mission and vision. We're redefining hospitality staffing through excellence, diversity, and sustainable partnerships.",
+  values_meta_description: "Explore the core values that guide all our operations at BOH Concepts.",
+  values_description: "Our core values form the foundation of everything we do at BOH Concepts, guiding our decisions, shaping our culture, and defining our approach to hospitality staffing excellence. Our commitment to excellence, diversity, and accountability shapes everything we do.",
+
   // About page content
   about_section_heading: "Our Commitment to Community",
-  about_section_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  about_section_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   about_page_title: "Corporate Social Responsibility",
   about_page_tag: "ABOUT US",
-  about_paragraph_1: "Back of House Concepts connects top hospitality talent with leading properties, backed by decades of industry experience.",
-  about_paragraph_2: "Through our breast cancer awareness campaigns and Black History Month celebrations, we strive to make a positive impact and foster a culture of inclusivity and support.",
-  about_paragraph_3: "With initiatives across 4+ continents, we're committed to creating meaningful change and supporting diverse communities worldwide.",
-  
+  about_paragraph_1:
+    "Back of House Concepts connects top hospitality talent with leading properties, backed by decades of industry experience.",
+  about_paragraph_2:
+    "Through our breast cancer awareness campaigns and Black History Month celebrations, we strive to make a positive impact and foster a culture of inclusivity and support.",
+  about_paragraph_3:
+    "With initiatives across 4+ continents, we're committed to creating meaningful change and supporting diverse communities worldwide.",
+
   // Mission & Vision
   mission_heading: "Our Mission & Vision",
-  mission_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
+  mission_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
   mission_page_title: "Our Mission and Vision",
   mission_page_tag: "OUR MISSION",
   mission_title: "Our Mission",
-  mission_description: "It is our mission to redefine Hospitality staffing by building sustainable partnerships that promote growth and diversity for all.",
+  mission_description:
+    "At BOH Staffing Solutions, our mission is to revolutionize the hospitality industry by providing exceptional staffing solutions that empower both businesses and professionals. We are committed to bridging the gap between talented hospitality workers and quality establishments, creating meaningful employment opportunities while helping businesses thrive.",
+  mission_overview_description:
+    "We're dedicated to transforming hospitality staffing through innovative solutions that connect exceptional talent with premier establishments, creating value for both businesses and professionals.",
   vision_title: "Our Vision",
-  vision_description: "To be the premier global hospitality staffing partner, recognized for excellence, innovation, and creating meaningful opportunities across continents.",
-  
+  vision_description:
+    "To be the premier global hospitality staffing partner, recognized for excellence, innovation, and creating meaningful opportunities across continents.",
+
   // Values
   values_heading: "The Values That Guide Us",
-  values_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  values_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   values_page_title: "The Values That Guide Us",
   values_page_tag: "OUR VALUES",
-  
+
   // Team
   team_heading: "Our Team",
-  team_heading_color: "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
+  team_heading_color:
+    "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Meet Our Exceptional Team",
-  team_page_tag: "OUR TEAM"
+  team_page_tag: "OUR TEAM",
+  team_description: "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
 };
