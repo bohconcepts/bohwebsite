@@ -184,7 +184,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     email: string,
     password: string,
     fullName: string,
-    role: string = "staff"
+    role: string = "editor"
   ) => {
     try {
       const redirectUrl = `${window.location.origin}/`;
