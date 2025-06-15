@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import WhatsAppChat from '../ui/whatsapp-chat';
+import DocumentChat from '../ui/document-chat';
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-      <WhatsAppChat phoneNumber="14252790173" />
+      <DocumentChat />
     </div>
   );
 };
