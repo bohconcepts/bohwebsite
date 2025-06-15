@@ -62,24 +62,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('footer_quick_links')}</h4>
             <ul className="space-y-3">
-              {siteNavigation.map((item: { title: string; href: string; dropdown?: { title: string; href: string }[] }) => (
-                item.title === "About" ? (
-                  // For About section, render its dropdown items
-                  item.dropdown?.map((dropItem) => (
-                    <li key={dropItem.title}>
-                      <Link to={dropItem.href} className="text-white/80 hover:text-white transition-colors">
-                        {t(dropItem.title)}
-                      </Link>
-                    </li>
-                  ))
-                ) : (
-                  // For other navigation items, render as normal
-                  <li key={item.title}>
-                    <Link to={item.href} className="text-white/80 hover:text-white transition-colors">
-                      {t(item.title)}
-                    </Link>
-                  </li>
-                )
+              {siteNavigation.map((item: { title: string; href: string }) => (
+                <li key={item.title}>
+                  <Link to={item.href} className="text-white/80 hover:text-white transition-colors">
+                    {item.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
