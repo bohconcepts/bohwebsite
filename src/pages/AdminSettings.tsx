@@ -184,10 +184,10 @@ const AdminSettings = () => {
   };
 
   // Change password
-  const changePassword = () => {
+  const changePassword = async () => {
     if (!validatePassword() || !currentUser) return;
 
-    const success = adminService.changePassword(
+    const success = await adminService.changePassword(
       currentUser.id,
       passwordData.currentPassword,
       passwordData.newPassword
