@@ -15,7 +15,7 @@ export interface EmailOptions {
 export const sendEmail = async (options: EmailOptions): Promise<{ success: boolean; error?: string }> => {
   try {
     // Get the sender email from environment variables or use default
-    const senderEmail = import.meta.env.VITE_EMAIL_SENDER || 'noreply@bohconcepts.netlify.app';
+    const senderEmail = import.meta.env.VITE_EMAIL_SENDER || 'sefa@bohconcepts.com';
     
     // Call the Supabase Edge Function for sending emails
     const { error } = await supabase.functions.invoke('send-email', {
