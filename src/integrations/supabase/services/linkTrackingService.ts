@@ -1,8 +1,15 @@
 import { createAnonymousClient, supabase } from "../client";
 import { LinkClickInsert } from "../types/link-clicks";
 
-// Enable debug mode for development
+// Enable debug mode for development and production
 const DEBUG = true;
+
+// Log environment information
+console.log('Environment:', {
+  isProduction: typeof window !== 'undefined' ? window.location.hostname !== 'localhost' : 'unknown',
+  hostname: typeof window !== 'undefined' ? window.location.hostname : 'unknown',
+  origin: typeof window !== 'undefined' ? window.location.origin : 'unknown'
+});
 
 /**
  * Service for tracking link clicks
