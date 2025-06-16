@@ -102,14 +102,8 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
       <div className="min-h-screen bg-gray-100 flex">
         {/* Sidebar - Desktop */}
         <aside
-          className={`bg-brand-blue text-white fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-auto lg:flex-shrink-0 ${
-          sidebarOpen ? "w-64" : "w-20"
-        } ${
-          mobileMenuOpen
-            ? "translate-x-0"
-            : "-translate-x-full lg:translate-x-0"
-        }`}
-      >
+          className={`bg-brand-blue text-white fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-auto lg:flex-shrink-0 ${sidebarOpen ? "w-64" : "w-20"} ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        >
         <div className="h-full flex flex-col">
           <div
             className={`flex items-center justify-between h-16 px-4 border-b border-white/10 ${
@@ -206,20 +200,20 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
           {/* Header */}
           <header className="bg-white shadow-sm z-10">
             <div className="px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <div className="flex items-center">
-              <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="text-gray-500 hover:text-gray-700 lg:hidden"
-                title="Open menu"
-              >
-                <Menu className="h-6 w-6" />
-              </button>
-              <h1 className="ml-3 lg:ml-0 text-xl font-bold text-gray-900">
-                {title}
-              </h1>
+              <div className="flex items-center">
+                <button
+                  onClick={() => setMobileMenuOpen(true)}
+                  className="text-gray-500 hover:text-gray-700 lg:hidden"
+                  title="Open menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </button>
+                <h1 className="ml-3 lg:ml-0 text-xl font-bold text-gray-900">
+                  {title}
+                </h1>
+              </div>
             </div>
-          </div>
-        </header>
+          </header>
 
           {/* Main Content */}
           <main className="flex-1 overflow-y-auto bg-gray-100 p-4 sm:p-6 lg:p-8">
@@ -233,6 +227,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
             </div>
           </footer>
         </div>
+      </div>
     </TrackableLinksProvider>
   );
 };
