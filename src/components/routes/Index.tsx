@@ -14,6 +14,7 @@ const Terms = lazy(() => import("@/pages/Terms"));
 const Sitemap = lazy(() => import("@/pages/Sitemap"));
 const WhyChooseUsPage = lazy(() => import("@/pages/WhyChooseUsPage"));
 const MarketsPage = lazy(() => import("@/pages/MarketsPage"));
+const Partnership = lazy(() => import("@/pages/Partnership"));
 const Auth = lazy(() => import("@/pages/Auth"));
 
 
@@ -70,6 +71,7 @@ const AppRoutes = () => {
         />
         <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
         <Route path="/markets" element={<MarketsPage />} />
+        <Route path="/partnership" element={<Partnership />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />

@@ -3,6 +3,7 @@ import { Profile, ProfileInsert, ProfileUpdate } from './profiles';
 import { Job, JobInsert, JobUpdate } from './jobs';
 import { JobApplication, JobApplicationInsert, JobApplicationUpdate } from './job-applications';
 import { Contact, ContactInsert, ContactUpdate } from './contacts';
+import { PartnershipRequest, PartnershipRequestInsert, PartnershipRequestUpdate } from './partnership-requests';
 import { DocumentTypes } from './documentTypes';
 import { ChatTypes } from './chatTypes';
 
@@ -46,6 +47,11 @@ export interface Database {
         Row: Contact;
         Insert: ContactInsert;
         Update: ContactUpdate;
+      };
+      partnership_requests: {
+        Row: PartnershipRequest;
+        Insert: PartnershipRequestInsert;
+        Update: PartnershipRequestUpdate;
       };
       documents: {
         Row: DocumentTypes['Row'];
