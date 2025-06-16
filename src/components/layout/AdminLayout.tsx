@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { TrackableLinksProvider } from "@/utils/replaceAnchorsWithTrackableLinks";
 import {
   LogOut,
   MessageSquare,
@@ -97,10 +98,11 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar - Desktop */}
-      <aside
-        className={`bg-brand-blue text-white fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-auto lg:flex-shrink-0 ${
+    <TrackableLinksProvider pageSource={`admin-${currentPath}`}>
+      <div className="min-h-screen bg-gray-100 flex">
+        {/* Sidebar - Desktop */}
+        <aside
+          className={`bg-brand-blue text-white fixed inset-y-0 left-0 z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-auto lg:flex-shrink-0 ${
           sidebarOpen ? "w-64" : "w-20"
         } ${
           mobileMenuOpen
@@ -200,10 +202,10 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
         </div>
       </aside>
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Header */}
-        <header className="bg-white shadow-sm z-10">
-          <div className="px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+          {/* Header */}
+          <header className="bg-white shadow-sm z-10">
+            <div className="px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div className="flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(true)}
@@ -219,19 +221,19 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="flex-1 overflow-y-auto bg-gray-100 p-4 sm:p-6 lg:p-8">
-          {children}
-        </main>
+          {/* Main Content */}
+          <main className="flex-1 overflow-y-auto bg-gray-100 p-4 sm:p-6 lg:p-8">
+            {children}
+          </main>
 
-        {/* Footer */}
-        <footer className="bg-gray-800 text-white py-4 text-center text-sm">
-          <div className="container mx-auto">
-            <p>Admin Panel &copy; {new Date().getFullYear()}</p>
-          </div>
-        </footer>
-      </div>
-    </div>
+          {/* Footer */}
+          <footer className="bg-gray-800 text-white py-4 text-center text-sm">
+            <div className="container mx-auto">
+              <p>Admin Panel &copy; {new Date().getFullYear()}</p>
+            </div>
+          </footer>
+        </div>
+    </TrackableLinksProvider>
   );
 };
 
