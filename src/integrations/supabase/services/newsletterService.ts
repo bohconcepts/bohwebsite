@@ -5,7 +5,6 @@ import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailSer
 /**
  * Subscribe a new email to the newsletter
  * Uses direct Supabase client for public operations
- * Sends a confirmation email with unsubscribe link
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
@@ -14,14 +13,15 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
     const newSubscriber: NewsletterSubscriberInsert = {
       email: email.toLowerCase().trim(),
       confirmed: false, // Default to unconfirmed until email verification
+      // Generate tokens client-side to avoid needing to select after insert
+      confirmation_token: crypto.randomUUID(),
+      unsubscribe_token: crypto.randomUUID()
     };
 
-    // Insert the new subscriber
-    const { data, error } = await supabase
+    // Insert the new subscriber without trying to select (which would require additional permissions)
+    const { error } = await supabase
       .from("newsletter_subscribers")
-      .insert(newSubscriber)
-      .select('unsubscribe_token')
-      .single();
+      .insert(newSubscriber);
 
     if (error) {
       // Handle duplicate email error more gracefully
@@ -32,14 +32,13 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
     }
 
     // Send confirmation email with unsubscribe link
-    if (data?.unsubscribe_token) {
-      try {
-        await sendSubscriptionConfirmationEmail(email, data.unsubscribe_token);
-      } catch (emailError) {
-        console.error('Failed to send confirmation email:', emailError);
-        // We don't want to fail the subscription if just the email fails
-        // The user is still subscribed, they just didn't get the confirmation email
-      }
+    try {
+      // We already have the unsubscribe token since we generated it client-side
+      await sendSubscriptionConfirmationEmail(email, newSubscriber.unsubscribe_token!);
+    } catch (emailError) {
+      console.error('Failed to send confirmation email:', emailError);
+      // We don't want to fail the subscription if just the email fails
+      // The user is still subscribed, they just didn't get the confirmation email
     }
 
     return { success: true };

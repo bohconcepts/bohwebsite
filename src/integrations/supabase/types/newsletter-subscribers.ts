@@ -10,6 +10,8 @@ export interface NewsletterSubscriber {
 export type NewsletterSubscriberInsert = {
   email: string;
   confirmed?: boolean;
+  confirmation_token?: string;
+  unsubscribe_token?: string;
 };
 
 export type NewsletterSubscriberUpdate = {
