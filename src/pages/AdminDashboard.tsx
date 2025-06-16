@@ -158,6 +158,14 @@ const AdminDashboard = () => {
                   </p>
                 </div>
               </Link>
+              <Link to="/admin/partnership-requests" className="block">
+                <div className="p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer transition-colors">
+                  <p className="font-medium">Partnership Requests</p>
+                  <p className="text-sm text-gray-500">
+                    Manage partnership inquiries
+                  </p>
+                </div>
+              </Link>
             </div>
           </div>
 

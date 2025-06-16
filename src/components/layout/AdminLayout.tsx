@@ -10,6 +10,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  Link2,
 } from "lucide-react";
 import { adminService } from "@/integrations/supabase/services/adminService";
 
@@ -45,6 +46,12 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
       href: "/admin/messages",
       icon: MessageSquare,
       active: currentPath === "/admin/messages",
+    },
+    {
+      name: "Partnership Requests",
+      href: "/admin/partnership-requests",
+      icon: Link2,
+      active: currentPath === "/admin/partnership-requests",
     },
     {
       name: "Users",
@@ -112,6 +119,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
             <button
               onClick={toggleSidebar}
               className="text-white/70 hover:text-white lg:block hidden"
+              title="Toggle sidebar width"
             >
               <ChevronRight
                 className={`h-5 w-5 transition-transform duration-300 ${
@@ -123,6 +131,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="text-white/70 hover:text-white lg:hidden"
+              title="Close menu"
             >
               <X className="h-5 w-5" />
             </button>
@@ -192,6 +201,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
               <button
                 onClick={() => setMobileMenuOpen(true)}
                 className="text-gray-500 hover:text-gray-700 lg:hidden"
+                title="Open menu"
               >
                 <Menu className="h-6 w-6" />
               </button>

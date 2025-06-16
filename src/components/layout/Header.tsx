@@ -99,7 +99,7 @@ const Header = () => {
             asChild
             className="bg-brand-orange hover:bg-brand-orange/90 text-white"
           >
-            <Link to="/contact">{t("Partner With Us")}</Link>
+            <Link to="/partnership">{t("Partner With Us")}</Link>
           </Button>
         </div>
 
@@ -162,7 +162,7 @@ const Header = () => {
                   asChild
                   className="bg-brand-orange hover:bg-brand-orange/90 text-white w-full"
                 >
-                  <Link to="/contact">{t("Partner With Us")}</Link>
+                  <Link to="/partnership">{t("Partner With Us")}</Link>
                 </Button>
               </div>
             </div>

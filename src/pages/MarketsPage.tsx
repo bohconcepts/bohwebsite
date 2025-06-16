@@ -344,7 +344,7 @@ const MarketsPage: React.FC = () => {
               {t("markets_partnership_description")}
             </p>
             
-            <Link to="/contact" className="inline-block bg-brand-orange hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300">
+            <Link to="/partnership" className="inline-block bg-brand-orange hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300">
               {t("markets_contact_us_today")}
             </Link>
           </div>

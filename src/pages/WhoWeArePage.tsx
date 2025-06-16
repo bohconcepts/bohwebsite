@@ -302,7 +302,7 @@ const WhoWeArePage: React.FC = () => {
             className="text-center mt-12"
           >
             <a
-              href="/contact"
+              href="/partnership"
               className="inline-flex items-center justify-center bg-brand-orange hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             >
               Partner With Us

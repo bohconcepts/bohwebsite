@@ -19,6 +19,7 @@ const AdminMessages = lazy(() => import("@/pages/AdminMessages"));
 const AdminUsers = lazy(() => import("@/pages/AdminUsers"));
 const AdminSettings = lazy(() => import("@/pages/AdminSettings"));
 const AdminSetup = lazy(() => import("@/pages/AdminSetup"));
+const AdminPartnershipRequests = lazy(() => import("@/pages/AdminPartnershipRequests"));
 
 
 // Protected route component
@@ -73,6 +74,14 @@ const AdminRoutes = () => {
             element={
               <ProtectedRoute>
                 <AdminSettings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="partnership-requests"
+            element={
+              <ProtectedRoute>
+                <AdminPartnershipRequests />
               </ProtectedRoute>
             }
           />
