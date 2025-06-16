@@ -16,6 +16,7 @@ ALTER TABLE newsletter_subscribers ENABLE ROW LEVEL SECURITY;
 
 -- Create policies
 -- Allow anonymous users to insert new subscribers (for the public subscription form)
+DROP POLICY IF EXISTS "Allow anonymous insert" ON newsletter_subscribers;
 CREATE POLICY "Allow anonymous insert" ON newsletter_subscribers
   FOR INSERT TO anon
   WITH CHECK (true);
