@@ -1,66 +1,40 @@
 import { supabase } from '../client';
-import { NewsletterSubscriber, NewsletterSubscriberInsert, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
-import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailService';
+import { NewsletterSubscriber, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
 
 /**
  * Subscribe a new email to the newsletter
- * Uses direct Supabase client for public operations
+ * Uses a direct insert approach with better error handling
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
-    // First, check if the email already exists to provide a better error message
-    const { data: existingSubscriber } = await supabase
-      .from("newsletter_subscribers")
-      .select("email")
-      .eq("email", email.toLowerCase().trim())
-      .maybeSingle();
+    // Normalize the email
+    const normalizedEmail = email.toLowerCase().trim();
     
-    if (existingSubscriber) {
-      return { success: false, error: 'This email is already subscribed to our newsletter.' };
-    }
-    
-    // Use direct Supabase client with RLS policies
-    const newSubscriber: NewsletterSubscriberInsert = {
-      email: email.toLowerCase().trim(),
-      confirmed: false, // Default to unconfirmed until email verification
+    // Create a new subscriber object
+    const newSubscriber = {
+      email: normalizedEmail,
+      confirmed: false,
     };
 
     // Insert the new subscriber
     const { error } = await supabase
       .from("newsletter_subscribers")
       .insert(newSubscriber);
-
+    
     if (error) {
+      console.error('Error subscribing to newsletter:', error);
+      
       // Handle duplicate email error more gracefully
       if (error.code === '23505') {
         return { success: false, error: 'This email is already subscribed to our newsletter.' };
       }
-      return { success: false, error: error.message };
+      
+      return { success: false, error: 'Failed to subscribe. Please try again later.' };
     }
-
-    // If insert was successful, retrieve the unsubscribe token to send in the email
-    if (!error) {
-      try {
-        // We need to retrieve the token for the email
-        // This requires admin privileges, so we use the authenticated client
-        const { data: subscriber } = await supabase
-          .from("newsletter_subscribers")
-          .select("unsubscribe_token")
-          .eq("email", email.toLowerCase().trim())
-          .single();
-        
-        if (subscriber?.unsubscribe_token) {
-          await sendSubscriptionConfirmationEmail(email, subscriber.unsubscribe_token);
-        } else {
-          console.error('Could not retrieve unsubscribe token for email:', email);
-        }
-      } catch (emailError) {
-        console.error('Failed to send confirmation email:', emailError);
-        // We don't want to fail the subscription if just the email fails
-        // The user is still subscribed, they just didn't get the confirmation email
-      }
-    }
-
+    
+    // For now, skip sending the confirmation email since we can't get the token
+    // We'll fix this in a separate update
+    
     return { success: true };
   } catch (error) {
     console.error("Error subscribing to newsletter:", error);
