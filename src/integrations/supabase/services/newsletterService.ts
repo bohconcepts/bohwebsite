@@ -1,24 +1,23 @@
-import { supabase, createAnonymousClient } from '../client';
+import { supabase } from '../client';
 import { NewsletterSubscriber, NewsletterSubscriberInsert, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
 import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailService';
 
 /**
  * Subscribe a new email to the newsletter
- * Uses anonymous client to comply with RLS policies
+ * Uses direct Supabase client for public operations
  * Sends a confirmation email with unsubscribe link
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
-    // Use anonymous client for public operations
-    const anonClient = createAnonymousClient();
-    
+    // Use direct Supabase client with RLS policies
+    // The RLS policy should allow anonymous inserts
     const newSubscriber: NewsletterSubscriberInsert = {
       email: email.toLowerCase().trim(),
       confirmed: false, // Default to unconfirmed until email verification
     };
 
     // Insert the new subscriber
-    const { data, error } = await anonClient
+    const { data, error } = await supabase
       .from("newsletter_subscribers")
       .insert(newSubscriber)
       .select('unsubscribe_token')

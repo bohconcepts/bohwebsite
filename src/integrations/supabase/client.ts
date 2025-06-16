@@ -33,25 +33,32 @@ export const supabase = createClient<Database>(
   }
 );
 
+// Singleton anonymous client to avoid multiple GoTrueClient instances
+let anonymousClient: SupabaseClient<Database> | undefined = undefined;
+
 /**
- * Creates an anonymous Supabase client for public operations
+ * Creates or returns an existing anonymous Supabase client for public operations
  * This client doesn't use any stored session and is suitable for public operations
  * like submitting forms that should work for non-authenticated users
  */
 export const createAnonymousClient = (): SupabaseClient<Database> => {
-  return createClient<Database>(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY,
-    {
-      auth: {
-        persistSession: false,
-        autoRefreshToken: false,
-      },
-      global: {
-        headers: {
-          "Cache-Control": "no-cache, no-store, must-revalidate",
+  if (!anonymousClient) {
+    anonymousClient = createClient<Database>(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY,
+      {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false,
+          // Don't specify storage to avoid conflicts
         },
-      },
-    }
-  );
+        global: {
+          headers: {
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+          },
+        },
+      }
+    );
+  }
+  return anonymousClient;
 };
