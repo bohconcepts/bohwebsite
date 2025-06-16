@@ -11,6 +11,7 @@ import {
   X,
   ChevronRight,
   Link2,
+  Mail,
 } from "lucide-react";
 import { adminService } from "@/integrations/supabase/services/adminService";
 
@@ -52,6 +53,12 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
       href: "/admin/partnership-requests",
       icon: Link2,
       active: currentPath === "/admin/partnership-requests",
+    },
+    {
+      name: "Newsletter Subscribers",
+      href: "/admin/newsletter-subscribers",
+      icon: Mail,
+      active: currentPath === "/admin/newsletter-subscribers",
     },
     {
       name: "Users",
