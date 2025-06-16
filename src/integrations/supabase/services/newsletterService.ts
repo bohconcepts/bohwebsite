@@ -8,17 +8,24 @@ import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailSer
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
+    // First, check if the email already exists to provide a better error message
+    const { data: existingSubscriber } = await supabase
+      .from("newsletter_subscribers")
+      .select("email")
+      .eq("email", email.toLowerCase().trim())
+      .maybeSingle();
+    
+    if (existingSubscriber) {
+      return { success: false, error: 'This email is already subscribed to our newsletter.' };
+    }
+    
     // Use direct Supabase client with RLS policies
-    // The RLS policy should allow anonymous inserts
     const newSubscriber: NewsletterSubscriberInsert = {
       email: email.toLowerCase().trim(),
       confirmed: false, // Default to unconfirmed until email verification
-      // Generate tokens client-side to avoid needing to select after insert
-      confirmation_token: crypto.randomUUID(),
-      unsubscribe_token: crypto.randomUUID()
     };
 
-    // Insert the new subscriber without trying to select (which would require additional permissions)
+    // Insert the new subscriber
     const { error } = await supabase
       .from("newsletter_subscribers")
       .insert(newSubscriber);
@@ -31,14 +38,27 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
       return { success: false, error: error.message };
     }
 
-    // Send confirmation email with unsubscribe link
-    try {
-      // We already have the unsubscribe token since we generated it client-side
-      await sendSubscriptionConfirmationEmail(email, newSubscriber.unsubscribe_token!);
-    } catch (emailError) {
-      console.error('Failed to send confirmation email:', emailError);
-      // We don't want to fail the subscription if just the email fails
-      // The user is still subscribed, they just didn't get the confirmation email
+    // If insert was successful, retrieve the unsubscribe token to send in the email
+    if (!error) {
+      try {
+        // We need to retrieve the token for the email
+        // This requires admin privileges, so we use the authenticated client
+        const { data: subscriber } = await supabase
+          .from("newsletter_subscribers")
+          .select("unsubscribe_token")
+          .eq("email", email.toLowerCase().trim())
+          .single();
+        
+        if (subscriber?.unsubscribe_token) {
+          await sendSubscriptionConfirmationEmail(email, subscriber.unsubscribe_token);
+        } else {
+          console.error('Could not retrieve unsubscribe token for email:', email);
+        }
+      } catch (emailError) {
+        console.error('Failed to send confirmation email:', emailError);
+        // We don't want to fail the subscription if just the email fails
+        // The user is still subscribed, they just didn't get the confirmation email
+      }
     }
 
     return { success: true };
