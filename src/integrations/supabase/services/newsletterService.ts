@@ -1,14 +1,17 @@
-import { supabase } from '../client';
+import { supabase, createAnonymousClient } from '../client';
 import { NewsletterSubscriber, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
 
 /**
  * Subscribe a new email to the newsletter
- * Uses a direct insert approach with better error handling
+ * Uses the anonymous client to bypass authentication issues with RLS
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
     // Normalize the email
     const normalizedEmail = email.toLowerCase().trim();
+    
+    // Get anonymous client specifically for this operation
+    const anonClient = createAnonymousClient();
     
     // Create a new subscriber object
     const newSubscriber = {
@@ -16,8 +19,8 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
       confirmed: false,
     };
 
-    // Insert the new subscriber
-    const { error } = await supabase
+    // Insert the new subscriber using the anonymous client
+    const { error } = await anonClient
       .from("newsletter_subscribers")
       .insert(newSubscriber);
     
