@@ -4,6 +4,7 @@ import { Job, JobInsert, JobUpdate } from './jobs';
 import { JobApplication, JobApplicationInsert, JobApplicationUpdate } from './job-applications';
 import { Contact, ContactInsert, ContactUpdate } from './contacts';
 import { PartnershipRequest, PartnershipRequestInsert, PartnershipRequestUpdate } from './partnership-requests';
+import { LinkClick, LinkClickInsert, LinkClickUpdate } from './link-clicks';
 import { DocumentTypes } from './documentTypes';
 import { ChatTypes } from './chatTypes';
 
@@ -12,6 +13,7 @@ export * from './profiles';
 export * from './jobs';
 export * from './job-applications';
 export * from './contacts';
+export * from './link-clicks';
 export * from './documentTypes';
 export * from './chatTypes';
 
@@ -52,6 +54,11 @@ export interface Database {
         Row: PartnershipRequest;
         Insert: PartnershipRequestInsert;
         Update: PartnershipRequestUpdate;
+      };
+      link_clicks: {
+        Row: LinkClick;
+        Insert: LinkClickInsert;
+        Update: LinkClickUpdate;
       };
       documents: {
         Row: DocumentTypes['Row'];

@@ -6,6 +6,8 @@ import AppRoutes from '@/components/routes/Index';
 import AdminRoutes from '@/components/routes/AdminRoutes';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { AuthProvider } from '@/contexts/AuthContext';
+import initializeGlobalLinkTracking from '@/utils/globalLinkTracking';
+import { TrackableLinksProvider } from '@/utils/replaceAnchorsWithTrackableLinks';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,14 +48,23 @@ const App = () => {
 const AppContent = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+  const currentPath = location.pathname;
   
-  console.log('AppContent rendered, current path:', location.pathname);
+  // Initialize global link tracking
+  useEffect(() => {
+    // Set up global link tracking to catch any links that might be missed
+    const cleanup = initializeGlobalLinkTracking();
+    return cleanup;
+  }, []);
+  
+  console.log('AppContent rendered, current path:', currentPath);
   console.log('Is admin route:', isAdminRoute);
 
   // For admin routes, don't use the main Layout
   if (isAdminRoute) {
     console.log('Rendering admin routes');
     return (
+      // We don't need TrackableLinksProvider here as AdminLayout already has it
       <div className="admin-routes-container">
         <Routes>
           <Route path="/admin/*" element={<AdminRoutes />} />
@@ -63,12 +74,16 @@ const AppContent = () => {
   }
 
   // For regular routes, use the main Layout
+  // Layout already has TrackableLinksProvider, but we add a fallback here
+  // to catch any links that might be rendered outside of Layout
   return (
-    <Layout>
-      <Routes>
-        <Route path="/*" element={<AppRoutes />} />
-      </Routes>
-    </Layout>
+    <TrackableLinksProvider pageSource={`global-${currentPath}`}>
+      <Layout>
+        <Routes>
+          <Route path="/*" element={<AppRoutes />} />
+        </Routes>
+      </Layout>
+    </TrackableLinksProvider>
   );
 };
 
