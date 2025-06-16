@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { useCompanyInfo, useContactInfo, useSocialLinks, useSiteNavigation, useServices } from '@/hooks/useLocalizedConstants';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { NewsletterSubscriptionForm } from '@/components/forms/NewsletterSubscriptionForm';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -25,16 +24,7 @@ const Footer = () => {
                 {t('footer_subscribe_to_newsletter')}
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Input
-                type="email"
-                placeholder={t('footer_enter_your_email')}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
-              />
-              <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white whitespace-nowrap">
-                {t('footer_subscribe')}
-              </Button>
-            </div>
+            <NewsletterSubscriptionForm className="w-full" />
           </div>
         </div>
 

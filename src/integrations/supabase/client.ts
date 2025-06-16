@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "./types/index";
 
 // Get environment variables with fallbacks for development
@@ -32,3 +32,26 @@ export const supabase = createClient<Database>(
     },
   }
 );
+
+/**
+ * Creates an anonymous Supabase client for public operations
+ * This client doesn't use any stored session and is suitable for public operations
+ * like submitting forms that should work for non-authenticated users
+ */
+export const createAnonymousClient = (): SupabaseClient<Database> => {
+  return createClient<Database>(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
+    {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+      global: {
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+        },
+      },
+    }
+  );
+};
