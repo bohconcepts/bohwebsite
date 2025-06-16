@@ -1,9 +1,11 @@
 import { supabase, createAnonymousClient } from '../client';
 import { NewsletterSubscriber, NewsletterSubscriberInsert, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
+import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailService';
 
 /**
  * Subscribe a new email to the newsletter
  * Uses anonymous client to comply with RLS policies
+ * Sends a confirmation email with unsubscribe link
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
@@ -15,9 +17,12 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
       confirmed: false, // Default to unconfirmed until email verification
     };
 
-    const { error } = await anonClient
+    // Insert the new subscriber
+    const { data, error } = await anonClient
       .from("newsletter_subscribers")
-      .insert(newSubscriber);
+      .insert(newSubscriber)
+      .select('unsubscribe_token')
+      .single();
 
     if (error) {
       // Handle duplicate email error more gracefully
@@ -25,6 +30,17 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
         return { success: false, error: 'This email is already subscribed to our newsletter.' };
       }
       return { success: false, error: error.message };
+    }
+
+    // Send confirmation email with unsubscribe link
+    if (data?.unsubscribe_token) {
+      try {
+        await sendSubscriptionConfirmationEmail(email, data.unsubscribe_token);
+      } catch (emailError) {
+        console.error('Failed to send confirmation email:', emailError);
+        // We don't want to fail the subscription if just the email fails
+        // The user is still subscribed, they just didn't get the confirmation email
+      }
     }
 
     return { success: true };
