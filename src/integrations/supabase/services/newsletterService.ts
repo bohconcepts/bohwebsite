@@ -1,9 +1,11 @@
 import { supabase, createAnonymousClient } from '../client';
 import { NewsletterSubscriber, NewsletterSubscriberUpdate } from '../types/newsletter-subscribers';
+import { sendSubscriptionConfirmationEmail } from '@/integrations/email/emailService';
 
 /**
  * Subscribe a new email to the newsletter
  * Uses the anonymous client to bypass authentication issues with RLS
+ * and sends a confirmation email with unsubscribe link
  */
 export const subscribeToNewsletter = async (email: string): Promise<{ success: boolean; error?: string }> => {
   try {
@@ -13,6 +15,17 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
     // Get anonymous client specifically for this operation
     const anonClient = createAnonymousClient();
     
+    // First check if the email already exists to avoid duplicate errors
+    const { data: existingSubscriber } = await anonClient
+      .from("newsletter_subscribers")
+      .select("email")
+      .eq("email", normalizedEmail)
+      .maybeSingle();
+    
+    if (existingSubscriber) {
+      return { success: false, error: 'This email is already subscribed to our newsletter.' };
+    }
+    
     // Create a new subscriber object
     const newSubscriber = {
       email: normalizedEmail,
@@ -20,23 +33,29 @@ export const subscribeToNewsletter = async (email: string): Promise<{ success: b
     };
 
     // Insert the new subscriber using the anonymous client
-    const { error } = await anonClient
+    const { data, error } = await anonClient
       .from("newsletter_subscribers")
-      .insert(newSubscriber);
+      .insert(newSubscriber)
+      .select('unsubscribe_token')
+      .single();
     
     if (error) {
       console.error('Error subscribing to newsletter:', error);
-      
-      // Handle duplicate email error more gracefully
-      if (error.code === '23505') {
-        return { success: false, error: 'This email is already subscribed to our newsletter.' };
-      }
-      
       return { success: false, error: 'Failed to subscribe. Please try again later.' };
     }
     
-    // For now, skip sending the confirmation email since we can't get the token
-    // We'll fix this in a separate update
+    // Send confirmation email with unsubscribe token
+    if (data && data.unsubscribe_token) {
+      try {
+        await sendSubscriptionConfirmationEmail(normalizedEmail, data.unsubscribe_token);
+      } catch (emailError) {
+        console.error('Failed to send confirmation email:', emailError);
+        // We don't want to fail the subscription if just the email fails
+        // The user is still subscribed, they just didn't get the confirmation email
+      }
+    } else {
+      console.error('Could not retrieve unsubscribe token for email:', normalizedEmail);
+    }
     
     return { success: true };
   } catch (error) {
