@@ -23,8 +23,10 @@ const AdminNewsletterSubscribers = () => {
       const { data: profile } = await supabase
         .from('profiles')
         .select('role')
-        .eq('id', session.user.id)
+        .eq('user_id', session.user.id)
         .single();
+      
+      console.log('Newsletter subscribers auth check:', { userId: session.user.id, profile });
       
       if (profile?.role !== 'admin') {
         navigate('/');
