@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import OptimizedImage from "@/components/common/OptimizedImage";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -11,7 +11,7 @@ const Hero = () => {
   // Carousel slides configuration
   const slides = [
     {
-      image: "/images/hero/services.jpg",
+      image: "/images/hero/services.png",
       title: t('Professional Hospitality Services'),
       subtitle: t('Elevating guest experiences with our premium staffing solutions')
     },
@@ -47,50 +47,53 @@ const Hero = () => {
     }
   ];
   
-  // Auto-advance carousel
+  // Auto-advance carousel - using requestAnimationFrame for better performance
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    let timeoutId: number;
+    let startTime: number;
     
-    return () => clearInterval(interval);
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      
+      if (elapsed >= 5000) { // 5 seconds
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        startTime = timestamp;
+      }
+      
+      timeoutId = requestAnimationFrame(animate);
+    };
+    
+    timeoutId = requestAnimationFrame(animate);
+    
+    return () => cancelAnimationFrame(timeoutId);
   }, [slides.length]);
   
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
-        {/* Commented out video
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover brightness-[1.1] contrast-[1.1]"
-        >
-          <source src="/images/hero/main.mp4" type="video/mp4" />
-          <img
-            src="/images/hero/hero1.jpg"
-            alt="BOH Concepts Hotel Background"
-            className="w-full h-full object-cover"
-          />
-        </video>
-        */}
-        
         {/* Carousel Images */}
         {slides.map((slide, index) => (
           <div 
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
-            <img
-              src={slide.image}
-              alt={`BOH Concepts - ${index + 1}`}
-              className="w-full h-full object-contain sm:object-cover md:object-cover brightness-110 contrast-110 saturate-110"
-            />
+            <Suspense fallback={<div className="w-full h-full bg-gray-800"></div>}>
+              <OptimizedImage
+                src={slide.image}
+                alt={`BOH Concepts - ${index + 1}`}
+                className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                width={1920}
+                height={1080}
+                decoding="async"
+                sizes="100vw"
+              />
+            </Suspense>
           </div>
         ))}
-
         
         {/* Ultra-light overlay just for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/20 via-brand-blue/10 to-transparent"></div>
@@ -98,47 +101,30 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10 pt-20">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-3"
-          >
+          {/* Removed motion effects for better performance */}
+          <div className="mb-3">
             <span className="bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium">
               {t('A TRUSTED PARTNER')}
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
+          <h1
             key={`title-${currentSlide}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in"
             style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
           >
             {slides[currentSlide].title}
-          </motion.h1>
+          </h1>
 
-          <motion.p
+          <p
             key={`subtitle-${currentSlide}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-white text-lg mb-8 max-w-2xl font-medium"
+            className="text-white text-lg mb-8 max-w-2xl font-medium animate-fade-in"
             style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}
           >
             {slides[currentSlide].subtitle}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
             <Button
               asChild
               size="lg"
@@ -160,15 +146,10 @@ const Hero = () => {
             >
               <Link to="/our-approach">{t('Our Approach')}</Link>
             </Button>
-          </motion.div>
+          </div>
           
           {/* Carousel Indicators */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex justify-center mt-8 gap-2"
-          >
+          <div className="flex justify-center mt-8 gap-2 animate-fade-in">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -177,7 +158,7 @@ const Hero = () => {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

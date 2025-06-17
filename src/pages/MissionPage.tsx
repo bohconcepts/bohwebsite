@@ -149,7 +149,7 @@ const MissionPage = () => {
             >
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Our Commitment</h3>
               <p className="text-lg text-gray-600 mb-8">
-                At BOH Concepts, we're committed to redefining hospitality staffing through excellence, 
+                At BOH Concepts,we are committed to redefining hospitality staffing through excellence, 
                 diversity, and sustainable partnerships. We believe that by investing in our people and 
                 maintaining the highest standards of service, we can transform the hospitality industry 
                 and create meaningful opportunities for growth.

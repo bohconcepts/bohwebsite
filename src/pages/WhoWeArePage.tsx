@@ -83,7 +83,7 @@ const WhoWeArePage: React.FC = () => {
               Committed to Community Impact
             </p>
             <p className="text-lg text-gray-700 mb-4">
-              At Back of House Concepts, we go beyond hospitality staffing. As a premier agency connecting exceptional talent with top-tier hotels, resorts, restaurants, and event venues, we're also deeply committed to corporate social responsibility.
+              At Back of House Concepts, we go beyond hospitality staffing. As a premier agency connecting exceptional talent with top-tier hotels, resorts, restaurants, and event venues, we are also deeply committed to corporate social responsibility.
             </p>
             <p className="text-lg text-gray-700 mb-4">
               Each October, we proudly support Breast Cancer Awareness Month through education, wellness initiatives, and advocacy that promote early detection and support for affected individuals in our industry.

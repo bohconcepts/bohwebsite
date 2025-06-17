@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import L from 'leaflet';
 
 // Fix for default marker icons in Leaflet with React
-// This is needed because the default icons reference files that aren't properly loaded in the React environment
+// This is needed because the default icons reference files that are not properly loaded in the React environment
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',

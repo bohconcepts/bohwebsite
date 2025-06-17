@@ -13,7 +13,7 @@ export const enConstants: LocalizedConstants = {
     "Discover why leading hospitality brands and professionals trust BOH Concepts for their staffing needs.",
   clients_title: "Our Clients",
   clients_subtitle:
-    "We're proud to partner with prestigious hospitality brands nationwide",
+    "We are proud to partner with prestigious hospitality brands nationwide",
   footer_company_description:
     "Premium hospitality staffing solutions connecting exceptional talent with prestigious establishments.",
   footer_stay_updated: "Stay Updated",
@@ -76,7 +76,7 @@ export const enConstants: LocalizedConstants = {
     "Trusted by leading hospitality brands worldwide.",
   trusted_by_industry_leaders: "Trusted by Industry Leaders",
   client_trust_description:
-    "We're proud to partner with some of the most prestigious names in the hospitality industry.",
+    "We are proud to partner with some of the most prestigious names in the hospitality industry.",
   what_our_clients_say: "What Our Clients Say",
   testimonial_description:
     "Hear directly from our clients about their experience working with BOH Concepts.",
@@ -747,14 +747,14 @@ export const enConstants: LocalizedConstants = {
   teams_meta_description:
     "Meet the exceptional team behind BOH Concepts. Our diverse professionals are dedicated to transforming hospitality staffing across Africa and the United States.",
   mission_meta_description:
-    "Discover BOH Concepts' mission and vision. We're redefining hospitality staffing through excellence, diversity, and sustainable partnerships.",
+    "Discover BOH Concepts' mission and vision. We are redefining hospitality staffing through excellence, diversity, and sustainable partnerships.",
   values_meta_description:
     "Explore the core values that guide all our operations at BOH Concepts.",
   values_description:
     "Our core values form the foundation of everything we do at BOH Concepts, guiding our decisions, shaping our culture, and defining our approach to hospitality staffing excellence. Our commitment to excellence, diversity, and accountability shapes everything we do.",
 
   // About page content
-  about_section_heading: "Our Commitment to Community",
+  about_section_heading: "Commitment to Community",
   about_section_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   about_page_title: "Corporate Social Responsibility",
@@ -764,19 +764,19 @@ export const enConstants: LocalizedConstants = {
   about_paragraph_2:
     "Through our breast cancer awareness campaigns and Black History Month celebrations, we strive to make a positive impact and foster a culture of inclusivity and support.",
   about_paragraph_3:
-    "With initiatives across 4+ continents, we're committed to creating meaningful change and supporting diverse communities worldwide.",
+    "With initiatives across 4+ continents, we are committed to creating meaningful change and supporting diverse communities worldwide.",
 
   // Mission & Vision
-  mission_heading: "Our Mission & Vision",
+  mission_heading: "Mission & Vision",
   mission_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
-  mission_page_title: "Our Mission and Vision",
-  mission_page_tag: "OUR MISSION",
-  mission_title: "Our Mission",
+  mission_page_title: "Mission and Vision",
+  mission_page_tag: "MISSION",
+  mission_title: "Mission",
   mission_description:
     "At BOH Staffing Solutions, our mission is to revolutionize the hospitality industry by providing exceptional staffing solutions that empower both businesses and professionals. We are committed to bridging the gap between talented hospitality workers and quality establishments, creating meaningful employment opportunities while helping businesses thrive.",
   mission_overview_description:
-    "We're dedicated to transforming hospitality staffing through innovative solutions that connect exceptional talent with premier establishments, creating value for both businesses and professionals.",
+    "We are dedicated to transforming hospitality staffing through innovative solutions that connect exceptional talent with premier establishments, creating value for both businesses and professionals.",
   vision_title: "Our Vision",
   vision_description:
     "To be the premier global hospitality staffing partner, recognized for excellence, innovation, and creating meaningful opportunities across continents.",
@@ -789,11 +789,11 @@ export const enConstants: LocalizedConstants = {
   values_page_tag: "OUR VALUES",
 
   // Team
-  team_heading: "Our Team",
+  team_heading: "Meet Our Exceptional Team",
   team_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Meet Our Exceptional Team",
-  team_page_tag: "OUR TEAM",
+  team_page_tag: "OMeet Our Exceptional Team",
   team_description:
     "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
 };

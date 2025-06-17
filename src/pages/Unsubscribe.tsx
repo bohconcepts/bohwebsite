@@ -57,7 +57,7 @@ const Unsubscribe = () => {
               <h2 className="text-xl font-semibold text-gray-800">Successfully Unsubscribed</h2>
               <p className="text-gray-600 mt-2 text-center">
                 You have been successfully unsubscribed from our newsletter.
-                We're sorry to see you go!
+                We are sorry to see you go!
               </p>
               <p className="text-gray-600 mt-4 text-center">
                 If you change your mind, you can always subscribe again from our website.

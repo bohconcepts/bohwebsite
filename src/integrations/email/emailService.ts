@@ -66,7 +66,7 @@ export const sendSubscriptionConfirmationEmail = async (
         
         <p>Dear Subscriber,</p>
         
-        <p>Thank you for subscribing to the BOH Concepts newsletter. We're excited to have you join our community!</p>
+        <p>Thank you for subscribing to the BOH Concepts newsletter. We are excited to have you join our community!</p>
         
         <p>You'll now receive regular updates on industry insights, exclusive opportunities, and the latest news from BOH Concepts.</p>
         
