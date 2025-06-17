@@ -17,6 +17,10 @@ export interface DashboardStats {
   // Performance metrics
   conversionRate: number;
   averageResponseTime: number;
+
+  // Link tracking stats
+  totalLinkClicks: number;
+  uniqueLinksClicked: number;
 }
 
 // Activity interface for tracking recent actions
@@ -32,7 +36,18 @@ export interface Activity {
 // Time periods for analytics
 export type TimePeriod = 'day' | 'week' | 'month' | 'year';
 
+// Link click analytics interface
+export interface LinkClickStats {
+  url: string;
+  clicks: number;
+  uniqueUsers: number;
+  pageSources: { source: string; count: number }[];
+}
+
 // Dashboard service for admin analytics and statistics
+// Import types
+import { LinkClick } from '../types/link-clicks';
+
 export const dashboardService = {
   // Get comprehensive dashboard statistics
   getStats: async (): Promise<DashboardStats> => {
@@ -81,6 +96,40 @@ export const dashboardService = {
       // Calculate user stats
       const totalUsers = users?.length || 0;
       const activeUsers = users?.filter(u => u.is_active).length || 0;
+      
+      // Try to fetch link click stats from the view if it exists
+      let totalLinkClicks = 0;
+      let uniqueLinksClicked = 0;
+      
+      try {
+        // First try to get stats from the view (if migration has been applied)
+        const { data: linkClickStats, error: viewError } = await supabaseAdmin
+          .from('link_click_stats')
+          .select('*')
+          .single();
+        
+        if (!viewError && linkClickStats) {
+          totalLinkClicks = linkClickStats.total_link_clicks || 0;
+          uniqueLinksClicked = linkClickStats.unique_links_clicked || 0;
+        } else {
+          // Fallback: Calculate stats directly from link_clicks table
+          console.log('Falling back to direct calculation of link click stats');
+          
+          const { data: linkClicks, error: linkClicksError } = await supabaseAdmin
+            .from('link_clicks')
+            .select('url');
+          
+          if (linkClicksError) {
+            console.error('Error fetching link clicks:', linkClicksError);
+          } else if (linkClicks) {
+            totalLinkClicks = linkClicks.length;
+            uniqueLinksClicked = new Set(linkClicks.map(click => click.url)).size;
+          }
+        }
+      } catch (error) {
+        console.error('Error calculating link click stats:', error);
+        // Continue execution even if link clicks fetch fails
+      }
       
       // Map activities to our format
       const recentActivities: Activity[] = activities?.map((activity: any) => ({
@@ -136,7 +185,9 @@ export const dashboardService = {
         activeUsers,
         recentActivities: recentActivities.slice(0, 10),
         conversionRate,
-        averageResponseTime
+        averageResponseTime,
+        totalLinkClicks,
+        uniqueLinksClicked
       };
     } catch (error) {
       console.error('Error in getStats:', error);
@@ -148,8 +199,10 @@ export const dashboardService = {
         totalUsers: 0,
         activeUsers: 0,
         recentActivities: [],
-        conversionRate: 0,
-        averageResponseTime: 0
+        conversionRate: 0, // Placeholder for now
+        averageResponseTime: 0, // Placeholder for now
+        totalLinkClicks: 0,
+        uniqueLinksClicked: 0
       };
     }
   },
@@ -285,6 +338,202 @@ export const dashboardService = {
     } catch (error) {
       console.error('Error in logActivity:', error);
       return false;
+    }
+  },
+
+  // Get link click statistics
+  getLinkClickStats: async (period: TimePeriod = 'month'): Promise<LinkClickStats[]> => {
+    try {
+      console.log('Fetching link click statistics for period:', period);
+      
+      // Calculate the start date based on the period
+      const now = new Date();
+      let startDate = new Date();
+      
+      switch(period) {
+        case 'day':
+          startDate.setDate(now.getDate() - 1);
+          break;
+        case 'week':
+          startDate.setDate(now.getDate() - 7);
+          break;
+        case 'month':
+          startDate.setMonth(now.getMonth() - 1);
+          break;
+        case 'year':
+          startDate.setFullYear(now.getFullYear() - 1);
+          break;
+      }
+      
+      // Format the date for SQL query
+      const startDateStr = startDate.toISOString();
+      
+      // Fetch link clicks within the period
+      const { data: linkClicks, error } = await supabaseAdmin
+        .from('link_clicks')
+        .select('*')
+        .gte('clicked_at', startDateStr);
+      
+      if (error) {
+        console.error('Error fetching link clicks:', error);
+        throw error;
+      }
+      
+      // Process the data to get statistics
+      const clicksByUrl = new Map<string, LinkClick[]>();
+      
+      // Group clicks by URL
+      linkClicks?.forEach((click: LinkClick) => {
+        if (!clicksByUrl.has(click.url)) {
+          clicksByUrl.set(click.url, []);
+        }
+        clicksByUrl.get(click.url)?.push(click);
+      });
+      
+      // Calculate statistics for each URL
+      const stats: LinkClickStats[] = [];
+      
+      clicksByUrl.forEach((clicks, url) => {
+        // Count unique users
+        const uniqueUsers = new Set(clicks.map(c => c.user_id || c.ip_address || 'anonymous')).size;
+        
+        // Count clicks by page source
+        const sourceMap = new Map<string, number>();
+        clicks.forEach(click => {
+          const source = click.page_source || 'unknown';
+          sourceMap.set(source, (sourceMap.get(source) || 0) + 1);
+        });
+        
+        // Convert source map to array
+        const pageSources = Array.from(sourceMap.entries()).map(([source, count]) => ({
+          source,
+          count
+        }));
+        
+        // Sort by count descending
+        pageSources.sort((a, b) => b.count - a.count);
+        
+        stats.push({
+          url,
+          clicks: clicks.length,
+          uniqueUsers,
+          pageSources
+        });
+      });
+      
+      // Sort by total clicks descending
+      stats.sort((a, b) => b.clicks - a.clicks);
+      
+      return stats;
+    } catch (error) {
+      console.error('Error in getLinkClickStats:', error);
+      return [];
+    }
+  },
+
+  // Get link click timeline data
+  getLinkClickTimeline: async (period: TimePeriod = 'month'): Promise<{ date: string; clicks: number }[]> => {
+    try {
+      console.log('Fetching link click timeline for period:', period);
+      
+      // Calculate the start date based on the period
+      const now = new Date();
+      let startDate = new Date();
+      let format: string = 'YYYY-MM-DD'; // Default format
+      let groupBy: string = 'day'; // Default grouping
+      
+      switch(period) {
+        case 'day':
+          startDate.setDate(now.getDate() - 1);
+          format = 'HH24';
+          groupBy = 'hour';
+          break;
+        case 'week':
+          startDate.setDate(now.getDate() - 7);
+          format = 'YYYY-MM-DD';
+          groupBy = 'day';
+          break;
+        case 'month':
+          startDate.setMonth(now.getMonth() - 1);
+          format = 'YYYY-MM-DD';
+          groupBy = 'day';
+          break;
+        case 'year':
+          startDate.setFullYear(now.getFullYear() - 1);
+          format = 'YYYY-MM';
+          groupBy = 'month';
+          break;
+      }
+      
+      // Format the date for SQL query
+      const startDateStr = startDate.toISOString();
+      
+      // Try to fetch link clicks grouped by date using the RPC function
+      try {
+        const { data: rpcData, error: rpcError } = await supabaseAdmin.rpc('group_link_clicks_by_date', {
+          start_date: startDateStr,
+          date_format: format
+        });
+        
+        if (!rpcError && rpcData) {
+          // If RPC function worked, format the result
+          return rpcData.map((item: any) => ({
+            date: item.date_group,
+            clicks: item.click_count
+          }));
+        }
+      } catch (rpcError) {
+        console.error('RPC function not available:', rpcError);
+      }
+      
+      // Fallback if the RPC function doesn't exist or fails
+      console.log('Falling back to manual grouping of link clicks');
+      
+      // Fetch all link clicks and group them manually
+      const { data: linkClicks, error: fallbackError } = await supabaseAdmin
+        .from('link_clicks')
+        .select('clicked_at')
+        .gte('clicked_at', startDateStr);
+        
+      if (fallbackError) {
+        console.error('Error in fallback link click fetch:', fallbackError);
+        return []; // Return empty array instead of throwing
+      }
+      
+      // Manually group by date
+      const clicksByDate = new Map<string, number>();
+      
+      linkClicks?.forEach((click: { clicked_at: string }) => {
+        let dateKey: string;
+        const date = new Date(click.clicked_at);
+        
+        switch(groupBy) {
+          case 'hour':
+            dateKey = date.getHours().toString().padStart(2, '0');
+            break;
+          case 'day':
+            dateKey = date.toISOString().split('T')[0]; // YYYY-MM-DD
+            break;
+          case 'month':
+          default:
+            dateKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`; // YYYY-MM
+            break;
+        }
+        
+        clicksByDate.set(dateKey, (clicksByDate.get(dateKey) || 0) + 1);
+      });
+      
+      // Convert to array and sort by date
+      const result = Array.from(clicksByDate.entries()).map(([date, clicks]) => ({
+        date,
+        clicks
+      }));
+      
+      result.sort((a, b) => a.date.localeCompare(b.date));
+      return result;
+    } catch (error) {
+      console.error('Error in getLinkClickTimeline:', error);
+      return [];
     }
   }
 };
