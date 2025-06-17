@@ -228,7 +228,7 @@ const Partnership = () => {
               {t("Our Partners")}
             </h2>
             <p className="text-lg text-gray-600">
-              {t("We're proud to work with leading organizations across various industries. Join our growing network of partners.")}
+              {t("We are proud to work with leading organizations across various industries. Join our growing network of partners.")}
             </p>
           </motion.div>
           

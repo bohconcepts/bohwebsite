@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
     // Ensure environment variables are properly exposed
     define: {
       // Explicitly define Supabase environment variables
-      // This ensures they're available at runtime
+      // This ensures they are available at runtime
       '__SUPABASE_URL__': JSON.stringify(env.VITE_SUPABASE_URL || ''),
       '__SUPABASE_ANON_KEY__': JSON.stringify(env.VITE_SUPABASE_ANON_KEY || ''),
       '__SUPABASE_SERVICE_ROLE_KEY__': JSON.stringify(env.VITE_SUPABASE_SERVICE_ROLE_KEY || ''),

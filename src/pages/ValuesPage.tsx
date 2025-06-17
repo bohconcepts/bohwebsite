@@ -119,9 +119,9 @@ const ValuesPage = () => {
             >
               <h3 className="text-2xl font-bold mb-6 text-gray-800">Living Our Values</h3>
               <p className="text-lg text-gray-600 mb-8">
-                At BOH Concepts, our values aren't just words on a page—they're the principles that guide 
+                At BOH Concepts, our values are not just words on a page, they are the principles that guide 
                 every decision we make and every interaction we have. From our leadership team to our 
-                frontline staff, we're committed to embodying these values in everything we do.
+                frontline staff, we are committed to embodying these values in everything we do.
               </p>
             </motion.div>
           </motion.div>

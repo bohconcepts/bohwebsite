@@ -50,7 +50,7 @@ const translations = {
     // Clients Section
     clients_title: "Our Trusted Partners",
     clients_subtitle:
-      "We're proud to work with leading hospitality brands across the industry.",
+      "We are proud to work with leading hospitality brands across the industry.",
 
     // About Page
     "About Us": "About Us",
@@ -90,7 +90,7 @@ const translations = {
     markets_section_tag: "GLOBAL HOSPITALITY MARKET",
     markets_section_title: "Our Premium Staffing Solutions Worldwide",
     markets_section_description:
-      "The global hospitality industry is experiencing a dynamic shift — driven by booming tourism, urban development, and a rise in international hotel brands across continents. At BOH Concepts, we're proud to support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
+      "The global hospitality industry is experiencing a dynamic shift — driven by booming tourism, urban development, and a rise in international hotel brands across continents. At BOH Concepts, we are proud to support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
     markets_service_1_title: "End-to-End Recruitment Services",
     markets_service_1_description:
       "From entry-level hotel staff to executive hospitality managers, we provide customized recruitment solutions tailored to global markets. We match candidates based on cultural fit, skillset, and service excellence.",
@@ -187,7 +187,7 @@ const translations = {
     // Our Clients Page
     our_clients: "Our Clients",
     our_clients_page_description:
-      "We're proud to partner with prestigious hospitality brands across the nation, providing exceptional staffing solutions that elevate service standards.",
+      "We are proud to partner with prestigious hospitality brands across the nation, providing exceptional staffing solutions that elevate service standards.",
     trusted_by_industry_leaders: "Trusted by Industry Leaders",
     client_trust_description:
       "These prestigious brands rely on BOH Concepts for consistent, quality staffing solutions.",
