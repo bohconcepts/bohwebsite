@@ -97,15 +97,32 @@ export const linkTrackingService = {
   /**
    * Get most clicked links
    * @param limit Maximum number of results to return
+   * @param startDate Optional start date for filtering (ISO string)
+   * @param endDate Optional end date for filtering (ISO string)
    * @returns Most clicked links with counts
    */
-  async getMostClickedLinks(limit: number = 10) {
+  async getMostClickedLinks(limit: number = 10, startDate?: string, endDate?: string) {
     try {
-      // This requires a PostgreSQL function or a view in Supabase
-      // For now, we'll fetch all and aggregate in JS
-      const { data, error } = await supabase
+      if (DEBUG) {
+        console.log('📊 Fetching most clicked links:', { limit, startDate, endDate });
+      }
+      
+      // Build the query
+      let query = supabase
         .from("link_clicks")
         .select("url");
+      
+      // Apply date filters if provided
+      if (startDate) {
+        query = query.gte('clicked_at', startDate);
+      }
+      
+      if (endDate) {
+        query = query.lte('clicked_at', endDate);
+      }
+      
+      // Execute the query
+      const { data, error } = await query;
         
       if (error) {
         console.error("Error fetching most clicked links:", error);
@@ -123,6 +140,10 @@ export const linkTrackingService = {
         .sort(([, countA], [, countB]) => countB - countA)
         .slice(0, limit)
         .map(([url, count]) => ({ url, count }));
+      
+      if (DEBUG) {
+        console.log(`📊 Found ${sortedUrls.length} most clicked links`);
+      }
       
       return { data: sortedUrls, error: null };
     } catch (error) {

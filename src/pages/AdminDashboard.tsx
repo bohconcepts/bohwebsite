@@ -5,7 +5,7 @@ import { adminService } from "@/integrations/supabase/services/adminService";
 import { dashboardService, TimePeriod, Activity } from "@/integrations/supabase/services/dashboardService";
 import { useCompanyInfo } from "@/hooks/useLocalizedConstants";
 import AdminLayout from "@/components/layout/AdminLayout";
-import { StatsCards, UserGrowthChart, MessageStatsChart, RecentActivities } from "@/components/admin/dashboard";
+import { StatsCards, UserGrowthChart, MessageStatsChart, RecentActivities, LinkClicksAnalytics } from "@/components/admin/dashboard";
 
 const AdminDashboard = () => {
   const companyInfo = useCompanyInfo();
@@ -126,6 +126,11 @@ const AdminDashboard = () => {
             isLoading={isLoading} 
             onPeriodChange={handleMessageStatsPeriodChange}
           />
+        </div>
+        
+        {/* Link Clicks Analytics */}
+        <div className="mt-6">
+          <LinkClicksAnalytics days={30} />
         </div>
         
         {/* Dashboard Content */}

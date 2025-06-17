@@ -5,3 +5,4 @@ export * from './SearchBar';
 export * from './MessageManagement';
 export * from './DashboardCharts';
 export * from './RecentActivities';
+export * from './LinkClicksAnalytics';
