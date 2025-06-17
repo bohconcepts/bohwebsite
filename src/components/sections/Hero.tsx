@@ -42,7 +42,7 @@ const Hero = () => {
     // },
     {
       image: "/images/hero/speworkforce.jpg",
-      title: t('Expert Culinary Team'),
+      title: t('Expert Hospitality Team'),
       subtitle: t('Dedicated professionals working together to create exceptional experiences')
     }
   ];
