@@ -40,11 +40,11 @@ const Hero = () => {
     //   title: t('Luxury Accommodations'),
     //   subtitle: t('Elegant rooms with premium amenities for an unforgettable stay')
     // },
-    {
-      image: "/images/hero/speworkforce.jpg",
-      title: t('Expert Hospitality Team'),
-      subtitle: t('Dedicated professionals working together to create exceptional experiences')
-    }
+    // {
+    //   image: "/images/hero/speworkforce.jpg",
+    //   title: t('Expert Hospitality Team'),
+    //   subtitle: t('Dedicated professionals working together to create exceptional experiences')
+    // }
   ];
   
   // Auto-advance carousel - using requestAnimationFrame for better performance
@@ -70,7 +70,7 @@ const Hero = () => {
   }, [slides.length]);
   
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900">
+    <section className="relative h-screen w-full overflow-hidden bg-gray-900">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {/* Carousel Images */}
@@ -80,26 +80,28 @@ const Hero = () => {
             className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
           >
             <Suspense fallback={<div className="w-full h-full bg-gray-800"></div>}>
-              <OptimizedImage
-                src={slide.image}
-                alt={`BOH Concepts - ${index + 1}`}
-                className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "auto"}
-                width={1920}
-                height={1080}
-                decoding="async"
-                sizes="100vw"
-              />
+              <div className="w-full h-full">
+                <OptimizedImage
+                  src={slide.image}
+                  alt={`BOH Concepts - ${index + 1}`}
+                  className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  width={1920}
+                  height={1080}
+                  decoding="async"
+                  sizes="100vw"
+                />
+              </div>
             </Suspense>
           </div>
         ))}
         
         {/* Ultra-light overlay just for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/20 via-brand-blue/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/30 via-brand-blue/20 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-20">
+      <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
         <div className="max-w-3xl">
           {/* Removed motion effects for better performance */}
           <div className="mb-3">
@@ -110,7 +112,7 @@ const Hero = () => {
 
           <h1
             key={`title-${currentSlide}`}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in"
             style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
           >
             {slides[currentSlide].title}
@@ -118,7 +120,7 @@ const Hero = () => {
 
           <p
             key={`subtitle-${currentSlide}`}
-            className="text-white text-lg mb-8 max-w-2xl font-medium animate-fade-in"
+            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in"
             style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}
           >
             {slides[currentSlide].subtitle}
@@ -149,7 +151,7 @@ const Hero = () => {
           </div>
           
           {/* Carousel Indicators */}
-          <div className="flex justify-center mt-8 gap-2 animate-fade-in">
+          <div className="flex justify-center mt-6 md:mt-8 gap-2 animate-fade-in">
             {slides.map((_, index) => (
               <button
                 key={index}
