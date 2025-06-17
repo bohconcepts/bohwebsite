@@ -11,7 +11,7 @@ const Hero = () => {
   // Carousel slides configuration
   const slides = [
     {
-      image: "/images/hero/services.png",
+      image: "/images/hero/services.jpg",
       title: t('Professional Hospitality Services'),
       subtitle: t('Elevating guest experiences with our premium staffing solutions')
     },
@@ -29,6 +29,21 @@ const Hero = () => {
       image: "/images/hero/process.png",
       title: t('Streamlined Recruitment Process'),
       subtitle: t('From selection to onboarding, we handle every step with care')
+    },
+    {
+      image: "/images/hero/kate-townsend-hEC6zxdFF0M-unsplash.jpg",
+      title: t('Exceptional Hospitality Service'),
+      subtitle: t('Professional staff delivering impeccable table service and guest attention')
+    },
+    // {
+    //   image: "/images/hero/matt-hoffman-AYdJM-HiSUM-unsplash.jpg",
+    //   title: t('Luxury Accommodations'),
+    //   subtitle: t('Elegant rooms with premium amenities for an unforgettable stay')
+    // },
+    {
+      image: "/images/hero/speworkforce.jpg",
+      title: t('Expert Culinary Team'),
+      subtitle: t('Dedicated professionals working together to create exceptional experiences')
     }
   ];
   
