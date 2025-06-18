@@ -139,9 +139,9 @@ const Footer = () => {
             <Link to="/sitemap" className="text-white/70 hover:text-white text-sm transition-colors">
               {t('footer_sitemap')}
             </Link>
-            <Link to="/admin/login" className="text-white/70 hover:text-white text-sm transition-colors font-semibold">
+            {/* <Link to="/admin/login" className="text-white/70 hover:text-white text-sm transition-colors font-semibold">
               Admin Portal
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

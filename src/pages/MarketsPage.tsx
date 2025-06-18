@@ -44,6 +44,19 @@ const MarketsPage: React.FC = () => {
     threshold: 0.1,
   });
 
+  // Define types for location data
+  type StateInfo = {
+    state: string;
+    cities: string;
+  };
+
+  type Location = {
+    id: number;
+    name: string;
+    cities?: string;
+    states?: StateInfo[];
+  };
+
   // Data for the page
   const industries = [
     { id: 1, name: t("industry_hotels_resorts") },
@@ -54,8 +67,18 @@ const MarketsPage: React.FC = () => {
     { id: 6, name: t("industry_airlines") }
   ];
 
-  const locations = [
-    { id: 1, name: "United States", cities: "Cambridge (Maryland), Maui, Kauai, Kihei, Kahului (Hawaii), Bellevue, Seattle (Washington), Stowe (Vermont)" },
+  const locations: Location[] = [
+    { 
+      id: 1, 
+      name: "United States", 
+      states: [
+        { state: "Maryland", cities: "Cambridge" },
+        { state: "Hawaii", cities: "Maui, Kauai" },
+        { state: "Washington", cities: "Bellevue, Seattle, Renton" },
+        { state: "Oregon", cities: "Portland" },
+        { state: "Vermont", cities: "Stowe" }
+      ]
+    },
     { id: 2, name: "Ghana", cities: "Accra, Kumasi" }
   ];
 
@@ -319,8 +342,19 @@ const MarketsPage: React.FC = () => {
                 viewport={{ once: true }}
                 className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">{location.name}</h3>
-                <p className="text-gray-600">{location.cities}</p>
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">{location.name}</h3>
+                {location.states ? (
+                  <div className="space-y-3">
+                    {location.states.map((stateInfo, stateIndex) => (
+                      <div key={stateIndex} className="border-l-2 border-brand-orange pl-3">
+                        <h4 className="font-medium text-gray-800">{stateInfo.state}</h4>
+                        <p className="text-gray-600">{stateInfo.cities}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">{location.cities}</p>
+                )}
               </motion.div>
             ))}
           </div>

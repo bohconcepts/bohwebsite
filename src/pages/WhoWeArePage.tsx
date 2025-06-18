@@ -132,7 +132,7 @@ const WhoWeArePage: React.FC = () => {
                 Our team members volunteer their time and resources to support
                 breast cancer research and awareness. Through our partnership
                 with the American Cancer Society's Making Strides campaign,
-                we've helped raise funds and increase awareness in our
+                we have helped raise funds and increase awareness in our
                 communities.
               </p>
               <ul className="space-y-2">

@@ -1,11 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { COMPANY_NAME } from '@/lib/constants';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCompanyInfo } from '@/hooks/useLocalizedConstants';
+import { useCompanyInfo, useContactInfo } from '@/hooks/useLocalizedConstants';
 
 const Terms = () => {
   const { t } = useLanguage();
   const companyInfo = useCompanyInfo();
+  const contactInfo = useContactInfo();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -71,8 +72,9 @@ const Terms = () => {
               </p>
               <p>
                 {companyInfo.name}<br />
-                Phone: {companyInfo.phone}<br />
-                Address: {companyInfo.address}
+                Email: <a href={`mailto:${contactInfo.email}`} className="text-brand-blue hover:text-brand-orange transition-colors">{contactInfo.email}</a><br />
+                Phone: <a href={`tel:${contactInfo.phone}`} className="text-brand-blue hover:text-brand-orange transition-colors">{contactInfo.phone}</a><br />
+                Address: {contactInfo.address}
               </p>
             </div>
           </div>

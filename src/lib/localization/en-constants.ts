@@ -396,26 +396,34 @@ export const enConstants: LocalizedConstants = {
       id: "1",
       content:
         "Back of House Concepts adequately fortifies our staffing needs of 100 employees in stewarding, housekeeping, and engineering. Due to their firm understanding of our needs and the partnership they foster, I do not see us changing staffing partners.",
-      author: "GM-Luxury Hotel",
+      author: "General Manager-Luxury Hotel",
       position: "Greater Seattle Area",
-      image: "/images/testimonials/testimonial-1.jpg",
+      image: "/images/clients/Waldorf.png",
     },
     {
       id: "2",
       content:
-        "We've been working with BOH Concepts for over three years now, and they've consistently provided us with high-quality staff who understand our brand standards. Their attention to detail and personalized service make them stand out from other staffing agencies.",
-      author: "Sarah Johnson",
-      position: "HR Director, Marriott International",
-      image: "/images/testimonials/testimonial-2.jpg",
+        "We have been working with BOH Concepts for over three years now, and they've consistently provided us with high-quality staff who understand our brand standards. Their attention to detail and personalized service make them stand out from other staffing agencies.",
+      author: "Executive Housekeeper",
+      position: "Maui, Hawaii",
+      image: "/images/clients/Hyatt.png",
     },
     {
       id: "3",
       content:
         "Finding reliable staff for our seasonal peaks was always a challenge until we partnered with BOH Concepts. Their temporary staffing solutions have been a game-changer for our resort, allowing us to maintain service excellence even during our busiest periods.",
-      author: "Michael Chen",
-      position: "Operations Manager, Waldorf Astoria",
-      image: "/images/testimonials/testimonial-3.jpg",
+      author: "Human Resource Manager",
+      position: "Maryland",
+      image: "/images/clients/Hilton-Logo-4.png",
     },
+    // {
+    //   id: "4",
+    //   content:
+    //     "BOH Concepts has transformed our staffing approach with their innovative solutions. Their team consistently delivers exceptional talent who embody our brand's commitment to luxury and personalized service.",
+    //   author: "David Reynolds",
+    //   position: "General Manager, Andaz Hotels",
+    //   image: "/images/clients/andaz.png",
+    // },
   ],
   CLIENTS: [
     {
@@ -447,6 +455,12 @@ export const enConstants: LocalizedConstants = {
       name: "Destination Hotels",
       logo: "/images/clients/destination.png",
       website: "https://www.marriott.com",
+    },
+    {
+      id: "6",
+      name: "Andaz Hotels",
+      logo: "/images/clients/andaz.png",
+      website: "https://www.hyatt.com/brands/andaz",
     },
   ],
 

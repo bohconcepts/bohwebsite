@@ -30,8 +30,18 @@ const Hero = () => {
     {
       image: "/images/hero/process.png",
       title: t("Streamlined Recruitment Process"),
+      subtitle: t("From selection to onboarding, we handle every step with care"),
+    },
+    {
+      image: "/images/hero/main_new.mp4",
+      title: t("Elevating Guest Experiences"),
+      subtitle: t("Professional hospitality staff that exceed expectations"),
+    },
+    {
+      image: "/images/hero/bedlay.png",
+      title: t("Premium Hospitality Staffing"),
       subtitle: t(
-        "From selection to onboarding, we handle every step with care"
+        "Exceptional talent for luxury hotels and resorts"
       ),
     },
     {
@@ -41,16 +51,7 @@ const Hero = () => {
         "Professional staff delivering impeccable table service and guest attention"
       ),
     },
-    // {
-    //   image: "/images/hero/matt-hoffman-AYdJM-HiSUM-unsplash.jpg",
-    //   title: t('Luxury Accommodations'),
-    //   subtitle: t('Elegant rooms with premium amenities for an unforgettable stay')
-    // },
-    // {
-    //   image: "/images/hero/speworkforce.jpg",
-    //   title: t('Expert Hospitality Team'),
-    //   subtitle: t('Dedicated professionals working together to create exceptional experiences')
-    // }
+   
   ];
 
   // Auto-advance carousel - using requestAnimationFrame for better performance
@@ -92,17 +93,31 @@ const Hero = () => {
               fallback={<div className="w-full h-full bg-gray-800"></div>}
             >
               <div className="w-full h-full">
-                <OptimizedImage
-                  src={slide.image}
-                  alt={`BOH Concepts - ${index + 1}`}
-                  className="w-full h-full object-cover object-[center_5%] brightness-110 contrast-110 saturate-110"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  width={1920}
-                  height={1080}
-                  decoding="async"
-                  sizes="100vw"
-                />
+                {slide.image.endsWith('.mp4') ? (
+                  <video
+                    className="w-full h-full object-cover object-[center_5%] brightness-110 contrast-110 saturate-110"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload={index === 0 ? "auto" : "metadata"}
+                  >
+                    <source src={slide.image} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <OptimizedImage
+                    src={slide.image}
+                    alt={`BOH Concepts - ${index + 1}`}
+                    className="w-full h-full object-cover object-[center_5%] brightness-110 contrast-110 saturate-110"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    width={1920}
+                    height={1080}
+                    decoding="async"
+                    sizes="100vw"
+                  />
+                )}
               </div>
             </Suspense>
           </div>
