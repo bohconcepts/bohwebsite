@@ -132,9 +132,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1
-
-          >
+          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 animate-fade-in drop-shadow text-shadow">
             {carousel.slides[carousel.currentSlide].title}
           </h1>
 
