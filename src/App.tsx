@@ -24,9 +24,13 @@ const App = () => {
   if (isLoading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-brand-blue">
-        <div className="flex flex-col items-center">
-          <div className="w-16 h-16 border-4 border-white/20 border-t-brand-orange rounded-full animate-spin mb-4"></div>
-          <img src="/images/logo/Compass.png" alt="BOH Concepts" className="h-16 w-auto" />
+        <div className="relative">
+          <div className="w-24 h-24 border-4 border-white/20 border-t-brand-orange rounded-full animate-spin"></div>
+          <img 
+            src="/images/logo/Compass.png" 
+            alt="BOH Concepts" 
+            className="h-16 w-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
+          />
         </div>
       </div>
     );
