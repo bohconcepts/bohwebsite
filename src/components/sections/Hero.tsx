@@ -5,6 +5,7 @@ import { useState, useEffect, Suspense } from "react";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import { useDesktopCarousel } from "@/hooks/useDesktopCarousel";
 import { useMobileCarousel } from "@/hooks/useMobileCarousel";
+import "@/styles/hero.css";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -90,11 +91,7 @@ const Hero = () => {
               <div className="w-full h-full">
                 {slide.image.endsWith(".mp4") ? (
                   <video
-
-                    className="w-full h-full object-cover object-center md:object-[center_5%] brightness-110 contrast-110 saturate-110"
-
-                    className={carousel.videoClassName}
-
+                    className={carousel.videoClassName || "w-full h-full object-cover object-center md:object-[center_5%] brightness-110 contrast-110 saturate-110"}
                     autoPlay
                     muted
                     loop
@@ -142,14 +139,8 @@ const Hero = () => {
           </h1>
 
           <p
-
-            key={`subtitle-${currentSlide}`}
-            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in drop-shadow"
-
             key={`subtitle-${carousel.currentSlide}`}
-            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in"
-            style={{ textShadow: "0 1px 3px rgba(0, 0, 0, 0.6)" }}
-
+            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in drop-shadow text-shadow"
           >
             {carousel.slides[carousel.currentSlide].subtitle}
           </p>
