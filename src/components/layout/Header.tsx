@@ -145,6 +145,11 @@ const Header = () => {
                 )
               ))}
               <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
+                {/* Language Selector for Mobile */}
+                <div className="py-2">
+                  <LanguageSelector />
+                </div>
+                
                 <Button
                   asChild
                   variant="outline"
