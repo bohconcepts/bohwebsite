@@ -26,7 +26,7 @@ const App = () => {
       <div className="fixed inset-0 flex items-center justify-center bg-brand-blue">
         <div className="flex flex-col items-center">
           <div className="w-16 h-16 border-4 border-white/20 border-t-brand-orange rounded-full animate-spin mb-4"></div>
-          <p className="text-white text-lg">Loading BOH Concepts</p>
+          <img src="/images/logo/Compass.png" alt="BOH Concepts" className="h-16 w-auto" />
         </div>
       </div>
     );
