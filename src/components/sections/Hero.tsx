@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -88,8 +87,7 @@ const Hero = () => {
             <Suspense
               fallback={<div className="w-full h-full bg-gray-800"></div>}
             >
-              {/* FIX: Added container for proper image containment */}
-              <div className="w-full h-full flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full">
                 {slide.image.endsWith(".mp4") ? (
                   <video
                     className={carousel.videoClassName}
