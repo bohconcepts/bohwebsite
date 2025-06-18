@@ -7,15 +7,15 @@ html {
 
 /* Adjust heading sizes */
 h1 {
-  font-size: calc(2.125rem - 1pt); /* ~34px - 1pt */
+  font-size: calc(2.125rem - 1pt + 0.7pt); /* ~34px - 1pt + 0.7pt */
 }
 
 h2 {
-  font-size: calc(1.875rem - 1pt); /* ~30px - 1pt */
+  font-size: calc(1.875rem - 1pt + 0.7pt); /* ~30px - 1pt + 0.7pt */
 }
 
 h3 {
-  font-size: calc(1.5rem - 1pt); /* ~24px - 1pt */
+  font-size: calc(1.5rem - 1pt + 0.5pt); /* ~24px - 1pt + 0.5pt */
 }
 
 h4 {
