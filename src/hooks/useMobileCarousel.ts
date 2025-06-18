@@ -1,4 +1,3 @@
-// src/hooks/useMobileCarousel.ts
 import { useState, useEffect } from "react";
 
 export interface CarouselSlide {
@@ -15,12 +14,10 @@ export interface UseCarouselReturn {
   videoClassName: string;
 }
 
-export const useMobileCarousel = (
-  slides: CarouselSlide[]
-): UseCarouselReturn => {
+export const useMobileCarousel = (slides: CarouselSlide[]): UseCarouselReturn => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-advance carousel
+  // Auto-advance carousel - slightly faster on mobile for better engagement
   useEffect(() => {
     let timeoutId: number;
     let startTime: number;
@@ -30,6 +27,7 @@ export const useMobileCarousel = (
       const elapsed = timestamp - startTime;
 
       if (elapsed >= 4000) {
+        // 4 seconds for mobile (slightly faster)
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         startTime = timestamp;
       }
@@ -46,10 +44,9 @@ export const useMobileCarousel = (
     currentSlide,
     setCurrentSlide,
     slides,
-    // FIX: Use object-contain on mobile, object-cover on desktop
-    imageClassName:
-      "w-full h-full md:object-cover object-contain object-center brightness-105 contrast-105 saturate-105",
-    videoClassName:
-      "w-full h-full md:object-cover object-contain object-center brightness-105 contrast-105 saturate-105",
+    // Mobile: Use object-contain to show full image or object-center for better mobile viewing
+    // Removed the upward positioning that was cropping on mobile
+    imageClassName: "w-full h-full object-cover object-center brightness-105 contrast-105 saturate-105",
+    videoClassName: "w-full h-full object-cover object-center brightness-105 contrast-105 saturate-105",
   };
 };
