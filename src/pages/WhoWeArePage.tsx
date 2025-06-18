@@ -309,6 +309,122 @@ const WhoWeArePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Community Initiatives Section */}
+      <section id="initiatives" className="py-16 bg-white">
+        <div className="container px-4 mx-auto">
+          <motion.div
+            variants={staggerContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center mb-12"
+          >
+            <div className="inline-block bg-green-100 p-3 rounded-full mb-4">
+              <Globe className="text-green-500 w-6 h-6" />
+            </div>
+            <h2 className="text-3xl font-bold mb-6 text-brand-blue">
+              {t("Community Initiatives")}
+            </h2>
+            <p className="text-lg mb-4">
+              BOH Concepts actively participates in community events and charitable initiatives across the country,
+              demonstrating our commitment to giving back and making a positive impact.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-12">
+            <motion.div
+              variants={fadeInUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold">
+                Hawaii Lodging & Tourism Association Charity Walk
+              </h3>
+              <p className="text-gray-700">
+                Our team proudly participates in the annual Hawaii Lodging & Tourism Association Charity Walk,
+                supporting local communities and charitable organizations throughout Hawaii. This event brings
+                together hospitality professionals to raise funds for hundreds of local charities.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <Check className="text-brand-blue mr-2 flex-shrink-0 mt-1" />
+                  <span>Supporting local Hawaiian communities</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-brand-blue mr-2 flex-shrink-0 mt-1" />
+                  <span>Team-building through charitable activities</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-brand-blue mr-2 flex-shrink-0 mt-1" />
+                  <span>Promoting hospitality industry solidarity</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <img
+                src="/images/whoweare/hlaevent.png"
+                alt="Hawaii Lodging & Tourism Association Charity Walk"
+                className="w-full h-auto object-cover rounded-lg shadow-md"
+              />
+            </motion.div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <motion.div
+              variants={fadeInUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="order-2 md:order-1"
+            >
+              <img
+                src="/images/whoweare/uncevent.png"
+                alt="United Negro College Fund Event"
+                className="w-full h-auto object-cover rounded-lg shadow-md"
+              />
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUpVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="space-y-6 order-1 md:order-2"
+            >
+              <h3 className="text-2xl font-bold">
+                United Negro College Fund Support
+              </h3>
+              <p className="text-gray-700">
+                BOH Concepts is a proud supporter of the United Negro College Fund (UNCF), helping to provide
+                educational opportunities for deserving students. Our participation in UNCF events aligns with
+                our commitment to diversity, education, and creating pathways for future leaders in hospitality.
+              </p>
+              <p className="text-gray-700">
+                Through financial contributions and volunteer efforts, we help UNCF fulfill its mission of
+                building a robust pipeline of graduates from historically Black colleges and universities.
+              </p>
+              <div className="pt-4">
+                <a
+                  href="#"
+                  className="inline-flex items-center text-brand-orange font-medium hover:underline"
+                >
+                  Learn more about our educational initiatives
+                  <Briefcase className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Community Impact Section */}
       <section className="py-16 bg-gray-50">
         <div className="container px-4 mx-auto">
