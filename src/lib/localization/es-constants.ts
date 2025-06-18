@@ -465,24 +465,32 @@ export const esConstants: LocalizedConstants = {
         "Back of House Concepts fortalece adecuadamente nuestras necesidades de personal de 100 empleados en administración, limpieza e ingeniería. Debido a su firme comprensión de nuestras necesidades y la asociación que fomentan, no veo que cambiemos de socios de personal.",
       author: "John Smith",
       position: "Gerente General, Hilton Atlanta",
-      image: "/images/testimonials/testimonial-1.jpg",
+      image: "/images/clients/Waldorf.png",
     },
     {
       id: "2",
       content:
         "Hemos estado trabajando con BOH Concepts durante más de tres años y constantemente nos han proporcionado personal de alta calidad que comprende los estándares de nuestra marca. Su atención al detalle y servicio personalizado los distinguen de otras agencias de personal.",
-      author: "Sarah Johnson",
-      position: "Directora de RRHH, Marriott International",
-      image: "/images/testimonials/testimonial-2.jpg",
+      author: "Ama de Llaves Ejecutiva",
+      position: "Maui, Hawaii",
+      image: "/images/clients/Hyatt.png",
     },
     {
       id: "3",
       content:
         "Encontrar personal confiable para nuestros picos estacionales siempre fue un desafío hasta que nos asociamos con BOH Concepts. Sus soluciones de personal temporal han sido un cambio de juego para nuestro resort, permitiéndonos mantener la excelencia en el servicio incluso durante nuestros períodos más ocupados.",
-      author: "Michael Chen",
-      position: "Gerente de Operaciones, Waldorf Astoria",
-      image: "/images/testimonials/testimonial-3.jpg",
+      author: "Gerente de Recursos Humanos",
+      position: "Maryland",
+      image: "/images/clients/Hilton-Logo-4.png",
     },
+    // {
+    //   id: "4",
+    //   content:
+    //     "BOH Concepts ha transformado nuestro enfoque de personal con sus soluciones innovadoras. Su equipo ofrece constantemente talento excepcional que encarna el compromiso de nuestra marca con el lujo y el servicio personalizado.",
+    //   author: "David Reynolds",
+    //   position: "Gerente General, Andaz Hotels",
+    //   image: "/images/clients/andaz.png",
+    // },
   ],
 
   SITE_NAVIGATION: [
@@ -786,6 +794,12 @@ export const esConstants: LocalizedConstants = {
       name: "Destination Hotels",
       logo: "/images/clients/destination.png",
       website: "https://www.marriott.com",
+    },
+    {
+      id: "6",
+      name: "Andaz Hotels",
+      logo: "/images/clients/andaz.png",
+      website: "https://www.hyatt.com/brands/andaz",
     },
   ],
 };

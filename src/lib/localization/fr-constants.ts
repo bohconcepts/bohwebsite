@@ -463,24 +463,32 @@ export const frConstants: LocalizedConstants = {
         "Back of House Concepts renforce adéquatement nos besoins en personnel de 100 employés dans les domaines de l'intendance, de l'entretien ménager et de l'ingénierie. En raison de leur compréhension solide de nos besoins et du partenariat qu'ils favorisent, je ne nous vois pas changer de partenaires de dotation en personnel.",
       author: "John Smith",
       position: "Directeur Général, Hilton Atlanta",
-      image: "/images/testimonials/testimonial-1.jpg",
+      image: "/images/clients/Waldorf.png",
     },
     {
       id: "2",
       content:
         "Nous travaillons avec BOH Concepts depuis plus de trois ans maintenant, et ils nous ont constamment fourni du personnel de haute qualité qui comprend les normes de notre marque. Leur attention aux détails et leur service personnalisé les distinguent des autres agences de recrutement.",
-      author: "Sarah Johnson",
-      position: "Directrice RH, Marriott International",
-      image: "/images/testimonials/testimonial-2.jpg",
+      author: "Gouvernante Exécutive",
+      position: "Maui, Hawaii",
+      image: "/images/clients/Hyatt.png",
     },
     {
       id: "3",
       content:
         "Trouver du personnel fiable pour nos pics saisonniers a toujours été un défi jusqu'à ce que nous nous associions à BOH Concepts. Leurs solutions de dotation temporaire ont changé la donne pour notre complexe hôtelier, nous permettant de maintenir l'excellence du service même pendant nos périodes les plus chargées.",
-      author: "Michael Chen",
-      position: "Responsable des Opérations, Waldorf Astoria",
-      image: "/images/testimonials/testimonial-3.jpg",
+      author: "Responsable des Ressources Humaines",
+      position: "Maryland",
+      image: "/images/clients/Hilton-Logo-4.png",
     },
+    // {
+    //   id: "4",
+    //   content:
+    //     "BOH Concepts a transformé notre approche de dotation en personnel avec leurs solutions innovantes. Leur équipe fournit constamment des talents exceptionnels qui incarnent l'engagement de notre marque envers le luxe et le service personnalisé.",
+    //   author: "David Reynolds",
+    //   position: "Directeur Général, Andaz Hotels",
+    //   image: "/images/clients/andaz.png",
+    // },
   ],
   SITE_NAVIGATION: [
     { title: "Accueil", href: "/" },
@@ -784,6 +792,12 @@ export const frConstants: LocalizedConstants = {
       name: "Destination Hotels",
       logo: "/images/clients/destination.png",
       website: "https://www.marriott.com",
+    },
+    {
+      id: "6",
+      name: "Andaz Hotels",
+      logo: "/images/clients/andaz.png",
+      website: "https://www.hyatt.com/brands/andaz",
     },
   ],
 };

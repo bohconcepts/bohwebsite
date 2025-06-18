@@ -103,7 +103,7 @@ const OurClientsPage: FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.slice(0, 3).map((testimonial) => (
+            {testimonials.slice(0, 9).map((testimonial) => (
               <div key={testimonial.id} className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-center mb-6">
                   <img 
