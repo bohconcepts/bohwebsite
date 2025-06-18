@@ -5,7 +5,6 @@ import { useState, useEffect, Suspense } from "react";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import { useDesktopCarousel } from "@/hooks/useDesktopCarousel";
 import { useMobileCarousel } from "@/hooks/useMobileCarousel";
-import "@/styles/hero.css";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -18,8 +17,8 @@ const Hero = () => {
     };
 
     checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Carousel slides configuration
@@ -36,17 +35,15 @@ const Hero = () => {
       title: t("Trusted by Industry Leaders"),
       subtitle: t("Partnering with top hotels and resorts across the nation"),
     },
-    // {
-    //   image: "/images/hero/pricing.png",
-    //   title: t("Transparent & Competitive Pricing"),
-    //   subtitle: t("Cost-effective staffing solutions tailored to your needs"),
-    // },
+    {
+      image: "/images/hero/pricing.png",
+      title: t("Transparent & Competitive Pricing"),
+      subtitle: t("Cost-effective staffing solutions tailored to your needs"),
+    },
     {
       image: "/images/hero/process.png",
       title: t("Streamlined Recruitment Process"),
-      subtitle: t(
-        "From selection to onboarding, we handle every step with care"
-      ),
+      subtitle: t("From selection to onboarding, we handle every step with care"),
     },
     {
       image: "/images/hero/main_new.mp4",
@@ -56,7 +53,9 @@ const Hero = () => {
     {
       image: "/images/hero/bedlay.png",
       title: t("Premium Hospitality Staffing"),
-      subtitle: t("Exceptional talent for luxury hotels and resorts"),
+      subtitle: t(
+        "Exceptional talent for luxury hotels and resorts"
+      ),
     },
     {
       image: "/images/hero/kate-townsend-hEC6zxdFF0M-unsplash.jpg",
@@ -70,7 +69,7 @@ const Hero = () => {
   // Use appropriate hook based on screen size
   const desktopCarousel = useDesktopCarousel(slides);
   const mobileCarousel = useMobileCarousel(slides);
-
+  
   const carousel = isMobile ? mobileCarousel : desktopCarousel;
 
   return (
@@ -89,9 +88,9 @@ const Hero = () => {
               fallback={<div className="w-full h-full bg-gray-800"></div>}
             >
               <div className="w-full h-full">
-                {slide.image.endsWith(".mp4") ? (
+                {slide.image.endsWith('.mp4') ? (
                   <video
-                    className={carousel.videoClassName || "w-full h-full object-cover object-center md:object-[center_5%] brightness-110 contrast-110 saturate-110"}
+                    className={carousel.videoClassName}
                     autoPlay
                     muted
                     loop
@@ -105,7 +104,7 @@ const Hero = () => {
                   <OptimizedImage
                     src={slide.image}
                     alt={`BOH Concepts - ${index + 1}`}
-
+                    className={carousel.imageClassName}
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
                     width={1920}
@@ -132,13 +131,18 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 animate-fade-in drop-shadow text-shadow">
+          <h1
+            key={`title-${carousel.currentSlide}`}
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in"
+            style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.7)" }}
+          >
             {carousel.slides[carousel.currentSlide].title}
           </h1>
 
           <p
             key={`subtitle-${carousel.currentSlide}`}
-            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in drop-shadow text-shadow"
+            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in"
+            style={{ textShadow: "0 1px 3px rgba(0, 0, 0, 0.6)" }}
           >
             {carousel.slides[carousel.currentSlide].subtitle}
           </p>
@@ -174,9 +178,7 @@ const Hero = () => {
                 key={index}
                 onClick={() => carousel.setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  carousel.currentSlide === index
-                    ? "bg-brand-orange w-6"
-                    : "bg-white/50"
+                  carousel.currentSlide === index ? "bg-brand-orange w-6" : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
