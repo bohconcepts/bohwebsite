@@ -7,33 +7,39 @@ import OptimizedImage from "@/components/common/OptimizedImage";
 const Hero = () => {
   const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   // Carousel slides configuration
   const slides = [
     {
       image: "/images/hero/services.png",
-      title: t('Professional Hospitality Services'),
-      subtitle: t('Elevating guest experiences with our premium staffing solutions')
+      title: t("Professional Hospitality Services"),
+      subtitle: t(
+        "Elevating guest experiences with our premium staffing solutions"
+      ),
     },
     {
       image: "/images/hero/clients.jpg",
-      title: t('Trusted by Industry Leaders'),
-      subtitle: t('Partnering with top hotels and resorts across the nation')
+      title: t("Trusted by Industry Leaders"),
+      subtitle: t("Partnering with top hotels and resorts across the nation"),
     },
     {
       image: "/images/hero/pricing.png",
-      title: t('Transparent & Competitive Pricing'),
-      subtitle: t('Cost-effective staffing solutions tailored to your needs')
+      title: t("Transparent & Competitive Pricing"),
+      subtitle: t("Cost-effective staffing solutions tailored to your needs"),
     },
     {
       image: "/images/hero/process.png",
-      title: t('Streamlined Recruitment Process'),
-      subtitle: t('From selection to onboarding, we handle every step with care')
+      title: t("Streamlined Recruitment Process"),
+      subtitle: t(
+        "From selection to onboarding, we handle every step with care"
+      ),
     },
     {
       image: "/images/hero/kate-townsend-hEC6zxdFF0M-unsplash.jpg",
-      title: t('Exceptional Hospitality Service'),
-      subtitle: t('Professional staff delivering impeccable table service and guest attention')
+      title: t("Exceptional Hospitality Service"),
+      subtitle: t(
+        "Professional staff delivering impeccable table service and guest attention"
+      ),
     },
     // {
     //   image: "/images/hero/matt-hoffman-AYdJM-HiSUM-unsplash.jpg",
@@ -46,45 +52,50 @@ const Hero = () => {
     //   subtitle: t('Dedicated professionals working together to create exceptional experiences')
     // }
   ];
-  
+
   // Auto-advance carousel - using requestAnimationFrame for better performance
   useEffect(() => {
     let timeoutId: number;
     let startTime: number;
-    
+
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
-      
-      if (elapsed >= 5000) { // 5 seconds
+
+      if (elapsed >= 5000) {
+        // 5 seconds
         setCurrentSlide((prev) => (prev + 1) % slides.length);
         startTime = timestamp;
       }
-      
+
       timeoutId = requestAnimationFrame(animate);
     };
-    
+
     timeoutId = requestAnimationFrame(animate);
-    
+
     return () => cancelAnimationFrame(timeoutId);
   }, [slides.length]);
-  
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-gray-900">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {/* Carousel Images */}
         {slides.map((slide, index) => (
-          <div 
+          <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
           >
-            <Suspense fallback={<div className="w-full h-full bg-gray-800"></div>}>
+            <Suspense
+              fallback={<div className="w-full h-full bg-gray-800"></div>}
+            >
               <div className="w-full h-full">
                 <OptimizedImage
                   src={slide.image}
                   alt={`BOH Concepts - ${index + 1}`}
-                  className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
+                  className="w-full h-full object-cover object-[center_5%] brightness-110 contrast-110 saturate-110"
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "auto"}
                   width={1920}
@@ -96,7 +107,7 @@ const Hero = () => {
             </Suspense>
           </div>
         ))}
-        
+
         {/* Ultra-light overlay just for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/30 via-brand-blue/20 to-transparent"></div>
       </div>
@@ -106,14 +117,14 @@ const Hero = () => {
           {/* Removed motion effects for better performance */}
           <div className="mb-3">
             <span className="bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium">
-              {t('A TRUSTED PARTNER')}
+              {t("A TRUSTED PARTNER")}
             </span>
           </div>
 
           <h1
             key={`title-${currentSlide}`}
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in"
-            style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.7)' }}
+            style={{ textShadow: "0 2px 4px rgba(0, 0, 0, 0.7)" }}
           >
             {slides[currentSlide].title}
           </h1>
@@ -121,7 +132,7 @@ const Hero = () => {
           <p
             key={`subtitle-${currentSlide}`}
             className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in"
-            style={{ textShadow: '0 1px 3px rgba(0, 0, 0, 0.6)' }}
+            style={{ textShadow: "0 1px 3px rgba(0, 0, 0, 0.6)" }}
           >
             {slides[currentSlide].subtitle}
           </p>
@@ -138,7 +149,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t('Join Our Team')}
+                {t("Join Our Team")}
               </a>
             </Button>
             <Button
@@ -146,17 +157,19 @@ const Hero = () => {
               size="lg"
               className="bg-brand-orange hover:bg-brand-orange/90 text-white"
             >
-              <Link to="/our-approach">{t('Our Approach')}</Link>
+              <Link to="/our-approach">{t("Our Approach")}</Link>
             </Button>
           </div>
-          
+
           {/* Carousel Indicators */}
           <div className="flex justify-center mt-6 md:mt-8 gap-2 animate-fade-in">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${currentSlide === index ? 'bg-brand-orange w-6' : 'bg-white/50'}`}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  currentSlide === index ? "bg-brand-orange w-6" : "bg-white/50"
+                }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
