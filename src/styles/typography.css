@@ -1,0 +1,61 @@
+/* Typography adjustments - reducing all font sizes by 1pt */
+
+/* Base HTML font size reduction */
+html {
+  font-size: 15px; /* Default is usually 16px, reducing by 1pt (~1.33px) */
+}
+
+/* Adjust heading sizes */
+h1 {
+  font-size: calc(2.125rem - 1pt); /* ~34px - 1pt */
+}
+
+h2 {
+  font-size: calc(1.875rem - 1pt); /* ~30px - 1pt */
+}
+
+h3 {
+  font-size: calc(1.5rem - 1pt); /* ~24px - 1pt */
+}
+
+h4 {
+  font-size: calc(1.25rem - 1pt); /* ~20px - 1pt */
+}
+
+h5 {
+  font-size: calc(1.125rem - 1pt); /* ~18px - 1pt */
+}
+
+h6 {
+  font-size: calc(1rem - 1pt); /* ~16px - 1pt */
+}
+
+/* Adjust paragraph and general text */
+p, span, div, li, a {
+  font-size: calc(1rem - 1pt); /* ~16px - 1pt */
+}
+
+/* Small text */
+.text-sm {
+  font-size: calc(0.875rem - 1pt); /* ~14px - 1pt */
+}
+
+/* Extra small text */
+.text-xs {
+  font-size: calc(0.75rem - 1pt); /* ~12px - 1pt */
+}
+
+/* Adjust Tailwind's text utility classes */
+.text-xs { font-size: calc(0.75rem - 1pt); }
+.text-sm { font-size: calc(0.875rem - 1pt); }
+.text-base { font-size: calc(1rem - 1pt); }
+.text-lg { font-size: calc(1.125rem - 1pt); }
+.text-xl { font-size: calc(1.25rem - 1pt); }
+.text-2xl { font-size: calc(1.5rem - 1pt); }
+.text-3xl { font-size: calc(1.875rem - 1pt); }
+.text-4xl { font-size: calc(2.25rem - 1pt); }
+.text-5xl { font-size: calc(3rem - 1pt); }
+.text-6xl { font-size: calc(3.75rem - 1pt); }
+.text-7xl { font-size: calc(4.5rem - 1pt); }
+.text-8xl { font-size: calc(6rem - 1pt); }
+.text-9xl { font-size: calc(8rem - 1pt); }

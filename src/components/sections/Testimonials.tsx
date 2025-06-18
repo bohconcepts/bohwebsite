@@ -80,7 +80,7 @@ const Testimonials = () => {
                     <div className="text-center">
                       <h4 className="font-semibold text-brand-blue">{testimonial.author}</h4>
                       <p className="text-sm text-gray-600">
-                        {testimonial.position}, {testimonial.company}
+                        {testimonial.position} {testimonial.company}
                       </p>
                     </div>
                   </CardFooter>

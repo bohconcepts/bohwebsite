@@ -73,7 +73,7 @@ const Hero = () => {
   const carousel = isMobile ? mobileCarousel : desktopCarousel;
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gray-900">
+    <section className={`relative w-full overflow-hidden bg-gray-900 ${isMobile ? 'h-[calc(100vh-60px)] mt-[60px]' : 'h-screen'}`}>
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {/* Carousel Images */}
