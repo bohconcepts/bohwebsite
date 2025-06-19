@@ -152,9 +152,9 @@ const WhoWeArePage: React.FC = () => {
                 <div className="bg-pink-500/10 p-3 rounded-full inline-flex mb-6">
                   <Heart className="text-pink-500 w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Social Responsibility</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Diversity and Inclusion </h3>
                 <p className="text-gray-700">
-                  We are dedicated to creating a positive impact through active community engagement, extensive awareness campaigns, and the implementation of sustainable business practices.
+                We advocate for diversity in all its forms, creating opportunities for underrepresented groups and fostering an inclusive environment across our operations
                 </p>
               </motion.div>
             </div>
