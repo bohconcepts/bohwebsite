@@ -35,11 +35,11 @@ const Hero = () => {
       title: t("Trusted by Industry Leaders"),
       subtitle: t("Partnering with top hotels and resorts across the nation"),
     },
-    {
-      image: "/images/hero/pricing.png",
-      title: t("Transparent & Competitive Pricing"),
-      subtitle: t("Cost-effective staffing solutions tailored to your needs"),
-    },
+    // {
+    //   image: "/images/hero/pricing.png",
+    //   title: t("Transparent & Competitive Pricing"),
+    //   subtitle: t("Cost-effective staffing solutions tailored to your needs"),
+    // },
     {
       image: "/images/hero/process.png",
       title: t("Streamlined Recruitment Process"),
