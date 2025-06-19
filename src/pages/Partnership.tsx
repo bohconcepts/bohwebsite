@@ -233,42 +233,121 @@ const Partnership = () => {
           </motion.div>
           
           {/* Partner logos */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
-            <div className="h-20 flex items-center justify-center">
-              <img 
-                src="/images/clients/Hilton-Logo-4.png" 
-                alt="Hilton Hotels" 
-                className="max-h-full max-w-full object-contain" 
-              />
-            </div>
-            <div className="h-20 flex items-center justify-center">
-              <img 
-                src="/images/clients/Hyatt.png" 
-                alt="Hyatt Hotels" 
-                className="max-h-full max-w-full object-contain" 
-              />
-            </div>
-            <div className="h-20 flex items-center justify-center">
-              <img 
-                src="/images/clients/Thompson.jpg" 
-                alt="Thompson Hotels" 
-                className="max-h-full max-w-full object-contain" 
-              />
-            </div>
-            <div className="h-20 flex items-center justify-center">
-              <img 
-                src="/images/clients/Waldorf.png" 
-                alt="Waldorf Astoria" 
-                className="max-h-full max-w-full object-contain" 
-              />
-            </div>
-            <div className="h-20 flex items-center justify-center">
-              <img 
-                src="/images/clients/destination.png" 
-                alt="Destination Hotels" 
-                className="max-h-full max-w-full object-contain" 
-              />
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hilton.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Hilton Hotels website"
+              >
+                <img 
+                  src="/images/clients/Hilton-Logo-4.png" 
+                  alt="Hilton Hotels" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hyatt.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Hyatt Hotels website"
+              >
+                <img 
+                  src="/images/clients/Hyatt.png" 
+                  alt="Hyatt Hotels" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hyatt.com/brands/thompson-hotels" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Thompson Hotels website"
+              >
+                <img 
+                  src="/images/clients/Thompson.jpg" 
+                  alt="Thompson Hotels" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hilton.com/en/waldorf-astoria/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Waldorf Astoria website"
+              >
+                <img 
+                  src="/images/clients/Waldorf.png" 
+                  alt="Waldorf Astoria" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hyatt.com/brands/destination-by-hyatt" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Destination Hotels website"
+              >
+                <img 
+                  src="/images/clients/destination.png" 
+                  alt="Destination Hotels" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
+            <motion.div 
+              className="h-24 flex items-center justify-center p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <a 
+                href="https://www.hyatt.com/brands/andaz" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center"
+                aria-label="Visit Andaz Hotels website"
+              >
+                <img 
+                  src="/images/clients/andaz.png" 
+                  alt="Andaz Hotels" 
+                  className="max-h-full max-w-full object-contain filter hover:brightness-110 transition-all duration-300" 
+                />
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
