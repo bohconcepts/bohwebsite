@@ -256,7 +256,7 @@ const Contact = () => {
                   >
                     <Instagram size={20} />
                   </a>
-                  <a 
+                  {/* <a 
                     href={socialLinks.youtube} 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -265,7 +265,7 @@ const Contact = () => {
                     title="Visit our YouTube channel"
                   >
                     <Youtube size={20} />
-                  </a>
+                  </a> */}
                 </div>
               </motion.div>
             </motion.div>
