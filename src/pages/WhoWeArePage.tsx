@@ -79,7 +79,7 @@ const WhoWeArePage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Our Mission
+                Mission
                 <Award className="ml-2 h-5 w-5" />
               </motion.a>
               <motion.a 
@@ -88,7 +88,7 @@ const WhoWeArePage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Our Initiatives
+                Initiatives
                 <Globe className="ml-2 h-5 w-5" />
               </motion.a>
             </div>
@@ -109,7 +109,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="flex items-center justify-center mb-6">
               <div className="h-0.5 w-12 bg-brand-orange mr-4"></div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
-                Our Corporate Mission
+                Corporate Mission
               </h2>
               <div className="h-0.5 w-12 bg-brand-orange ml-4"></div>
             </div>
@@ -438,7 +438,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="inline-block bg-blue-100 p-3 rounded-full mb-4">
               <Users className="text-blue-500 w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
+            <h2 className="text-3xl font-bold mb-4">Impact</h2>
             <p className="text-lg text-gray-700 mb-6">
               Through our corporate social responsibility initiatives, BOH
               Concepts has made a meaningful difference in communities across
@@ -498,7 +498,7 @@ const WhoWeArePage: React.FC = () => {
           >
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-bold mb-4 text-brand-blue">
-                Our Story
+                Story
               </h3>
               <p className="text-gray-700">
                 BOH Concepts was founded with a vision to transform hospitality
@@ -511,7 +511,7 @@ const WhoWeArePage: React.FC = () => {
 
             <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
               <h3 className="text-xl font-bold mb-4 text-brand-orange">
-                Our Approach
+                Approach
               </h3>
               <p className="text-gray-700">
                 We take a personalized approach to staffing, understanding that

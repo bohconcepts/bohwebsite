@@ -70,14 +70,14 @@ const translations = {
       "What sets us apart is our commitment to quality, reliability, and personalized service. We don't just fill positions – we build lasting relationships with both our clients and our talent pool, ensuring the perfect match every time.",
 
     // Mission Section
-    mission_heading: "Our Mission & Vision",
-    mission_title: "Our Mission",
+    mission_heading: "Mission & Vision",
+    mission_title: "Mission",
     mission_description:
       "To revolutionize hospitality staffing by connecting exceptional talent with premier properties, creating lasting partnerships built on trust, quality, and mutual success.",
-    vision_title: "Our Vision",
+    vision_title: "Vision",
     vision_description:
       "To be the leading hospitality staffing partner known for excellence, integrity, and innovation, setting the industry standard for quality placements and exceptional service.",
-    values_heading: "Our Core Values",
+    values_heading: "Core Values",
 
     // Markets Page
     markets_page_title: "Markets",
@@ -88,7 +88,7 @@ const translations = {
     markets_hero_subtitle:
       "Empowering the Global Hospitality Sector with World-Class Talent",
     markets_section_tag: "GLOBAL HOSPITALITY MARKET",
-    markets_section_title: "Our Premium Staffing Solutions Worldwide",
+    markets_section_title: "Premium Staffing Solutions Worldwide",
     markets_section_description:
       "The global hospitality industry is experiencing a dynamic shift — driven by booming tourism, urban development, and a rise in international hotel brands across continents. At BOH Concepts, we are proud to support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
     markets_service_1_title: "End-to-End Recruitment Services",

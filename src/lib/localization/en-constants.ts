@@ -8,10 +8,10 @@ export const enConstants: LocalizedConstants = {
     "At Back of House Concepts, we redefine hospitality staffing with a diverse, equitable, and inclusive workforce that ensures consistency and commitment to the goals of all our clients.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
-  testimonials_title: "What Our Partners Say",
+  testimonials_title: "What Partners Say",
   testimonials_subtitle:
     "Discover why leading hospitality brands and professionals trust BOH Concepts for their staffing needs.",
-  clients_title: "Our Clients",
+  clients_title: "Clients",
   clients_subtitle:
     "We are proud to partner with prestigious hospitality brands nationwide",
   footer_company_description:
@@ -22,7 +22,7 @@ export const enConstants: LocalizedConstants = {
   footer_enter_your_email: "Enter your email",
   footer_subscribe: "Subscribe",
   footer_quick_links: "Quick Links",
-  footer_our_services: "Our Services",
+  footer_our_services: "Services",
   footer_contact_us: "Contact Us",
   footer_permanent_placement: "Permanent Placement",
   footer_temporary_staffing: "Temporary Staffing",
@@ -55,32 +55,32 @@ export const enConstants: LocalizedConstants = {
 
   // Why Choose Us section
   why_choose_us: "Why Choose Us",
-  our_services_card: "Our Services",
+  our_services_card: "Services",
   our_services_description:
     "Comprehensive hospitality staffing solutions for all your needs.",
-  our_clients_card: "Our Clients",
+  our_clients_card: "Clients",
   our_clients_card_description:
     "See the prestigious properties and brands that trust our services.",
   pricing_module_card: "Pricing Module",
   pricing_module_description:
     "Transparent and flexible pricing options to suit your needs.",
-  our_process_card: "Our Process",
+  our_process_card: "Process",
   our_process_card_description:
     "How we ensure quality and consistency in our staffing solutions.",
   our_process_detailed_description:
     "We work on your behalf to find vetted quality staffing in your location. We hold all our associates to the same standards of excellence and enforce a standardized set of operating procedures, meaning that, if you work with us, you will always know exactly what to expect.",
 
   // Our Clients Page
-  our_clients: "Our Clients",
+  our_clients: "Clients",
   our_clients_page_description:
     "Trusted by leading hospitality brands worldwide.",
   trusted_by_industry_leaders: "Trusted by Industry Leaders",
   client_trust_description:
     "We are proud to partner with some of the most prestigious names in the hospitality industry.",
-  what_our_clients_say: "What Our Clients Say",
+  what_our_clients_say: "What Clients Say",
   testimonial_description:
     "Hear directly from our clients about their experience working with BOH Concepts.",
-  become_our_client: "Become Our Client",
+  become_our_client: "Become a Client",
   client_partnership_description:
     "Join our growing list of satisfied clients and experience the BOH Concepts difference.",
   contact_us_today: "Contact Us Today",
@@ -189,11 +189,11 @@ export const enConstants: LocalizedConstants = {
   ],
 
   // Our Process Page
-  our_process: "Our Process",
+  our_process: "Process",
   how_we_work: "How We Work",
   our_process_subtitle:
     "Our proven step-by-step process ensures quality staffing solutions for your hospitality needs",
-  benefits_of_our_process: "Benefits of Our Process",
+  benefits_of_our_process: "Process Benefits",
   process_benefits_description:
     "Our streamlined process delivers exceptional results for your hospitality business",
   ready_to_start_journey: "Ready to Start Your Staffing Journey?",
