@@ -134,7 +134,7 @@ const translations = {
     markets_partnership_tag: "PARTNERSHIP",
     markets_partnership_title: "Partner With Us",
     markets_partnership_description:
-      "Whether you're a global hospitality chain expanding into Africa or a local hotel group seeking reliable staff, BOH Concepts is here to support you. Our recruitment platform and industry specialists simplify hiring so you can focus on guest satisfaction.",
+      "Whether you are a global hospitality chain expanding into Africa or a local hotel group seeking reliable staff, BOH Concepts is here to support you. Our recruitment platform and industry specialists simplify hiring so you can focus on guest satisfaction.",
     markets_contact_us_today: "Contact Us Today",
     markets_cta_heading:
       "Looking to hire or get hired in Africa's hospitality industry?",
@@ -153,8 +153,8 @@ const translations = {
     "OUR ADVANTAGES": "OUR ADVANTAGES",
     "Discover the advantages of partnering with us for all your hospitality staffing needs.":
       "Discover the advantages of partnering with us for all your hospitality staffing needs.",
-    "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities.":
-      "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities.",
+    "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
+      "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.",
     our_unique_advantages: "Our Unique Advantages",
     unique_advantages_description:
       "What sets us apart from other hospitality staffing services.",
@@ -470,7 +470,7 @@ const translations = {
     "OUR ADVANTAGES": "NUESTRAS VENTAJAS",
     "Discover the advantages of partnering with us for all your hospitality staffing needs.":
       "Descubra las ventajas de asociarse con nosotros para todas sus necesidades de personal de hostelería.",
-    "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities.":
+    "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
       "Proporcionamos servicios de personal de hostelería adaptados para satisfacer sus necesidades específicas, ya sea que busque talento u oportunidades.",
     our_unique_advantages: "Nuestras Ventajas Únicas",
     unique_advantages_description:
@@ -774,7 +774,7 @@ const translations = {
     "OUR ADVANTAGES": "NOS AVANTAGES",
     "Discover the advantages of partnering with us for all your hospitality staffing needs.":
       "Découvrez les avantages de vous associer à nous pour tous vos besoins en personnel hôtelier.",
-    "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities.":
+    "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
       "Nous fournissons des services de personnel hôtelier sur mesure pour répondre à vos besoins spécifiques, que vous recherchiez des talents ou des opportunités.",
     our_unique_advantages: "Nos Avantages Uniques",
     unique_advantages_description:

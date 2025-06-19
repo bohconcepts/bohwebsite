@@ -167,7 +167,7 @@ const ServicesPage = () => {
         <meta
           name="description"
           content={t(
-            "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities."
+            "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
           )}
         />
       </Helmet>
@@ -193,7 +193,7 @@ const ServicesPage = () => {
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
               {t(
-                "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities."
+                "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
               )}
             </p>
           </motion.div>
@@ -243,7 +243,7 @@ const ServicesPage = () => {
               className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto"
             >
               {t(
-                "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities."
+                "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
               )}
             </motion.p>
           </div>
@@ -443,7 +443,7 @@ const ServicesPage = () => {
             </h2>
             <p className="text-xl text-white/90 mb-10">
               {t(
-                "Whether you're seeking premium hospitality opportunities or looking to build your dream team, BOH Concepts delivers tailored solutions to meet your specific needs."
+                "Whether you are seeking premium hospitality opportunities or looking to build your dream team, BOH Concepts delivers tailored solutions to meet your specific needs."
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

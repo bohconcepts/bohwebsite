@@ -94,7 +94,7 @@ const CtaSection = () => {
               {t('Ready to Elevate Your Hospitality Career or Team?')}
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              {t('Whether you\'re seeking premium hospitality opportunities or looking to build your dream team, BOH Concepts delivers tailored solutions to meet your specific needs.')}
+              {t('Whether you are seeking premium hospitality opportunities or looking to build your dream team, BOH Concepts delivers tailored solutions to meet your specific needs.')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-brand-orange text-white border-2 border-brand-orange hover:bg-white hover:text-brand-orange transition-colors">
