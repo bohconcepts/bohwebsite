@@ -115,7 +115,7 @@ const WhoWeArePage: React.FC = () => {
             </div>
             
             <p className="text-xl text-gray-700 text-center mb-12">
-              At Back of House Concepts, we're committed to excellence in hospitality staffing while embracing diversity and making a positive impact in our communities.
+              Back of House Concepts serves as a vital link between exceptional hospitality talent and prestigious properties. With decades of industry experience, we are committed to promoting diversity and upholding social responsibility, ensuring that our partnerships make a positive impact.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -126,9 +126,9 @@ const WhoWeArePage: React.FC = () => {
                 <div className="bg-brand-blue/10 p-3 rounded-full inline-flex mb-6">
                   <Building className="text-brand-blue w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Corporate Excellence</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Our Corporate Mission</h3>
                 <p className="text-gray-700">
-                  We deliver exceptional staffing solutions with professionalism, reliability, and attention to detail that elevates hospitality experiences.
+                  At Back of House Concepts, we are committed to upholding the highest standards in hospitality staffing while actively promoting diversity and making a positive impact in our communities.
                 </p>
               </motion.div>
               
@@ -139,9 +139,9 @@ const WhoWeArePage: React.FC = () => {
                 <div className="bg-brand-orange/10 p-3 rounded-full inline-flex mb-6">
                   <Users className="text-brand-orange w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">Diversity & Inclusion</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Corporate Excellence</h3>
                 <p className="text-gray-700">
-                  We champion diversity in all forms, creating opportunities for underrepresented groups and fostering an inclusive environment across our operations.
+                  We provide exceptional staffing solutions defined by professionalism, reliability, and careful attention to detail, improving the overall hospitality experience.
                 </p>
               </motion.div>
               
@@ -154,7 +154,7 @@ const WhoWeArePage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">Social Responsibility</h3>
                 <p className="text-gray-700">
-                  We're dedicated to making a positive impact through community engagement, awareness campaigns, and sustainable business practices.
+                  We are dedicated to creating a positive impact through active community engagement, extensive awareness campaigns, and the implementation of sustainable business practices.
                 </p>
               </motion.div>
             </div>
@@ -193,11 +193,7 @@ const WhoWeArePage: React.FC = () => {
                 Making Strides Against Breast Cancer
               </h3>
               <p className="text-gray-700">
-                Our team members volunteer their time and resources to support
-                breast cancer research and awareness. Through our partnership
-                with the American Cancer Society's Making Strides campaign,
-                we have helped raise funds and increase awareness in our
-                communities.
+                Our team members actively volunteer their time and resources to support breast cancer research and awareness. In collaboration with the American Cancer Society's Making Strides campaign, we have successfully raised funds and increased awareness in our communities.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start">

@@ -109,10 +109,10 @@ const MarketsPage: React.FC = () => {
               {t("markets_hero_tag")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t("markets_hero_title")}
+              Global Hospitality Market
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              {t("markets_hero_subtitle")}
+              Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.
             </p>
           </motion.div>
         </div>
@@ -174,9 +174,9 @@ const MarketsPage: React.FC = () => {
               }}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-orange hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">{t("markets_service_1_title")}</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">End-to-End Recruitment Services</h3>
               <p className="text-gray-600">
-                {t("markets_service_1_description")}
+                From entry-level hotel staff to executive hospitality managers, we provide customized recruitment solutions tailored to the unique characteristics of global markets. We carefully match candidates based on cultural fit, skill set, and a commitment to service excellence.
               </p>
             </motion.div>
 
@@ -189,9 +189,9 @@ const MarketsPage: React.FC = () => {
               }}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-blue hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">{t("markets_service_2_title")}</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">On-the-Ground Expertise</h3>
               <p className="text-gray-600">
-                {t("markets_service_2_description")}
+                With local recruitment partners and sourcing teams positioned across the globe, we have a profound understanding of the unique hiring needs, labor regulations, and market dynamics that characterize each country.
               </p>
             </motion.div>
 
@@ -204,9 +204,9 @@ const MarketsPage: React.FC = () => {
               }}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-orange hover:shadow-xl transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">{t("markets_service_3_title")}</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Multilingual Talent Pool</h3>
               <p className="text-gray-600">
-                {t("markets_service_3_description")}
+                We actively recruit talent who are fluent in multiple languages, including English, French, Spanish, Arabic, Portuguese, Mandarin, and more, ensuring that hospitality businesses can confidently serve diverse international clientele.
               </p>
             </motion.div>
           </div>

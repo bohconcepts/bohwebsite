@@ -91,10 +91,10 @@ const CtaSection = () => {
         >
           <div className="flex flex-col items-center justify-center pt-16 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {t('Ready to Elevate Your Hospitality Career or Team?')}
+              Ready to Elevate Your Hospitality Career or Team?
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              {t('Whether you are seeking premium hospitality opportunities or looking to build your dream team, BOH Concepts delivers tailored solutions to meet your specific needs.')}
+              Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-brand-orange text-white border-2 border-brand-orange hover:bg-white hover:text-brand-orange transition-colors">

@@ -33,9 +33,9 @@ export const enConstants: LocalizedConstants = {
   footer_terms_of_service: "Terms of Service",
   footer_sitemap: "Sitemap",
   long_term_talents_description:
-    "We provide the following long-term positions with well-vetted and qualified colleagues who execute to the standards and expectations of your property and brand standards.",
+    "We offer a selection of long-term positions filled by thoroughly vetted and qualified professionals. These individuals are equipped to meet the standards and expectations of your property while aligning with your brand standards.",
   seasonal_talents_description:
-    "We provide the following seasonal positions with well-vetted and qualified colleagues who execute to the standards and expectations of your property and brand standards.",
+    "We offer a variety of seasonal positions filled by thoroughly vetted and qualified professionals. These individuals are equipped to meet the standards and expectations of your property, ensuring seamless integration with your brand standards.",
   show_more: "Show More",
   show_less: "Show Less",
   available_positions: "Available Positions",
@@ -320,7 +320,7 @@ export const enConstants: LocalizedConstants = {
       id: "1",
       title: "Consistency and Productivity",
       description:
-        "When staff is short, injured or untrained, productivity suffers. You need to be able to rely on consistency of your staff so that you can confidently guarantee your guests' experience. By working our standard operating procedures down to science, you will be able to rely on consistent, efficient, and productive work.",
+        "When staffing levels are compromised due to shortages, injuries, or inadequate training, productivity inevitably declines. It is essential to maintain staff consistency, enabling you to provide a confident and exceptional guest experience. By carefully refining our standard operating procedures, we support reliable, efficient, and productive workflows.",
       icon: "check-circle",
       href: "/framework/consistency-productivity",
     },
@@ -328,7 +328,7 @@ export const enConstants: LocalizedConstants = {
       id: "2",
       title: "Cutting Edge Approach",
       description:
-        "We present a modern staffing solution to hotels and resorts who are on the cutting-edge of hospitality. By incorporating cleaning bots and data-driven quality assurance into our workflow, we utilize artificial intelligence, alongside human intelligence, to cut costs, increase productivity, and protect the health and well-being of colleagues and guests.",
+        "We provide a modern staffing solution designed for hotels and resorts, leading in hospitality innovation. By integrating cleaning bots and data-driven quality assurance into our processes, we leverage artificial intelligence in conjunction with human intelligence to reduce costs, enhance productivity, and safeguard the health and well-being of both staff and guests.",
       icon: "lightbulb",
       href: "/framework/cutting-edge-approach",
     },
@@ -336,7 +336,7 @@ export const enConstants: LocalizedConstants = {
       id: "3",
       title: "Diversity",
       description:
-        "Diversity means many things to us. It means supporting minority employees by ensuring them a supportive environment with reliable work and safe working conditions. Diversity also means being able to offer a wide range of services and options to our partners, so you don't have to compromise on your vision or standards to work with us.",
+        "For us, diversity signifies a commitment to supporting employees from all walks of life by creating a nurturing environment with reliable work and safe working conditions. It also reflects our capability to provide a wide range of services and options to our partners, ensuring that you do not have to compromise on your vision or standards when working with us.",
       icon: "users-2",
       href: "/framework/diversity",
     },
@@ -344,7 +344,7 @@ export const enConstants: LocalizedConstants = {
       id: "4",
       title: "Profitability",
       description:
-        "We measure our success off your success. For that reason, making your jobs easier, more enjoyable, and profitable is the driving goal behind our business.",
+        "Our success is intrinsically linked to your success. Therefore, our primary goal is to enhance the ease, comfort, and overall experience for both guests and employees, as well as the profitability of your operations, thereby propelling our shared success.",
       icon: "trending-up",
       href: "/framework/profitability",
     },
@@ -352,7 +352,7 @@ export const enConstants: LocalizedConstants = {
       id: "5",
       title: "Employee Safety and Engagement",
       description:
-        "Service teams are the engine that make hospitality function like a well-oiled machinery. Through intelligently designed workflows, extensive training, and utilization of bots for labor-intensive tasks, we protect colleagues and through that protect you and your guests.",
+        "Service teams are the engines that drive hospitality operations. Through thoughtfully designed workflows, comprehensive training, and the use of bots for labor-intensive tasks, we prioritize the safety of our colleagues, thereby protecting you and your guests.",
       icon: "shield",
       href: "/framework/employee-safety",
     },
@@ -360,7 +360,7 @@ export const enConstants: LocalizedConstants = {
       id: "6",
       title: "Exceptional Guest Experience",
       description:
-        "With many years of experience in the industry, we know that hotels and resorts live or die by the quality of their guests' experience. Hence, we provide excellence and consistency in service so that you and or your guests never have to worry about it.",
+        "With years of industry experience, we understand that the success of hotels and resorts depends on the quality of their guests' experiences. Therefore, we are committed to delivering excellence and consistency in service, ensuring that you and your guests receive exceptional care.",
       icon: "star",
       href: "/framework/guest-experience",
     },
@@ -395,35 +395,30 @@ export const enConstants: LocalizedConstants = {
     {
       id: "1",
       content:
-        "Back of House Concepts adequately fortifies our staffing needs of 100 employees in stewarding, housekeeping, and engineering. Due to their firm understanding of our needs and the partnership they foster, I do not see us changing staffing partners.",
-      author: "General Manager-Luxury Hotel",
-      position: "Greater Seattle Area",
+        "Back of House Concepts effectively fulfills our staffing needs for 100 employees across housekeeping, culinary, stewarding, and engineering. Their deep understanding of our requirements, along with a strong partnership, gives us confidence in continuing our collaboration.",
+      author: "General Manager",
+      position: "Luxury Hotel",
       image: "/images/clients/Waldorf.png",
+      company: "Luxury Hotel"
     },
     {
       id: "2",
       content:
-        "We have been working with BOH Concepts for over three years now, and they have consistently provided us with high-quality staff who understand our brand standards. Their attention to detail and personalized service make them stand out from other staffing agencies.",
+        "We have partnered with BOH Concepts for over three years, and they have unequivocally provided us with outstanding staff who fully embody our brand standards. Their meticulous attention to detail and unparalleled personalized service distinctly set them apart from any other partner.",
       author: "Executive Housekeeper",
       position: "Maui, Hawaii",
       image: "/images/clients/Hyatt.png",
+      company: "Hyatt"
     },
     {
       id: "3",
       content:
-        "Finding reliable staff for our seasonal peaks was always a challenge until we partnered with BOH Concepts. Their temporary staffing solutions have been a game-changer for our resort, allowing us to maintain service excellence even during our busiest periods.",
+        "Partnering with BOH Concepts transformed our recruitment challenges during peak seasons. Their temporary solutions ensured that we maintained service excellence even during our busiest periods.",
       author: "Human Resource Manager",
       position: "Maryland",
       image: "/images/clients/Hilton-Logo-4.png",
+      company: "Hilton"
     },
-    // {
-    //   id: "4",
-    //   content:
-    //     "BOH Concepts has transformed our staffing approach with their innovative solutions. Their team consistently delivers exceptional talent who embody our brand's commitment to luxury and personalized service.",
-    //   author: "David Reynolds",
-    //   position: "General Manager, Andaz Hotels",
-    //   image: "/images/clients/andaz.png",
-    // },
   ],
   CLIENTS: [
     {
@@ -621,8 +616,7 @@ export const enConstants: LocalizedConstants = {
     {
       id: "1",
       title: "Specialized in Hospitality",
-      description:
-        "Unlike general staffing agencies, we exclusively focus on the hospitality industry, giving us unparalleled insight into your specific needs.",
+      description: "Unlike general staffing agencies, we exclusively focus on the hospitality industry, giving us unparalleled insight into your specific needs.",
     },
     {
       id: "2",
