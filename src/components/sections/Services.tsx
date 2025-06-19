@@ -130,7 +130,7 @@ const Services = () => {
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
             {t(
-              "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities."
+              "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
             )}
           </motion.p>
         </div>

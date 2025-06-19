@@ -403,7 +403,7 @@ export const enConstants: LocalizedConstants = {
     {
       id: "2",
       content:
-        "We have been working with BOH Concepts for over three years now, and they've consistently provided us with high-quality staff who understand our brand standards. Their attention to detail and personalized service make them stand out from other staffing agencies.",
+        "We have been working with BOH Concepts for over three years now, and they have consistently provided us with high-quality staff who understand our brand standards. Their attention to detail and personalized service make them stand out from other staffing agencies.",
       author: "Executive Housekeeper",
       position: "Maui, Hawaii",
       image: "/images/clients/Hyatt.png",
@@ -729,7 +729,7 @@ export const enConstants: LocalizedConstants = {
       dropdown: [
         { title: "Who We Are", href: "/about/who-we-are" },
         { title: "Our Team", href: "/about/teams" },
-        { title: "Our Mission & Vision", href: "/about/mission" },
+        { title: "Mission and Vision", href: "/about/mission" },
         { title: "Our Values", href: "/about/values" },
       ],
     },
@@ -780,8 +780,8 @@ export const enConstants: LocalizedConstants = {
   about_paragraph_3:
     "With initiatives across 4+ continents, we are committed to creating meaningful change and supporting diverse communities worldwide.",
 
-  // Mission & Vision
-  mission_heading: "Mission & Vision",
+  // Mission and Vision
+  mission_heading: "Mission and Vision",
   mission_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
   mission_page_title: "Mission and Vision",

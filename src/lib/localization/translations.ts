@@ -12,11 +12,11 @@ export const aboutSectionTranslations = {
   about_paragraph_2: "Our approach combines rigorous talent selection with comprehensive training and ongoing support, ensuring that our professionals not only meet but exceed the expectations of our prestigious hospitality partners.",
   about_paragraph_3: "With a focus on sustainability, equity, and inclusion, we are building a global workforce that represents the future of hospitality - one where excellence knows no borders.",
   
-  // Mission & Vision
-  mission_heading: "Our Mission & Vision",
-  mission_title: "Our Mission",
+  // Mission and Vision
+  mission_heading: "Mission and Vision",
+  mission_title: "Mission",
   mission_description: "It is our mission to redefine Hospitality staffing by building sustainable partnerships that promote growth and diversity for all.",
-  vision_title: "Our Vision",
+  vision_title: "Vision",
   vision_description: "To be the premier global hospitality staffing partner, recognized for excellence, innovation, and creating meaningful opportunities across continents.",
   
   // Values

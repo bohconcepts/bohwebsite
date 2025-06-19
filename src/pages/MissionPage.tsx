@@ -12,7 +12,7 @@ const MissionPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t("Our Mission")} | {companyInfo.name}</title>
+        <title>{t("Mission and Vision")} | {companyInfo.name}</title>
         <meta
           name="description"
           content={t("mission_meta_description")}
@@ -33,7 +33,7 @@ const MissionPage = () => {
             className="max-w-3xl"
           >
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
-              {t('OUR MISSION')}
+              {t('MISSION AND VISION')}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               {t('mission_page_title')}

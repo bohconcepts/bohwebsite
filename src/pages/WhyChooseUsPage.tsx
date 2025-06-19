@@ -58,7 +58,7 @@ const WhyChooseUsPage = () => {
             ></motion.div>
             <p className="text-xl text-white/90 max-w-2xl">
               {t(
-                "We provide tailored hospitality staffing services to meet your specific needs, whether you're seeking talent or opportunities."
+                "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
               )}
             </p>
           </motion.div>
