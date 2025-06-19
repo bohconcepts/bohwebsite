@@ -1,0 +1,77 @@
+/* Markets Page Styles */
+
+/* Hotel & Resorts */
+.industry-hotel-border {
+  border-top: 3px solid #3B82F6;
+}
+.industry-hotel-bg {
+  background-color: #EFF6FF;
+}
+.industry-hotel-icon {
+  color: #3B82F6;
+}
+
+/* Safari Lodges */
+.industry-safari-border {
+  border-top: 3px solid #10B981;
+}
+.industry-safari-bg {
+  background-color: #ECFDF5;
+}
+.industry-safari-icon {
+  color: #10B981;
+}
+
+/* Restaurants */
+.industry-restaurant-border {
+  border-top: 3px solid #F59E0B;
+}
+.industry-restaurant-bg {
+  background-color: #FEF3C7;
+}
+.industry-restaurant-icon {
+  color: #F59E0B;
+}
+
+/* Conference Centers */
+.industry-conference-border {
+  border-top: 3px solid #8B5CF6;
+}
+.industry-conference-bg {
+  background-color: #F3F4F6;
+}
+.industry-conference-icon {
+  color: #8B5CF6;
+}
+
+/* Cruise */
+.industry-cruise-border {
+  border-top: 3px solid #0EA5E9;
+}
+.industry-cruise-bg {
+  background-color: #E0F2FE;
+}
+.industry-cruise-icon {
+  color: #0EA5E9;
+}
+
+/* Airlines */
+.industry-airline-border {
+  border-top: 3px solid #EC4899;
+}
+.industry-airline-bg {
+  background-color: #FCE7F3;
+}
+.industry-airline-icon {
+  color: #EC4899;
+}
+
+/* Hover effects */
+.industry-hotel-border:hover .industry-hotel-icon,
+.industry-safari-border:hover .industry-safari-icon,
+.industry-restaurant-border:hover .industry-restaurant-icon,
+.industry-conference-border:hover .industry-conference-icon,
+.industry-cruise-border:hover .industry-cruise-icon,
+.industry-airline-border:hover .industry-airline-icon {
+  transform: scale(1.1);
+}
