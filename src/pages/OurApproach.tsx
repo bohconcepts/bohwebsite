@@ -189,12 +189,10 @@ const OurApproachPage = () => {
               {t("TAILORED SOLUTIONS")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t("Premium Staffing Solutions")}
+              Premium Staffing Solutions
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              {t(
-                "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities."
-              )}
+              We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.
             </p>
           </motion.div>
         </div>
