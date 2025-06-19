@@ -34,7 +34,7 @@ const TeamsPage = () => {
               OUR TEAM
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-              Our Team
+              Meet the Exceptional Team
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mb-6">
               {t("team_description")}
@@ -57,7 +57,7 @@ const TeamsPage = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold mb-10 text-center"
             >
-              <span className="text-brand-orange">Our Team</span>
+              {/* <span className="text-brand-navyblue ">Our Team</span> */}
               <div className="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
             </motion.h2>
 

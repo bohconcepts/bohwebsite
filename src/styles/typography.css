@@ -1,61 +1,67 @@
-/* Typography adjustments - reducing all font sizes by 1pt */
+/* Typography settings - Professional standard font sizes */
 
-/* Base HTML font size reduction */
+/* Base HTML font size */
 html {
-  font-size: 15px; /* Default is usually 16px, reducing by 1pt (~1.33px) */
+  font-size: 16px; /* Standard base font size */
 }
 
-/* Adjust heading sizes */
+/* Professional standard heading sizes */
 h1 {
-  font-size: calc(2.125rem - 1pt + 0.7pt); /* ~34px - 1pt + 0.7pt */
+  font-size: 2.5rem; /* 40px - Main page headings */
 }
 
 h2 {
-  font-size: calc(1.875rem - 1pt + 0.7pt); /* ~30px - 1pt + 0.7pt */
+  font-size: 2rem; /* 32px - Section headings */
 }
 
 h3 {
-  font-size: calc(1.5rem - 1pt + 0.5pt); /* ~24px - 1pt + 0.5pt */
+  font-size: 1.5rem; /* 24px - Subsection headings */
 }
 
 h4 {
-  font-size: calc(1.25rem - 1pt); /* ~20px - 1pt */
+  font-size: 1.25rem; /* 20px - Card or panel headings */
 }
 
 h5 {
-  font-size: calc(1.125rem - 1pt); /* ~18px - 1pt */
+  font-size: 1.125rem; /* 18px - Small section headings */
 }
 
 h6 {
-  font-size: calc(1rem - 1pt); /* ~16px - 1pt */
+  font-size: 1rem; /* 16px - Minor headings */
 }
 
-/* Adjust paragraph and general text */
-p, span, div, li, a {
-  font-size: calc(1rem - 1pt); /* ~16px - 1pt */
+/* Standard body text */
+p, div, li {
+  font-size: 1rem; /* 16px - Standard paragraph text */
+  line-height: 1.5; /* 24px - Standard line height for readability */
 }
 
-/* Small text */
-.text-sm {
-  font-size: calc(0.875rem - 1pt); /* ~14px - 1pt */
+/* Link text */
+a {
+  font-size: 1rem; /* 16px - Standard link text */
+}
+
+/* Small text for legal, footnotes, etc. */
+.text-sm, small {
+  font-size: 0.875rem; /* 14px */
 }
 
 /* Extra small text */
 .text-xs {
-  font-size: calc(0.75rem - 1pt); /* ~12px - 1pt */
+  font-size: 0.75rem; /* 12px */
 }
 
-/* Adjust Tailwind's text utility classes */
-.text-xs { font-size: calc(0.75rem - 1pt); }
-.text-sm { font-size: calc(0.875rem - 1pt); }
-.text-base { font-size: calc(1rem - 1pt); }
-.text-lg { font-size: calc(1.125rem - 1pt); }
-.text-xl { font-size: calc(1.25rem - 1pt); }
-.text-2xl { font-size: calc(1.5rem - 1pt); }
-.text-3xl { font-size: calc(1.875rem - 1pt); }
-.text-4xl { font-size: calc(2.25rem - 1pt); }
-.text-5xl { font-size: calc(3rem - 1pt); }
-.text-6xl { font-size: calc(3.75rem - 1pt); }
-.text-7xl { font-size: calc(4.5rem - 1pt); }
-.text-8xl { font-size: calc(6rem - 1pt); }
-.text-9xl { font-size: calc(8rem - 1pt); }
+/* Tailwind's text utility classes with professional standard sizes */
+.text-xs { font-size: 0.75rem; } /* 12px */
+.text-sm { font-size: 0.875rem; } /* 14px */
+.text-base { font-size: 1rem; } /* 16px */
+.text-lg { font-size: 1.125rem; } /* 18px */
+.text-xl { font-size: 1.25rem; } /* 20px */
+.text-2xl { font-size: 1.5rem; } /* 24px */
+.text-3xl { font-size: 1.875rem; } /* 30px */
+.text-4xl { font-size: 2.25rem; } /* 36px */
+.text-5xl { font-size: 3rem; } /* 48px */
+.text-6xl { font-size: 3.75rem; } /* 60px */
+.text-7xl { font-size: 4.5rem; } /* 72px */
+.text-8xl { font-size: 6rem; } /* 96px */
+.text-9xl { font-size: 8rem; } /* 128px */
