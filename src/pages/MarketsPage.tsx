@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import GlobalWorkforceMap from '../components/sections/GlobalWorkforceMap';
+import { Hotel, Palmtree, UtensilsCrossed, Building2, Ship, Plane } from 'lucide-react';
+import '../styles/markets.css'; // Import the CSS file we'll create
 
 
 const MarketsPage: React.FC = () => {
@@ -57,14 +59,14 @@ const MarketsPage: React.FC = () => {
     states?: StateInfo[];
   };
 
-  // Data for the page
+  // Data for the page with icons and CSS class names
   const industries = [
-    { id: 1, name: t("industry_hotels_resorts") },
-    { id: 2, name: t("industry_safari_lodges") },
-    { id: 3, name: t("industry_restaurants") },
-    { id: 4, name: t("industry_conference_centers") },
-    { id: 5, name: t("industry_cruise") },
-    { id: 6, name: t("industry_airlines") }
+    { id: 1, name: t("industry_hotels_resorts"), icon: Hotel, colorClass: "industry-hotel" },
+    { id: 2, name: t("industry_safari_lodges"), icon: Palmtree, colorClass: "industry-safari" },
+    { id: 3, name: t("industry_restaurants"), icon: UtensilsCrossed, colorClass: "industry-restaurant" },
+    { id: 4, name: t("industry_conference_centers"), icon: Building2, colorClass: "industry-conference" },
+    { id: 5, name: t("industry_cruise"), icon: Ship, colorClass: "industry-cruise" },
+    { id: 6, name: t("industry_airlines"), icon: Plane, colorClass: "industry-airline" }
   ];
 
   const locations: Location[] = [
@@ -278,19 +280,30 @@ const MarketsPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.id}
-                custom={index}
-                variants={fadeInAnimationVariants}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow duration-300 border border-gray-100"
-              >
-                <p className="text-lg font-medium text-gray-800">{industry.name}</p>
-              </motion.div>
-            ))}
+            {industries.map((industry, index) => {
+              const IconComponent = industry.icon;
+              return (
+                <motion.div
+                  key={industry.id}
+                  custom={index}
+                  variants={fadeInAnimationVariants}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  className={`bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group hover:-translate-y-1 ${industry.colorClass}-border`}
+                >
+                  <div 
+                    className={`mb-4 p-4 rounded-full shadow-md transform transition-all duration-300 group-hover:scale-110 ${industry.colorClass}-bg`}
+                  >
+                    <IconComponent 
+                      className={`w-10 h-10 transition-all duration-300 ${industry.colorClass}-icon`}
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <p className="text-lg font-medium text-gray-800">{industry.name}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
