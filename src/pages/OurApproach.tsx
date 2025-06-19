@@ -163,7 +163,7 @@ const OurApproachPage = () => {
   return (
     <>
       <Helmet>
-        <title>{`${t("Our Services")} | ${companyInfo.name}`}</title>
+        <title>{`${t("Services")} | ${companyInfo.name}`}</title>
         <meta
           name="description"
           content={t(
@@ -189,7 +189,7 @@ const OurApproachPage = () => {
               {t("TAILORED SOLUTIONS")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t("Our Premium Staffing Solutions")}
+              {t("Premium Staffing Solutions")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
               {t(
@@ -219,7 +219,7 @@ const OurApproachPage = () => {
               variants={fadeInUpVariants}
               className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
             >
-              {t("Our Premium Staffing Solutions")}
+              {t("Premium Staffing Solutions")}
             </motion.h2>
 
             <motion.div

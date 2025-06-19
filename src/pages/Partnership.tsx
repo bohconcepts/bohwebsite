@@ -191,7 +191,7 @@ const Partnership = () => {
                 className="bg-brand-blue/5 p-6 rounded-lg border border-brand-blue/20 mb-6"
                 variants={itemVariants}
               >
-                <h3 className="font-semibold text-xl mb-3 text-brand-blue">{t('Our Partnership Process')}</h3>
+                <h3 className="font-semibold text-xl mb-3 text-brand-blue">{t('Partnership Process')}</h3>
                 <ol className="space-y-2 list-decimal pl-5">
                   <li className="text-gray-700">{t('Submit your partnership request')}</li>
                   <li className="text-gray-700">{t('Initial consultation with our partnership team')}</li>
@@ -225,7 +225,7 @@ const Partnership = () => {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <h2 className="text-3xl font-bold mb-4 text-brand-blue">
-              {t("Our Partners")}
+              {t("Partners")}
             </h2>
             <p className="text-lg text-gray-600">
               {t("We are proud to work with leading organizations across various industries. Join our growing network of partners.")}
