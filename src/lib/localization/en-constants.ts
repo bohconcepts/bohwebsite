@@ -399,6 +399,7 @@ export const enConstants: LocalizedConstants = {
       author: "General Manager",
       position: "Luxury Hotel",
       image: "/images/clients/Waldorf.png",
+      company: "Luxury Hotel"
     },
     {
       id: "2",
@@ -407,6 +408,7 @@ export const enConstants: LocalizedConstants = {
       author: "Executive Housekeeper",
       position: "Maui, Hawaii",
       image: "/images/clients/Hyatt.png",
+      company: "Hyatt"
     },
     {
       id: "3",
@@ -415,15 +417,8 @@ export const enConstants: LocalizedConstants = {
       author: "Human Resource Manager",
       position: "Maryland",
       image: "/images/clients/Hilton-Logo-4.png",
+      company: "Hilton"
     },
-    // {
-    //   id: "4",
-    //   content:
-    //     "BOH Concepts has transformed our staffing approach with their innovative solutions. Their team consistently delivers exceptional talent who embody our brand's commitment to luxury and personalized service.",
-    //   author: "David Reynolds",
-    //   position: "General Manager, Andaz Hotels",
-    //   image: "/images/clients/andaz.png",
-    // },
   ],
   CLIENTS: [
     {
