@@ -68,9 +68,9 @@ const WhoWeArePage: React.FC = () => {
               {t("about_page_title")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mb-8">
-              {language === "en" ? "Back of House Concepts connects top hospitality talent with leading properties, backed by decades of industry experience and a commitment to diversity and social responsibility." :
-               language === "fr" ? "Back of House Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur et d'un engagement envers la diversité et la responsabilité sociale." :
-               "Back of House Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria y un compromiso con la diversidad y la responsabilidad social."}
+              {language === "en" ? "BOH Concepts connects top hospitality talent with leading properties, backed by decades of industry experience and a commitment to diversity and social responsibility." :
+               language === "fr" ? "BOH Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur et d'un engagement envers la diversité et la responsabilité sociale." :
+               "BOH Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria y un compromiso con la diversidad y la responsabilidad social."}
             </p>
             <div className="flex flex-wrap gap-4">
               <motion.a 
@@ -115,7 +115,7 @@ const WhoWeArePage: React.FC = () => {
             </div>
             
             <p className="text-xl text-gray-700 text-center mb-12">
-              Back of House Concepts serves as a vital link between exceptional hospitality talent and prestigious properties. With decades of industry experience, we are committed to promoting diversity and upholding social responsibility, ensuring that our partnerships make a positive impact.
+              BOH Concepts serves as a vital link between exceptional hospitality talent and prestigious properties. With decades of industry experience, we are committed to promoting diversity and upholding social responsibility, ensuring that our partnerships make a positive impact.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -128,7 +128,7 @@ const WhoWeArePage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">Our Corporate Mission</h3>
                 <p className="text-gray-700">
-                  At Back of House Concepts, we are committed to upholding the highest standards in hospitality staffing while actively promoting diversity and making a positive impact in our communities.
+                  At BOH Concepts, we are committed to upholding the highest standards in hospitality staffing while actively promoting diversity and making a positive impact in our communities.
                 </p>
               </motion.div>
               
