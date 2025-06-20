@@ -19,7 +19,7 @@ export const esConstants: LocalizedConstants = {
   about_page_title: "Responsabilidad Social Corporativa",
   about_page_tag: "SOBRE NOSOTROS",
   about_paragraph_1:
-    "Back of House Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria.",
+    "BOH Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria.",
   about_paragraph_2:
     "A través de nuestras campañas de concientización sobre el cáncer de mama y las celebraciones del Mes de la Historia Negra, nos esforzamos por generar un impacto positivo y fomentar una cultura de inclusión y apoyo.",
   about_paragraph_3:
@@ -80,7 +80,7 @@ export const esConstants: LocalizedConstants = {
   COMPANY_NAME: "BOH Concepts",
   COMPANY_TAGLINE: "¡Personal de Hospitalidad Redefinido!",
   COMPANY_DESCRIPTION:
-    "En Back of House Concepts, redefinimos la dotación de personal de hospitalidad con una fuerza laboral diversa, equitativa e inclusiva que garantiza la consistencia y el compromiso con los objetivos de todos nuestros clientes.",
+    "En BOH Concepts, redefinimos la dotación de personal de hospitalidad con una fuerza laboral diversa, equitativa e inclusiva que garantiza la consistencia y el compromiso con los objetivos de todos nuestros clientes.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
 
@@ -462,7 +462,7 @@ export const esConstants: LocalizedConstants = {
     {
       id: "1",
       content:
-        "Back of House Concepts fortalece adecuadamente nuestras necesidades de personal de 100 empleados en administración, limpieza e ingeniería. Debido a su firme comprensión de nuestras necesidades y la asociación que fomentan, no veo que cambiemos de socios de personal.",
+        "BOH Concepts fortalece adecuadamente nuestras necesidades de personal de 100 empleados en administración, limpieza e ingeniería. Debido a su firme comprensión de nuestras necesidades y la asociación que fomentan, no veo que cambiemos de socios de personal.",
       author: "John Smith",
       position: "Gerente General, Hilton Atlanta",
       image: "/images/clients/Waldorf.png",

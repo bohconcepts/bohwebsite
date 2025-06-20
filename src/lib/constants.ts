@@ -101,21 +101,21 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "1",
     name: "Kelvis Quaynor",
     position: "President & CEO, Founder",
-    bio: "Founder and CEO of Back of House Concepts.",
+    bio: "Founder and CEO of BOH Concepts.",
     image: "/images/team/kelvis.jpg",
   },
   {
     id: "2",
     name: "Michael Asnani",
     position: "Chief Operating Officer, Partner",
-    bio: "COO and Partner at Back of House Concepts.",
+    bio: "COO and Partner at BOH Concepts.",
     image: "/images/team/michael.jpg",
   },
   {
     id: "3",
     name: "Ben Quaynor",
     position: "Chief Financial Officer, Partner",
-    bio: "CFO and Partner at Back of House Concepts.",
+    bio: "CFO and Partner at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -123,7 +123,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "4",
     name: "Myrna Harris",
     position: "Sr. Director of People & Culture",
-    bio: "Senior HR Consultant at Back of House Concepts.",
+    bio: "Senior HR Consultant at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -131,7 +131,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "5",
     name: "Ayesa Makatiani",
     position: "Finance Director",
-    bio: "Finance Director at Back of House Concepts.",
+    bio: "Finance Director at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -139,7 +139,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "6",
     name: "Noella Muhamiriza",
     position: "Talent Acquisition Manager",
-    bio: "Talent Acquisition Manager at Back of House Concepts.",
+    bio: "Talent Acquisition Manager at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -147,7 +147,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "7",
     name: "Linette Baneth",
     position: "People and Culture Manager",
-    bio: "People and Culture Manager at Back of House Concepts.",
+    bio: "People and Culture Manager at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -155,7 +155,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "8",
     name: "Rafey Askaryar",
     position: "HR Finance Generalist",
-    bio: "HR Finance Generalist at Back of House Concepts.",
+    bio: "HR Finance Generalist at BOH Concepts.",
     image:
       "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },

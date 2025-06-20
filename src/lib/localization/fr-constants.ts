@@ -19,7 +19,7 @@ export const frConstants: LocalizedConstants = {
   about_page_title: "Responsabilité Sociale d'Entreprise",
   about_page_tag: "À PROPOS DE NOUS",
   about_paragraph_1:
-    "Back of House Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur.",
+    "BOH Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur.",
   about_paragraph_2:
     "Grâce à nos campagnes de sensibilisation au cancer du sein et à nos célébrations du Mois de l'histoire des Noirs, nous nous efforçons d'avoir un impact positif et de favoriser une culture d'inclusion et de soutien.",
   about_paragraph_3:
@@ -79,7 +79,7 @@ export const frConstants: LocalizedConstants = {
   COMPANY_NAME: "BOH Concepts",
   COMPANY_TAGLINE: "La Restauration Redéfinie!",
   COMPANY_DESCRIPTION:
-    "Chez Back of House Concepts, nous redéfinissons le personnel de l'hôtellerie avec une main-d'œuvre diversifiée, équitable et inclusive qui assure la cohérence et l'engagement envers les objectifs de tous nos clients.",
+    "Chez BOH Concepts, nous redéfinissons le personnel de l'hôtellerie avec une main-d'œuvre diversifiée, équitable et inclusive qui assure la cohérence et l'engagement envers les objectifs de tous nos clients.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
 
@@ -460,7 +460,7 @@ export const frConstants: LocalizedConstants = {
     {
       id: "1",
       content:
-        "Back of House Concepts renforce adéquatement nos besoins en personnel de 100 employés dans les domaines de l'intendance, de l'entretien ménager et de l'ingénierie. En raison de leur compréhension solide de nos besoins et du partenariat qu'ils favorisent, je ne nous vois pas changer de partenaires de dotation en personnel.",
+        "BOH Concepts renforce adéquatement nos besoins en personnel de 100 employés dans les domaines de l'intendance, de l'entretien ménager et de l'ingénierie. En raison de leur compréhension solide de nos besoins et du partenariat qu'ils favorisent, je ne nous vois pas changer de partenaires de dotation en personnel.",
       author: "John Smith",
       position: "Directeur Général, Hilton Atlanta",
       image: "/images/clients/Waldorf.png",

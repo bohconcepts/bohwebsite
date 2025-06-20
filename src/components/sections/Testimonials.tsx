@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTestimonials } from '@/hooks/useLocalizedConstants';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { QuoteIcon } from 'lucide-react';
@@ -21,6 +19,18 @@ const Testimonials = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
       },
     },
   };
@@ -39,63 +49,45 @@ const Testimonials = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <Tabs defaultValue={testimonials.length > 0 ? testimonials[0].id : 'default'} className="w-full">
-            <div className="overflow-x-auto pb-2 -mx-4 px-4">
-              <TabsList className="flex mb-8 w-max min-w-full">
-                {testimonials.length > 0 ? testimonials.map((testimonial) => (
-                  <TabsTrigger 
-                    key={testimonial.id} 
-                    value={testimonial.id} 
-                    className="data-[state=active]:bg-brand-orange data-[state=active]:text-white px-4 py-2 text-sm whitespace-nowrap flex-1 md:w-auto">
-                    {testimonial.author}
-                  </TabsTrigger>
-                )) : (
-                  <TabsTrigger value="default">No Testimonials</TabsTrigger>
-                )}
-              </TabsList>
-            </div>
-            
-            {testimonials.length > 0 ? testimonials.map((testimonial) => (
-              <TabsContent key={testimonial.id} value={testimonial.id}>
-                <Card className="border-none shadow-lg bg-white">
-                  <CardContent className="pt-6">
-                    <div className="flex justify-center mb-6">
-                      <QuoteIcon className="h-12 w-12 text-brand-orange opacity-20" />
-                    </div>
-                    <p className="text-center text-lg italic text-gray-700 mb-8">
-                      "{testimonial.content}"
+          {testimonials.length > 0 ? testimonials.map((testimonial) => (
+            <motion.div key={testimonial.id} variants={itemVariants}>
+              <Card className="border-none shadow-lg bg-white h-full flex flex-col">
+                <CardContent className="pt-6 flex-grow">
+                  <div className="flex justify-center mb-6">
+                    <QuoteIcon className="h-12 w-12 text-brand-orange opacity-20" />
+                  </div>
+                  <p className="text-center text-lg italic text-gray-700 mb-8">
+                    "{testimonial.content}"
+                  </p>
+                </CardContent>
+                <CardFooter className="flex flex-col items-center pb-6 border-t pt-6">
+                  <div className="mb-4 h-16 w-full flex justify-center">
+                    {testimonial.image && (
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.company || testimonial.author} 
+                        className="h-full object-contain"
+                      />
+                    )}
+                  </div>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-brand-blue">{testimonial.author}</h4>
+                    <p className="text-sm text-gray-600">
+                      {testimonial.position} {testimonial.company && `• ${testimonial.company}`}
                     </p>
-                  </CardContent>
-                  <CardFooter className="flex flex-col items-center pb-6">
-                    <Avatar className="h-16 w-16 mb-3">
-                      {testimonial.image ? (
-                        <AvatarImage src={testimonial.image} alt={testimonial.author} />
-                      ) : null}
-                      <AvatarFallback className="bg-brand-blue text-white">
-                        {testimonial.author?.split(' ')?.map((n) => n[0])?.join('') || ''}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="text-center">
-                      <h4 className="font-semibold text-brand-blue">{testimonial.author}</h4>
-                      <p className="text-sm text-gray-600">
-                        {testimonial.position} {testimonial.company}
-                      </p>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </TabsContent>
-            )) : (
-              <TabsContent value="default">
-                <Card className="border-none shadow-lg bg-white">
-                  <CardContent className="pt-6 text-center">
-                    <p>No testimonials available at this time.</p>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            )}
-          </Tabs>
+                  </div>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          )) : (
+            <Card className="border-none shadow-lg bg-white col-span-full">
+              <CardContent className="pt-6 text-center">
+                <p>No testimonials available at this time.</p>
+              </CardContent>
+            </Card>
+          )}
         </motion.div>
       </div>
     </section>

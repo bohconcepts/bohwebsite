@@ -56,14 +56,14 @@ const translations = {
     "About Us": "About Us",
     "ABOUT US": "ABOUT US",
     about_meta_description:
-      "Learn about Back of House Concepts, our mission, values, and team.",
+      "Learn about BOH Concepts, our mission, values, and team.",
     about_tab: "About",
     mission_tab: "Mission",
     values_tab: "Values",
     team_tab: "Team",
     about_section_heading: "Who We Are",
     about_paragraph_1:
-      "Back of House Concepts is a premier hospitality staffing agency dedicated to connecting exceptional talent with leading properties across the industry. Founded by industry veterans with decades of combined experience, we understand the unique challenges and opportunities in hospitality staffing.",
+      "BOH Concepts is a premier hospitality staffing agency dedicated to connecting exceptional talent with leading properties across the industry. Founded by industry veterans with decades of combined experience, we understand the unique challenges and opportunities in hospitality staffing.",
     about_paragraph_2:
       "Our approach combines deep industry knowledge with innovative recruitment strategies to deliver staffing solutions that meet the exact needs of our clients. We specialize in providing both long-term placements and seasonal staffing for hotels, resorts, restaurants, and event venues.",
     about_paragraph_3:
@@ -116,9 +116,9 @@ const translations = {
     industry_hotels_resorts: "Hotels & Resorts",
     industry_safari_lodges: "Safari Lodges & Eco-Tourism",
     industry_restaurants: "Restaurants & Fine Dining",
-    industry_conference_centers: "Conference Centers & Event Venues",
+    industry_conference_centers: "Convention Centers & Event Venues",
     industry_cruise: "Cruise & Offshore Hospitality",
-    industry_airlines: "Airlines and Airport Hospitality Lounges",
+    industry_airlines: "Airlines & Airport Hospitality Lounges",
     markets_locations_tag: "GEOGRAPHIC REACH",
     markets_locations_title: "Our Active Presence Worldwide",
     location_kenya: "Kenya",
@@ -371,14 +371,14 @@ const translations = {
     "About Us": "Sobre Nosotros",
     "ABOUT US": "SOBRE NOSOTROS",
     about_meta_description:
-      "Conozca más sobre Back of House Concepts, nuestra misión, valores y equipo.",
+      "Conozca más sobre BOH Concepts, nuestra misión, valores y equipo.",
     about_tab: "Sobre Nosotros",
     mission_tab: "Misión",
     values_tab: "Valores",
     team_tab: "Equipo",
     about_section_heading: "Quiénes Somos",
     about_paragraph_1:
-      "Back of House Concepts es una agencia de personal de hostelería de primer nivel dedicada a conectar talentos excepcionales con propiedades líderes en toda la industria. Fundada por veteranos de la industria con décadas de experiencia combinada, entendemos los desafíos y oportunidades únicos en la dotación de personal de hostelería.",
+      "BOH Concepts es una agencia de personal de hostelería de primer nivel dedicada a conectar talentos excepcionales con propiedades líderes en toda la industria. Fundada por veteranos de la industria con décadas de experiencia combinada, entendemos los desafíos y oportunidades únicos en la dotación de personal de hostelería.",
     about_paragraph_2:
       "Nuestro enfoque combina un profundo conocimiento de la industria con estrategias de reclutamiento innovadoras para ofrecer soluciones de personal que satisfacen las necesidades exactas de nuestros clientes. Nos especializamos en proporcionar tanto colocaciones a largo plazo como personal de temporada para hoteles, resorts, restaurantes y lugares de eventos.",
     about_paragraph_3:
@@ -676,14 +676,14 @@ const translations = {
     "About Us": "À Propos de Nous",
     "ABOUT US": "À PROPOS DE NOUS",
     about_meta_description:
-      "Découvrez Back of House Concepts, notre mission, nos valeurs et notre équipe.",
+      "Découvrez BOH Concepts, notre mission, nos valeurs et notre équipe.",
     about_tab: "À Propos",
     mission_tab: "Mission",
     values_tab: "Valeurs",
     team_tab: "Équipe",
     about_section_heading: "Qui Nous Sommes",
     about_paragraph_1:
-      "Back of House Concepts est une agence de recrutement hôtelier de premier plan dédiée à connecter des talents exceptionnels avec des établissements de premier ordre dans toute l'industrie. Fondée par des vétérans de l'industrie avec des décennies d'expérience combinée, nous comprenons les défis et opportunités uniques du recrutement hôtelier.",
+      "BOH Concepts est une agence de recrutement hôtelier de premier plan dédiée à connecter des talents exceptionnels avec des établissements de premier ordre dans toute l'industrie. Fondée par des vétérans de l'industrie avec des décennies d'expérience combinée, nous comprenons les défis et opportunités uniques du recrutement hôtelier.",
     about_paragraph_2:
       "Notre approche combine une connaissance approfondie de l'industrie avec des stratégies de recrutement innovantes pour fournir des solutions de personnel qui répondent aux besoins exacts de nos clients. Nous sommes spécialisés dans la fourniture de placements à long terme et de personnel saisonnier pour les hôtels, les centres de villégiature, les restaurants et les lieux d'événements.",
     about_paragraph_3:

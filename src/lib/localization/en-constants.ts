@@ -5,7 +5,7 @@ export const enConstants: LocalizedConstants = {
   COMPANY_NAME: "BOH Concepts",
   COMPANY_TAGLINE: "Hospitality Staffing Redefined!",
   COMPANY_DESCRIPTION:
-    "At Back of House Concepts, we redefine hospitality staffing with a diverse, equitable, and inclusive workforce that ensures consistency and commitment to the goals of all our clients.",
+    "At BOH Concepts, we redefine hospitality staffing with a diverse, equitable, and inclusive workforce that ensures consistency and commitment to the goals of all our clients.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
   testimonials_title: "What Partners Say",
@@ -395,11 +395,11 @@ export const enConstants: LocalizedConstants = {
     {
       id: "1",
       content:
-        "Back of House Concepts effectively fulfills our staffing needs for 100 employees across housekeeping, culinary, stewarding, and engineering. Their deep understanding of our requirements, along with a strong partnership, gives us confidence in continuing our collaboration.",
+        "BOH Concepts effectively fulfills our staffing needs for 100 employees across housekeeping, culinary, stewarding, and engineering. Their deep understanding of our requirements, along with a strong partnership, gives us confidence in continuing our collaboration.",
       author: "General Manager",
       position: "Luxury Hotel",
-      image: "/images/clients/Waldorf.png",
-      company: "Luxury Hotel"
+      image: "/images/clients/Hyatt.png",
+      company: "Hyatt"
     },
     {
       id: "2",
@@ -407,8 +407,8 @@ export const enConstants: LocalizedConstants = {
         "We have partnered with BOH Concepts for over three years, and they have unequivocally provided us with outstanding staff who fully embody our brand standards. Their meticulous attention to detail and unparalleled personalized service distinctly set them apart from any other partner.",
       author: "Executive Housekeeper",
       position: "Maui, Hawaii",
-      image: "/images/clients/Hyatt.png",
-      company: "Hyatt"
+      image: "/images/clients/Waldorf.png",
+      company: "Waldorf Astoria"
     },
     {
       id: "3",
@@ -768,7 +768,7 @@ export const enConstants: LocalizedConstants = {
   about_page_title: "Corporate Social Responsibility",
   about_page_tag: "ABOUT US",
   about_paragraph_1:
-    "Back of House Concepts connects top hospitality talent with leading properties, backed by decades of industry experience.",
+    "BOH Concepts connects top hospitality talent with leading properties, backed by decades of industry experience.",
   about_paragraph_2:
     "Through our breast cancer awareness campaigns and Black History Month celebrations, we strive to make a positive impact and foster a culture of inclusivity and support.",
   about_paragraph_3:
