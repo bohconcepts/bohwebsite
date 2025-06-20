@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { useTestimonials } from '@/hooks/useLocalizedConstants';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { QuoteIcon } from 'lucide-react';
 
 const Testimonials = () => {
   const { t } = useLanguage();
@@ -36,11 +34,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={ref} className="section-padding">
-      <div className="container">
+    <section ref={ref} className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-blue mb-6">{t('testimonials_title')}</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('testimonials_title')}</h2>
+          <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             {t('testimonials_subtitle')}
           </p>
         </div>
@@ -49,44 +48,33 @@ const Testimonials = () => {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {testimonials.length > 0 ? testimonials.map((testimonial) => (
-            <motion.div key={testimonial.id} variants={itemVariants}>
-              <Card className="border-none shadow-lg bg-white h-full flex flex-col">
-                <CardContent className="pt-6 flex-grow">
-                  <div className="flex justify-center mb-6">
-                    <QuoteIcon className="h-12 w-12 text-brand-orange opacity-20" />
-                  </div>
-                  <p className="text-center text-lg italic text-gray-700 mb-8">
-                    "{testimonial.content}"
-                  </p>
-                </CardContent>
-                <CardFooter className="flex flex-col items-center pb-6 border-t pt-6">
-                  <div className="mb-4 h-16 w-full flex justify-center">
-                    {testimonial.image && (
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.company || testimonial.author} 
-                        className="h-full object-contain"
-                      />
-                    )}
-                  </div>
-                  <div className="text-center">
-                    <h4 className="font-semibold text-brand-blue">{testimonial.author}</h4>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.position} {testimonial.company && `• ${testimonial.company}`}
-                    </p>
-                  </div>
-                </CardFooter>
-              </Card>
+            <motion.div 
+              key={testimonial.id} 
+              variants={itemVariants}
+              className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.author} 
+                  className="w-12 h-12 rounded-full object-cover" 
+                />
+                <div className="ml-4">
+                  <h4 className="font-semibold">{testimonial.author}</h4>
+                  <p className="text-sm text-gray-500">{testimonial.position} {testimonial.company && ` • ${testimonial.company}`}</p>
+                </div>
+              </div>
+              <p className="text-gray-600 italic">
+                "{testimonial.content}"
+              </p>
             </motion.div>
           )) : (
-            <Card className="border-none shadow-lg bg-white col-span-full">
-              <CardContent className="pt-6 text-center">
-                <p>No testimonials available at this time.</p>
-              </CardContent>
-            </Card>
+            <div className="col-span-full text-center">
+              <p>No testimonials available at this time.</p>
+            </div>
           )}
         </motion.div>
       </div>
