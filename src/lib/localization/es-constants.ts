@@ -83,6 +83,29 @@ export const esConstants: LocalizedConstants = {
     "En BOH Concepts, redefinimos la dotación de personal de hospitalidad con una fuerza laboral diversa, equitativa e inclusiva que garantiza la consistencia y el compromiso con los objetivos de todos nuestros clientes.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
+  "A TRUSTED PARTNER": "UN SOCIO CONFIABLE",
+  "Professional Hospitality Services": "Servicios Profesionales de Hospitalidad",
+  "Exceptional Hospitality Service": "Servicio Excepcional de Hospitalidad",
+  "Professional staff delivering impeccable table service and guest attention": "Personal profesional que brinda un servicio de mesa impecable y atención al huésped",
+  "Trusted by Industry Leaders": "Confiado por Líderes de la Industria",
+  "Partnering with top hotels and resorts across the nation": "Asociándonos con los mejores hoteles y resorts de todo el país",
+  "Streamlined Recruitment Process": "Proceso de Reclutamiento Optimizado",
+  "From selection to onboarding, we handle every step with care": "Desde la selección hasta la incorporación, manejamos cada paso con cuidado",
+  "Elevating Guest Experiences": "Elevando las Experiencias de los Huéspedes",
+  "Professional hospitality staff that exceed expectations": "Personal de hospitalidad profesional que supera las expectativas",
+  "Premium Hospitality Staffing": "Personal de Hospitalidad Premium",
+  "Exceptional talent for luxury hotels and resorts": "Talento excepcional para hoteles y resorts de lujo",
+  "Join Our Team": "Únete a Nuestro Equipo",
+  "Our Approach": "Nuestro Enfoque",
+  
+  // Services section text
+  "Premium Staffing Solutions": "Soluciones Premium de Personal",
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "Proporcionamos servicios personalizados de personal de hospitalidad para satisfacer sus necesidades específicas, ya sea que esté buscando talento u oportunidades.",
+  
+  // CTA section text
+  "Ready to Elevate Your Hospitality Career or Team?": "¿Listo para Elevar tu Carrera de Hospitalidad o Equipo?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Ya sea que estés buscando oportunidades excepcionales en hospitalidad o intentando formar tu equipo ideal, BOH Concepts ofrece soluciones personalizadas diseñadas para satisfacer tus necesidades específicas.",
+  "Find Opportunities": "Encontrar Oportunidades",
 
   // Service position descriptions
   long_term_talents_description:

@@ -8,6 +8,29 @@ export const enConstants: LocalizedConstants = {
     "At BOH Concepts, we redefine hospitality staffing with a diverse, equitable, and inclusive workforce that ensures consistency and commitment to the goals of all our clients.",
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
+  "A TRUSTED PARTNER": "A TRUSTED PARTNER",
+  "Professional Hospitality Services": "Professional Hospitality Services",
+  "Exceptional Hospitality Service": "Exceptional Hospitality Service",
+  "Professional staff delivering impeccable table service and guest attention": "Professional staff delivering impeccable table service and guest attention",
+  "Trusted by Industry Leaders": "Trusted by Industry Leaders",
+  "Partnering with top hotels and resorts across the nation": "Partnering with top hotels and resorts across the nation",
+  "Streamlined Recruitment Process": "Streamlined Recruitment Process",
+  "From selection to onboarding, we handle every step with care": "From selection to onboarding, we handle every step with care",
+  "Elevating Guest Experiences": "Elevating Guest Experiences",
+  "Professional hospitality staff that exceed expectations": "Professional hospitality staff that exceed expectations",
+  "Premium Hospitality Staffing": "Premium Hospitality Staffing",
+  "Exceptional talent for luxury hotels and resorts": "Exceptional talent for luxury hotels and resorts",
+  "Join Our Team": "Join Our Team",
+  "Our Approach": "Our Approach",
+  
+  // Services section text
+  "Premium Staffing Solutions": "Premium Staffing Solutions",
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.",
+  
+  // CTA section text
+  "Ready to Elevate Your Hospitality Career or Team?": "Ready to Elevate Your Hospitality Career or Team?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.",
+  "Find Opportunities": "Find Opportunities",
   testimonials_title: "What Partners Say",
   testimonials_subtitle:
     "Discover why leading hospitality brands and professionals trust BOH Concepts for their staffing needs.",

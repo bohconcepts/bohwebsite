@@ -62,6 +62,31 @@ export type LocalizedConstants = {
   COMPANY_DESCRIPTION: string;
   COMPANY_ADDRESS: string;
   COMPANY_PHONE: string;
+  
+  // Hero section text
+  "A TRUSTED PARTNER": string;
+  "Professional Hospitality Services": string;
+  "Exceptional Hospitality Service": string;
+  "Professional staff delivering impeccable table service and guest attention": string;
+  "Trusted by Industry Leaders": string;
+  "Partnering with top hotels and resorts across the nation": string;
+  "Streamlined Recruitment Process": string;
+  "From selection to onboarding, we handle every step with care": string;
+  "Elevating Guest Experiences": string;
+  "Professional hospitality staff that exceed expectations": string;
+  "Premium Hospitality Staffing": string;
+  "Exceptional talent for luxury hotels and resorts": string;
+  "Join Our Team": string;
+  "Our Approach": string;
+  
+  // Services section text
+  "Premium Staffing Solutions": string;
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": string;
+  
+  // CTA section text
+  "Ready to Elevate Your Hospitality Career or Team?": string;
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": string;
+  "Find Opportunities": string;
 
   // Service position descriptions
   long_term_talents_description: string;
