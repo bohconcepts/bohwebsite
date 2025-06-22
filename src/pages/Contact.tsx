@@ -8,7 +8,6 @@ import {
   Facebook, 
   Linkedin, 
   Instagram, 
-  Youtube,
   Send,
   CheckCircle,
   AlertCircle
@@ -410,15 +409,9 @@ const Contact = () => {
               height="100%" 
               className="border-0" 
               allowFullScreen 
-              /* 
-                The loading="lazy" attribute improves performance in supported browsers
-                but isn't supported in Safari on iOS < 16.4. This is acceptable as the
-                attribute is a progressive enhancement - browsers that don't support it
-                will still load the iframe normally.
-              */
-              loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="BOH Concepts Location"
+              onLoad={() => console.log('Map loaded')}
             ></iframe>
           </motion.div>
         </div>

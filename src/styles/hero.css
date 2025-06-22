@@ -14,6 +14,7 @@
 .hero-mobile-container {
   min-height: 100vh;
   height: auto !important;
+  padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
