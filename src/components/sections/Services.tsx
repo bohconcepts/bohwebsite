@@ -120,7 +120,7 @@ const Services = () => {
             variants={titleVariants}
             className="text-4xl md:text-5xl font-bold text-brand-blue mb-6"
           >
-            Premium Staffing Solutions
+            {t("Premium Staffing Solutions")}
           </motion.h2>
 
           <motion.p
@@ -129,7 +129,7 @@ const Services = () => {
             variants={subtitleVariants}
             className="text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.
+            {t("We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.")}
           </motion.p>
         </div>
 

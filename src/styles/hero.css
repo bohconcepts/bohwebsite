@@ -1,3 +1,28 @@
 .text-shadow {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
+
+.hero-title-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile-specific styles for hero section */
+.hero-mobile-container {
+  min-height: 100vh;
+  height: auto !important;
+  padding-bottom: 2rem;
+}
+
+/* Ensure images cover the full area while maintaining aspect ratio */
+.hero-mobile-image {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  object-position: center;
+  background-color: #111827; /* dark background for letterboxing */
+}
