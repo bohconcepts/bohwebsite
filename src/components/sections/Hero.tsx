@@ -123,7 +123,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/30 via-brand-blue/20 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
+      <div className={`container mx-auto px-4 relative z-10 flex ${isMobile ? 'items-start pt-16' : 'items-center'} h-full`}>
         <div className="max-w-3xl">
           {/* Removed motion effects for better performance */}
           <div className="mb-3">
