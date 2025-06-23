@@ -3,8 +3,8 @@ import type { Database } from "./types/index";
 
 // Get environment variables directly from import.meta.env
 // These are automatically injected by Vite for variables prefixed with VITE_
-export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "";
-export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
+export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://krbkwdkluhyxpgddnqwr.supabase.co";
+export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyYmt3ZGtsdWh5eHBnZGRucXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3NTE4MTcsImV4cCI6MjA2NTMyNzgxN30.cqcg9G8PsfP2xFTVdKToktzGcA0zv-LZXxgQO8__aaw";
 
 // Add console logs for debugging
 console.log("Supabase URL being used:", SUPABASE_URL);
