@@ -1,10 +1,6 @@
-import { supabase } from "../client";
+import { supabase, SUPABASE_URL, SUPABASE_ANON_KEY } from "../client";
 import { createClient } from "@supabase/supabase-js";
 import type { PartnershipRequestInsert, PartnershipRequestUpdate } from "../types/partnership-requests";
-
-// Get environment variables with fallbacks for development
-const SUPABASE_URL = "https://krbkwdkluhyxpgddnqwr.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyYmt3ZGtsdWh5eHBnZGRucXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3NTE4MTcsImV4cCI6MjA2NTMyNzgxN30.cqcg9G8PsfP2xFTVdKToktzGcA0zv-LZXxgQO8__aaw";
 
 /**
  * Saves a partnership request to the Supabase partnership_requests table

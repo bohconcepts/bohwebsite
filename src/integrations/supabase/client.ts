@@ -1,9 +1,13 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "./types/index";
 
-// Get environment variables with fallbacks for development
-const SUPABASE_URL = "https://krbkwdkluhyxpgddnqwr.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyYmt3ZGtsdWh5eHBnZGRucXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3NTE4MTcsImV4cCI6MjA2NTMyNzgxN30.cqcg9G8PsfP2xFTVdKToktzGcA0zv-LZXxgQO8__aaw";
+// Declare the global variables defined in vite.config.ts
+declare const __SUPABASE_URL__: string;
+declare const __SUPABASE_ANON_KEY__: string;
+
+// Get environment variables from Vite's define declarations
+export const SUPABASE_URL = __SUPABASE_URL__ || "";
+export const SUPABASE_ANON_KEY = __SUPABASE_ANON_KEY__ || "";
 
 // Add console logs for debugging
 console.log("Supabase URL being used:", SUPABASE_URL);
