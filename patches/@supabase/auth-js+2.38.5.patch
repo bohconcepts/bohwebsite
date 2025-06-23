@@ -1,0 +1,13 @@
+diff --git a/node_modules/@supabase/auth-js/dist/module/lib/locks.js b/node_modules/@supabase/auth-js/dist/module/lib/locks.js
+index xyz123..abc456 789
+--- a/node_modules/@supabase/auth-js/dist/module/lib/locks.js
++++ b/node_modules/@supabase/auth-js/dist/module/lib/locks.js
+@@ -105,7 +105,7 @@ export class BrowserLockImplementation {
+                 if (support === undefined) {
+                     try {
+                         const result = await globalThis.navigator.locks.query();
+-                        );
++                        // Remove the extra parenthesis which was causing the syntax error
+                     }
+                     catch (e) {
+                     }

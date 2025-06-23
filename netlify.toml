@@ -4,8 +4,8 @@
 [build]
   # Directory to publish (relative to root of your repo)
   publish = "dist"
-  # Default build command
-  command = "npm run build"
+  # Using our shell script to fix module and build
+  command = "bash ./scripts/fix-and-build.sh"
 
 # Environment variables (non-sensitive ones only)
 # For sensitive variables like API keys, use Netlify UI instead
