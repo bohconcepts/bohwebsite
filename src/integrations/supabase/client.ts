@@ -1,13 +1,10 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "./types/index";
 
-// Declare the global variables defined in vite.config.ts
-declare const __SUPABASE_URL__: string;
-declare const __SUPABASE_ANON_KEY__: string;
-
-// Get environment variables from Vite's define declarations
-export const SUPABASE_URL = __SUPABASE_URL__ || "";
-export const SUPABASE_ANON_KEY = __SUPABASE_ANON_KEY__ || "";
+// Get environment variables directly from import.meta.env
+// These are automatically injected by Vite for variables prefixed with VITE_
+export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "";
+export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
 
 // Add console logs for debugging
 console.log("Supabase URL being used:", SUPABASE_URL);
