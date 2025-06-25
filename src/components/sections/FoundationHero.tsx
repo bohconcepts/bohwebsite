@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Suspense } from "react";
 import OptimizedImage from "@/components/common/OptimizedImage";
-import "@/styles/foundation.css";
+
 
 const FoundationHero = () => {
 
@@ -13,7 +13,7 @@ const FoundationHero = () => {
         <Suspense fallback={<div className="w-full h-full bg-gray-800"></div>}>
           <div className="w-full h-full">
             <OptimizedImage
-              src="/images/foundation/hero.jpg"
+              src="/images/foundation/education.jpeg"
               alt="BOH Foundation - Empowering Lives"
               className="object-cover w-full h-full"
               loading="eager"

@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import FoundationHero from '@/components/sections/FoundationHero';
 import OurMission from '@/components/sections/OurMission';
 import WhatWeDo from '@/components/sections/WhatWeDo';
-import SuccessStories from '@/components/sections/SuccessStories';
+//import SuccessStories from '@/components/sections/SuccessStories';
 import HowToHelp from '@/components/sections/HowToHelp';
-import ContactForm from '@/components/sections/ContactForm';
+//import ContactForm from '@/components/sections/ContactForm';
 
 const Foundation = () => {
   // We don't need the t function since we're using static text
@@ -24,9 +24,9 @@ const Foundation = () => {
       <FoundationHero />
       <OurMission />
       <WhatWeDo />
-      <SuccessStories />
+      {/*<SuccessStories />*/}
       <HowToHelp />
-      <ContactForm />
+      {/*<ContactForm />*/}
     </>
   );
 };

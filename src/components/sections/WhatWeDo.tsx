@@ -15,25 +15,25 @@ const WhatWeDo = () => {
       title: "College Scholarships",
       description: "Supporting minority students with financial aid to pursue higher education and achieve their academic goals.",
       icon: <GraduationCap className="h-8 w-8 text-brand-earth" />,
-      image: "/images/foundation/scholarship.jpg"
+      image: "/images/foundation/scholarship.JPG"
     },
     {
       title: "Borehole Installations",
       description: "Providing clean water access to communities through sustainable borehole installations and maintenance programs.",
       icon: <Droplet className="h-8 w-8 text-brand-earth" />,
-      image: "/images/foundation/borehole.jpg"
+      image: "/images/foundation/borehole.JPG"
     },
     {
       title: "Clothing Donations",
       description: "Distributing quality clothing to those in need while preserving dignity and offering choice in selection.",
       icon: <Shirt className="h-8 w-8 text-brand-earth" />,
-      image: "/images/foundation/clothing.jpg"
+      image: "/images/foundation/clothing.jpeg"
     },
     {
       title: "Financial Assistance",
       description: "Offering emergency financial support and resources to help individuals overcome temporary hardships.",
       icon: <Wallet className="h-8 w-8 text-brand-earth" />,
-      image: "/images/foundation/financial.jpg"
+      image: "/images/foundation/financial.JPG"
     }
   ];
 

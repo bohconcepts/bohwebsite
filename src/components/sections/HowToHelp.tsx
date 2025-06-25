@@ -18,7 +18,7 @@ const HowToHelp = () => {
       icon: <Heart className="h-10 w-10 text-white" />,
       buttonText: "Donate Now",
       buttonLink: "/donate",
-      color: "bg-brand-earth"
+      color: "bg-brand-blue"
     },
     {
       title: "Volunteer",
@@ -26,7 +26,7 @@ const HowToHelp = () => {
       icon: <Handshake className="h-10 w-10 text-white" />,
       buttonText: "Join Us",
       buttonLink: "/volunteer",
-      color: "bg-brand-blue-dark"
+      color: "bg-brand-blue"
     },
     {
       title: "Partner With Us",

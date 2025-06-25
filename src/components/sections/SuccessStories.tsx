@@ -15,28 +15,28 @@ const SuccessStories = () => {
       name: "Sarah Johnson",
       location: "Ghana",
       quote: "The BOH Foundation scholarship changed my life. I'm the first in my family to attend college, and now I'm studying to become a doctor so I can give back to my community.",
-      image: "/images/foundation/story1.jpg",
+      image: "/images/foundation/clothing.jpeg",
       program: "Scholarship Program"
     },
     {
       name: "Emmanuel Osei",
       location: "Rural Ghana",
       quote: "Before the borehole was installed, our village women walked 3 miles each way for water. Now we have clean water right here, and our children are healthier and can attend school regularly.",
-      image: "/images/foundation/story2.jpg",
+      image: "/images/foundation/clothing.jpeg",
       program: "Clean Water Initiative"
     },
     {
       name: "Amara Diallo",
       location: "Senegal",
       quote: "The clothing donation program provided me with professional attire for job interviews. I now have steady employment and can support my family with dignity.",
-      image: "/images/foundation/story3.jpg",
+      image: "/images/foundation/bohfoundation.jpeg",
       program: "Clothing Donations"
     },
     {
       name: "Kwame Mensah",
       location: "Nigeria",
       quote: "When my small business was struggling during the pandemic, BOH Foundation's financial assistance helped me stay afloat. Now my business is thriving again and I've hired two employees.",
-      image: "/images/foundation/story4.jpg",
+      image: "/images/foundation/clothing.jpeg",
       program: "Financial Assistance"
     }
   ];

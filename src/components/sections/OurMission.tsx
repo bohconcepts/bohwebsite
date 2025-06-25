@@ -20,7 +20,7 @@ const OurMission = () => {
             }`}
           >
             <OptimizedImage
-              src="/images/foundation/mission.jpg"
+              src="/images/foundation/hero.png"
               alt="BOH Foundation Mission"
               className="rounded-lg shadow-xl object-cover w-full h-full max-h-[500px]"
               width={600}
