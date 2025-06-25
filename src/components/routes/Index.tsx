@@ -25,6 +25,9 @@ const MissionPage = lazy(() => import("@/pages/MissionPage"));
 const ValuesPage = lazy(() => import("@/pages/ValuesPage"));
 const WhoWeArePage = lazy(() => import("@/pages/WhoWeArePage"));
 
+// Foundation pages
+const Foundation = lazy(() => import("@/pages/Foundation"));
+
 // Main site routes only
 
 // Loading fallback component
@@ -74,6 +77,7 @@ const AppRoutes = () => {
         <Route path="/markets" element={<MarketsPage />} />
         <Route path="/partnership" element={<Partnership />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/foundation" element={<Foundation />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/sitemap" element={<Sitemap />} />

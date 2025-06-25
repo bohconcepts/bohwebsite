@@ -748,6 +748,7 @@ export const enConstants: LocalizedConstants = {
         { title: "Our Team", href: "/about/teams" },
         { title: "Mission and Vision", href: "/about/mission" },
         { title: "Our Values", href: "/about/values" },
+        { title: "BOH Foundation", href: "/foundation" },
       ],
     },
     {

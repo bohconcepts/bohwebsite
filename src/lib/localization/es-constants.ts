@@ -526,6 +526,7 @@ export const esConstants: LocalizedConstants = {
         { title: "Nuestro Equipo", href: "/about/teams" },
         { title: "Nuestra Misión y Visión", href: "/about/mission" },
         { title: "Nuestros Valores", href: "/about/values" },
+        { title: "Fundación BOH", href: "/foundation" },
       ],
     },
     { title: "Nuestro Enfoque", href: "/our-approach" },
