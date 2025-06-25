@@ -2,7 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Handshake, Building } from "lucide-react";
+import { Heart, Users, Building } from "lucide-react";
 
 const HowToHelp = () => {
   const { t } = useLanguage();
@@ -23,7 +23,7 @@ const HowToHelp = () => {
     {
       title: "Volunteer",
       description: "Share your time and skills to make a difference. We have opportunities both locally and remotely.",
-      icon: <Handshake className="h-10 w-10 text-white" />,
+      icon: <Users className="h-10 w-10 text-white" />,
       buttonText: "Join Us",
       buttonLink: "/volunteer",
       color: "bg-brand-blue"
