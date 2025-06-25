@@ -47,14 +47,14 @@ const FoundationHero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-            {/* <Button
+            <Button
               asChild
               size="lg"
               className="bg-brand-earth hover:bg-brand-earth/90 text-white"
             >
               <Link to="/donate">Donate Now</Link>
-            </Button> */}
-            {/* <Button
+            </Button>
+            <Button
               asChild
               size="lg"
               variant="outline"
@@ -63,7 +63,7 @@ const FoundationHero = () => {
               <Link to="/foundation/get-involved">
                 Get Involved
               </Link>
-            </Button> */}
+            </Button>
           </div>
         </div>
       </div>
