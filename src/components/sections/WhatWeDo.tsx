@@ -1,10 +1,8 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import { useInView } from "react-intersection-observer";
 import { GraduationCap, Droplet, Shirt, Wallet } from "lucide-react";
 import OptimizedImage from "@/components/common/OptimizedImage";
 
 const WhatWeDo = () => {
-  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

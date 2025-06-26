@@ -1,13 +1,13 @@
-/* Custom font imports */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+/* Custom font imports - Hyatt-inspired luxury style */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&display=swap');
 
-/* Font variables */
+/* Font variables - Hyatt-inspired luxury style */
 :root {
-  --font-primary: 'Roboto', sans-serif;
-  --font-secondary: 'Roboto Condensed', sans-serif;
-  --font-tertiary: 'Open Sans', sans-serif;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  --font-tertiary: 'Lato', sans-serif;
 }
 
 /* Apply fonts to body */

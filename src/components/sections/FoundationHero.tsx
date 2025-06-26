@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Suspense } from "react";
 import OptimizedImage from "@/components/common/OptimizedImage";
 

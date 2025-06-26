@@ -421,26 +421,23 @@ export const enConstants: LocalizedConstants = {
         "BOH Concepts effectively fulfills our staffing needs for 100 employees across housekeeping, culinary, stewarding, and engineering. Their deep understanding of our requirements, along with a strong partnership, gives us confidence in continuing our collaboration.",
       author: "General Manager",
       position: "Luxury Hotel",
-      image: "/images/clients/Hyatt.png",
-      company: "Hyatt"
+      location: "Greater Seattle Area"
     },
     {
       id: "2",
       content:
         "We have partnered with BOH Concepts for over three years, and they have unequivocally provided us with outstanding staff who fully embody our brand standards. Their meticulous attention to detail and unparalleled personalized service distinctly set them apart from any other partner.",
       author: "Executive Housekeeper",
-      position: "Maui, Hawaii",
-      image: "/images/clients/Waldorf.png",
-      company: "Waldorf Astoria"
+      position: "Luxury Resort",
+      location: "Maui, Hawaii"
     },
     {
       id: "3",
       content:
         "Partnering with BOH Concepts transformed our recruitment challenges during peak seasons. Their temporary solutions ensured that we maintained service excellence even during our busiest periods.",
       author: "Human Resource Manager",
-      position: "Maryland",
-      image: "/images/clients/Hilton-Logo-4.png",
-      company: "Hilton"
+      position: "Premium Hotel",
+      location: "Baltimore, Maryland"
     },
   ],
   CLIENTS: [

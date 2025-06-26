@@ -29,8 +29,7 @@ export type Testimonial = {
   content: string;
   author: string;
   position: string;
-  image: string;
-  company?: string;
+  location: string;
 };
 
 export type TeamMember = {

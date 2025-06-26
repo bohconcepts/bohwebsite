@@ -17,7 +17,7 @@ const OurClientsPage: FC = () => {
   // Animation variants
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
   };
 
   const { ref: titleRef } = useInView({
@@ -105,15 +105,11 @@ const OurClientsPage: FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.slice(0, 9).map((testimonial) => (
               <div key={testimonial.id} className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300">
-                <div className="flex items-center mb-6">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.author} 
-                    className="w-12 h-12 rounded-full object-cover" 
-                  />
-                  <div className="ml-4">
+                <div className="mb-6">
+                  <div className="mb-2">
                     <h4 className="font-semibold">{testimonial.author}</h4>
                     <p className="text-sm text-gray-500">{testimonial.position}</p>
+                    <p className="text-sm text-brand-teal font-medium">{testimonial.location}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 italic">

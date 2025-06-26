@@ -24,7 +24,7 @@ const OurClientsPage: FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut" as const },
     },
   };
 
@@ -126,17 +126,11 @@ const OurClientsPage: FC = () => {
                 key={testimonial.id}
                 className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex items-center mb-6">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div className="ml-4">
+                <div className="mb-6">
+                  <div className="mb-2">
                     <h4 className="font-semibold">{testimonial.author}</h4>
-                    <p className="text-sm text-gray-500">
-                      {testimonial.position}
-                    </p>
+                    <p className="text-sm text-gray-500">{testimonial.position}</p>
+                    <p className="text-sm text-brand-teal font-medium">{testimonial.location}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 italic">{t(testimonial.content)}</p>

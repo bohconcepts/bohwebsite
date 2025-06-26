@@ -1,11 +1,9 @@
-import { useLanguage } from "@/contexts/LanguageContext";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Building } from "lucide-react";
 
 const HowToHelp = () => {
-  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
