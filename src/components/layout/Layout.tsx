@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="flex flex-col min-h-screen">
       <TrackableLinksProvider pageSource={currentPath}>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-[80px]">{children}</main>
         <Footer />
       </TrackableLinksProvider>
     </div>
