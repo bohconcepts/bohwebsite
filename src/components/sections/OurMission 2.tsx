@@ -1,9 +1,9 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+// import { useLanguage } from "@/contexts/LanguageContext"; // Removed unused import
 import { useInView } from "react-intersection-observer";
 import OptimizedImage from "@/components/common/OptimizedImage";
 
 const OurMission = () => {
-  const { t } = useLanguage();
+  // const { t } = useLanguage(); // Removed unused variable
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -39,9 +39,9 @@ const OurMission = () => {
               </span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mb-6 leading-tight">
+            <h3 className="text-1xl md:text-2xl uppercase text-gray-900 mb-6 leading-tight">
               Uplifting Communities Through Compassion and Action
-            </h2>
+            </h3>
             
             <p className="text-gray-700 text-lg mb-6 leading-relaxed">
               At BOH Foundation, our mission is to create lasting positive change in underserved communities 

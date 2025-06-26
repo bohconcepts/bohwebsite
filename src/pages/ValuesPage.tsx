@@ -37,7 +37,7 @@ const ValuesPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('values_page_tag')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-4 text-white">
               {t('values_page_title')}
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mb-6">
@@ -58,7 +58,7 @@ const ValuesPage = () => {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-4">
                 <Heart className="text-brand-orange w-8 h-8 mr-3" />
-                <h2 className="text-3xl font-bold text-center">
+                <h2 className="text-3xl uppercase text-center">
                   <span className={t("values_heading_color")}>COMPANY CORE VALUES</span>
                 </h2>
               </div>
@@ -117,7 +117,7 @@ const ValuesPage = () => {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="max-w-3xl mx-auto mt-16 text-center"
             >
-              <h3 className="text-2xl font-bold mb-6 text-gray-800">Living Our Values</h3>
+              <h3 className="text-2xl uppercase mb-6 text-gray-800">Living Our Values</h3>
               <p className="text-lg text-gray-600 mb-8">
                 At BOH Concepts, our values are not just words on a page, they are the principles that guide 
                 every decision we make and every interaction we have. From our leadership team to our 

@@ -80,7 +80,7 @@ const Statistics = () => {
   };
 
   return (
-    <section ref={ref} className="primary-gradient py-16">
+    <section ref={ref} className="primary-gradient py-10">
       <div className="container">
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
