@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
-        heading: ['Roboto Condensed', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif'],
+        sans: ['Montserrat', 'sans-serif'],
+        heading: ['Playfair Display', 'serif'],
+        body: ['Lato', 'sans-serif'],
       },
       colors: {
         'brand-orange': 'hsl(var(--brand-orange))',
