@@ -1,5 +1,5 @@
 
-import { motion } from "framer-motion";
+import { motion, Variants, Easing } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Home, Building, DollarSign, Shield } from "lucide-react";
@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
     threshold: 0.1,
   });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 60,
@@ -36,8 +36,8 @@ const WhyChooseUs = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
+        ease: "easeOut" as Easing,
+        type: "spring" as const,
         stiffness: 80,
         damping: 20,
       },
@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
   return (
     <>
       {/* Cards Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             {/* <span className="inline-block font-medium mb-3 text-center text-brand-orange">

@@ -51,7 +51,7 @@ const About = () => {
         </div>
       </div>
 
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container px-4">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <Tabs defaultValue="about" className="w-full">

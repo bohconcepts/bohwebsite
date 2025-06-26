@@ -218,7 +218,7 @@ const MarketsPage: React.FC = () => {
       </section>
 
       {/* Why Africa Chooses Us */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block text-brand-orange font-medium mb-3">
@@ -271,7 +271,7 @@ const MarketsPage: React.FC = () => {
       <GlobalWorkforceMap />
 
       {/* Industries We Serve */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block text-brand-orange font-medium mb-3">
@@ -313,7 +313,7 @@ const MarketsPage: React.FC = () => {
       </section>
 
       {/* Active Presence */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div ref={locationsRef} className="text-center mb-12">
             <motion.span
@@ -379,7 +379,7 @@ const MarketsPage: React.FC = () => {
       </section>
 
       {/* Partner With Us */}
-      <section className="py-16 bg-brand-blue text-white">
+      <section className="py-12 bg-brand-blue text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
@@ -403,7 +403,7 @@ const MarketsPage: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl uppercase mb-8 text-gray-800">
             {t("markets_cta_heading")}

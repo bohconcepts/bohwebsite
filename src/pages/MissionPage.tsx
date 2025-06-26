@@ -45,7 +45,7 @@ const MissionPage = () => {
         </div>
       </div>
 
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0 }}

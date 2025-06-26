@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants, Easing } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,27 +29,27 @@ const Services = () => {
   });
 
   // Animation variants
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut" as Easing },
     },
   };
 
-  const subtitleVariants = {
+  const subtitleVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" as Easing },
     },
   };
 
   // Animation variants removed as they're no longer needed
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -60,7 +60,7 @@ const Services = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 60,
@@ -72,15 +72,15 @@ const Services = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
-        type: "spring",
+        ease: "easeOut" as Easing,
+        type: "spring" as const,
         stiffness: 80,
         damping: 20,
       },
     },
   };
 
-  const cardHoverVariants = {
+  const cardHoverVariants: Variants = {
     initial: {
       y: 0,
       boxShadow:
@@ -92,12 +92,12 @@ const Services = () => {
         "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)",
       transition: {
         duration: 0.3,
-        ease: "easeOut",
+        ease: "easeOut" as Easing,
       },
     },
   };
 
-  const backgroundVariants = {
+  const backgroundVariants: Variants = {
     initial: {
       background: "linear-gradient(135deg, #ffffff 0%, #ffffff 100%)",
     },
@@ -105,13 +105,13 @@ const Services = () => {
       background: "linear-gradient(135deg, #ffffff 0%, #fef7f0 100%)",
       transition: {
         duration: 0.4,
-        ease: "easeInOut",
+        ease: "easeInOut" as Easing,
       },
     },
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-12 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div ref={titleRef} className="text-center mb-16">
           <motion.h2

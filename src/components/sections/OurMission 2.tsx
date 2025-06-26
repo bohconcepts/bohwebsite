@@ -1,16 +1,16 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+// import { useLanguage } from "@/contexts/LanguageContext"; // Removed unused import
 import { useInView } from "react-intersection-observer";
 import OptimizedImage from "@/components/common/OptimizedImage";
 
 const OurMission = () => {
-  const { t } = useLanguage();
+  // const { t } = useLanguage(); // Removed unused variable
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
-    <section className="py-16 md:py-24 bg-brand-blue-dark/5" id="our-mission">
+    <section className="py-12 md:py-24 bg-brand-blue-dark/5" id="our-mission">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div 
@@ -39,9 +39,9 @@ const OurMission = () => {
               </span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mb-6 leading-tight">
+            <h3 className="text-1xl md:text-2xl uppercase text-gray-900 mb-6 leading-tight">
               Uplifting Communities Through Compassion and Action
-            </h2>
+            </h3>
             
             <p className="text-gray-700 text-lg mb-6 leading-relaxed">
               At BOH Foundation, our mission is to create lasting positive change in underserved communities 

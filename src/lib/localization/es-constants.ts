@@ -487,7 +487,8 @@ export const esConstants: LocalizedConstants = {
       content:
         "BOH Concepts fortalece adecuadamente nuestras necesidades de personal de 100 empleados en administración, limpieza e ingeniería. Debido a su firme comprensión de nuestras necesidades y la asociación que fomentan, no veo que cambiemos de socios de personal.",
       author: "John Smith",
-      position: "Gerente General, Hilton Atlanta",
+      position: "Gerente General",
+      location: "Hilton Atlanta",
       image: "/images/clients/Waldorf.png",
     },
     {
@@ -495,7 +496,8 @@ export const esConstants: LocalizedConstants = {
       content:
         "Hemos estado trabajando con BOH Concepts durante más de tres años y constantemente nos han proporcionado personal de alta calidad que comprende los estándares de nuestra marca. Su atención al detalle y servicio personalizado los distinguen de otras agencias de personal.",
       author: "Ama de Llaves Ejecutiva",
-      position: "Maui, Hawaii",
+      position: "Ama de Llaves",
+      location: "Maui, Hawaii",
       image: "/images/clients/Hyatt.png",
     },
     {
@@ -503,7 +505,8 @@ export const esConstants: LocalizedConstants = {
       content:
         "Encontrar personal confiable para nuestros picos estacionales siempre fue un desafío hasta que nos asociamos con BOH Concepts. Sus soluciones de personal temporal han sido un cambio de juego para nuestro resort, permitiéndonos mantener la excelencia en el servicio incluso durante nuestros períodos más ocupados.",
       author: "Gerente de Recursos Humanos",
-      position: "Maryland",
+      position: "Gerente de RRHH",
+      location: "Maryland",
       image: "/images/clients/Hilton-Logo-4.png",
     },
     // {

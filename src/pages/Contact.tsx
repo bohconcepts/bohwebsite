@@ -8,7 +8,7 @@ import {
   Facebook, 
   Linkedin, 
   Instagram, 
-  Youtube,
+  // Youtube, // Removed unused import
   Send,
   CheckCircle,
   AlertCircle
@@ -159,7 +159,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Information and Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container px-4">
           <div className="grid md:grid-cols-2 gap-10">
             {/* Contact Information */}

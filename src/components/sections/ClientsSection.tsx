@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useClients } from "@/hooks/useLocalizedConstants";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,7 +19,7 @@ const ClientsSection = () => {
   const duplicatedClients = [...clients, ...clients];
   
   // Animation variants for individual items
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -29,7 +29,7 @@ const ClientsSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-16 bg-white">
+    <section ref={ref} className="py-10 bg-white">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl uppercase text-brand-blue mb-6">{t('clients_title')}</h2>
@@ -43,30 +43,30 @@ const ClientsSection = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <motion.div
-            className="flex gap-12 py-4 items-center whitespace-nowrap"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: inView ? 1 : 0,
-              x: [-1920, 0],
-            }}
-            transition={{
-              opacity: { duration: 0.8 },
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 30,
-                ease: "linear",
-                paused: isHovered // Completely pause when hovered
-              },
-            }}
-          >
-            {duplicatedClients.map((client, index) => (
-              <motion.div
-                key={`${client.id}-${index}`}
-                variants={itemVariants}
-                className="flex justify-center"
-              >
+          {inView && (
+            <motion.div
+              className="flex gap-12 py-4 items-center whitespace-nowrap"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                x: isHovered ? 0 : "-50%"
+              }}
+              transition={{
+                opacity: { duration: 0.8 },
+                x: {
+                  repeat: isHovered ? 0 : Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear"
+                },
+              }}
+            >
+              {duplicatedClients.map((client, index) => (
+                <motion.div
+                  key={`${client.id}-${index}`}
+                  variants={itemVariants}
+                  className="flex justify-center"
+                >
                 <a
                   href={client.website}
                   target="_blank"
@@ -90,6 +90,7 @@ const ClientsSection = () => {
               </motion.div>
             ))}
           </motion.div>
+        )}  {/* Added missing closing parenthesis */}
         </div>
       </div>
     </section>
