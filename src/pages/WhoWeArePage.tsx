@@ -64,7 +64,7 @@ const WhoWeArePage: React.FC = () => {
             <span className="inline-block bg-brand-orange text-white px-4 py-2 rounded-md text-sm font-semibold mb-6 uppercase tracking-wider">
               {t("about_page_tag")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-8 leading-tight">
               {t("about_page_title")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mb-8">
