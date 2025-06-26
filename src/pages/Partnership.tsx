@@ -70,7 +70,7 @@ const Partnership = () => {
       </div>
 
       {/* Partnership Benefits Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ const Partnership = () => {
       </section>
 
       {/* Partnership Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container px-4">
           <div className="grid md:grid-cols-2 gap-10">
             {/* Partnership Information */}
@@ -216,7 +216,7 @@ const Partnership = () => {
       </section>
       
       {/* Testimonials/Current Partners Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

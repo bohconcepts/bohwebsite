@@ -30,6 +30,7 @@ export type Testimonial = {
   author: string;
   position: string;
   location: string;
+  image?: string; // Optional image path for the testimonial
 };
 
 export type TeamMember = {

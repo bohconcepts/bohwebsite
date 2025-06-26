@@ -41,7 +41,7 @@ const Unsubscribe = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-16 px-4">
+      <div className="container mx-auto py-12 px-4">
         <div className="max-w-lg mx-auto bg-white rounded-lg shadow-md p-8">
           {status === 'loading' && (
             <div className="flex flex-col items-center justify-center py-8">

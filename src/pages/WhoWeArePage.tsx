@@ -163,7 +163,7 @@ const WhoWeArePage: React.FC = () => {
       </section>
 
       {/* Breast Cancer Awareness Initiative */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={staggerContainerVariants}
@@ -236,7 +236,7 @@ const WhoWeArePage: React.FC = () => {
       </section>
 
       {/* Black History Month Initiative */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={staggerContainerVariants}
@@ -306,7 +306,7 @@ const WhoWeArePage: React.FC = () => {
       </section>
 
       {/* Community Initiatives Section */}
-      <section id="initiatives" className="py-16 bg-white">
+      <section id="initiatives" className="py-12 bg-white">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={staggerContainerVariants}
@@ -422,7 +422,7 @@ const WhoWeArePage: React.FC = () => {
       </section>
 
       {/* Community Impact Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="container px-4 mx-auto">
           <motion.div
             variants={staggerContainerVariants}

@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
   return (
     <>
       {/* Cards Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             {/* <span className="inline-block font-medium mb-3 text-center text-brand-orange">
