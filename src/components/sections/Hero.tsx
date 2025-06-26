@@ -134,7 +134,7 @@ const Hero = () => {
 
           <h1
             key={`title-${carousel.currentSlide}`}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow"
+            className="text-3xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow"
           >
             {carousel.slides[carousel.currentSlide].title}
           </h1>
