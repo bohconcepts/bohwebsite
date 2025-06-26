@@ -118,7 +118,7 @@ const Services = () => {
             initial="hidden"
             animate={titleInView ? "visible" : "hidden"}
             variants={titleVariants}
-            className="text-4xl md:text-5xl font-bold text-brand-blue mb-6"
+            className="text-4xl md:text-5xl uppercase text-brand-blue mb-6"
           >
             {t("Premium Staffing Solutions")}
           </motion.h2>
