@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants, easeOut } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -12,9 +12,13 @@ import '../styles/markets.css'; // Import the CSS file we'll create
 const MarketsPage: React.FC = () => {
   const { t } = useLanguage();
   // Animation variants for sections
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  const fadeInUpVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: easeOut }
+    }
   };
 
   // Animation variants for staggered fade-in
@@ -108,7 +112,7 @@ const MarketsPage: React.FC = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("markets_hero_tag")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               Global Hospitality Market
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -135,7 +139,7 @@ const MarketsPage: React.FC = () => {
               initial="hidden"
               animate={titleInView ? "visible" : "hidden"}
               variants={fadeInUpVariants}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl uppercase text-gray-900 mb-4"
             >
               {t("markets_section_title")}
             </motion.h2>
@@ -148,7 +152,7 @@ const MarketsPage: React.FC = () => {
                 visible: {
                   width: "80px",
                   opacity: 1,
-                  transition: { duration: 0.8, delay: 0.4, ease: "easeOut" }
+                  transition: { duration: 0.8, delay: 0.4, ease: easeOut }
                 }
               }}
               className="h-1 bg-brand-orange mx-auto rounded-full"
@@ -170,8 +174,8 @@ const MarketsPage: React.FC = () => {
               animate={industriesInView ? "visible" : "hidden"}
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-              }}
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } }
+              } as Variants}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-orange hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-xl font-semibold mb-4 text-gray-800">End-to-End Recruitment Services</h3>
@@ -185,8 +189,8 @@ const MarketsPage: React.FC = () => {
               animate={industriesInView ? "visible" : "hidden"}
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
-              }}
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2, ease: easeOut } }
+              } as Variants}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-blue hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-xl font-semibold mb-4 text-gray-800">On-the-Ground Expertise</h3>
@@ -200,8 +204,8 @@ const MarketsPage: React.FC = () => {
               animate={industriesInView ? "visible" : "hidden"}
               variants={{
                 hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4 } }
-              }}
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4, ease: easeOut } }
+              } as Variants}
               className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand-orange hover:shadow-xl transition-shadow duration-300"
             >
               <h3 className="text-xl font-semibold mb-4 text-gray-800">Multilingual Talent Pool</h3>
@@ -220,7 +224,7 @@ const MarketsPage: React.FC = () => {
             <span className="inline-block text-brand-orange font-medium mb-3">
               {t("markets_why_tag")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mb-4">
               {t("markets_why_title")}
             </h2>
             <div className="h-1 w-20 bg-brand-orange mx-auto rounded-full"></div>
@@ -338,9 +342,9 @@ const MarketsPage: React.FC = () => {
                 visible: {
                   width: "80px",
                   opacity: 1,
-                  transition: { duration: 0.8, delay: 0.4, ease: "easeOut" }
+                  transition: { duration: 0.8, delay: 0.4, ease: easeOut }
                 }
-              }}
+              } as Variants}
               className="h-1 bg-brand-orange mx-auto rounded-full"
             ></motion.div>
           </div>
@@ -381,7 +385,7 @@ const MarketsPage: React.FC = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("markets_partnership_tag")}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl uppercase mb-6">
               {t("markets_partnership_title")}
             </h2>
           </div>
@@ -401,7 +405,7 @@ const MarketsPage: React.FC = () => {
       {/* Call to Action */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-800">
+          <h2 className="text-2xl md:text-3xl uppercase mb-8 text-gray-800">
             {t("markets_cta_heading")}
           </h2>
           

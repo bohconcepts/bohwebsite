@@ -148,7 +148,7 @@ const Contact = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("GET IN TOUCH")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("Contact Us")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -170,7 +170,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <motion.h2 
-                className="text-3xl font-bold mb-8 text-brand-blue"
+                className="text-3xl uppercase mb-8 text-brand-blue"
                 variants={itemVariants}
               >
                 {t('Contact Information')}
@@ -278,7 +278,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-white rounded-xl shadow-lg p-8"
             >
-              <h2 className="text-3xl font-bold mb-6 text-brand-blue">{t('Send Us a Message')}</h2>
+              <h2 className="text-3xl uppercase mb-6 text-brand-blue">{t('Send Us a Message')}</h2>
               
               {isSubmitted ? (
                 <motion.div 
@@ -389,7 +389,7 @@ const Contact = () => {
       <section className="py-10 bg-gray-50">
         <div className="container px-4">
           <motion.h2 
-            className="text-3xl font-bold mb-8 text-center text-brand-blue"
+            className="text-3xl uppercase mb-8 text-center text-brand-blue"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

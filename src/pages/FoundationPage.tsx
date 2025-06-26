@@ -93,7 +93,7 @@ const FoundationPage: React.FC = () => {
     <>
       <Helmet>
         <title>BOH Foundation | {companyInfo.name}</title>
-        <meta name="description" content="The BOH Foundation is dedicated to uplifting marginalized communities through education, clean water, clothing, and financial assistance programs." />
+        <meta name="description" content="The BOH Foundation is dedicated to uplifting underserved communities through education, clean water, clothing, and financial assistance programs." />
       </Helmet>
 
       {/* Hero Section with Video Background */}
@@ -127,7 +127,7 @@ const FoundationPage: React.FC = () => {
               Empowering Lives, Building Hope
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mb-8">
-              {language === "en" ? "Supporting minorities through education, clean water, clothing, and financial assistance programs to create sustainable change and brighter futures." :
+              {language === "en" ? "Supporting underserved communities through education, clean water, clothing, and financial assistance programs to create sustainable change and brighter futures." :
                language === "fr" ? "Soutenir les minorités grâce à des programmes d'éducation, d'eau potable, de vêtements et d'aide financière pour créer un changement durable et un avenir meilleur." :
                "Apoyando a las minorías a través de programas de educación, agua potable, ropa y asistencia financiera para crear un cambio sostenible y un futuro más brillante."}
             </p>
@@ -167,14 +167,14 @@ const FoundationPage: React.FC = () => {
           >
             <div className="flex items-center justify-center mb-6">
               <div className="h-0.5 w-12 bg-brand-orange mr-4"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+              <h2 className="text-3xl md:text-4xl uppercase text-gray-900 text-center">
                 Foundation Mission
               </h2>
               <div className="h-0.5 w-12 bg-brand-orange ml-4"></div>
             </div>
             
             <p className="text-xl text-gray-700 text-center mb-12">
-              The BOH Foundation is dedicated to uplifting marginalized communities by providing essential resources, 
+              The BOH Foundation is dedicated to uplifting underserved communities by providing essential resources, 
               educational opportunities, and financial support. We believe in creating sustainable solutions that 
               empower individuals to overcome systemic barriers and achieve their full potential with dignity and hope.
             </p>
@@ -230,7 +230,7 @@ const FoundationPage: React.FC = () => {
             <span className="bg-brand-blue/10 text-brand-blue px-4 py-2 rounded-md text-sm font-semibold mb-6 inline-block">
               OUR PROGRAMS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
+            <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mt-4">
               What We Do
             </h2>
             <div className="h-1 w-20 bg-brand-earth mx-auto mt-6"></div>
@@ -251,7 +251,7 @@ const FoundationPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-gray-900">Education</h3>
               <p className="text-gray-700">
-                Providing scholarships and educational resources to help minorities access quality education and build brighter futures.
+                Providing scholarships and educational resources to help underserved communities access quality education and build brighter futures.
               </p>
             </motion.div>
 
@@ -307,7 +307,7 @@ const FoundationPage: React.FC = () => {
               </span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl uppercase text-white mb-6">
               Lives We've Transformed
             </h2>
             
@@ -373,7 +373,7 @@ const FoundationPage: React.FC = () => {
       {/* How to Help Section */}
       <section className="help-section" ref={helpRef}>
         <div className="container">
-          <h2 className="section-title">How to Help</h2>
+          <h2 className="section-title uppercase font-normal">How to Help</h2>
           <div className="section-divider"></div>
           
           <motion.div 

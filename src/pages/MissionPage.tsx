@@ -35,7 +35,7 @@ const MissionPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('MISSION AND VISION')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-4 text-white">
               {t('mission_page_title')}
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mb-6">
@@ -57,7 +57,7 @@ const MissionPage = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-10 text-center relative"
+              className="text-2xl sm:text-3xl md:text-4xl uppercase mb-6 sm:mb-10 text-center relative"
             >
               <span className={t("mission_heading_color")}>
                 {t("mission_heading")}

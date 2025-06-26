@@ -36,12 +36,12 @@ const FoundationHero = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow">
             Empowering Lives, Building Hope
           </h1>
 
           <p className="text-white text-lg md:text-xl mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow">
-            Supporting minorities through education, clean water, clothing, and financial assistance programs
+            Supporting underserved communities through education, clean water, clothing, and financial assistance programs
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">

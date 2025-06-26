@@ -188,7 +188,7 @@ const ServicesPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("TAILORED SOLUTIONS")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("Our Premium Staffing Solutions")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">

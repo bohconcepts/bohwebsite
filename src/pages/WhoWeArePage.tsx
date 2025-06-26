@@ -108,7 +108,7 @@ const WhoWeArePage: React.FC = () => {
           >
             <div className="flex items-center justify-center mb-6">
               <div className="h-0.5 w-12 bg-brand-orange mr-4"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+              <h2 className="text-3xl md:text-4xl uppercase text-gray-900 text-center">
                 Corporate Mission
               </h2>
               <div className="h-0.5 w-12 bg-brand-orange ml-4"></div>
@@ -175,7 +175,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="inline-block bg-pink-100 p-3 rounded-full mb-4">
               <Heart className="text-pink-500 w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-6 text-brand-blue">
+            <h2 className="text-3xl uppercase mb-6 text-brand-blue">
               {t("csr_breast_cancer_title")}
             </h2>
             <p className="text-lg mb-4">{t("csr_breast_cancer_description")}</p>
@@ -248,7 +248,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="inline-block bg-orange-100 p-3 rounded-full mb-4">
               <Calendar className="text-orange-500 w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-6 text-brand-blue">
+            <h2 className="text-3xl uppercase mb-6 text-brand-blue">
               {t("csr_black_history_title")}
             </h2>
             <p className="text-lg mb-4">{t("csr_black_history_description")}</p>
@@ -293,10 +293,10 @@ const WhoWeArePage: React.FC = () => {
               </p>
               <div className="pt-4">
                 <a
-                  href="#"
+                  href="/foundation"
                   className="inline-flex items-center text-brand-orange font-medium hover:underline"
                 >
-                  Learn more about our DEI initiatives
+                  Learn more about BoH Foundation
                   <Globe className="ml-2 h-4 w-4" />
                 </a>
               </div>
@@ -318,7 +318,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="inline-block bg-green-100 p-3 rounded-full mb-4">
               <Globe className="text-green-500 w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-6 text-brand-blue">
+            <h2 className="text-3xl uppercase mb-6 text-brand-blue">
               {t("Community Initiatives")}
             </h2>
             <p className="text-lg mb-4">
@@ -434,7 +434,7 @@ const WhoWeArePage: React.FC = () => {
             <div className="inline-block bg-blue-100 p-3 rounded-full mb-4">
               <Users className="text-blue-500 w-6 h-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-4">Impact</h2>
+            <h2 className="text-3xl uppercase mb-4">Impact</h2>
             <p className="text-lg text-gray-700 mb-6">
               Through our corporate social responsibility initiatives, BOH
               Concepts has made a meaningful difference in communities across

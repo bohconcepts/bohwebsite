@@ -33,7 +33,7 @@ const TeamsPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               OUR TEAM
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-4 text-white">
               Meet the Exceptional Team
             </h1>
             <p className="text-lg text-white/90 max-w-2xl mb-6">

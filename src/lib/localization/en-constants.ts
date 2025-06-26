@@ -436,7 +436,7 @@ export const enConstants: LocalizedConstants = {
       content:
         "Partnering with BOH Concepts transformed our recruitment challenges during peak seasons. Their temporary solutions ensured that we maintained service excellence even during our busiest periods.",
       author: "Human Resource Manager",
-      position: "Premium Hotel",
+      position: "Destination Hotel",
       location: "Baltimore, Maryland"
     },
   ],
