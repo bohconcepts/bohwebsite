@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { motion, Variants, easeOut } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -136,12 +136,12 @@ const OurApproachPage = () => {
   const constants = useLocalizedConstants();
 
   // Animation variants
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: easeOut },
     },
   };
 
@@ -188,7 +188,7 @@ const OurApproachPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("TAILORED SOLUTIONS")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               Premium Staffing Solutions
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -215,7 +215,7 @@ const OurApproachPage = () => {
               initial="hidden"
               animate={titleInView ? "visible" : "hidden"}
               variants={fadeInUpVariants}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl uppercase text-gray-900 mb-4"
             >
               {t("Premium Staffing Solutions")}
             </motion.h2>
@@ -228,9 +228,9 @@ const OurApproachPage = () => {
                 visible: {
                   width: "80px",
                   opacity: 1,
-                  transition: { duration: 0.8, delay: 0.4, ease: "easeOut" },
+                  transition: { duration: 0.8, delay: 0.4, ease: easeOut },
                 },
-              }}
+              } as Variants}
               className="h-1 bg-brand-orange mx-auto rounded-full"
             ></motion.div>
 

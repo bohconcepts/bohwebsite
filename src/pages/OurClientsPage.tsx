@@ -54,7 +54,7 @@ const OurClientsPage: FC = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('TAILORED_SOLUTIONS')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("our_clients")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -68,7 +68,7 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t("trusted_by_industry_leaders")}</h2>
+            <h2 className="text-3xl uppercase mb-4">{t("trusted_by_industry_leaders")}</h2>
             <p className="text-gray-600">{t("client_trust_description")}</p>
           </div>
           
@@ -95,7 +95,7 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("what_our_clients_say")}</h2>
+            <h2 className="text-3xl uppercase text-gray-900 mb-4">{t("what_our_clients_say")}</h2>
             <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {t("testimonial_description")}
@@ -125,7 +125,7 @@ const OurClientsPage: FC = () => {
       <section className="py-20 bg-brand-blue text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">{t("become_our_client")}</h2>
+            <h2 className="text-3xl uppercase mb-6">{t("become_our_client")}</h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               {t("client_partnership_description")}
             </p>

@@ -59,7 +59,7 @@ const Partnership = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t("COLLABORATION")}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("Partner With Us")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -78,7 +78,7 @@ const Partnership = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4 text-brand-blue">
+            <h2 className="text-3xl uppercase mb-4 text-brand-blue">
               {t("Why Partner With Us")}
             </h2>
             <p className="text-lg text-gray-600">
@@ -167,7 +167,7 @@ const Partnership = () => {
               className="flex flex-col justify-center"
             >
               <motion.h2 
-                className="text-3xl font-bold mb-6 text-brand-blue"
+                className="text-3xl uppercase mb-6 text-brand-blue"
                 variants={itemVariants}
               >
                 {t('Partnership Opportunities')}
@@ -224,7 +224,7 @@ const Partnership = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4 text-brand-blue">
+            <h2 className="text-3xl uppercase mb-4 text-brand-blue">
               {t("Partners")}
             </h2>
             <p className="text-lg text-gray-600">

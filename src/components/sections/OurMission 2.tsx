@@ -39,12 +39,12 @@ const OurMission = () => {
               </span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mb-6 leading-tight">
               Uplifting Communities Through Compassion and Action
             </h2>
             
             <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-              At BOH Foundation, our mission is to create lasting positive change in marginalized communities 
+              At BOH Foundation, our mission is to create lasting positive change in underserved communities 
               by providing essential resources, educational opportunities, and financial support. We believe 
               in empowering individuals to overcome systemic barriers and achieve their full potential.
             </p>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion, Variants, easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -15,9 +15,9 @@ const PricingPage: FC = () => {
   const pricingPlans: PricingPlan[] = usePricingPlans();
   
   // Animation variants
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } }
   };
 
   const { ref: titleRef, inView: titleInView } = useInView({
@@ -55,7 +55,7 @@ const PricingPage: FC = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('TAILORED SOLUTIONS')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("pricing")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -75,7 +75,7 @@ const PricingPage: FC = () => {
             variants={fadeInUpVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("flexible_pricing_options")}</h2>
+            <h2 className="text-3xl uppercase text-gray-900 mb-4">{t("flexible_pricing_options")}</h2>
             <div className="w-24 h-1 bg-brand-orange mb-6 mx-auto"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {t("pricing_plans_description")}
@@ -140,7 +140,7 @@ const PricingPage: FC = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-left mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("frequently_asked_questions")}</h2>
+            <h2 className="text-3xl uppercase text-gray-900 mb-4">{t("frequently_asked_questions")}</h2>
             <div className="w-24 h-1 bg-brand-orange mb-6"></div>
             <p className="text-gray-600 max-w-2xl">
               {t("faq_description")}
@@ -176,7 +176,7 @@ const PricingPage: FC = () => {
       <section className="py-20 bg-brand-blue text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold mb-4">{t("ready_to_get_started")}</h2>
+            <h2 className="text-3xl uppercase mb-4">{t("ready_to_get_started")}</h2>
             <p className="text-xl mb-8">{t("contact_for_quote")}</p>
             <Link to="/contact">
               <Button className="bg-white text-brand-blue hover:bg-gray-100 text-lg px-8 py-6 rounded-lg font-medium flex items-center gap-2">

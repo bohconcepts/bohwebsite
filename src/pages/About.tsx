@@ -40,7 +40,7 @@ const About = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('ABOUT US')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               Transforming <span className="text-brand-orange">Hospitality</span>{" "}
               Through <span className="text-brand-orange">Excellence</span>
             </h1>
@@ -117,7 +117,7 @@ const About = () => {
                 {/* Content section below the video */}
                 <div className="container mx-auto px-4 py-8 sm:py-12">
                   <div className="max-w-4xl mx-auto">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-gray-800">
+                    <h2 className="text-2xl sm:text-3xl uppercase mb-6 sm:mb-8 text-center text-gray-800">
                       {t("about_section_heading")}
                     </h2>
                     <div className="bg-white p-4 sm:p-8 rounded-xl shadow-md">
@@ -239,7 +239,7 @@ const About = () => {
                   transition={{ duration: 0.5 }}
                   className="container mx-auto px-4"
                 >
-                  <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
+                  <h2 className="text-3xl uppercase mb-8 text-center text-gray-800">
                     {t("values_heading")}
                   </h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">

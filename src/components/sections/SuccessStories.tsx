@@ -61,7 +61,7 @@ const SuccessStories = () => {
             </span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl uppercase text-white mb-6">
             Lives We've Transformed
           </h2>
           

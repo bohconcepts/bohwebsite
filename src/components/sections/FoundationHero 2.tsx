@@ -43,7 +43,7 @@ const FoundationHero = () => {
           </h1>
 
           <p className="text-white text-lg md:text-xl mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow">
-            Supporting minorities through education, clean water, clothing, and financial assistance programs
+            Supporting underserved communities through education, clean water, clothing, and financial assistance programs
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">

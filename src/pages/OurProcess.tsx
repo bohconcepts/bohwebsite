@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
+import { motion, Variants, easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,9 +13,9 @@ const OurProcessPage: FC = () => {
   const companyInfo = useCompanyInfo();
   
   // Animation variants
-  const fadeInUpVariants = {
+  const fadeInUpVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } }
   };
 
   const { ref: titleRef } = useInView({
@@ -93,7 +93,7 @@ const OurProcessPage: FC = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               {t('TAILORED SOLUTIONS')}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
               {t("our_process")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
@@ -113,7 +113,7 @@ const OurProcessPage: FC = () => {
             transition={{ duration: 0.6 }}
             className="mb-16 text-center mx-auto"
           >
-            <h2 className="text-3xl font-bold mb-4">{t("how_we_work")}</h2>
+            <h2 className="text-3xl uppercase mb-4">{t("how_we_work")}</h2>
             <div className="h-1 w-20 bg-brand-orange mb-6 mx-auto"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {t("our_process_subtitle")}
@@ -175,7 +175,7 @@ const OurProcessPage: FC = () => {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t("benefits_of_our_process")}</h2>
+            <h2 className="text-3xl uppercase mb-4">{t("benefits_of_our_process")}</h2>
             <div className="h-1 w-20 bg-brand-orange mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {t("process_benefits_description")}
@@ -226,7 +226,7 @@ const OurProcessPage: FC = () => {
       <section className="py-20 bg-brand-blue text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">{t("ready_to_start_journey")}</h2>
+            <h2 className="text-3xl uppercase mb-6">{t("ready_to_start_journey")}</h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               {t("process_cta_description")}
             </p>

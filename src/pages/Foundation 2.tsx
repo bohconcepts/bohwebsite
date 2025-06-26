@@ -17,7 +17,7 @@ const Foundation = () => {
         <title>BOH Foundation | Empowering Lives, Building Hope</title>
         <meta 
           name="description" 
-          content="BOH Foundation supports minorities through scholarships, clean water initiatives, clothing donations, and financial assistance." 
+          content="BOH Foundation supports underserved communities through scholarships, clean water initiatives, clothing donations, and financial assistance." 
         />
       </Helmet>
       
