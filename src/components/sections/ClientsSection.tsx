@@ -32,7 +32,7 @@ const ClientsSection = () => {
     <section ref={ref} className="py-16 bg-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-blue mb-6">{t('clients_title')}</h2>
+          <h2 className="text-4xl md:text-5xl uppercase text-brand-blue mb-6">{t('clients_title')}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {t('clients_subtitle')}
           </p>
