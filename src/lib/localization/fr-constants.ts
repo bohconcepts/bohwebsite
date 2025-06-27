@@ -73,6 +73,22 @@ export const frConstants: LocalizedConstants = {
   global_workforce_title: "Notre Main-d'Œuvre Mondiale",
   global_workforce_description: "BOH Concepts opère avec une main-d'œuvre véritablement mondiale, attirant des talents d'Afrique, d'Asie, d'Europe, des Amériques et des Caraïbes pour fournir des services exceptionnels de personnel hôtelier sur les marchés clés du monde entier.",
 
+  // Markets Locations Section
+  markets_locations_tag: "PORTÉE GÉOGRAPHIQUE",
+  markets_locations_title: "Trouver des Talents et des Bureaux par Région",
+  markets_locations_description:
+    "Nous nous concentrons sur la mise en relation des meilleurs talents de l'hôtellerie avec des opportunités d'emploi premium à travers le monde.",
+    
+  // Markets Why Choose Us Section
+  markets_why_tag: "POURQUOI NOUS CHOISIR",
+  markets_why_title: "Expertise Inégalée en Recrutement Hôtelier",
+  markets_why_1_title: "Services de Recrutement de Bout en Bout",
+  markets_why_1_description: "Du personnel de niveau débutant aux directeurs exécutifs de l'hôtellerie, nous fournissons des solutions de recrutement personnalisées adaptées aux caractéristiques uniques des marchés mondiaux.",
+  markets_why_2_title: "Expertise sur le Terrain",
+  markets_why_2_description: "Avec des partenaires de recrutement locaux et des équipes de sourcing positionnées à travers le monde, nous avons une compréhension profonde de l'industrie, de la culture, des réglementations du travail et de la dynamique du marché qui caractérisent chaque pays.",
+  markets_why_3_title: "Vivier de Talents Multilingues",
+  markets_why_3_description: "Nous recrutons activement des talents qui parlent couramment plusieurs langues, notamment l'anglais, le français, l'espagnol, l'arabe, le portugais, le mandarin et plus encore, garantissant que les entreprises hôtelières peuvent servir en toute confiance une clientèle internationale diversifiée.",
+
   // Industry descriptions
   industry_hotels_resorts: "Hôtels et Centres de Villégiature",
   industry_hotels_resorts_desc:

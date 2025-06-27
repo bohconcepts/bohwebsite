@@ -591,10 +591,10 @@ export const enConstants: LocalizedConstants = {
     },
   ],
   // Global Workforce Map
-  global_workforce_tag: "GLOBAL PRESENCE",
-  global_workforce_title: "Our Diverse Global Workforce",
-  global_workforce_description:
-    "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
+  // global_workforce_tag: "GLOBAL PRESENCE",
+  // global_workforce_title: "Our Diverse Global Workforce",
+  // global_workforce_description:
+  //   "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
   workforce_distribution: "Workforce Distribution",
   africa_workforce_count: "Africa-based workforce: {count} employees",
   us_workforce_count: "US-based workforce: {count} employees",
@@ -829,7 +829,7 @@ export const enConstants: LocalizedConstants = {
   // Markets page content
   markets_page_title: "Global Hospitality Markets",
   markets_meta_description:
-    "Explore BOH Concepts' global hospitality staffing solutions across diverse markets and industries worldwide.",
+    "Explore BOH Concepts' global hospitality staffing solutions across various markets and industries worldwide.",
   markets_hero_tag: "GLOBAL REACH",
   markets_section_tag: "OUR EXPERTISE",
   markets_section_title: "Premium Staffing Solutions",
@@ -839,11 +839,34 @@ export const enConstants: LocalizedConstants = {
   markets_industries_title: "Specialized Hospitality Sectors",
   markets_industries_description:
     "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities.",
+  markets_why_tag: "WHY CHOOSE US",
+  markets_why_title: "Unparalleled Expertise in Hospitality Staffing",
+  markets_why_1_title: "End-to-End Recruitment Services",
+  markets_why_1_description:
+    "From entry-level staff to executive hospitality managers, we provide customized recruitment solutions tailored to the unique characteristics of global markets.",
+  markets_why_2_title: "On-the-Ground Expertise",
+  markets_why_2_description:
+    "With local recruitment partners and sourcing teams positioned across the globe, we have a profound understanding of the industry, culture, labor regulations, and market dynamics that characterize each country.",
+  markets_why_3_title: "Multilingual Talent Pool",
+  markets_why_3_description:
+    "We actively recruit talent who are fluent in multiple languages, including English, French, Spanish, Arabic, Portuguese, Mandarin, and more, ensuring that hospitality businesses can confidently serve diverse international clientele.",
 
   // Global Hospitality Market section
   markets_hero_title: "Global Hospitality Market",
   markets_hero_subtitle:
     "Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
+
+  // Global Workforce Section
+  global_workforce_tag: "GLOBAL PRESENCE",
+  global_workforce_title: "Our Global Workforce",
+  global_workforce_description:
+    "BOH Concepts operates with a truly global workforce, drawing talent from across Africa, Asia, Europe, the Americas, and the Caribbean to provide exceptional hospitality staffing services in key markets worldwide.",
+
+  // Markets Locations Section
+  markets_locations_tag: "GEOGRAPHIC REACH",
+  markets_locations_title: "Find Talent and Offices by Region",
+  markets_locations_description:
+    "We focus on connecting top hospitality talent with premium employment opportunities across the globe.",
 
   // Industry descriptions
   industry_hotels_resorts: "Hotels & Resorts",

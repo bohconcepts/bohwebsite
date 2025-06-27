@@ -913,10 +913,26 @@ export const esConstants: LocalizedConstants = {
   markets_hero_subtitle:
     "Soluciones de personal premium a nivel mundial. La industria hotelera global está experimentando una transformación dinámica, impulsada por el aumento del turismo, el desarrollo urbano y la aparición de marcas hoteleras internacionales en todo el mundo. En BOH Concepts, apoyamos este crecimiento conectando a los principales hoteles, resorts y grupos de hospitalidad con talento de primer nivel de todo el mundo.",
 
-  // Global Workforce Section
+  // // Global Workforce Section
   // global_workforce_tag: "PRESENCIA GLOBAL",
   // global_workforce_title: "Nuestra Fuerza Laboral Global",
   // global_workforce_description: "BOH Concepts opera con una fuerza laboral verdaderamente global, atrayendo talento de África, Asia, Europa, las Américas y el Caribe para proporcionar servicios excepcionales de personal para hostelería en mercados clave en todo el mundo.",
+
+  // Markets Locations Section
+  markets_locations_tag: "ALCANCE GEOGRÁFICO",
+  markets_locations_title: "Encuentra Talento y Oficinas por Región",
+  markets_locations_description:
+    "Nos enfocamos en conectar talento hotelero de primer nivel con oportunidades de empleo premium en todo el mundo.",
+    
+  // Markets Why Choose Us Section
+  markets_why_tag: "POR QUÉ ELEGIRNOS",
+  markets_why_title: "Experiencia Incomparable en Personal de Hostelería",
+  markets_why_1_title: "Servicios de Reclutamiento Integrales",
+  markets_why_1_description: "Desde personal de nivel inicial hasta gerentes ejecutivos de hostelería, proporcionamos soluciones de reclutamiento personalizadas adaptadas a las características únicas de los mercados globales.",
+  markets_why_2_title: "Experiencia sobre el Terreno",
+  markets_why_2_description: "Con socios de reclutamiento locales y equipos de búsqueda ubicados en todo el mundo, tenemos un profundo conocimiento de la industria, la cultura, las regulaciones laborales y la dinámica del mercado que caracterizan a cada país.",
+  markets_why_3_title: "Grupo de Talentos Multilingües",
+  markets_why_3_description: "Reclutamos activamente talentos que dominan varios idiomas, incluidos inglés, francés, español, árabe, portugués, mandarín y más, garantizando que las empresas hoteleras puedan atender con confianza a una clientela internacional diversa.",
 
   CLIENTS: [
     {

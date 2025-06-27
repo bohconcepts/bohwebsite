@@ -172,6 +172,21 @@ export type LocalizedConstants = {
   markets_hero_title: string;
   markets_hero_subtitle: string;
   
+  // Markets Locations Section
+  markets_locations_tag: string;
+  markets_locations_title: string;
+  markets_locations_description: string;
+  
+  // Markets Why Choose Us Section
+  markets_why_tag: string;
+  markets_why_title: string;
+  markets_why_1_title: string;
+  markets_why_1_description: string;
+  markets_why_2_title: string;
+  markets_why_2_description: string;
+  markets_why_3_title: string;
+  markets_why_3_description: string;
+  
   // Industry descriptions
   industry_hotels_resorts: string;
   industry_hotels_resorts_desc: string;
