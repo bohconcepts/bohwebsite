@@ -6,6 +6,7 @@ import Services from '@/components/sections/Services';
 import Statistics from '@/components/sections/Statistics';
 import Testimonials from '@/components/sections/Testimonials';
 import ClientsSection from '@/components/sections/ClientsSection';
+import TrustBadgesSection from '@/components/sections/TrustBadgesSection';
 import CtaSection from '@/components/sections/CtaSection';
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       <Statistics />
       <Testimonials />
       <ClientsSection />
+      <TrustBadgesSection />
       <CtaSection />
     </>
   );

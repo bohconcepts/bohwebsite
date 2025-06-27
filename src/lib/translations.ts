@@ -151,7 +151,7 @@ const translations = {
       "Whether you are a global hospitality chain expanding into Africa or a local hotel group seeking reliable staff, BOH Concepts is here to support you. Our recruitment platform and industry specialists simplify hiring so you can focus on guest satisfaction.",
     markets_contact_us_today: "Contact Us Today",
     markets_cta_heading:
-      "Looking to hire or get hired in Africa's hospitality industry?",
+      "Looking to hire or get hired in the hospitality industry?",
     get_started: "Get Started",
     talk_to_specialist: "Talk to a Specialist",
 
