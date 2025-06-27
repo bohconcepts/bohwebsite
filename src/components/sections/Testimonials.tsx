@@ -36,10 +36,10 @@ const Testimonials = () => {
   return (
     <section ref={ref} className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl uppercase text-gray-900 mb-4">{t('testimonials_title')}</h2>
-          <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className="section-title-container mb-16">
+          <h2 className="section-title">{t('testimonials_title')}</h2>
+          <div className="section-title-underline"></div>
+          <p className="section-title-description">
             {t('testimonials_subtitle')}
           </p>
         </div>

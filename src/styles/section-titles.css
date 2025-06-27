@@ -1,0 +1,65 @@
+/* Standardized section title styling */
+
+.section-title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.875rem; /* text-3xl - reduced by 1rem from text-4xl */
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #111827; /* text-gray-900 - matching marketplace page */
+}
+
+.section-title-underline {
+  height: 0.25rem; /* h-1 */
+  width: 5rem; /* w-20 */
+  background-color: #FF6B35; /* bg-brand-orange */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9999px; /* rounded-full */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* For dark backgrounds */
+.section-title-underline.white {
+  background-color: white;
+}
+
+.section-title-description {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  color: #4b5563; /* text-gray-600 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* For dark backgrounds */
+.section-title.white {
+  color: white;
+}
+
+.section-title-description.white {
+  color: rgba(255, 255, 255, 0.8); /* text-white/80 */
+}
+
+/* Optional tag above section title */
+.section-title-tag {
+  display: inline-block;
+  background-color: rgba(30, 58, 138, 0.1); /* bg-brand-blue/10 */
+  color: #1e3a8a; /* text-brand-blue */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 1rem;
+}
+
+/* For dark backgrounds */
+.section-title-tag.white {
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  color: white;
+}
