@@ -855,4 +855,44 @@ export const enConstants: LocalizedConstants = {
   team_page_tag: "Meet Our Exceptional Team",
   team_description:
     "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
+
+  // Foundation page
+  foundation_meta_description: "The BOH Foundation supports underserved communities through scholarships, clean water initiatives, clothing donations, and financial assistance programs.",
+  foundation_page_title: "BOH Foundation | Empowering Lives, Building Hope",
+  foundation_hero_tag: "BOH FOUNDATION",
+  foundation_hero_title: "Empowering Lives, Building Hope",
+  foundation_hero_subtitle: "Supporting underserved communities through education, clean water, clothing, and financial assistance programs",
+  
+  // Foundation - Our Mission section
+  foundation_mission_tag: "OUR MISSION",
+  foundation_mission_title: "Uplifting Communities Through Compassion and Action",
+  foundation_mission_paragraph_1: "At BOH Foundation, our mission is to create lasting positive change in underserved communities by providing essential resources, educational opportunities, and financial support. We believe in empowering individuals to overcome systemic barriers and reach their full potential.",
+  foundation_mission_paragraph_2: "Through our four core programs—scholarships, clean water initiatives, clothing donations, and financial assistance—we address fundamental needs while preserving the dignity and autonomy of those we serve. Our approach is grounded in respect, sustainability, and community collaboration.",
+  
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "WHAT WE DO",
+  foundation_what_we_do_title: "Our Core Programs",
+  foundation_what_we_do_description: "Through our four focus areas, we provide comprehensive support to communities in need, addressing both immediate needs and long-term development goals.",
+  foundation_program_scholarship_title: "University Scholarships",
+  foundation_program_scholarship_description: "Supporting minority students with financial assistance to pursue higher education and achieve their academic goals.",
+  foundation_program_borehole_title: "Borehole Installations",
+  foundation_program_borehole_description: "Providing communities with access to clean drinking water through sustainable borehole installations and maintenance programs.",
+  foundation_program_clothing_title: "Clothing Donations",
+  foundation_program_clothing_description: "Distributing quality clothing to those in need while preserving dignity and offering choices in selection.",
+  foundation_program_financial_title: "Financial Assistance",
+  foundation_program_financial_description: "Offering emergency financial support and resources to help individuals overcome temporary hardships.",
+  
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "HOW TO HELP",
+  foundation_how_to_help_title: "JOIN OUR MISSION",
+  foundation_how_to_help_description: "There are many ways to support our work and make a meaningful difference in the lives of those we serve.",
+  foundation_help_donate_title: "Donate",
+  foundation_help_donate_description: "Your financial contribution directly supports our programs and helps us reach more people in need.",
+  foundation_help_donate_button: "Donate Now",
+  foundation_help_volunteer_title: "Volunteer",
+  foundation_help_volunteer_description: "Share your time and skills to make a difference. We have both local and remote opportunities available.",
+  foundation_help_volunteer_button: "Join Us",
+  foundation_help_partner_title: "Partner With Us",
+  foundation_help_partner_description: "Organizations and businesses can partner with us to create sustainable impact through collaborative initiatives.",
+  foundation_help_partner_button: "Learn More",
 };

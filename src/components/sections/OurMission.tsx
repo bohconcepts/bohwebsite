@@ -1,7 +1,9 @@
 import { useInView } from "react-intersection-observer";
 import OptimizedImage from "@/components/common/OptimizedImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const OurMission = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -33,24 +35,20 @@ const OurMission = () => {
           >
             <div className="inline-block mb-4">
               <span className="bg-brand-earth/10 text-brand-earth px-3 py-1 rounded-md text-sm font-medium">
-                OUR MISSION
+                {t('foundation_mission_tag')}
               </span>
             </div>
             
             <h3 className="text-1xl md:text-2xl uppercase text-gray-900 mb-6 leading-tight">
-              Uplifting Communities Through Compassion and Action
+              {t('foundation_mission_title')}
             </h3>
             
             <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-              At BOH Foundation, our mission is to create lasting positive change in underserved communities 
-              by providing essential resources, educational opportunities, and financial support. We believe 
-              in empowering individuals to overcome systemic barriers and achieve their full potential.
+              {t('foundation_mission_paragraph_1')}
             </p>
             
             <p className="text-gray-700 text-lg leading-relaxed">
-              Through our four core programs—scholarships, clean water initiatives, clothing donations, and 
-              financial assistance—we address fundamental needs while preserving the dignity and agency of 
-              those we serve. Our approach is built on respect, sustainability, and community partnership.
+              {t('foundation_mission_paragraph_2')}
             </p>
           </div>
         </div>

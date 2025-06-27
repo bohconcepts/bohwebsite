@@ -365,6 +365,46 @@ export type LocalizedConstants = {
   street_view: string;
   satellite_view: string;
   map_data_note: string;
+
+  // Foundation page
+  foundation_meta_description: string;
+  foundation_page_title: string;
+  foundation_hero_tag: string;
+  foundation_hero_title: string;
+  foundation_hero_subtitle: string;
+  
+  // Foundation - Our Mission section
+  foundation_mission_tag: string;
+  foundation_mission_title: string;
+  foundation_mission_paragraph_1: string;
+  foundation_mission_paragraph_2: string;
+  
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: string;
+  foundation_what_we_do_title: string;
+  foundation_what_we_do_description: string;
+  foundation_program_scholarship_title: string;
+  foundation_program_scholarship_description: string;
+  foundation_program_borehole_title: string;
+  foundation_program_borehole_description: string;
+  foundation_program_clothing_title: string;
+  foundation_program_clothing_description: string;
+  foundation_program_financial_title: string;
+  foundation_program_financial_description: string;
+  
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: string;
+  foundation_how_to_help_title: string;
+  foundation_how_to_help_description: string;
+  foundation_help_donate_title: string;
+  foundation_help_donate_description: string;
+  foundation_help_donate_button: string;
+  foundation_help_volunteer_title: string;
+  foundation_help_volunteer_description: string;
+  foundation_help_volunteer_button: string;
+  foundation_help_partner_title: string;
+  foundation_help_partner_description: string;
+  foundation_help_partner_button: string;
 };
 
 // Constants that don't need translation

@@ -6,18 +6,19 @@ import WhatWeDo from '@/components/sections/WhatWeDo';
 //import SuccessStories from '@/components/sections/SuccessStories';
 import HowToHelp from '@/components/sections/HowToHelp';
 //import ContactForm from '@/components/sections/ContactForm';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Foundation = () => {
-  // We don't need the t function since we're using static text
-  // const { t } = useLanguage();
+  // Use the t function for localization
+  const { t } = useLanguage();
   
   return (
     <>
       <Helmet>
-        <title>BOH Foundation | Empowering Lives, Building Hope</title>
+        <title>{t('foundation_page_title')}</title>
         <meta 
           name="description" 
-          content="BOH Foundation supports underserved communities through scholarships, clean water initiatives, clothing donations, and financial assistance." 
+          content={t('foundation_meta_description')} 
         />
       </Helmet>
       

@@ -49,6 +49,40 @@ export const frConstants: LocalizedConstants = {
   values_description:
     "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
 
+  // Markets page
+  markets_page_title: "Marchés",
+  markets_meta_description:
+    "Découvrez les diverses industries servies par BOH Concepts avec des solutions de personnel spécialisées.",
+  markets_hero_tag: "MARCHÉS",
+  markets_section_tag: "MARCHÉS",
+  markets_section_title: "Industries que Nous Servons",
+  markets_section_description:
+    "Des hôtels de luxe aux compagnies aériennes internationales, nous connectons des talents exceptionnels à chaque segment de l'hôtellerie.",
+  markets_industries_tag: "INDUSTRIES",
+  markets_industries_title: "Industries de l'Hôtellerie",
+  markets_industries_description:
+    "Nous offrons des solutions de personnel sur mesure pour une large gamme d'environnements d'hôtellerie et de voyage.",
+
+  // Industry descriptions
+  industry_hotels_resorts: "Hôtels et Centres de Villégiature",
+  industry_hotels_resorts_desc:
+    "Personnel expert pour les propriétés à service complet, les hôtels boutiques et les centres de villégiature de luxe.",
+  industry_safari_lodges: "Lodges Safari",
+  industry_safari_lodges_desc:
+    "Équipes talentueuses préparées pour offrir des expériences authentiques dans des environnements éloignés.",
+  industry_restaurants: "Restaurants",
+  industry_restaurants_desc:
+    "Professionnels de l'alimentation et des boissons qui élèvent chaque expérience culinaire.",
+  industry_conference_centers: "Centres de Conférence",
+  industry_conference_centers_desc:
+    "Personnel orienté vers les détails qui assure des événements sans accroc.",
+  industry_cruise: "Croisières",
+  industry_cruise_desc:
+    "Équipages polyvalents capables de fournir une hospitalité de premier ordre en mer.",
+  industry_airlines: "Compagnies Aériennes",
+  industry_airlines_desc:
+    "Talents de cabine et au sol avec un engagement ferme envers la sécurité et le service client.",
+
   // Team
   team_heading: "Notre Équipe",
   team_heading_color:
@@ -486,6 +520,7 @@ export const frConstants: LocalizedConstants = {
         "BOH Concepts renforce adéquatement nos besoins en personnel de 100 employés dans les domaines de l'intendance, de l'entretien ménager et de l'ingénierie. En raison de leur compréhension solide de nos besoins et du partenariat qu'ils favorisent, je ne nous vois pas changer de partenaires de dotation en personnel.",
       author: "John Smith",
       position: "Directeur Général, Hilton Atlanta",
+      location: "Atlanta, USA",
       image: "/images/clients/Waldorf.png",
     },
     {
@@ -494,6 +529,7 @@ export const frConstants: LocalizedConstants = {
         "Nous travaillons avec BOH Concepts depuis plus de trois ans maintenant, et ils nous ont constamment fourni du personnel de haute qualité qui comprend les normes de notre marque. Leur attention aux détails et leur service personnalisé les distinguent des autres agences de recrutement.",
       author: "Gouvernante Exécutive",
       position: "Maui, Hawaii",
+      location: "Maui, USA",
       image: "/images/clients/Hyatt.png",
     },
     {
@@ -502,6 +538,7 @@ export const frConstants: LocalizedConstants = {
         "Trouver du personnel fiable pour nos pics saisonniers a toujours été un défi jusqu'à ce que nous nous associions à BOH Concepts. Leurs solutions de dotation temporaire ont changé la donne pour notre complexe hôtelier, nous permettant de maintenir l'excellence du service même pendant nos périodes les plus chargées.",
       author: "Responsable des Ressources Humaines",
       position: "Maryland",
+      location: "Maryland, USA",
       image: "/images/clients/Hilton-Logo-4.png",
     },
     // {
@@ -783,8 +820,48 @@ export const frConstants: LocalizedConstants = {
     linkedin: "https://www.linkedin.com/company/bohconcepts/",
     instagram:
       "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
-    youtube: "https://www.youtube.com/bohconcepts",
+    youtube: "https://www.youtube.com/",
   },
+
+  // Foundation page
+  foundation_meta_description: "La Fondation BOH soutient les communautés défavorisées grâce à des bourses d'études, des initiatives d'eau potable, des dons de vêtements et une assistance financière.",
+  foundation_page_title: "Fondation BOH | Autonomiser les Vies, Construire l'Espoir",
+  foundation_hero_tag: "FONDATION BOH",
+  foundation_hero_title: "Autonomiser les Vies, Construire l'Espoir",
+  foundation_hero_subtitle: "Soutenir les communautés défavorisées grâce à l'éducation, l'eau potable, les vêtements et des programmes d'assistance financière",
+
+  // Foundation - Our Mission section
+  foundation_mission_tag: "NOTRE MISSION",
+  foundation_mission_title: "Élever les Communautés par la Compassion et l'Action",
+  foundation_mission_paragraph_1: "À la Fondation BOH, notre mission est de créer un changement positif durable dans les communautés défavorisées en fournissant des ressources essentielles, des opportunités éducatives et un soutien financier. Nous croyons en l'autonomisation des individus pour surmonter les barrières systémiques et atteindre leur plein potentiel.",
+  foundation_mission_paragraph_2: "Grâce à nos quatre programmes principaux—bourses d'études, initiatives d'eau potable, dons de vêtements et assistance financière—nous répondons aux besoins fondamentaux tout en préservant la dignité et l'autonomie de ceux que nous servons. Notre approche est fondée sur le respect, la durabilité et le partenariat communautaire.",
+
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "CE QUE NOUS FAISONS",
+  foundation_what_we_do_title: "Nos Programmes Principaux",
+  foundation_what_we_do_description: "Grâce à nos quatre domaines d'intervention, nous apportons un soutien complet aux communautés dans le besoin, en répondant à la fois aux nécessités immédiates et aux objectifs de développement à long terme.",
+  foundation_program_scholarship_title: "Bourses Universitaires",
+  foundation_program_scholarship_description: "Soutenir les étudiants issus de minorités avec une aide financière pour poursuivre des études supérieures et atteindre leurs objectifs académiques.",
+  foundation_program_borehole_title: "Installations de Forages",
+  foundation_program_borehole_description: "Fournir un accès à l'eau potable aux communautés grâce à des installations de forages durables et des programmes de maintenance.",
+  foundation_program_clothing_title: "Dons de Vêtements",
+  foundation_program_clothing_description: "Distribuer des vêtements de qualité aux personnes dans le besoin tout en préservant leur dignité et en offrant un choix dans la sélection.",
+  foundation_program_financial_title: "Assistance Financière",
+  foundation_program_financial_description: "Offrir un soutien financier d'urgence et des ressources pour aider les individus à surmonter des difficultés temporaires.",
+
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "COMMENT AIDER",
+  foundation_how_to_help_title: "REJOIGNEZ NOTRE MISSION",
+  foundation_how_to_help_description: "Il existe de nombreuses façons de soutenir notre travail et de faire une différence significative dans la vie de ceux que nous servons.",
+  foundation_help_donate_title: "Faire un Don",
+  foundation_help_donate_description: "Votre contribution financière soutient directement nos programmes et nous aide à atteindre plus de personnes dans le besoin.",
+  foundation_help_donate_button: "Donner Maintenant",
+  foundation_help_volunteer_title: "Devenir Bénévole",
+  foundation_help_volunteer_description: "Partagez votre temps et vos compétences pour faire une différence. Nous avons des opportunités tant localement qu'à distance.",
+  foundation_help_volunteer_button: "Rejoignez-Nous",
+  foundation_help_partner_title: "Devenez Partenaire",
+  foundation_help_partner_description: "Les organisations et entreprises peuvent s'associer à nous pour créer un impact durable grâce à des initiatives collaboratives.",
+  foundation_help_partner_button: "En Savoir Plus",
 
   CLIENTS: [
     {

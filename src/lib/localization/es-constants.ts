@@ -49,6 +49,40 @@ export const esConstants: LocalizedConstants = {
   values_description:
     "Nuestros valores fundamentales forman la base de todo lo que hacemos en BOH Concepts, guiando nuestras decisiones, dando forma a nuestra cultura y definiendo nuestro enfoque hacia la excelencia en la dotación de personal para la hospitalidad.",
 
+  // Markets page
+  markets_page_title: "Mercados",
+  markets_meta_description:
+    "Descubra las diversas industrias a las que BOH Concepts presta servicios con soluciones de personal especializadas.",
+  markets_hero_tag: "MERCADOS",
+  markets_section_tag: "MERCADOS",
+  markets_section_title: "Industrias que Servimos",
+  markets_section_description:
+    "Desde hoteles de lujo hasta aerolíneas internacionales, conectamos talento excepcional con cada segmento de la hospitalidad.",
+  markets_industries_tag: "INDUSTRIAS",
+  markets_industries_title: "Industrias de Hospitalidad",
+  markets_industries_description:
+    "Ofrecemos soluciones de personal adaptadas a una amplia variedad de entornos de hospitalidad y viajes.",
+
+  // Industry descriptions
+  industry_hotels_resorts: "Hoteles y Resorts",
+  industry_hotels_resorts_desc:
+    "Personal experto para propiedades de servicio completo, hoteles boutique y resorts de lujo.",
+  industry_safari_lodges: "Lodges de Safari",
+  industry_safari_lodges_desc:
+    "Equipos talentosos preparados para ofrecer experiencias auténticas en entornos remotos.",
+  industry_restaurants: "Restaurantes",
+  industry_restaurants_desc:
+    "Profesionales de alimentos y bebidas que elevan cada experiencia culinaria.",
+  industry_conference_centers: "Centros de Conferencias",
+  industry_conference_centers_desc:
+    "Personal orientado al detalle que asegura eventos sin contratiempos.",
+  industry_cruise: "Cruceros",
+  industry_cruise_desc:
+    "Tripulaciones versátiles capaces de ofrecer hospitalidad de primer nivel en el mar.",
+  industry_airlines: "Aerolíneas",
+  industry_airlines_desc:
+    "Talento de cabina y tierra con un firme compromiso con la seguridad y el servicio al cliente.",
+
   // Team
   team_heading: "Nuestro Equipo",
   team_heading_color:
@@ -532,7 +566,15 @@ export const esConstants: LocalizedConstants = {
         { title: "Fundación BOH", href: "/foundation" },
       ],
     },
-    { title: "Nuestro Enfoque", href: "/our-approach" },
+    {
+      title: "Servicios",
+      href: "/our-approach",
+      dropdown: [
+        { title: "Nuestro Enfoque", href: "/our-approach" },
+        { title: "Nuestro Proceso", href: "/our-process" },
+        { title: "Mercados", href: "/markets" },
+      ],
+    },
     {
       title: "Por Qué Elegirnos",
       href: "/why-choose-us",
@@ -790,6 +832,46 @@ export const esConstants: LocalizedConstants = {
       "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
     youtube: "https://www.youtube.com/bohconcepts",
   },
+
+  // Foundation page
+  foundation_meta_description: "La Fundación BOH apoya a comunidades desatendidas a través de becas, iniciativas de agua potable, donaciones de ropa y asistencia financiera.",
+  foundation_page_title: "Fundación BOH | Empoderando Vidas, Construyendo Esperanza",
+  foundation_hero_tag: "FUNDACIÓN BOH",
+  foundation_hero_title: "Empoderando Vidas, Construyendo Esperanza",
+  foundation_hero_subtitle: "Apoyando a comunidades desatendidas a través de educación, agua potable, ropa y programas de asistencia financiera",
+  
+  // Foundation - Our Mission section
+  foundation_mission_tag: "NUESTRA MISIÓN",
+  foundation_mission_title: "Elevando Comunidades a Través de la Compasión y la Acción",
+  foundation_mission_paragraph_1: "En la Fundación BOH, nuestra misión es crear un cambio positivo duradero en comunidades desatendidas proporcionando recursos esenciales, oportunidades educativas y apoyo financiero. Creemos en empoderar a las personas para superar barreras sistémicas y alcanzar su máximo potencial.",
+  foundation_mission_paragraph_2: "A través de nuestros cuatro programas principales—becas, iniciativas de agua potable, donaciones de ropa y asistencia financiera—atendemos necesidades fundamentales mientras preservamos la dignidad y autonomía de aquellos a quienes servimos. Nuestro enfoque se basa en el respeto, la sostenibilidad y la colaboración comunitaria.",
+  
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "LO QUE HACEMOS",
+  foundation_what_we_do_title: "Nuestros Programas Principales",
+  foundation_what_we_do_description: "A través de nuestras cuatro áreas de enfoque, proporcionamos apoyo integral a comunidades necesitadas, abordando tanto necesidades inmediatas como objetivos de desarrollo a largo plazo.",
+  foundation_program_scholarship_title: "Becas Universitarias",
+  foundation_program_scholarship_description: "Apoyando a estudiantes de minorías con ayuda financiera para que puedan cursar estudios superiores y alcanzar sus metas académicas.",
+  foundation_program_borehole_title: "Instalaciones de Pozos",
+  foundation_program_borehole_description: "Proporcionando acceso a agua potable a comunidades a través de instalaciones sostenibles de pozos y programas de mantenimiento.",
+  foundation_program_clothing_title: "Donaciones de Ropa",
+  foundation_program_clothing_description: "Distribuyendo ropa de calidad a personas necesitadas mientras preservamos su dignidad y ofrecemos opciones en la selección.",
+  foundation_program_financial_title: "Asistencia Financiera",
+  foundation_program_financial_description: "Ofreciendo apoyo financiero de emergencia y recursos para ayudar a las personas a superar dificultades temporales.",
+  
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "CÓMO AYUDAR",
+  foundation_how_to_help_title: "ÚNETE A NUESTRA MISIÓN",
+  foundation_how_to_help_description: "Hay muchas formas de apoyar nuestro trabajo y hacer una diferencia significativa en las vidas de aquellos a quienes servimos.",
+  foundation_help_donate_title: "Donar",
+  foundation_help_donate_description: "Tu contribución financiera apoya directamente nuestros programas y nos ayuda a llegar a más personas necesitadas.",
+  foundation_help_donate_button: "Donar Ahora",
+  foundation_help_volunteer_title: "Voluntariado",
+  foundation_help_volunteer_description: "Comparte tu tiempo y habilidades para marcar la diferencia. Tenemos oportunidades tanto locales como remotas.",
+  foundation_help_volunteer_button: "Únete a Nosotros",
+  foundation_help_partner_title: "Asóciate con Nosotros",
+  foundation_help_partner_description: "Organizaciones y empresas pueden asociarse con nosotros para crear un impacto sostenible a través de iniciativas colaborativas.",
+  foundation_help_partner_button: "Más Información",
 
   CLIENTS: [
     {

@@ -1,8 +1,10 @@
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HowToHelp = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -10,26 +12,26 @@ const HowToHelp = () => {
 
   const helpOptions = [
     {
-      title: "Donate",
-      description: "Your financial contribution directly supports our programs and helps us reach more people in need.",
+      titleKey: "foundation_help_donate_title",
+      descriptionKey: "foundation_help_donate_description",
       image: "/images/foundation/donate.jpeg",
-      buttonText: "Donate Now",
+      buttonTextKey: "foundation_help_donate_button",
       buttonLink: "/donate",
       color: "bg-brand-blue"
     },
     {
-      title: "Volunteer",
-      description: "Share your time and skills to make a difference. We have opportunities both locally and remotely.",
+      titleKey: "foundation_help_volunteer_title",
+      descriptionKey: "foundation_help_volunteer_description",
       image: "/images/foundation/volunteer.webp",
-      buttonText: "Join Us",
+      buttonTextKey: "foundation_help_volunteer_button",
       buttonLink: "/volunteer",
       color: "bg-brand-blue"
     },
     {
-      title: "Partner With Us",
-      description: "Organizations and businesses can partner with us to create sustainable impact through collaborative initiatives.",
+      titleKey: "foundation_help_partner_title",
+      descriptionKey: "foundation_help_partner_description",
       image: "/images/foundation/partner.avif",
-      buttonText: "Learn More",
+      buttonTextKey: "foundation_help_partner_button",
       buttonLink: "/partnership",
       color: "bg-brand-blue"
     }
@@ -40,15 +42,15 @@ const HowToHelp = () => {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-sm font-medium tracking-wider text-gray-600 uppercase mb-2">
-            HOW TO HELP
+            {t('foundation_how_to_help_tag')}
           </h2>
           
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            JOIN OUR MISSION
+            {t('foundation_how_to_help_title')}
           </h3>
           
           <p className="text-gray-600 max-w-2xl mx-auto mb-10">
-            There are many ways to support our work and make a meaningful difference in the lives of those we serve.
+            {t('foundation_how_to_help_description')}
           </p>
         </div>
         
@@ -58,7 +60,7 @@ const HowToHelp = () => {
         >
           {helpOptions.map((option, index) => (
             <div 
-              key={option.title}
+              key={option.titleKey}
               className={`bg-white rounded-lg shadow-md overflow-hidden transition-all duration-500 delay-${index * 100} transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
@@ -66,15 +68,15 @@ const HowToHelp = () => {
               <div className="h-48 overflow-hidden bg-gray-900">
                 <img 
                   src={option.image} 
-                  alt={`${option.title} - BOH Foundation`}
+                  alt={`${t(option.titleKey)} - BOH Foundation`}
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
               
               <div className="p-5 flex flex-col h-48">
-                <h3 className="text-xl font-bold mb-2 text-center">{option.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-center">{t(option.titleKey)}</h3>
                 <p className="text-gray-600 text-sm mb-auto">
-                  {option.description}
+                  {t(option.descriptionKey)}
                 </p>
                 
                 <Button
@@ -82,7 +84,7 @@ const HowToHelp = () => {
                   className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white"
                 >
                   <Link to={option.buttonLink}>
-                    {option.buttonText}
+                    {t(option.buttonTextKey)}
                   </Link>
                 </Button>
               </div>
