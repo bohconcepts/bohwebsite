@@ -56,7 +56,7 @@ const TrustBadgesSection: React.FC = () => {
               variants={itemVariants}
               className="text-lg text-gray-600 max-w-2xl mx-auto text-center mb-8"
             >
-              {t('We\'re proud to maintain the highest standards of service and business ethics')}
+              {t('We are proud to maintain the highest standards of service and business ethics')}
             </motion.p>
             
             <motion.div 

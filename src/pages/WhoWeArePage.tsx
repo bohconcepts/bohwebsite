@@ -68,7 +68,7 @@ const WhoWeArePage: React.FC = () => {
               {t("about_page_title")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl mb-8">
-              {language === "en" ? "BOH Concepts connects top hospitality talent with leading properties, backed by decades of industry experience and a commitment to diversity and social responsibility." :
+              {language === "en" ? "BOH Concepts, through its Corporate Social Responsibility initiatives, demonstrates a strong commitment to diversity and social impact." :
                language === "fr" ? "BOH Concepts met en relation les meilleurs talents de l'hôtellerie avec des établissements de premier plan, fort d'une expertise de plusieurs décennies dans le secteur et d'un engagement envers la diversité et la responsabilité sociale." :
                "BOH Concepts conecta a los mejores talentos de la hospitalidad con propiedades líderes, respaldado por décadas de experiencia en la industria y un compromiso con la diversidad y la responsabilidad social."}
             </p>
