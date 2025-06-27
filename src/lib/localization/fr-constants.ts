@@ -563,7 +563,15 @@ export const frConstants: LocalizedConstants = {
         { title: "Fondation BOH", href: "/foundation" },
       ],
     },
-    { title: "Notre Approche", href: "/our-approach" },
+    {
+      title: "Services",
+      href: "/our-approach",
+      dropdown: [
+        { title: "Notre Approche", href: "/our-approach" },
+        { title: "Notre Processus", href: "/our-process" },
+        { title: "Marchés", href: "/markets" },
+      ],
+    },
     {
       title: "Pourquoi Nous Choisir",
       href: "/why-choose-us",
