@@ -33,8 +33,8 @@ const FoundationHero = () => {
       <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
         <div className="max-w-3xl">
           <div className="mb-3 animate-fade-in">
-            <span className="bg-brand-earth text-white px-3 py-1 rounded-md text-sm font-medium">
-              {t('foundation_hero_tag')}
+            <span className="bg-brand-orange text-white px-4 py-2 rounded-md text-sm font-semibold">
+              BOH FOUNDATION
             </span>
           </div>
 
