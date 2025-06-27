@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { useCompanyInfo, useContactInfo, useSocialLinks, useSiteNavigation, useServices } from '@/hooks/useLocalizedConstants';
+import BBBAccreditationBadge from '@/components/badges/BBBAccreditationBadge';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { NewsletterSubscriptionForm } from '@/components/forms/NewsletterSubscriptionForm';
 
@@ -111,6 +112,14 @@ const Footer = () => {
         </div>
 
 
+
+        {/* Trust Badges */}
+        <div className="flex flex-col items-center justify-center mb-8">
+          <h4 className="text-lg font-semibold mb-4 text-center">Trusted & Accredited</h4>
+          <div className="flex items-center justify-center space-x-6">
+            <BBBAccreditationBadge size="md" />
+          </div>
+        </div>
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">

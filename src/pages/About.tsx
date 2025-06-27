@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import "@/styles/about.css";
 import { useCompanyInfo, useCompanyValues, useTeamMembers } from "@/hooks/useLocalizedConstants";
+import BBBAccreditationBadge from "@/components/badges/BBBAccreditationBadge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Info, Users, Award, Eye, Heart } from "lucide-react";
@@ -130,6 +131,19 @@ const About = () => {
                       <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                         {t("about_paragraph_3")}
                       </p>
+                      
+                      {/* Accreditations Section */}
+                      <div className="mt-8 pt-6 border-t border-gray-200">
+                        <h3 className="text-xl font-semibold mb-4 text-center text-gray-800">Our Accreditations</h3>
+                        <div className="flex flex-col items-center justify-center">
+                          <div className="flex items-center space-x-4 mb-4">
+                            <BBBAccreditationBadge size="lg" />
+                          </div>
+                          <p className="text-sm text-gray-600 text-center max-w-lg mx-auto">
+                            BOH Concepts is proud to be an accredited business with the Better Business Bureau, maintaining an A+ rating through our commitment to excellence and customer satisfaction.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

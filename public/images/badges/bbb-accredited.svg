@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="150" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue Circle Background -->
+  <circle cx="75" cy="75" r="70" fill="#0072BB"/>
+  
+  <!-- BBB Text -->
+  <text x="75" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">BBB</text>
+  
+  <!-- Accredited Business Text -->
+  <text x="75" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">ACCREDITED</text>
+  <text x="75" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">BUSINESS</text>
+  
+  <!-- Rating A+ -->
+  <text x="200" y="75" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#0072BB" text-anchor="middle">A+</text>
+  <text x="200" y="100" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0072BB" text-anchor="middle">RATING</text>
+</svg>
