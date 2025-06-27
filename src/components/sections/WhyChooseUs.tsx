@@ -2,7 +2,9 @@
 import { motion, Variants, Easing } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Home, Building, DollarSign, Shield } from "lucide-react";
+import { Home, Building, DollarSign, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const WhyChooseUs = () => {
   const { t } = useLanguage();
@@ -83,9 +85,17 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-2 text-center">{t("our_services_card")}</h3>
-              <p className="text-gray-600 text-sm text-center">
+              <p className="text-gray-600 text-sm text-center mb-4">
                 {t("our_services_description")}
               </p>
+              <div className="mt-auto pt-4">
+                <Link to="/services">
+                  <Button variant="outline" className="text-brand-orange border-brand-orange hover:bg-brand-orange hover:text-white group">
+                    {t("Learn More")}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Card 2 - Our Clients */}
@@ -100,9 +110,17 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-2 text-center">{t("our_clients_card")}</h3>
-              <p className="text-gray-600 text-sm text-center">
+              <p className="text-gray-600 text-sm text-center mb-4">
                 {t("our_clients_description")}
               </p>
+              <div className="mt-auto pt-4">
+                <Link to="/our-clients">
+                  <Button variant="outline" className="text-brand-orange border-brand-orange hover:bg-brand-orange hover:text-white group">
+                    {t("Learn More")}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Card 3 - Pricing Module */}
@@ -117,9 +135,17 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-2 text-center">{t("pricing_module_card")}</h3>
-              <p className="text-gray-600 text-sm text-center">
+              <p className="text-gray-600 text-sm text-center mb-4">
                 {t("pricing_module_description")}
               </p>
+              <div className="mt-auto pt-4">
+                <Link to="/pricing">
+                  <Button variant="outline" className="text-brand-orange border-brand-orange hover:bg-brand-orange hover:text-white group">
+                    {t("Learn More")}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
 
             {/* Card 4 - Our Process */}
@@ -134,9 +160,17 @@ const WhyChooseUs = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-2 text-center">{t("our_process_card")}</h3>
-              <p className="text-gray-600 text-sm text-center">
+              <p className="text-gray-600 text-sm text-center mb-4">
                 {t("our_process_description")}
               </p>
+              <div className="mt-auto pt-4">
+                <Link to="/our-process">
+                  <Button variant="outline" className="text-brand-orange border-brand-orange hover:bg-brand-orange hover:text-white group">
+                    {t("Learn More")}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </motion.div>
         </div>

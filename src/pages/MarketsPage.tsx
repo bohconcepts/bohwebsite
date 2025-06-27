@@ -373,7 +373,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="max-w-2xl mx-auto text-gray-600 mb-10"
             >
-              Our focus on Africa connects top hospitality talent with premium employment opportunities across the continent.
+              We focus on connecting top hospitality talent with premium employment opportunities across the globe.
             </motion.p>
           </div>
           

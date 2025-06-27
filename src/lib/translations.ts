@@ -148,7 +148,7 @@ const translations = {
     markets_partnership_tag: "PARTNERSHIP",
     markets_partnership_title: "Partner With Us",
     markets_partnership_description:
-      "Whether you are a global hospitality chain expanding into Africa or a local hotel group seeking reliable staff, BOH Concepts is here to support you. Our recruitment platform and industry specialists simplify hiring so you can focus on guest satisfaction.",
+      "Whether you are a global hospitality chain expanding into globally or a local hotel group seeking reliable staff, BOH Concepts is here to support you. Our recruitment platform and industry specialists simplify hiring so you can focus on guest satisfaction.",
     markets_contact_us_today: "Contact Us Today",
     markets_cta_heading:
       "Looking to hire or get hired in the hospitality industry?",
