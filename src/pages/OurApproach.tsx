@@ -263,7 +263,7 @@ const OurApproachPage = () => {
             className="container mx-auto px-4 w-full"
           >
             {/* Premium Featured Services - Side by Side */}
-            <div className="flex flex-col md:flex-row gap-8 mb-16 w-full max-w-5xl mx-auto justify-center">
+            <div className="flex flex-col md:flex-row flex-wrap gap-8 mb-16 w-full max-w-6xl mx-auto justify-center">
               {services.slice(0, 2).map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -399,6 +399,110 @@ const OurApproachPage = () => {
                   </div>
                 </motion.div>
               ))}
+              
+              {/* Special Projects & Services Card */}
+              <motion.div
+                variants={fadeInUpVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="h-full w-full md:w-1/2 lg:w-1/3 flex-1 mt-8 md:mt-0"
+              >
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 h-full group transform transition-all duration-500">
+                  {/* Simple border glow effect */}
+                  <div className="absolute inset-0 pointer-events-none transition-all duration-500 opacity-0 group-hover:opacity-100">
+                    <div className="absolute inset-0 rounded-2xl border-2 border-brand-orange shadow-[0_0_15px_rgba(255,128,0,0.5)] service-card-glow"></div>
+                  </div>
+
+                  {/* Corner dots with animation */}
+                  <div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute top-0 left-0 h-[4px] w-[4px] bg-brand-orange rounded-full group-hover:animate-pulse"></div>
+                    <div className="absolute top-0 right-0 h-[4px] w-[4px] bg-brand-orange rounded-full group-hover:animate-pulse"></div>
+                    <div className="absolute bottom-0 left-0 h-[4px] w-[4px] bg-brand-orange rounded-full group-hover:animate-pulse"></div>
+                    <div className="absolute bottom-0 right-0 h-[4px] w-[4px] bg-brand-orange rounded-full group-hover:animate-pulse"></div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-8 h-full flex flex-col">
+                    {/* Service Title with animated underline */}
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-brand-orange mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                        {t("Special Projects & Services")}
+                      </h3>
+                      <div className="w-16 h-1 bg-gradient-to-r from-brand-orange to-brand-orange/50 rounded-full group-hover:w-32 transition-all duration-500 ease-out"></div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      {t("Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience while minimizing disruption to your operations.")}
+                    </p>
+
+                    {/* Collapsible Services List */}
+                    <div className="flex-grow">
+                      {(() => {
+                        const [isExpanded, setIsExpanded] = useState(false);
+                        
+                        return (
+                          <div className="bg-gray-50/80 p-5 rounded-xl border border-gray-100">
+                            {/* Services list when expanded */}
+                            {isExpanded && (
+                              <>
+                                <h4 className="font-medium text-gray-800 mb-3 flex items-center gap-2">
+                                  <CheckCircle2 className="h-4 w-4 text-brand-blue" />
+                                  {t("Available Services")}
+                                </h4>
+
+                                <ul className="space-y-2.5">
+                                  <li className="flex items-start gap-2.5 group/item">
+                                    <div className="text-brand-blue font-bold">•</div>
+                                    <span className="text-gray-700 group-hover/item:text-brand-blue transition-colors duration-300">
+                                      {t("Total Guest Room Deep Cleaning")}
+                                    </span>
+                                  </li>
+                                  <li className="flex items-start gap-2.5 group/item">
+                                    <div className="text-brand-blue font-bold">•</div>
+                                    <span className="text-gray-700 group-hover/item:text-brand-blue transition-colors duration-300">
+                                      {t("Total Floor Care Program")}
+                                    </span>
+                                  </li>
+                                  <li className="flex items-start gap-2.5 group/item">
+                                    <div className="text-brand-blue font-bold">•</div>
+                                    <span className="text-gray-700 group-hover/item:text-brand-blue transition-colors duration-300">
+                                      {t("Taskforce Maintenance Technicians")}
+                                    </span>
+                                  </li>
+                                  <li className="flex items-start gap-2.5 group/item">
+                                    <div className="text-brand-blue font-bold">•</div>
+                                    <span className="text-gray-700 group-hover/item:text-brand-blue transition-colors duration-300">
+                                      {t("Overnight Kitchen and Public Areas Cleaning")}
+                                    </span>
+                                  </li>
+                                </ul>
+                              </>
+                            )}
+
+                            {/* Toggle button */}
+                            <button
+                              onClick={() => setIsExpanded(!isExpanded)}
+                              className="mt-2 text-sm text-brand-blue hover:text-brand-orange transition-colors flex items-center gap-1 focus:outline-none"
+                            >
+                              <span>
+                                {isExpanded
+                                  ? (constants.show_less as string)
+                                  : (constants.show_more as string)}
+                              </span>
+                              {isExpanded ? (
+                                <ChevronDown className="h-3 w-3" />
+                              ) : (
+                                <ChevronRight className="h-3 w-3" />
+                              )}
+                            </button>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
             {/* Additional Services */}

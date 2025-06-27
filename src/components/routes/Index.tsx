@@ -17,6 +17,8 @@ const MarketsPage = lazy(() => import("@/pages/MarketsPage"));
 const Partnership = lazy(() => import("@/pages/Partnership"));
 const Auth = lazy(() => import("@/pages/Auth"));
 const Unsubscribe = lazy(() => import("@/pages/Unsubscribe"));
+const VolunteerPage = lazy(() => import("@/pages/VolunteerPage"));
+const DonatePage = lazy(() => import("@/pages/DonatePage"));
 
 
 // About section pages
@@ -78,6 +80,8 @@ const AppRoutes = () => {
         <Route path="/partnership" element={<Partnership />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/foundation" element={<Foundation />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/donate" element={<DonatePage />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/sitemap" element={<Sitemap />} />

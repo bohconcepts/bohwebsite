@@ -62,6 +62,18 @@ const MarketsPage: React.FC = () => {
     cities?: string;
     states?: StateInfo[];
   };
+  
+  // State to track expanded states
+  const [expandedStates, setExpandedStates] = React.useState<string[]>([]);
+  
+  // Toggle state expansion
+  const toggleState = (stateKey: string) => {
+    if (expandedStates.includes(stateKey)) {
+      setExpandedStates(expandedStates.filter(key => key !== stateKey));
+    } else {
+      setExpandedStates([...expandedStates, stateKey]);
+    }
+  };
 
   // Data for the page with icons and CSS class names
   const industries = [
@@ -85,7 +97,14 @@ const MarketsPage: React.FC = () => {
         { state: "Vermont", cities: "Stowe" }
       ]
     },
-    { id: 2, name: "Ghana", cities: "Accra, Kumasi" }
+    { 
+      id: 2, 
+      name: "Ghana", 
+      states: [
+        { state: "Greater Accra Region", cities: "Accra" },
+        { state: "Ashanti Region", cities: "Kumasi" }
+      ]
+    }
   ];
 
   return (
@@ -312,7 +331,7 @@ const MarketsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Active Presence */}
+      {/* Areas of Operation */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div ref={locationsRef} className="text-center mb-12">
@@ -331,7 +350,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
-              Areas of Operation
+              Find Talent and Offices by Region
             </motion.h2>
             
             <motion.div
@@ -345,35 +364,105 @@ const MarketsPage: React.FC = () => {
                   transition: { duration: 0.8, delay: 0.4, ease: easeOut }
                 }
               } as Variants}
-              className="h-1 bg-brand-orange mx-auto rounded-full"
+              className="h-1 bg-brand-orange mx-auto rounded-full mb-6"
             ></motion.div>
+            
+            <motion.p
+              initial="hidden"
+              animate={locationsInView ? "visible" : "hidden"}
+              variants={fadeInUpVariants}
+              className="max-w-2xl mx-auto text-gray-600 mb-10"
+            >
+              Our focus on Africa connects top hospitality talent with premium employment opportunities across the continent.
+            </motion.p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 max-w-4xl mx-auto">
             {locations.map((location, index) => (
               <motion.div
                 key={location.id}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="col-span-1"
               >
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">{location.name}</h3>
+                <div className="mb-4 pb-2 border-b-2 border-brand-orange">
+                  <h3 className="text-xl font-bold text-brand-blue flex items-center">
+                    {location.name}
+                  </h3>
+                </div>
+                
                 {location.states ? (
                   <div className="space-y-3">
-                    {location.states.map((stateInfo, stateIndex) => (
-                      <div key={stateIndex} className="border-l-2 border-brand-orange pl-3">
-                        <h4 className="font-medium text-gray-800">{stateInfo.state}</h4>
-                        <p className="text-gray-600">{stateInfo.cities}</p>
-                      </div>
-                    ))}
+                    {location.states.map((stateInfo, stateIndex) => {
+                      const stateKey = `${location.id}-${stateIndex}`;
+                      const isExpanded = expandedStates.includes(stateKey);
+                      
+                      return (
+                        <div key={stateIndex} className="border-b border-gray-100 overflow-hidden">
+                          <button 
+                            onClick={() => toggleState(stateKey)}
+                            className="w-full text-left px-1 py-2 flex items-center justify-between hover:text-brand-orange transition-colors duration-200"
+                          >
+                            <h4 className="font-medium">{stateInfo.state}</h4>
+                            <div className="flex items-center text-brand-orange">
+                              {isExpanded ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                                </svg>
+                              ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                              )}
+                            </div>
+                          </button>
+                          
+                          {isExpanded && (
+                            <motion.div 
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="py-2 pl-5"
+                            >
+                              <ul className="space-y-2">
+                                {stateInfo.cities.split(", ").map((city, cityIndex) => (
+                                  <li key={cityIndex} className="text-gray-600 hover:text-brand-orange transition-colors">
+                                    <Link to="/contact" className="inline-block hover:underline">{city}</Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </motion.div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 ) : (
-                  <p className="text-gray-600">{location.cities}</p>
+                  <ul className="space-y-2">
+                    {location.cities?.split(", ").map((city, cityIndex) => (
+                      <li key={cityIndex} className="text-gray-600 hover:text-brand-orange transition-colors">
+                        <Link to="/contact" className="inline-block hover:underline">{city}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </motion.div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-md hover:bg-blue-700 transition-colors duration-300"
+            >
+              <span>Contact Our Regional Office</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
