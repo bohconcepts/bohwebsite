@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 import './styles/fonts.css';
 import './styles/typography.css'; // Import typography adjustments
+import './styles/size-override.css'; // Override Tailwind font sizes
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

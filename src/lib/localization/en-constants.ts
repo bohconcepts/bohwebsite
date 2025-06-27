@@ -808,7 +808,7 @@ export const enConstants: LocalizedConstants = {
   mission_heading: "Mission and Vision",
   mission_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
-  mission_page_title: "Mission and Vision",
+  mission_page_title: "OUR MISSION",
   mission_page_tag: "MISSION",
   mission_title: "Mission",
   mission_description:

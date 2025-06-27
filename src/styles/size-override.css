@@ -1,0 +1,48 @@
+/* Override heading sizes across the site */
+
+/* Reduce h1 sizes */
+h1.text-3xl {
+  font-size: 1.25rem !important; /* Reduced from 1.875rem */
+}
+
+h1.text-4xl {
+  font-size: 1.5rem !important; /* Reduced from 2.25rem */
+}
+
+h1.text-5xl {
+  font-size: 2rem !important; /* Reduced from 3rem */
+}
+
+h1.text-6xl {
+  font-size: 2.5rem !important; /* Reduced from 3.75rem */
+}
+
+/* Reduce h2 sizes */
+h2.text-2xl {
+  font-size: 1rem !important; /* Reduced from 1.5rem */
+}
+
+h2.text-3xl {
+  font-size: 1.25rem !important; /* Reduced from 1.875rem */
+}
+
+h2.text-4xl {
+  font-size: 1.5rem !important; /* Reduced from 2.25rem */
+}
+
+/* Apply to all headings with these classes regardless of element type */
+.text-3xl {
+  font-size: 1.25rem !important; /* Reduced from 1.875rem */
+}
+
+.text-4xl {
+  font-size: 1.5rem !important; /* Reduced from 2.25rem */
+}
+
+.text-5xl {
+  font-size: 2rem !important; /* Reduced from 3rem */
+}
+
+.text-6xl {
+  font-size: 2.5rem !important; /* Reduced from 3.75rem */
+}
