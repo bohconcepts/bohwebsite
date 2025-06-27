@@ -10,7 +10,7 @@ import {
 import "leaflet/dist/leaflet.css";
 import "./GlobalWorkforceMap.css";
 import { motion } from "framer-motion";
-// Translation is now handled with hardcoded text
+import { useLanguage } from "../../contexts/LanguageContext";
 import L from "leaflet";
 
 // Fix for default marker icons in Leaflet with React
@@ -36,6 +36,7 @@ const GlobalWorkforceMap: React.FC = () => {
   const [selectedContinent, setSelectedContinent] = useState<string | null>(
     null
   );
+  const { t } = useLanguage();
 
   // Using hardcoded text instead of translations
   // Map configuration is handled by LayersControl
@@ -206,7 +207,7 @@ const GlobalWorkforceMap: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="inline-block text-brand-orange font-medium mb-3"
           >
-            GLOBAL PRESENCE
+            {t("global_workforce_tag")}
           </motion.span>
 
           <motion.h2
@@ -215,7 +216,7 @@ const GlobalWorkforceMap: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
-            Our Global Workforce
+            {t("global_workforce_title")}
           </motion.h2>
 
           <motion.div
@@ -231,10 +232,7 @@ const GlobalWorkforceMap: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto"
           >
-            BOH Concepts operates with a truly global workforce, drawing talent
-            from across Africa, Asia, Europe, the Americas, and the Caribbean to
-            provide exceptional hospitality staffing services in key markets
-            worldwide.
+            {t("global_workforce_description")}
           </motion.p>
         </div>
 

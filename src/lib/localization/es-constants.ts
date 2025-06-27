@@ -913,6 +913,11 @@ export const esConstants: LocalizedConstants = {
   markets_hero_subtitle:
     "Soluciones de personal premium a nivel mundial. La industria hotelera global está experimentando una transformación dinámica, impulsada por el aumento del turismo, el desarrollo urbano y la aparición de marcas hoteleras internacionales en todo el mundo. En BOH Concepts, apoyamos este crecimiento conectando a los principales hoteles, resorts y grupos de hospitalidad con talento de primer nivel de todo el mundo.",
 
+  // Global Workforce Section
+  // global_workforce_tag: "PRESENCIA GLOBAL",
+  // global_workforce_title: "Nuestra Fuerza Laboral Global",
+  // global_workforce_description: "BOH Concepts opera con una fuerza laboral verdaderamente global, atrayendo talento de África, Asia, Europa, las Américas y el Caribe para proporcionar servicios excepcionales de personal para hostelería en mercados clave en todo el mundo.",
+
   CLIENTS: [
     {
       id: "1",

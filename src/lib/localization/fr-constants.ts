@@ -71,8 +71,7 @@ export const frConstants: LocalizedConstants = {
   // Global Workforce Section
   global_workforce_tag: "PRÉSENCE MONDIALE",
   global_workforce_title: "Notre Main-d'Œuvre Mondiale",
-  global_workforce_description:
-    "BOH Concepts opère avec une main-d'œuvre véritablement mondiale, attirant des talents d'Afrique, d'Asie, d'Europe, des Amériques et des Caraïbes pour fournir des services exceptionnels de personnel hôtelier sur les marchés clés du monde entier.",
+  global_workforce_description: "BOH Concepts opère avec une main-d'œuvre véritablement mondiale, attirant des talents d'Afrique, d'Asie, d'Europe, des Amériques et des Caraïbes pour fournir des services exceptionnels de personnel hôtelier sur les marchés clés du monde entier.",
 
   // Industry descriptions
   industry_hotels_resorts: "Hôtels et Centres de Villégiature",
