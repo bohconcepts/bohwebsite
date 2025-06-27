@@ -22,7 +22,7 @@ const BBBAccreditationBadge: React.FC<BBBAccreditationBadgeProps> = ({
 
   return (
     <a 
-      href="https://www.bbb.org/us/wa/bellevue/profile/employment-agency/boh-concepts-1296-1000146372" 
+      href="https://www.bbb.org/us/wa/kirkland/profile/hospitality/back-of-house-concepts-1296-1000156994" 
       target="_blank" 
       rel="noopener noreferrer" 
       className={`inline-block ${className}`}
