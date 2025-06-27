@@ -31,9 +31,10 @@ const ClientsSection = () => {
   return (
     <section ref={ref} className="py-10 bg-white">
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl uppercase text-brand-blue mb-6">{t('clients_title')}</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <div className="section-title-container mb-12">
+          <h2 className="section-title">{t('clients_title')}</h2>
+          <div className="section-title-underline"></div>
+          <p className="section-title-description">
             {t('clients_subtitle')}
           </p>
         </div>

@@ -39,7 +39,7 @@ export const enConstants: LocalizedConstants = {
   "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.":
     "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.",
   "Find Opportunities": "Find Opportunities",
-  testimonials_title: "What Partners Say",
+  testimonials_title: "What Our Partners Say",
   testimonials_subtitle:
     "Discover why leading hospitality brands and professionals trust BOH Concepts for their staffing needs.",
   clients_title: "Clients",

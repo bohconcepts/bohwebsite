@@ -113,21 +113,35 @@ const Services = () => {
   return (
     <section className="py-12 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div ref={titleRef} className="text-center mb-16">
+        <div ref={titleRef} className="section-title-container mb-16">
           <motion.h2
             initial="hidden"
             animate={titleInView ? "visible" : "hidden"}
             variants={titleVariants}
-            className="text-4xl md:text-5xl uppercase text-brand-blue mb-6"
+            className="section-title"
           >
             {t("Premium Staffing Solutions")}
           </motion.h2>
+
+          <motion.div
+            initial="hidden"
+            animate={titleInView ? "visible" : "hidden"}
+            variants={{
+              hidden: { width: "0%", opacity: 0 },
+              visible: {
+                width: "5rem",
+                opacity: 1,
+                transition: { duration: 0.8, delay: 0.2, ease: "easeOut" }
+              }
+            }}
+            className="section-title-underline"
+          ></motion.div>
 
           <motion.p
             initial="hidden"
             animate={titleInView ? "visible" : "hidden"}
             variants={subtitleVariants}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="section-title-description"
           >
             {t("We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.")}
           </motion.p>
