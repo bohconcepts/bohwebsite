@@ -65,7 +65,14 @@ export const frConstants: LocalizedConstants = {
 
   // Global Hospitality Market section
   markets_hero_title: "Marché mondial de l'hôtellerie",
-  markets_hero_subtitle: "Des solutions de recrutement premium à l'échelle mondiale. L'industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l'émergence de marques hôtelières internationales à travers le monde. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes et groupes hôteliers de premier plan avec des talents de haut niveau provenant du monde entier.",
+  markets_hero_subtitle:
+    "Des solutions de recrutement premium à l'échelle mondiale. L'industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l'émergence de marques hôtelières internationales à travers le monde. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes et groupes hôteliers de premier plan avec des talents de haut niveau provenant du monde entier.",
+
+  // Global Workforce Section
+  global_workforce_tag: "PRÉSENCE MONDIALE",
+  global_workforce_title: "Notre Main-d'Œuvre Mondiale",
+  global_workforce_description:
+    "BOH Concepts opère avec une main-d'œuvre véritablement mondiale, attirant des talents d'Afrique, d'Asie, d'Europe, des Amériques et des Caraïbes pour fournir des services exceptionnels de personnel hôtelier sur les marchés clés du monde entier.",
 
   // Industry descriptions
   industry_hotels_resorts: "Hôtels et Centres de Villégiature",
@@ -96,11 +103,11 @@ export const frConstants: LocalizedConstants = {
   team_description:
     "Notre équipe diversifiée de professionnels de l'hôtellerie apporte des décennies d'expérience et une passion pour l'excellence à chaque solution de personnel que nous fournissons.",
 
-  // Global Workforce Map
-  global_workforce_tag: "Main-d'œuvre Mondiale",
-  global_workforce_title: "Notre Présence Mondiale",
-  global_workforce_description:
-    "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
+  // // Global Workforce Map
+  // global_workforce_tag: "Main-d'œuvre Mondiale",
+  // global_workforce_title: "Notre Présence Mondiale",
+  // global_workforce_description:
+  //     "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
   workforce_distribution: "Distribution de la Main-d'œuvre",
   africa_workforce_count: "Main-d'œuvre basée en Afrique: {count} employés",
   us_workforce_count: "Main-d'œuvre basée aux États-Unis: {count} employés",
