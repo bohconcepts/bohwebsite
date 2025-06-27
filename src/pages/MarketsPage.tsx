@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import GlobalWorkforceMap from '../components/sections/GlobalWorkforceMap';
-import { Hotel, Palmtree, UtensilsCrossed, Building2, Ship, Plane } from 'lucide-react';
 import '../styles/markets.css'; // Import the CSS file we'll create
 
 
@@ -75,14 +74,44 @@ const MarketsPage: React.FC = () => {
     }
   };
 
-  // Data for the page with icons and CSS class names
+  // Data for the page with images, names, and descriptions
   const industries = [
-    { id: 1, name: t("industry_hotels_resorts"), icon: Hotel, colorClass: "industry-hotel" },
-    { id: 2, name: t("industry_safari_lodges"), icon: Palmtree, colorClass: "industry-safari" },
-    { id: 3, name: t("industry_restaurants"), icon: UtensilsCrossed, colorClass: "industry-restaurant" },
-    { id: 4, name: t("industry_conference_centers"), icon: Building2, colorClass: "industry-conference" },
-    { id: 5, name: t("industry_cruise"), icon: Ship, colorClass: "industry-cruise" },
-    { id: 6, name: t("industry_airlines"), icon: Plane, colorClass: "industry-airline" }
+    { 
+      id: 1, 
+      name: t("industry_hotels_resorts"), 
+      image: "/images/industries/hotels-resorts.jpg",
+      description: t("industry_hotels_resorts_desc") || "Luxury hotels and resorts worldwide seeking top hospitality talent for exceptional guest experiences."
+    },
+    { 
+      id: 2, 
+      name: t("industry_safari_lodges"), 
+      image: "/images/industries/safari.jpg",
+      description: t("industry_safari_lodges_desc") || "Exclusive safari lodges and wilderness retreats requiring specialized hospitality professionals."
+    },
+    { 
+      id: 3, 
+      name: t("industry_restaurants"), 
+      image: "/images/industries/restaurants.jpg",
+      description: t("industry_restaurants_desc") || "Fine dining establishments and restaurant groups seeking culinary and service excellence."
+    },
+    { 
+      id: 4, 
+      name: t("industry_conference_centers"), 
+      image: "/images/industries/convention.jpg",
+      description: t("industry_conference_centers_desc") || "Conference and event centers requiring skilled staff for seamless event execution."
+    },
+    { 
+      id: 5, 
+      name: t("industry_cruise"), 
+      image: "/images/industries/cruise.jpg",
+      description: t("industry_cruise_desc") || "Cruise lines seeking hospitality professionals for exceptional onboard guest experiences."
+    },
+    { 
+      id: 6, 
+      name: t("industry_airlines"), 
+      image: "/images/industries/airlines.jpg",
+      description: t("industry_airlines_desc") || "Airlines requiring cabin crew and hospitality staff focused on passenger comfort and service."
+    }
   ];
 
   const locations: Location[] = [
@@ -290,7 +319,7 @@ const MarketsPage: React.FC = () => {
       <GlobalWorkforceMap />
 
       {/* Industries We Serve */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block text-brand-orange font-medium mb-3">
@@ -299,34 +328,36 @@ const MarketsPage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {t("markets_industries_title")}
             </h2>
-            <div className="h-1 w-20 bg-brand-orange mx-auto rounded-full"></div>
+            <div className="h-1 w-20 bg-brand-orange mx-auto rounded-full mb-6"></div>
+            <p className="max-w-2xl mx-auto text-gray-600">
+              {t("markets_industries_description") || "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities."}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {industries.map((industry, index) => {
-              const IconComponent = industry.icon;
-              return (
-                <motion.div
-                  key={industry.id}
-                  custom={index}
-                  variants={fadeInAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  className={`bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center group hover:-translate-y-1 ${industry.colorClass}-border`}
-                >
-                  <div 
-                    className={`mb-4 p-4 rounded-full shadow-md transform transition-all duration-300 group-hover:scale-110 ${industry.colorClass}-bg`}
-                  >
-                    <IconComponent 
-                      className={`w-10 h-10 transition-all duration-300 ${industry.colorClass}-icon`}
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <p className="text-lg font-medium text-gray-800">{industry.name}</p>
-                </motion.div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.id}
+                custom={index}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={industry.image} 
+                    alt={industry.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{industry.name}</h3>
+                  <p className="text-gray-600 flex-grow">{industry.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

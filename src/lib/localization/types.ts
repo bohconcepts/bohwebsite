@@ -156,6 +156,31 @@ export type LocalizedConstants = {
   values_page_title: string;
   values_page_tag: string;
   values_description: string;
+
+  // Markets page properties
+  markets_page_title: string;
+  markets_meta_description: string;
+  markets_hero_tag: string;
+  markets_section_tag: string;
+  markets_section_title: string;
+  markets_section_description: string;
+  markets_industries_tag: string;
+  markets_industries_title: string;
+  markets_industries_description: string;
+  
+  // Industry descriptions
+  industry_hotels_resorts: string;
+  industry_hotels_resorts_desc: string;
+  industry_safari_lodges: string;
+  industry_safari_lodges_desc: string;
+  industry_restaurants: string;
+  industry_restaurants_desc: string;
+  industry_conference_centers: string;
+  industry_conference_centers_desc: string;
+  industry_cruise: string;
+  industry_cruise_desc: string;
+  industry_airlines: string;
+  industry_airlines_desc: string;
   
   // Team
   team_heading: string;

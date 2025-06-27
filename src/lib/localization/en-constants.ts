@@ -814,15 +814,45 @@ export const enConstants: LocalizedConstants = {
   values_heading: "The Values That Guide Us",
   values_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
-  values_page_title: "The Values That Guide Us",
-  values_page_tag: "OUR VALUES",
+  values_page_title: "Our Core Values",
+  values_page_tag: "VALUES",
+
+  // Markets page content
+  markets_page_title: "Global Hospitality Markets",
+  markets_meta_description: "Explore BOH Concepts' global hospitality staffing solutions across diverse markets and industries worldwide.",
+  markets_hero_tag: "GLOBAL REACH",
+  markets_section_tag: "OUR EXPERTISE",
+  markets_section_title: "Premium Staffing Solutions",
+  markets_section_description: "We provide comprehensive hospitality staffing solutions tailored to the unique needs of each market we serve.",
+  markets_industries_tag: "INDUSTRIES WE SERVE",
+  markets_industries_title: "Specialized Hospitality Sectors",
+  markets_industries_description: "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities.",
+  
+  // Industry descriptions
+  industry_hotels_resorts: "Hotels & Resorts",
+  industry_hotels_resorts_desc: "Luxury hotels and resorts worldwide seeking top hospitality talent for exceptional guest experiences and operational excellence.",
+  
+  industry_safari_lodges: "Safari Lodges",
+  industry_safari_lodges_desc: "Exclusive safari lodges and wilderness retreats requiring specialized hospitality professionals who understand unique guest expectations.",
+  
+  industry_restaurants: "Restaurants",
+  industry_restaurants_desc: "Fine dining establishments and restaurant groups seeking culinary and service excellence to deliver memorable dining experiences.",
+  
+  industry_conference_centers: "Conference Centers",
+  industry_conference_centers_desc: "Conference and event centers requiring skilled staff for seamless event execution, from planning to implementation.",
+  
+  industry_cruise: "Cruise Lines",
+  industry_cruise_desc: "Cruise lines seeking hospitality professionals for exceptional onboard guest experiences across dining, accommodation, and entertainment.",
+  
+  industry_airlines: "Airlines",
+  industry_airlines_desc: "Airlines requiring cabin crew and hospitality staff focused on passenger comfort, safety, and delivering premium in-flight service.",
 
   // Team
   team_heading: "Meet Our Exceptional Team",
   team_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange",
   team_page_title: "Meet Our Exceptional Team",
-  team_page_tag: "OMeet Our Exceptional Team",
+  team_page_tag: "Meet Our Exceptional Team",
   team_description:
     "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
 };
