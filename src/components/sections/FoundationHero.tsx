@@ -1,8 +1,10 @@
 import { Suspense } from "react";
 import OptimizedImage from "@/components/common/OptimizedImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 
 const FoundationHero = () => {
+  const { t } = useLanguage();
 
   return (
     <section className="relative w-full overflow-hidden bg-gray-900 h-screen">
@@ -32,16 +34,16 @@ const FoundationHero = () => {
         <div className="max-w-3xl">
           <div className="mb-3 animate-fade-in">
             <span className="bg-brand-earth text-white px-3 py-1 rounded-md text-sm font-medium">
-              BOH FOUNDATION
+              {t('foundation_hero_tag')}
             </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow">
-            Empowering Lives, Building Hope
+            {t('foundation_hero_title')}
           </h1>
 
           <p className="text-white text-lg md:text-xl mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow">
-            Supporting underserved communities through education, clean water, clothing, and financial assistance programs
+            {t('foundation_hero_subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">

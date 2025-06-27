@@ -158,13 +158,13 @@ const MarketsPage: React.FC = () => {
             className="max-w-3xl"
           >
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
-              {t("markets_hero_tag")}
+              {t("markets_hero_tag") || "GLOBAL MARKETS"}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
-              Global Hospitality Market
+              {t("markets_hero_title") || "Global Hospitality Market"}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.
+              {t("markets_hero_subtitle") || "Connecting exceptional hospitality talent with premier properties across global markets."}
             </p>
           </motion.div>
         </div>
@@ -180,7 +180,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="inline-block text-brand-orange font-medium mb-3"
             >
-              {t("markets_section_tag")}
+              {t("markets_section_tag") || "OUR INDUSTRIES"}
             </motion.span>
             
             <motion.h2 
@@ -189,7 +189,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="text-4xl md:text-5xl uppercase text-gray-900 mb-4"
             >
-              {t("markets_section_title")}
+              {t("markets_section_title") || "Industries We Serve"}
             </motion.h2>
             
             <motion.div 
@@ -212,7 +212,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto"
             >
-              {t("markets_section_description")}
+              {t("markets_section_description") || "We provide exceptional staffing solutions across diverse hospitality sectors, ensuring the right talent for your specific industry needs."}
             </motion.p>
           </div>
 
@@ -362,6 +362,91 @@ const MarketsPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="inline-block text-brand-orange font-medium mb-3"
+            >
+              {t("markets_locations_tag") || "AREAS OF OPERATION"}
+            </motion.span>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            >
+              {t("markets_locations_title") || "Where We Operate"}
+            </motion.h2>
+            
+            <motion.div
+              initial={{ width: "0%", opacity: 0 }}
+              whileInView={{ width: "80px", opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: easeOut }}
+              viewport={{ once: true }}
+              className="h-1 bg-brand-orange mx-auto rounded-full mb-6"
+            ></motion.div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-md flex flex-col"
+            >
+              <div className="bg-brand-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t("markets_why_1_title") || "Industry Expertise"}</h3>
+              <p className="text-gray-600">{t("markets_why_1_description") || "Our team brings decades of hospitality experience across diverse markets and property types."}</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-md flex flex-col"
+            >
+              <div className="bg-brand-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0020 5.5v-1.5" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t("markets_why_2_title") || "Global Network"}</h3>
+              <p className="text-gray-600">{t("markets_why_2_description") || "Access to our extensive network of qualified hospitality professionals across international markets."}</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-md flex flex-col"
+            >
+              <div className="bg-brand-blue/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">{t("markets_why_3_title") || "Customized Solutions"}</h3>
+              <p className="text-gray-600">{t("markets_why_3_description") || "Tailored staffing approaches designed to meet the unique needs of each property and market."}</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* Areas of Operation */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -372,7 +457,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="inline-block text-brand-orange font-medium mb-3"
             >
-              GEOGRAPHIC REACH
+              {t("markets_locations_tag")}
             </motion.span>
             
             <motion.h2
@@ -381,7 +466,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
-              Find Talent and Offices by Region
+              {t("markets_locations_title")}
             </motion.h2>
             
             <motion.div
@@ -404,7 +489,7 @@ const MarketsPage: React.FC = () => {
               variants={fadeInUpVariants}
               className="max-w-2xl mx-auto text-gray-600 mb-10"
             >
-              We focus on connecting top hospitality talent with premium employment opportunities across the globe.
+              {t("markets_locations_description")}
             </motion.p>
           </div>
           

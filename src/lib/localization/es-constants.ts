@@ -49,6 +49,40 @@ export const esConstants: LocalizedConstants = {
   values_description:
     "Nuestros valores fundamentales forman la base de todo lo que hacemos en BOH Concepts, guiando nuestras decisiones, dando forma a nuestra cultura y definiendo nuestro enfoque hacia la excelencia en la dotación de personal para la hospitalidad.",
 
+  // Markets page
+  markets_page_title: "Mercados",
+  markets_meta_description:
+    "Descubra las diversas industrias a las que BOH Concepts presta servicios con soluciones de personal especializadas.",
+  markets_hero_tag: "MERCADOS",
+  markets_section_tag: "MERCADOS",
+  markets_section_title: "Industrias que Servimos",
+  markets_section_description:
+    "Desde hoteles de lujo hasta aerolíneas internacionales, conectamos talento excepcional con cada segmento de la hospitalidad.",
+  markets_industries_tag: "INDUSTRIAS",
+  markets_industries_title: "Industrias de Hospitalidad",
+  markets_industries_description:
+    "Ofrecemos soluciones de personal adaptadas a una amplia variedad de entornos de hospitalidad y viajes.",
+
+  // Industry descriptions
+  industry_hotels_resorts: "Hoteles y Resorts",
+  industry_hotels_resorts_desc:
+    "Personal experto para propiedades de servicio completo, hoteles boutique y resorts de lujo.",
+  industry_safari_lodges: "Lodges de Safari",
+  industry_safari_lodges_desc:
+    "Equipos talentosos preparados para ofrecer experiencias auténticas en entornos remotos.",
+  industry_restaurants: "Restaurantes",
+  industry_restaurants_desc:
+    "Profesionales de alimentos y bebidas que elevan cada experiencia culinaria.",
+  industry_conference_centers: "Centros de Conferencias",
+  industry_conference_centers_desc:
+    "Personal orientado al detalle que asegura eventos sin contratiempos.",
+  industry_cruise: "Cruceros",
+  industry_cruise_desc:
+    "Tripulaciones versátiles capaces de ofrecer hospitalidad de primer nivel en el mar.",
+  industry_airlines: "Aerolíneas",
+  industry_airlines_desc:
+    "Talento de cabina y tierra con un firme compromiso con la seguridad y el servicio al cliente.",
+
   // Team
   team_heading: "Nuestro Equipo",
   team_heading_color:
@@ -84,27 +118,36 @@ export const esConstants: LocalizedConstants = {
   COMPANY_ADDRESS: "123 Hospitality Lane, Suite 100, Atlanta, GA 30308",
   COMPANY_PHONE: "+1 (404) 123-4567",
   "A TRUSTED PARTNER": "UN SOCIO CONFIABLE",
-  "Professional Hospitality Services": "Servicios Profesionales de Hospitalidad",
+  "Professional Hospitality Services":
+    "Servicios Profesionales de Hospitalidad",
   "Exceptional Hospitality Service": "Servicio Excepcional de Hospitalidad",
-  "Professional staff delivering impeccable table service and guest attention": "Personal profesional que brinda un servicio de mesa impecable y atención al huésped",
+  "Professional staff delivering impeccable table service and guest attention":
+    "Personal profesional que brinda un servicio de mesa impecable y atención al huésped",
   "Trusted by Industry Leaders": "Confiado por Líderes de la Industria",
-  "Partnering with top hotels and resorts across the nation": "Asociándonos con los mejores hoteles y resorts de todo el país",
+  "Partnering with top hotels and resorts across the nation":
+    "Asociándonos con los mejores hoteles y resorts de todo el país",
   "Streamlined Recruitment Process": "Proceso de Reclutamiento Optimizado",
-  "From selection to onboarding, we handle every step with care": "Desde la selección hasta la incorporación, manejamos cada paso con cuidado",
+  "From selection to onboarding, we handle every step with care":
+    "Desde la selección hasta la incorporación, manejamos cada paso con cuidado",
   "Elevating Guest Experiences": "Elevando las Experiencias de los Huéspedes",
-  "Professional hospitality staff that exceed expectations": "Personal de hospitalidad profesional que supera las expectativas",
+  "Professional hospitality staff that exceed expectations":
+    "Personal de hospitalidad profesional que supera las expectativas",
   "Premium Hospitality Staffing": "Personal de Hospitalidad Premium",
-  "Exceptional talent for luxury hotels and resorts": "Talento excepcional para hoteles y resorts de lujo",
+  "Exceptional talent for luxury hotels and resorts":
+    "Talento excepcional para hoteles y resorts de lujo",
   "Join Our Team": "Únete a Nuestro Equipo",
   "Our Approach": "Nuestro Enfoque",
-  
+
   // Services section text
   "Premium Staffing Solutions": "Soluciones Premium de Personal",
-  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "Proporcionamos servicios personalizados de personal de hospitalidad para satisfacer sus necesidades específicas, ya sea que esté buscando talento u oportunidades.",
-  
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
+    "Proporcionamos servicios personalizados de personal de hospitalidad para satisfacer sus necesidades específicas, ya sea que esté buscando talento u oportunidades.",
+
   // CTA section text
-  "Ready to Elevate Your Hospitality Career or Team?": "¿Listo para Elevar tu Carrera de Hospitalidad o Equipo?",
-  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Ya sea que estés buscando oportunidades excepcionales en hospitalidad o intentando formar tu equipo ideal, BOH Concepts ofrece soluciones personalizadas diseñadas para satisfacer tus necesidades específicas.",
+  "Ready to Elevate Your Hospitality Career or Team?":
+    "¿Listo para Elevar tu Carrera de Hospitalidad o Equipo?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.":
+    "Ya sea que estés buscando oportunidades excepcionales en hospitalidad o intentando formar tu equipo ideal, BOH Concepts ofrece soluciones personalizadas diseñadas para satisfacer tus necesidades específicas.",
   "Find Opportunities": "Encontrar Oportunidades",
 
   // Service position descriptions
@@ -532,7 +575,15 @@ export const esConstants: LocalizedConstants = {
         { title: "Fundación BOH", href: "/foundation" },
       ],
     },
-    { title: "Nuestro Enfoque", href: "/our-approach" },
+    {
+      title: "Servicios",
+      href: "/our-approach",
+      dropdown: [
+        { title: "Nuestro Enfoque", href: "/our-approach" },
+        { title: "Nuestro Proceso", href: "/our-process" },
+        { title: "Mercados", href: "/markets" },
+      ],
+    },
     {
       title: "Por Qué Elegirnos",
       href: "/why-choose-us",
@@ -790,6 +841,98 @@ export const esConstants: LocalizedConstants = {
       "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
     youtube: "https://www.youtube.com/bohconcepts",
   },
+
+  // Foundation page
+  foundation_meta_description:
+    "La Fundación BOH apoya a comunidades desatendidas a través de becas, iniciativas de agua potable, donaciones de ropa y asistencia financiera.",
+  foundation_page_title:
+    "Fundación BOH | Empoderando Vidas, Construyendo Esperanza",
+  foundation_hero_tag: "FUNDACIÓN BOH",
+  foundation_hero_title: "Empoderando Vidas, Construyendo Esperanza",
+  foundation_hero_subtitle:
+    "Apoyando a comunidades desatendidas a través de educación, agua potable, ropa y programas de asistencia financiera",
+
+  // Foundation - Our Mission section
+  foundation_mission_tag: "NUESTRA MISIÓN",
+  foundation_mission_title:
+    "Elevando Comunidades a Través de la Compasión y la Acción",
+  foundation_mission_paragraph_1:
+    "En la Fundación BOH, nuestra misión es crear un cambio positivo duradero en comunidades desatendidas proporcionando recursos esenciales, oportunidades educativas y apoyo financiero. Creemos en empoderar a las personas para superar barreras sistémicas y alcanzar su máximo potencial.",
+  foundation_mission_paragraph_2:
+    "A través de nuestros cuatro programas principales—becas, iniciativas de agua potable, donaciones de ropa y asistencia financiera—atendemos necesidades fundamentales mientras preservamos la dignidad y autonomía de aquellos a quienes servimos. Nuestro enfoque se basa en el respeto, la sostenibilidad y la colaboración comunitaria.",
+
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "LO QUE HACEMOS",
+  foundation_what_we_do_title: "Nuestros Programas Principales",
+  foundation_what_we_do_description:
+    "A través de nuestras cuatro áreas de enfoque, proporcionamos apoyo integral a comunidades necesitadas, abordando tanto necesidades inmediatas como objetivos de desarrollo a largo plazo.",
+  foundation_program_scholarship_title: "Becas Universitarias",
+  foundation_program_scholarship_description:
+    "Apoyando a estudiantes de minorías con ayuda financiera para que puedan cursar estudios superiores y alcanzar sus metas académicas.",
+  foundation_program_borehole_title: "Instalaciones de Pozos",
+  foundation_program_borehole_description:
+    "Proporcionando acceso a agua potable a comunidades a través de instalaciones sostenibles de pozos y programas de mantenimiento.",
+  foundation_program_clothing_title: "Donaciones de Ropa",
+  foundation_program_clothing_description:
+    "Distribuyendo ropa de calidad a personas necesitadas mientras preservamos su dignidad y ofrecemos opciones en la selección.",
+  foundation_program_financial_title: "Asistencia Financiera",
+  foundation_program_financial_description:
+    "Ofreciendo apoyo financiero de emergencia y recursos para ayudar a las personas a superar dificultades temporales.",
+
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "CÓMO AYUDAR",
+  foundation_how_to_help_title: "ÚNETE A NUESTRA MISIÓN",
+  foundation_how_to_help_description:
+    "Hay muchas formas de apoyar nuestro trabajo y hacer una diferencia significativa en las vidas de aquellos a quienes servimos.",
+  foundation_help_donate_title: "Donar",
+  foundation_help_donate_description:
+    "Tu contribución financiera apoya directamente nuestros programas y nos ayuda a llegar a más personas necesitadas.",
+  foundation_help_donate_button: "Donar Ahora",
+  foundation_help_volunteer_title: "Voluntariado",
+  foundation_help_volunteer_description:
+    "Comparte tu tiempo y habilidades para marcar la diferencia. Tenemos oportunidades tanto locales como remotas.",
+  foundation_help_volunteer_button: "Únete a Nosotros",
+  foundation_help_partner_title: "Asóciate con Nosotros",
+  foundation_help_partner_description:
+    "Organizaciones y empresas pueden asociarse con nosotros para crear un impacto sostenible a través de iniciativas colaborativas.",
+  foundation_help_partner_button: "Más Información",
+
+  // Markets page content
+  // markets_page_title: "Mercados Globales de Hospitalidad",
+  // markets_meta_description: "Explore las soluciones de personal de hospitalidad global de BOH Concepts en diversos mercados e industrias en todo el mundo.",
+  // markets_hero_tag: "ALCANCE GLOBAL",
+  // markets_section_tag: "NUESTRA EXPERIENCIA",
+  // markets_section_title: "Soluciones Premium de Personal",
+  // markets_section_description: "Proporcionamos soluciones integrales de personal de hospitalidad adaptadas a las necesidades únicas de cada mercado que servimos.",
+  // markets_industries_tag: "INDUSTRIAS QUE SERVIMOS",
+  // markets_industries_title: "Sectores Especializados de Hospitalidad",
+  // markets_industries_description: "Proporcionamos soluciones de personal especializadas para varios sectores dentro de la industria de la hospitalidad, conectando el mejor talento con oportunidades premium.",
+
+  // Global Hospitality Market section
+  markets_hero_title: "Mercado global de la hospitalidad",
+  markets_hero_subtitle:
+    "Soluciones de personal premium a nivel mundial. La industria hotelera global está experimentando una transformación dinámica, impulsada por el aumento del turismo, el desarrollo urbano y la aparición de marcas hoteleras internacionales en todo el mundo. En BOH Concepts, apoyamos este crecimiento conectando a los principales hoteles, resorts y grupos de hospitalidad con talento de primer nivel de todo el mundo.",
+
+  // // Global Workforce Section
+  // global_workforce_tag: "PRESENCIA GLOBAL",
+  // global_workforce_title: "Nuestra Fuerza Laboral Global",
+  // global_workforce_description: "BOH Concepts opera con una fuerza laboral verdaderamente global, atrayendo talento de África, Asia, Europa, las Américas y el Caribe para proporcionar servicios excepcionales de personal para hostelería en mercados clave en todo el mundo.",
+
+  // Markets Locations Section
+  markets_locations_tag: "ALCANCE GEOGRÁFICO",
+  markets_locations_title: "Encuentra Talento y Oficinas por Región",
+  markets_locations_description:
+    "Nos enfocamos en conectar talento hotelero de primer nivel con oportunidades de empleo premium en todo el mundo.",
+    
+  // Markets Why Choose Us Section
+  markets_why_tag: "POR QUÉ ELEGIRNOS",
+  markets_why_title: "Experiencia Incomparable en Personal de Hostelería",
+  markets_why_1_title: "Servicios de Reclutamiento Integrales",
+  markets_why_1_description: "Desde personal de nivel inicial hasta gerentes ejecutivos de hostelería, proporcionamos soluciones de reclutamiento personalizadas adaptadas a las características únicas de los mercados globales.",
+  markets_why_2_title: "Experiencia sobre el Terreno",
+  markets_why_2_description: "Con socios de reclutamiento locales y equipos de búsqueda ubicados en todo el mundo, tenemos un profundo conocimiento de la industria, la cultura, las regulaciones laborales y la dinámica del mercado que caracterizan a cada país.",
+  markets_why_3_title: "Grupo de Talentos Multilingües",
+  markets_why_3_description: "Reclutamos activamente talentos que dominan varios idiomas, incluidos inglés, francés, español, árabe, portugués, mandarín y más, garantizando que las empresas hoteleras puedan atender con confianza a una clientela internacional diversa.",
 
   CLIENTS: [
     {

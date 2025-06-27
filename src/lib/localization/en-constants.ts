@@ -11,25 +11,33 @@ export const enConstants: LocalizedConstants = {
   "A TRUSTED PARTNER": "A TRUSTED PARTNER",
   "Professional Hospitality Services": "Professional Hospitality Services",
   "Exceptional Hospitality Service": "Exceptional Hospitality Service",
-  "Professional staff delivering impeccable table service and guest attention": "Professional staff delivering impeccable table service and guest attention",
+  "Professional staff delivering impeccable table service and guest attention":
+    "Professional staff delivering impeccable table service and guest attention",
   "Trusted by Industry Leaders": "Trusted by Industry Leaders",
-  "Partnering with top hotels and resorts across the nation": "Partnering with top hotels and resorts across the nation",
+  "Partnering with top hotels and resorts across the nation":
+    "Partnering with top hotels and resorts across the nation",
   "Streamlined Recruitment Process": "Streamlined Recruitment Process",
-  "From selection to onboarding, we handle every step with care": "From selection to onboarding, we handle every step with care",
+  "From selection to onboarding, we handle every step with care":
+    "From selection to onboarding, we handle every step with care",
   "Elevating Guest Experiences": "Elevating Guest Experiences",
-  "Professional hospitality staff that exceed expectations": "Professional hospitality staff that exceed expectations",
+  "Professional hospitality staff that exceed expectations":
+    "Professional hospitality staff that exceed expectations",
   "Premium Hospitality Staffing": "Premium Hospitality Staffing",
-  "Exceptional talent for luxury hotels and resorts": "Exceptional talent for luxury hotels and resorts",
+  "Exceptional talent for luxury hotels and resorts":
+    "Exceptional talent for luxury hotels and resorts",
   "Join Our Team": "Join Our Team",
   "Our Approach": "Our Approach",
-  
+
   // Services section text
   "Premium Staffing Solutions": "Premium Staffing Solutions",
-  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.",
-  
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
+    "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.",
+
   // CTA section text
-  "Ready to Elevate Your Hospitality Career or Team?": "Ready to Elevate Your Hospitality Career or Team?",
-  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.",
+  "Ready to Elevate Your Hospitality Career or Team?":
+    "Ready to Elevate Your Hospitality Career or Team?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.":
+    "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.",
   "Find Opportunities": "Find Opportunities",
   testimonials_title: "What Partners Say",
   testimonials_subtitle:
@@ -421,7 +429,7 @@ export const enConstants: LocalizedConstants = {
         "BOH Concepts effectively fulfills our staffing needs for 100 employees across housekeeping, culinary, stewarding, and engineering. Their deep understanding of our requirements, along with a strong partnership, gives us confidence in continuing our collaboration.",
       author: "General Manager",
       position: "Luxury Hotel",
-      location: "Greater Seattle Area"
+      location: "Greater Seattle Area",
     },
     {
       id: "2",
@@ -429,7 +437,7 @@ export const enConstants: LocalizedConstants = {
         "We have partnered with BOH Concepts for over three years, and they have unequivocally provided us with outstanding staff who fully embody our brand standards. Their meticulous attention to detail and unparalleled personalized service distinctly set them apart from any other partner.",
       author: "Executive Housekeeper",
       position: "Luxury Resort",
-      location: "Maui, Hawaii"
+      location: "Maui, Hawaii",
     },
     {
       id: "3",
@@ -437,7 +445,7 @@ export const enConstants: LocalizedConstants = {
         "Partnering with BOH Concepts transformed our recruitment challenges during peak seasons. Their temporary solutions ensured that we maintained service excellence even during our busiest periods.",
       author: "Human Resource Manager",
       position: "Destination Hotel",
-      location: "Baltimore, Maryland"
+      location: "Baltimore, Maryland",
     },
   ],
   CLIENTS: [
@@ -583,10 +591,10 @@ export const enConstants: LocalizedConstants = {
     },
   ],
   // Global Workforce Map
-  global_workforce_tag: "GLOBAL PRESENCE",
-  global_workforce_title: "Our Diverse Global Workforce",
-  global_workforce_description:
-    "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
+  // global_workforce_tag: "GLOBAL PRESENCE",
+  // global_workforce_title: "Our Diverse Global Workforce",
+  // global_workforce_description:
+  //   "Discover the global reach of our workforce, with talented professionals from both Africa and the United States contributing to our success.",
   workforce_distribution: "Workforce Distribution",
   africa_workforce_count: "Africa-based workforce: {count} employees",
   us_workforce_count: "US-based workforce: {count} employees",
@@ -636,7 +644,8 @@ export const enConstants: LocalizedConstants = {
     {
       id: "1",
       title: "Specialized in Hospitality",
-      description: "Unlike general staffing agencies, we exclusively focus on the hospitality industry, giving us unparalleled insight into your specific needs.",
+      description:
+        "Unlike general staffing agencies, we exclusively focus on the hospitality industry, giving us unparalleled insight into your specific needs.",
     },
     {
       id: "2",
@@ -819,33 +828,70 @@ export const enConstants: LocalizedConstants = {
 
   // Markets page content
   markets_page_title: "Global Hospitality Markets",
-  markets_meta_description: "Explore BOH Concepts' global hospitality staffing solutions across diverse markets and industries worldwide.",
+  markets_meta_description:
+    "Explore BOH Concepts' global hospitality staffing solutions across various markets and industries worldwide.",
   markets_hero_tag: "GLOBAL REACH",
   markets_section_tag: "OUR EXPERTISE",
   markets_section_title: "Premium Staffing Solutions",
-  markets_section_description: "We provide comprehensive hospitality staffing solutions tailored to the unique needs of each market we serve.",
+  markets_section_description:
+    "We provide comprehensive hospitality staffing solutions tailored to the unique needs of each market we serve.",
   markets_industries_tag: "INDUSTRIES WE SERVE",
   markets_industries_title: "Specialized Hospitality Sectors",
-  markets_industries_description: "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities.",
-  
+  markets_industries_description:
+    "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities.",
+  markets_why_tag: "WHY CHOOSE US",
+  markets_why_title: "Unparalleled Expertise in Hospitality Staffing",
+  markets_why_1_title: "End-to-End Recruitment Services",
+  markets_why_1_description:
+    "From entry-level staff to executive hospitality managers, we provide customized recruitment solutions tailored to the unique characteristics of global markets.",
+  markets_why_2_title: "On-the-Ground Expertise",
+  markets_why_2_description:
+    "With local recruitment partners and sourcing teams positioned across the globe, we have a profound understanding of the industry, culture, labor regulations, and market dynamics that characterize each country.",
+  markets_why_3_title: "Multilingual Talent Pool",
+  markets_why_3_description:
+    "We actively recruit talent who are fluent in multiple languages, including English, French, Spanish, Arabic, Portuguese, Mandarin, and more, ensuring that hospitality businesses can confidently serve diverse international clientele.",
+
+  // Global Hospitality Market section
+  markets_hero_title: "Global Hospitality Market",
+  markets_hero_subtitle:
+    "Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
+
+  // Global Workforce Section
+  global_workforce_tag: "GLOBAL PRESENCE",
+  global_workforce_title: "Our Global Workforce",
+  global_workforce_description:
+    "BOH Concepts operates with a truly global workforce, drawing talent from across Africa, Asia, Europe, the Americas, and the Caribbean to provide exceptional hospitality staffing services in key markets worldwide.",
+
+  // Markets Locations Section
+  markets_locations_tag: "GEOGRAPHIC REACH",
+  markets_locations_title: "Find Talent and Offices by Region",
+  markets_locations_description:
+    "We focus on connecting top hospitality talent with premium employment opportunities across the globe.",
+
   // Industry descriptions
   industry_hotels_resorts: "Hotels & Resorts",
-  industry_hotels_resorts_desc: "Luxury hotels and resorts worldwide seeking top hospitality talent for exceptional guest experiences and operational excellence.",
-  
+  industry_hotels_resorts_desc:
+    "Luxury hotels and resorts worldwide seeking top hospitality talent for exceptional guest experiences and operational excellence.",
+
   industry_safari_lodges: "Safari Lodges",
-  industry_safari_lodges_desc: "Exclusive safari lodges and wilderness retreats requiring specialized hospitality professionals who understand unique guest expectations.",
-  
+  industry_safari_lodges_desc:
+    "Exclusive safari lodges and wilderness retreats requiring specialized hospitality professionals who understand unique guest expectations.",
+
   industry_restaurants: "Restaurants",
-  industry_restaurants_desc: "Fine dining establishments and restaurant groups seeking culinary and service excellence to deliver memorable dining experiences.",
-  
+  industry_restaurants_desc:
+    "Fine dining establishments and restaurant groups seeking culinary and service excellence to deliver memorable dining experiences.",
+
   industry_conference_centers: "Conference Centers",
-  industry_conference_centers_desc: "Conference and event centers requiring skilled staff for seamless event execution, from planning to implementation.",
-  
+  industry_conference_centers_desc:
+    "Conference and event centers requiring skilled staff for seamless event execution, from planning to implementation.",
+
   industry_cruise: "Cruise Lines",
-  industry_cruise_desc: "Cruise lines seeking hospitality professionals for exceptional onboard guest experiences across dining, accommodation, and entertainment.",
-  
+  industry_cruise_desc:
+    "Cruise lines seeking hospitality professionals for exceptional onboard guest experiences across dining, accommodation, and entertainment.",
+
   industry_airlines: "Airlines",
-  industry_airlines_desc: "Airlines requiring cabin crew and hospitality staff focused on passenger comfort, safety, and delivering premium in-flight service.",
+  industry_airlines_desc:
+    "Airlines requiring cabin crew and hospitality staff focused on passenger comfort, safety, and delivering premium in-flight service.",
 
   // Team
   team_heading: "Meet Our Exceptional Team",
@@ -855,4 +901,58 @@ export const enConstants: LocalizedConstants = {
   team_page_tag: "Meet Our Exceptional Team",
   team_description:
     "Our diverse team of hospitality professionals brings decades of experience and a passion for excellence to every staffing solution we provide.",
+
+  // Foundation page
+  foundation_meta_description:
+    "The BOH Foundation supports underserved communities through scholarships, clean water initiatives, clothing donations, and financial assistance programs.",
+  foundation_page_title: "BOH Foundation | Empowering Lives, Building Hope",
+  foundation_hero_tag: "BOH FOUNDATION",
+  foundation_hero_title: "Empowering Lives, Building Hope",
+  foundation_hero_subtitle:
+    "Supporting underserved communities through education, clean water, clothing, and financial assistance programs",
+
+  // Foundation - Our Mission section
+  foundation_mission_tag: "OUR MISSION",
+  foundation_mission_title:
+    "Uplifting Communities Through Compassion and Action",
+  foundation_mission_paragraph_1:
+    "At BOH Foundation, our mission is to create lasting positive change in underserved communities by providing essential resources, educational opportunities, and financial support. We believe in empowering individuals to overcome systemic barriers and reach their full potential.",
+  foundation_mission_paragraph_2:
+    "Through our four core programs—scholarships, clean water initiatives, clothing donations, and financial assistance—we address fundamental needs while preserving the dignity and autonomy of those we serve. Our approach is grounded in respect, sustainability, and community collaboration.",
+
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "WHAT WE DO",
+  foundation_what_we_do_title: "Our Core Programs",
+  foundation_what_we_do_description:
+    "Through our four focus areas, we provide comprehensive support to communities in need, addressing both immediate needs and long-term development goals.",
+  foundation_program_scholarship_title: "University Scholarships",
+  foundation_program_scholarship_description:
+    "Supporting minority students with financial assistance to pursue higher education and achieve their academic goals.",
+  foundation_program_borehole_title: "Borehole Installations",
+  foundation_program_borehole_description:
+    "Providing communities with access to clean drinking water through sustainable borehole installations and maintenance programs.",
+  foundation_program_clothing_title: "Clothing Donations",
+  foundation_program_clothing_description:
+    "Distributing quality clothing to those in need while preserving dignity and offering choices in selection.",
+  foundation_program_financial_title: "Financial Assistance",
+  foundation_program_financial_description:
+    "Offering emergency financial support and resources to help individuals overcome temporary hardships.",
+
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "HOW TO HELP",
+  foundation_how_to_help_title: "JOIN OUR MISSION",
+  foundation_how_to_help_description:
+    "There are many ways to support our work and make a meaningful difference in the lives of those we serve.",
+  foundation_help_donate_title: "Donate",
+  foundation_help_donate_description:
+    "Your financial contribution directly supports our programs and helps us reach more people in need.",
+  foundation_help_donate_button: "Donate Now",
+  foundation_help_volunteer_title: "Volunteer",
+  foundation_help_volunteer_description:
+    "Share your time and skills to make a difference. We have both local and remote opportunities available.",
+  foundation_help_volunteer_button: "Join Us",
+  foundation_help_partner_title: "Partner With Us",
+  foundation_help_partner_description:
+    "Organizations and businesses can partner with us to create sustainable impact through collaborative initiatives.",
+  foundation_help_partner_button: "Learn More",
 };
