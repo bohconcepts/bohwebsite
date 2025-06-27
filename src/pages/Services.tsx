@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { motion, Easing } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -141,7 +141,7 @@ const ServicesPage = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut" as Easing },
     },
   };
 
@@ -403,6 +403,124 @@ const ServicesPage = () => {
               ))}
             </div>
 
+            {/* Special Projects & Services */}
+            <div className="mt-16 mb-12">
+              <div className="text-center mb-12">
+                <motion.h3
+                  initial="hidden"
+                  animate={servicesInView ? "visible" : "hidden"}
+                  variants={fadeInUpVariants}
+                  className="text-3xl font-bold text-gray-900 mb-4"
+                >
+                  {t("Special Projects & Services")}
+                </motion.h3>
+                <motion.div
+                  initial="hidden"
+                  animate={servicesInView ? "visible" : "hidden"}
+                  variants={{
+                    hidden: { width: "0%", opacity: 0 },
+                    visible: {
+                      width: "80px",
+                      opacity: 1,
+                      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+                    },
+                  }}
+                  className="h-1 bg-brand-orange mx-auto rounded-full"
+                ></motion.div>
+                <motion.p
+                  initial="hidden"
+                  animate={servicesInView ? "visible" : "hidden"}
+                  variants={fadeInUpVariants}
+                  className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto"
+                >
+                  {t("Specialized cleaning and maintenance solutions for hospitality businesses.")}
+                </motion.p>
+              </div>
+              
+              <motion.div 
+                initial="hidden"
+                animate={servicesInView ? "visible" : "hidden"}
+                variants={fadeInUpVariants}
+                className="relative w-full max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
+              >
+                <div className="flex flex-col md:flex-row">
+                  {/* Image Section */}
+                  <div className="w-full md:w-2/5 h-64 md:h-auto relative overflow-hidden bg-gray-100">
+                    <img 
+                      src="/images/services/projects.png" 
+                      alt="Special Projects & Services" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="w-full md:w-3/5 p-8 md:p-10">
+                    <h4 className="text-2xl font-bold text-gray-900 mb-6">
+                      {t("Special Facility Solutions")}
+                    </h4>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-brand-orange/10 flex-shrink-0 mt-1">
+                          <CheckCircle2 className="h-5 w-5 text-brand-orange" />
+                        </div>
+                        <div>
+                          <h5 className="text-lg font-medium text-gray-900 mb-1">
+                            {t("Total Guest Room Deep Cleaning")}
+                          </h5>
+                          <p className="text-gray-600">
+                            {t("Comprehensive deep cleaning services including post-construction cleanup.")}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-brand-orange/10 flex-shrink-0 mt-1">
+                          <CheckCircle2 className="h-5 w-5 text-brand-orange" />
+                        </div>
+                        <div>
+                          <h5 className="text-lg font-medium text-gray-900 mb-1">
+                            {t("Total Floor Care Program")}
+                          </h5>
+                          <p className="text-gray-600">
+                            {t("Advanced floor maintenance with autonomous solutions for optimal results.")}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-brand-orange/10 flex-shrink-0 mt-1">
+                          <CheckCircle2 className="h-5 w-5 text-brand-orange" />
+                        </div>
+                        <div>
+                          <h5 className="text-lg font-medium text-gray-900 mb-1">
+                            {t("Taskforce Maintenance Technicians")}
+                          </h5>
+                          <p className="text-gray-600">
+                            {t("Skilled maintenance professionals available for special projects and immediate needs.")}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-full bg-brand-orange/10 flex-shrink-0 mt-1">
+                          <CheckCircle2 className="h-5 w-5 text-brand-orange" />
+                        </div>
+                        <div>
+                          <h5 className="text-lg font-medium text-gray-900 mb-1">
+                            {t("Overnight Kitchen and Public Areas Cleaning")}
+                          </h5>
+                          <p className="text-gray-600">
+                            {t("Professional after-hours cleaning for kitchens and public spaces, minimizing guest disruption.")}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            
             {/* Additional Services */}
             {services.length > 2 && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

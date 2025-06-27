@@ -138,7 +138,7 @@ const Services = () => {
           variants={containerVariants}
           initial="hidden"
           animate={cardsInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
         >
           {/* Vetted Long-Term Talents */}
           <motion.div
@@ -147,7 +147,7 @@ const Services = () => {
             initial="initial"
             onMouseEnter={() => setHoveredCard('long-term')}
             onMouseLeave={() => setHoveredCard(null)}
-            className="relative group overflow-hidden rounded-2xl transition-all duration-300 h-full flex min-h-[220px] w-full bg-white shadow-sm hover:shadow-md"
+            className="relative group overflow-hidden rounded-2xl transition-all duration-300 h-full flex w-full bg-white shadow-sm hover:shadow-md"
           >
             <motion.div
               variants={cardHoverVariants}
@@ -155,17 +155,17 @@ const Services = () => {
             >
               <motion.div
                 variants={backgroundVariants}
-                className="w-full h-full flex rounded-2xl border border-gray-100 overflow-hidden"
+                className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
               >
-                <div className="w-2/5 overflow-hidden bg-gray-100">
+                <div className="w-full h-56 overflow-hidden bg-gray-100">
                   <img
                     src="/images/services/Professional Chefs.jpg"
                     alt="Professional Chefs"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
                 
-                <div className="w-3/5 p-6 flex flex-col justify-center">
+                <div className="w-full p-6 flex flex-col justify-between h-64">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Vetted Long-Term Talents")}</h3>
                   <motion.div
                     initial={{ width: "48px" }}
@@ -174,7 +174,7 @@ const Services = () => {
                     className="h-1 bg-brand-orange rounded-full mb-3"
                   ></motion.div>
                 
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
                     {t("long_term_talents_description")}
                   </p>
                 
@@ -206,7 +206,7 @@ const Services = () => {
             initial="initial"
             onMouseEnter={() => setHoveredCard('seasonal')}
             onMouseLeave={() => setHoveredCard(null)}
-            className="relative group overflow-hidden rounded-2xl transition-all duration-300 h-full flex min-h-[220px] w-full bg-white shadow-sm hover:shadow-md"
+            className="relative group overflow-hidden rounded-2xl transition-all duration-300 h-full flex w-full bg-white shadow-sm hover:shadow-md"
           >
             <motion.div
               variants={cardHoverVariants}
@@ -214,17 +214,17 @@ const Services = () => {
             >
               <motion.div
                 variants={backgroundVariants}
-                className="w-full h-full flex rounded-2xl border border-gray-100 overflow-hidden"
+                className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
               >
-                <div className="w-2/5 overflow-hidden bg-gray-100">
+                <div className="w-full h-56 overflow-hidden bg-gray-100">
                   <img
                     src="/images/services/Couple Checking In.jpg"
                     alt="Couple Checking In"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
                 
-                <div className="w-3/5 p-6 flex flex-col justify-center">
+                <div className="w-full p-6 flex flex-col justify-between h-64">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Vetted Seasonal Talents")}</h3>
                   <motion.div
                     initial={{ width: "48px" }}
@@ -233,7 +233,7 @@ const Services = () => {
                     className="h-1 bg-brand-orange rounded-full mb-3"
                   ></motion.div>
                 
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
                     {t("seasonal_talents_description")}
                   </p>
                 
@@ -247,6 +247,65 @@ const Services = () => {
                       <span className="mr-2">{t("Learn More")}</span>
                       <motion.div
                         animate={hoveredCard === 'seasonal' ? { x: 4 } : { x: 0 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </motion.div>
+                    </motion.div>
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* Special Projects & Services */}
+          <motion.div
+            variants={cardVariants}
+            whileHover="hover"
+            initial="initial"
+            onMouseEnter={() => setHoveredCard('projects')}
+            onMouseLeave={() => setHoveredCard(null)}
+            className="relative group overflow-hidden rounded-2xl transition-all duration-300 h-full flex w-full bg-white shadow-sm hover:shadow-md"
+          >
+            <motion.div
+              variants={cardHoverVariants}
+              className="w-full rounded-2xl"
+            >
+              <motion.div
+                variants={backgroundVariants}
+                className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
+              >
+                <div className="w-full h-56 overflow-hidden bg-gray-100">
+                  <img
+                    src="/images/services/projects.png"
+                    alt="Special Projects & Services"
+                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                
+                <div className="w-full p-6 flex flex-col justify-between h-64">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Special Projects & Services")}</h3>
+                  <motion.div
+                    initial={{ width: "48px" }}
+                    animate={hoveredCard === 'projects' ? { width: "64px" } : { width: "48px" }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="h-1 bg-brand-orange rounded-full mb-3"
+                  ></motion.div>
+                
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
+                    {t("Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.")}
+                  </p>
+                
+                  <Link to="/services">
+                    <motion.div
+                      initial={{ opacity: 0.7, x: 0 }}
+                      animate={hoveredCard === 'projects' ? { opacity: 1, x: 0 } : { opacity: 0.7, x: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="flex items-center text-brand-blue font-medium hover:text-brand-orange mt-auto"
+                    >
+                      <span className="mr-2">{t("Learn More")}</span>
+                      <motion.div
+                        animate={hoveredCard === 'projects' ? { x: 4 } : { x: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                       >
                         <ChevronRight className="h-5 w-5" />
