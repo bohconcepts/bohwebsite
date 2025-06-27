@@ -828,6 +828,10 @@ export const enConstants: LocalizedConstants = {
   markets_industries_title: "Specialized Hospitality Sectors",
   markets_industries_description: "We provide specialized staffing solutions for various sectors within the hospitality industry, connecting top talent with premium opportunities.",
   
+  // Global Hospitality Market section
+  markets_hero_title: "Global Hospitality Market",
+  markets_hero_subtitle: "Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
+  
   // Industry descriptions
   industry_hotels_resorts: "Hotels & Resorts",
   industry_hotels_resorts_desc: "Luxury hotels and resorts worldwide seeking top hospitality talent for exceptional guest experiences and operational excellence.",

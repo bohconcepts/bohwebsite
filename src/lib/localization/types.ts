@@ -168,6 +168,10 @@ export type LocalizedConstants = {
   markets_industries_title: string;
   markets_industries_description: string;
   
+  // Global Hospitality Market section
+  markets_hero_title: string;
+  markets_hero_subtitle: string;
+  
   // Industry descriptions
   industry_hotels_resorts: string;
   industry_hotels_resorts_desc: string;

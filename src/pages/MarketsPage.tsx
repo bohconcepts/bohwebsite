@@ -161,10 +161,10 @@ const MarketsPage: React.FC = () => {
               {t("markets_hero_tag")}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
-              Global Hospitality Market
+              {t("markets_hero_title")}
             </h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              Premium Staffing Solutions Worldwide. The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.
+              {t("markets_hero_subtitle")}
             </p>
           </motion.div>
         </div>

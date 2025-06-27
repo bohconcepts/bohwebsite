@@ -4,25 +4,28 @@ const translations = {
   en: {
     // Contact Page
     "Contact Us": "Contact Us",
-    "contact_meta_description": "Get in touch with BOH Concepts for hospitality staffing solutions tailored to your needs.",
-    "Contact Page Message": "Get in touch with our team for hospitality staffing solutions tailored to your needs.",
+    contact_meta_description:
+      "Get in touch with BOH Concepts for hospitality staffing solutions tailored to your needs.",
+    "Contact Page Message":
+      "Get in touch with our team for hospitality staffing solutions tailored to your needs.",
     "Contact Information": "Contact Information",
-    "Phone": "Phone",
-    "Address": "Address",
-    "Email": "Email",
+    Phone: "Phone",
+    Address: "Address",
+    Email: "Email",
     "Email Contact": "contact@bohconcepts.com",
     "Connect With Us": "Connect With Us",
     "Send Us a Message": "Send Us a Message",
     "Your Name": "Your Name",
     "Email Address": "Email Address",
-    "Subject": "Subject",
-    "Message": "Message",
-    "Sending": "Sending...",
+    Subject: "Subject",
+    Message: "Message",
+    Sending: "Sending...",
     "Send Message": "Send Message",
     "Message Sent": "Message Sent!",
-    "Thank You Message": "Thank you for your message. We'll get back to you shortly.",
+    "Thank You Message":
+      "Thank you for your message. We'll get back to you shortly.",
     "Find Us": "Find Us",
-    
+
     // Hero Section
     "A TRUSTED PARTNER": "A TRUSTED PARTNER",
     "Hospitality Staffing Redefined": "Hospitality Staffing Redefined",
@@ -40,15 +43,24 @@ const translations = {
     "Total Guest Room Deep Cleaning": "Total Guest Room Deep Cleaning",
     "Total Floor Care Program": "Total Floor Care Program",
     "Taskforce Maintenance Technicians": "Taskforce Maintenance Technicians",
-    "Overnight Kitchen and Public Areas Cleaning": "Overnight Kitchen and Public Areas Cleaning",
-    "Comprehensive deep cleaning services including post-construction cleanup.": "Comprehensive deep cleaning services including post-construction cleanup.",
-    "Advanced floor maintenance with autonomous solutions for optimal results.": "Advanced floor maintenance with autonomous solutions for optimal results.",
-    "Skilled maintenance professionals available for special projects and immediate needs.": "Skilled maintenance professionals available for special projects and immediate needs.",
-    "Professional after-hours cleaning for kitchens and public spaces, minimizing guest disruption.": "Professional after-hours cleaning for kitchens and public spaces, minimizing guest disruption.",
-    "Special facility cleaning and maintenance solutions for your hospitality business.": "Special facility cleaning and maintenance solutions for your hospitality business.",
-    "Specialized cleaning and maintenance solutions for hospitality businesses.": "Specialized cleaning and maintenance solutions for hospitality businesses.",
-    "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.": "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.",
-    "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience while minimizing disruption to your operations.": "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience while minimizing disruption to your operations.",
+    "Overnight Kitchen and Public Areas Cleaning":
+      "Overnight Kitchen and Public Areas Cleaning",
+    "Comprehensive deep cleaning services including post-construction cleanup.":
+      "Comprehensive deep cleaning services including post-construction cleanup.",
+    "Advanced floor maintenance with autonomous solutions for optimal results.":
+      "Advanced floor maintenance with autonomous solutions for optimal results.",
+    "Skilled maintenance professionals available for special projects and immediate needs.":
+      "Skilled maintenance professionals available for special projects and immediate needs.",
+    "Professional after-hours cleaning for kitchens and public spaces, minimizing guest disruption.":
+      "Professional after-hours cleaning for kitchens and public spaces, minimizing guest disruption.",
+    "Special facility cleaning and maintenance solutions for your hospitality business.":
+      "Special facility cleaning and maintenance solutions for your hospitality business.",
+    "Specialized cleaning and maintenance solutions for hospitality businesses.":
+      "Specialized cleaning and maintenance solutions for hospitality businesses.",
+    "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.":
+      "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.",
+    "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience while minimizing disruption to your operations.":
+      "Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience while minimizing disruption to your operations.",
     long_term_talents_description:
       "We provide well-vetted and qualified colleagues for long-term positions including Housekeeping Leadership, Housekeeping Attendants, Laundry, Food and Beverage, Stewarding, Convention Services, Culinary, and Maintenance Technicians.",
     seasonal_talents_description:
@@ -96,11 +108,11 @@ const translations = {
     // Markets Page
     markets_page_title: "Markets",
     markets_meta_description:
-      "Empowering the Global Hospitality Sector with World-Class Talent from BOH Concepts.",
+      "The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
     markets_hero_tag: "GLOBAL MARKETS",
     markets_hero_title: "Hospitality Talent Solutions Worldwide",
     markets_hero_subtitle:
-      "Empowering the Global Hospitality Sector with World-Class Talent",
+      "The global hospitality industry is experiencing a dynamic transformation, fueled by rising tourism, urban development, and the emergence of international hotel brands across the globe. At BOH Concepts, we support this growth by connecting leading hotels, resorts, and hospitality groups with top-tier talent from around the world.",
     markets_section_tag: "GLOBAL HOSPITALITY MARKET",
     markets_section_title: "Premium Staffing Solutions Worldwide",
     markets_section_description:
@@ -333,25 +345,28 @@ const translations = {
   es: {
     // Contact Page
     "Contact Us": "Contáctenos",
-    "contact_meta_description": "Póngase en contacto con BOH Concepts para soluciones de personal de hospitalidad adaptadas a sus necesidades.",
-    "Contact Page Message": "Póngase en contacto con nuestro equipo para soluciones de personal de hospitalidad adaptadas a sus necesidades.",
+    contact_meta_description:
+      "Póngase en contacto con BOH Concepts para soluciones de personal de hospitalidad adaptadas a sus necesidades.",
+    "Contact Page Message":
+      "Póngase en contacto con nuestro equipo para soluciones de personal de hospitalidad adaptadas a sus necesidades.",
     "Contact Information": "Información de Contacto",
-    "Phone": "Teléfono",
-    "Address": "Dirección",
-    "Email": "Correo Electrónico",
+    Phone: "Teléfono",
+    Address: "Dirección",
+    Email: "Correo Electrónico",
     "Email Contact": "contacto@bohconcepts.com",
     "Connect With Us": "Conéctese Con Nosotros",
     "Send Us a Message": "Envíenos un Mensaje",
     "Your Name": "Su Nombre",
     "Email Address": "Dirección de Correo Electrónico",
-    "Subject": "Asunto",
-    "Message": "Mensaje",
-    "Sending": "Enviando...",
+    Subject: "Asunto",
+    Message: "Mensaje",
+    Sending: "Enviando...",
     "Send Message": "Enviar Mensaje",
     "Message Sent": "¡Mensaje Enviado!",
-    "Thank You Message": "Gracias por su mensaje. Nos pondremos en contacto con usted pronto.",
+    "Thank You Message":
+      "Gracias por su mensaje. Nos pondremos en contacto con usted pronto.",
     "Find Us": "Encuéntrenos",
-    
+
     // Hero Section
     "A TRUSTED PARTNER": "UN SOCIO CONFIABLE",
     "Hospitality Staffing Redefined": "Personal de Hostelería Redefinido",
@@ -411,14 +426,13 @@ const translations = {
     // Markets Page
     markets_page_title: "Mercados",
     markets_meta_description:
-      "Potenciando el sector de la hospitalidad global con talento de clase mundial de BOH Concepts.",
+      "Soluciones de personal premium a nivel mundial.La industria hotelera global está experimentando una transformación dinámica, impulsada por el aumento del turismo, el desarrollo urbano y la aparición de marcas hoteleras internacionales en todo el mundo. En BOH Concepts, apoyamos este crecimiento conectando a los principales hoteles, resorts y grupos de hospitalidad con talento de primer nivel de todo el mundo.",
     markets_hero_tag: "MERCADOS GLOBALES",
-    markets_hero_title: "Soluciones de Talento para Hospitalidad en Todo el Mundo",
+    markets_hero_title: "Mercado global de la hospitalidad",
     markets_hero_subtitle:
-      "Potenciando el Sector de la Hospitalidad Global con Talento de Clase Mundial",
+      "Soluciones de personal premium a nivel mundial.La industria hotelera global está experimentando una transformación dinámica, impulsada por el aumento del turismo, el desarrollo urbano y la aparición de marcas hoteleras internacionales en todo el mundo. En BOH Concepts, apoyamos este crecimiento conectando a los principales hoteles, resorts y grupos de hospitalidad con talento de primer nivel de todo el mundo.",
     markets_section_tag: "MERCADO DE HOSPITALIDAD GLOBAL",
-    markets_section_title:
-      "Nuestras Soluciones Premium de Personal a Nivel Mundial",
+    markets_section_title: "Mercado global de la hospitalidad",
     markets_section_description:
       "La industria de la hospitalidad global está experimentando un cambio dinámico, impulsado por el auge del turismo, el desarrollo urbano y el aumento de marcas hoteleras internacionales en todos los continentes. En BOH Concepts, estamos orgullosos de apoyar este crecimiento conectando a hoteles, resorts y grupos hoteleros líderes con talento de primer nivel de todo el mundo.",
     markets_service_1_title: "Servicios de Reclutamiento Integrales",
@@ -638,25 +652,28 @@ const translations = {
   fr: {
     // Contact Page
     "Contact Us": "Contactez-Nous",
-    "contact_meta_description": "Contactez BOH Concepts pour des solutions de personnel hôtelier adaptées à vos besoins.",
-    "Contact Page Message": "Contactez notre équipe pour des solutions de personnel hôtelier adaptées à vos besoins.",
+    contact_meta_description:
+      "Contactez BOH Concepts pour des solutions de personnel hôtelier adaptées à vos besoins.",
+    "Contact Page Message":
+      "Contactez notre équipe pour des solutions de personnel hôtelier adaptées à vos besoins.",
     "Contact Information": "Informations de Contact",
-    "Phone": "Téléphone",
-    "Address": "Adresse",
-    "Email": "Email",
+    Phone: "Téléphone",
+    Address: "Adresse",
+    Email: "Email",
     "Email Contact": "contact@bohconcepts.com",
     "Connect With Us": "Connectez-Vous Avec Nous",
     "Send Us a Message": "Envoyez-Nous un Message",
     "Your Name": "Votre Nom",
     "Email Address": "Adresse Email",
-    "Subject": "Sujet",
-    "Message": "Message",
-    "Sending": "Envoi en cours...",
+    Subject: "Sujet",
+    Message: "Message",
+    Sending: "Envoi en cours...",
     "Send Message": "Envoyer le Message",
     "Message Sent": "Message Envoyé !",
-    "Thank You Message": "Merci pour votre message. Nous vous répondrons bientôt.",
+    "Thank You Message":
+      "Merci pour votre message. Nous vous répondrons bientôt.",
     "Find Us": "Trouvez-Nous",
-    
+
     // Hero Section
     "A TRUSTED PARTNER": "UN PARTENAIRE DE CONFIANCE",
     "Hospitality Staffing Redefined": "Personnel Hôtelier Redéfini",
@@ -716,19 +733,19 @@ const translations = {
     // Markets Page
     markets_page_title: "Marchés",
     markets_meta_description:
-      "Renforcer le secteur hôtelier mondial avec des talents de classe mondiale de BOH Concepts.",
+      "L’industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l’émergence de marques hôtelières internationales à travers le monde. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes et groupes hôteliers de premier plan avec des talents de haut niveau provenant du monde entier",
     markets_hero_tag: "MARCHÉS MONDIAUX",
     markets_hero_title: "Solutions de Talents Hôteliers dans le Monde Entier",
     markets_hero_subtitle:
-      "Renforcer le Secteur Hôtelier Mondial avec des Talents de Classe Mondiale",
-    markets_section_tag: "MARCHÉ HÔTELIER MONDIAL",
-    markets_section_title: "Nos Solutions Premium de Personnel à l'Échelle Mondiale",
+      "L’industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l’émergence de marques hôtelières internationales à travers le mundo. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes y groupes hôteliers de premier plan con talento de primer nivel de todo el mundo.",
+    markets_section_tag: "MERCADO GLOBAL DE LA HOSPITALIDAD",
+    markets_section_title: "Soluciones de personal premium a nivel mundial.",
     markets_section_description:
-      "L'industrie hôtelière mondiale connaît un changement dynamique, stimulé par l'essor du tourisme, le développement urbain et l'augmentation des marques hôtelières internationales sur tous les continents. Chez BOH Concepts, nous sommes fiers de soutenir cette croissance en connectant les hôtels, resorts et groupes hôteliers de premier plan avec des talents de haut niveau du monde entier.",
-    markets_service_1_title: "Services de Recrutement de Bout en Bout",
+      "L'industrie hôtelière mondiale connaît un changement dynamique, stimulé par l'essor du tourisme, el desarrollo urbano y la creación de marcas hoteles internacionales en todo el mundo. Chez BOH Concepts, nos somos orgullosos de apoyar este crecimiento conectando a hoteles, resorts y grupos hoteleros líderes con talento de primer nivel de todo el mundo.",
+    markets_service_1_title: "Servicios de Recrutamiento Integrales",
     markets_service_1_description:
-      "Du personnel hôtelier débutant aux directeurs de l'hôtellerie, nous fournissons des solutions de recrutement personnalisées adaptées aux marchés mondiaux. Nous associons les candidats en fonction de leur adéquation culturelle, de leurs compétences et de l'excellence du service.",
-    markets_service_2_title: "Expertise sur le Terrain",
+      "Desde personal hotelero de nivel inicial hasta gerentes ejecutivos de hospitalidad, proporcionamos soluciones de reclutamiento personalizadas adaptadas a los mercados globales. Emparejamos candidatos según la compatibilidad cultural, conjunto de habilidades y excelencia en el servicio.",
+    markets_service_2_title: "Expertise en el Terreno",
     markets_service_2_description:
       "Avec des partenaires de recrutement locaux et des équipes de sourcing dans des régions du monde entier, nous comprenons les besoins uniques en matière d'embauche, les réglementations du travail et la dynamique du marché de chaque pays.",
     markets_service_3_title: "Vivier de Talents Multilingues",

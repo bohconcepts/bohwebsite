@@ -50,18 +50,22 @@ export const frConstants: LocalizedConstants = {
     "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
 
   // Markets page
-  markets_page_title: "Marchés",
+  markets_page_title: "Marchés Mondiaux de l'Hôtellerie",
   markets_meta_description:
-    "Découvrez les diverses industries servies par BOH Concepts avec des solutions de personnel spécialisées.",
-  markets_hero_tag: "MARCHÉS",
-  markets_section_tag: "MARCHÉS",
-  markets_section_title: "Industries que Nous Servons",
+    "Découvrez les solutions de personnel hôtelier mondial de BOH Concepts à travers divers marchés et industries dans le monde entier.",
+  markets_hero_tag: "PORTÉE MONDIALE",
+  markets_section_tag: "NOTRE EXPERTISE",
+  markets_section_title: "Solutions de Personnel Premium",
   markets_section_description:
-    "Des hôtels de luxe aux compagnies aériennes internationales, nous connectons des talents exceptionnels à chaque segment de l'hôtellerie.",
-  markets_industries_tag: "INDUSTRIES",
-  markets_industries_title: "Industries de l'Hôtellerie",
+    "Nous fournissons des solutions complètes de personnel hôtelier adaptées aux besoins uniques de chaque marché que nous servons.",
+  markets_industries_tag: "INDUSTRIES QUE NOUS SERVONS",
+  markets_industries_title: "Secteurs Hôteliers Spécialisés",
   markets_industries_description:
-    "Nous offrons des solutions de personnel sur mesure pour une large gamme d'environnements d'hôtellerie et de voyage.",
+    "Nous fournissons des solutions de personnel spécialisées pour divers secteurs de l'industrie hôtelière, connectant les meilleurs talents avec des opportunités premium.",
+
+  // Global Hospitality Market section
+  markets_hero_title: "Marché mondial de l'hôtellerie",
+  markets_hero_subtitle: "Des solutions de recrutement premium à l'échelle mondiale. L'industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l'émergence de marques hôtelières internationales à travers le monde. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes et groupes hôteliers de premier plan avec des talents de haut niveau provenant du monde entier.",
 
   // Industry descriptions
   industry_hotels_resorts: "Hôtels et Centres de Villégiature",
@@ -119,25 +123,33 @@ export const frConstants: LocalizedConstants = {
   "A TRUSTED PARTNER": "UN PARTENAIRE DE CONFIANCE",
   "Professional Hospitality Services": "Services Professionnels d'Hôtellerie",
   "Exceptional Hospitality Service": "Service Hôtelier Exceptionnel",
-  "Professional staff delivering impeccable table service and guest attention": "Personnel professionnel offrant un service de table impeccable et une attention particulière aux invités",
+  "Professional staff delivering impeccable table service and guest attention":
+    "Personnel professionnel offrant un service de table impeccable et une attention particulière aux invités",
   "Trusted by Industry Leaders": "Approuvé par les Leaders de l'Industrie",
-  "Partnering with top hotels and resorts across the nation": "En partenariat avec les meilleurs hôtels et centres de villégiature du pays",
+  "Partnering with top hotels and resorts across the nation":
+    "En partenariat avec les meilleurs hôtels et centres de villégiature du pays",
   "Streamlined Recruitment Process": "Processus de Recrutement Optimisé",
-  "From selection to onboarding, we handle every step with care": "De la sélection à l'intégration, nous gérons chaque étape avec soin",
+  "From selection to onboarding, we handle every step with care":
+    "De la sélection à l'intégration, nous gérons chaque étape avec soin",
   "Elevating Guest Experiences": "Améliorer l'Expérience des Invités",
-  "Professional hospitality staff that exceed expectations": "Personnel hôtelier professionnel qui dépasse les attentes",
+  "Professional hospitality staff that exceed expectations":
+    "Personnel hôtelier professionnel qui dépasse les attentes",
   "Premium Hospitality Staffing": "Personnel Hôtelier de Qualité Supérieure",
-  "Exceptional talent for luxury hotels and resorts": "Talents exceptionnels pour hôtels et centres de villégiature de luxe",
+  "Exceptional talent for luxury hotels and resorts":
+    "Talents exceptionnels pour hôtels et centres de villégiature de luxe",
   "Join Our Team": "Rejoignez Notre Équipe",
   "Our Approach": "Notre Approche",
-  
+
   // Services section text
   "Premium Staffing Solutions": "Solutions Premium de Dotation en Personnel",
-  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "Nous fournissons des services de dotation en personnel hôtelier sur mesure pour répondre à vos besoins spécifiques, que vous recherchiez des talents ou des opportunités.",
-  
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
+    "Nous fournissons des services de dotation en personnel hôtelier sur mesure pour répondre à vos besoins spécifiques, que vous recherchiez des talents ou des opportunités.",
+
   // CTA section text
-  "Ready to Elevate Your Hospitality Career or Team?": "Prêt à Élever Votre Carrière ou Équipe Hôtelière ?",
-  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Que vous recherchiez des opportunités exceptionnelles dans l'hôtellerie ou que vous vous efforciez de constituer votre équipe idéale, BOH Concepts propose des solutions sur mesure conçues pour répondre à vos besoins spécifiques.",
+  "Ready to Elevate Your Hospitality Career or Team?":
+    "Prêt à Élever Votre Carrière ou Équipe Hôtelière ?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.":
+    "Que vous recherchiez des opportunités exceptionnelles dans l'hôtellerie ou que vous vous efforciez de constituer votre équipe idéale, BOH Concepts propose des solutions sur mesure conçues pour répondre à vos besoins spécifiques.",
   "Find Opportunities": "Trouver des Opportunités",
 
   // Service position descriptions
@@ -832,43 +844,58 @@ export const frConstants: LocalizedConstants = {
   },
 
   // Foundation page
-  foundation_meta_description: "La Fondation BOH soutient les communautés défavorisées grâce à des bourses d'études, des initiatives d'eau potable, des dons de vêtements et une assistance financière.",
-  foundation_page_title: "Fondation BOH | Autonomiser les Vies, Construire l'Espoir",
+  foundation_meta_description:
+    "La Fondation BOH soutient les communautés défavorisées grâce à des bourses d'études, des initiatives d'eau potable, des dons de vêtements et une assistance financière.",
+  foundation_page_title:
+    "Fondation BOH | Autonomiser les Vies, Construire l'Espoir",
   foundation_hero_tag: "FONDATION BOH",
   foundation_hero_title: "Autonomiser les Vies, Construire l'Espoir",
-  foundation_hero_subtitle: "Soutenir les communautés défavorisées grâce à l'éducation, l'eau potable, les vêtements et des programmes d'assistance financière",
+  foundation_hero_subtitle:
+    "Soutenir les communautés défavorisées grâce à l'éducation, l'eau potable, les vêtements et des programmes d'assistance financière",
 
   // Foundation - Our Mission section
   foundation_mission_tag: "NOTRE MISSION",
-  foundation_mission_title: "Élever les Communautés par la Compassion et l'Action",
-  foundation_mission_paragraph_1: "À la Fondation BOH, notre mission est de créer un changement positif durable dans les communautés défavorisées en fournissant des ressources essentielles, des opportunités éducatives et un soutien financier. Nous croyons en l'autonomisation des individus pour surmonter les barrières systémiques et atteindre leur plein potentiel.",
-  foundation_mission_paragraph_2: "Grâce à nos quatre programmes principaux—bourses d'études, initiatives d'eau potable, dons de vêtements et assistance financière—nous répondons aux besoins fondamentaux tout en préservant la dignité et l'autonomie de ceux que nous servons. Notre approche est fondée sur le respect, la durabilité et le partenariat communautaire.",
+  foundation_mission_title:
+    "Élever les Communautés par la Compassion et l'Action",
+  foundation_mission_paragraph_1:
+    "À la Fondation BOH, notre mission est de créer un changement positif durable dans les communautés défavorisées en fournissant des ressources essentielles, des opportunités éducatives et un soutien financier. Nous croyons en l'autonomisation des individus pour surmonter les barrières systémiques et atteindre leur plein potentiel.",
+  foundation_mission_paragraph_2:
+    "Grâce à nos quatre programmes principaux—bourses d'études, initiatives d'eau potable, dons de vêtements et assistance financière—nous répondons aux besoins fondamentaux tout en préservant la dignité et l'autonomie de ceux que nous servons. Notre approche est fondée sur le respect, la durabilité et le partenariat communautaire.",
 
   // Foundation - What We Do section
   foundation_what_we_do_tag: "CE QUE NOUS FAISONS",
   foundation_what_we_do_title: "Nos Programmes Principaux",
-  foundation_what_we_do_description: "Grâce à nos quatre domaines d'intervention, nous apportons un soutien complet aux communautés dans le besoin, en répondant à la fois aux nécessités immédiates et aux objectifs de développement à long terme.",
+  foundation_what_we_do_description:
+    "Grâce à nos quatre domaines d'intervention, nous apportons un soutien complet aux communautés dans le besoin, en répondant à la fois aux nécessités immédiates et aux objectifs de développement à long terme.",
   foundation_program_scholarship_title: "Bourses Universitaires",
-  foundation_program_scholarship_description: "Soutenir les étudiants issus de minorités avec une aide financière pour poursuivre des études supérieures et atteindre leurs objectifs académiques.",
+  foundation_program_scholarship_description:
+    "Soutenir les étudiants issus de minorités avec une aide financière pour poursuivre des études supérieures et atteindre leurs objectifs académiques.",
   foundation_program_borehole_title: "Installations de Forages",
-  foundation_program_borehole_description: "Fournir un accès à l'eau potable aux communautés grâce à des installations de forages durables et des programmes de maintenance.",
+  foundation_program_borehole_description:
+    "Fournir un accès à l'eau potable aux communautés grâce à des installations de forages durables et des programmes de maintenance.",
   foundation_program_clothing_title: "Dons de Vêtements",
-  foundation_program_clothing_description: "Distribuer des vêtements de qualité aux personnes dans le besoin tout en préservant leur dignité et en offrant un choix dans la sélection.",
+  foundation_program_clothing_description:
+    "Distribuer des vêtements de qualité aux personnes dans le besoin tout en préservant leur dignité et en offrant un choix dans la sélection.",
   foundation_program_financial_title: "Assistance Financière",
-  foundation_program_financial_description: "Offrir un soutien financier d'urgence et des ressources pour aider les individus à surmonter des difficultés temporaires.",
+  foundation_program_financial_description:
+    "Offrir un soutien financier d'urgence et des ressources pour aider les individus à surmonter des difficultés temporaires.",
 
   // Foundation - How To Help section
   foundation_how_to_help_tag: "COMMENT AIDER",
   foundation_how_to_help_title: "REJOIGNEZ NOTRE MISSION",
-  foundation_how_to_help_description: "Il existe de nombreuses façons de soutenir notre travail et de faire une différence significative dans la vie de ceux que nous servons.",
+  foundation_how_to_help_description:
+    "Il existe de nombreuses façons de soutenir notre travail et de faire une différence significative dans la vie de ceux que nous servons.",
   foundation_help_donate_title: "Faire un Don",
-  foundation_help_donate_description: "Votre contribution financière soutient directement nos programmes et nous aide à atteindre plus de personnes dans le besoin.",
+  foundation_help_donate_description:
+    "Votre contribution financière soutient directement nos programmes et nous aide à atteindre plus de personnes dans le besoin.",
   foundation_help_donate_button: "Donner Maintenant",
   foundation_help_volunteer_title: "Devenir Bénévole",
-  foundation_help_volunteer_description: "Partagez votre temps et vos compétences pour faire une différence. Nous avons des opportunités tant localement qu'à distance.",
+  foundation_help_volunteer_description:
+    "Partagez votre temps et vos compétences pour faire une différence. Nous avons des opportunités tant localement qu'à distance.",
   foundation_help_volunteer_button: "Rejoignez-Nous",
   foundation_help_partner_title: "Devenez Partenaire",
-  foundation_help_partner_description: "Les organisations et entreprises peuvent s'associer à nous pour créer un impact durable grâce à des initiatives collaboratives.",
+  foundation_help_partner_description:
+    "Les organisations et entreprises peuvent s'associer à nous pour créer un impact durable grâce à des initiatives collaboratives.",
   foundation_help_partner_button: "En Savoir Plus",
 
   CLIENTS: [
