@@ -505,12 +505,12 @@ const MarketsPage: React.FC = () => {
             >
               {t("get_started")}
             </Link>
-            <Link
+            {/* <Link
               to="/contact" 
               className="inline-block bg-white border-2 border-brand-blue text-brand-blue hover:bg-gray-50 font-medium py-3 px-8 rounded-md transition-colors duration-300"
             >
               {t("talk_to_specialist")}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
