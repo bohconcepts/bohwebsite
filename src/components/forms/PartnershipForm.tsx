@@ -100,26 +100,30 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
     }
   };
 
+ 
   const partnershipTypes = [
-    { value: "strategic", label: t('Strategic Partnership') },
-    { value: "technology", label: t('Technology Partnership') },
-    { value: "affiliate", label: t('Affiliate Partnership') },
-    { value: "distribution", label: t('Distribution Partnership') },
-    { value: "marketing", label: t('Marketing Partnership') },
+    { value: "hotel_chain", label: t('Hotel Chain Partnership') },
+    { value: "tour_operator", label: t('Tour Operator Partnership') },
+    { value: "restaurant_affiliate", label: t('Restaurant Affiliate Partnership') },
+    { value: "travel_agency", label: t('Travel Agency Partnership') },
+    { value: "event_collaboration", label: t('Event Collaboration') },
+    { value: "sponsor", label: t('Sponsorship') },
+    { value: "other", label: t('Other') }
+  ];
+  
+
+  const industryTypes = [
+    { value: "hotels", label: t('Hotels') },
+    { value: "restaurants", label: t('Restaurants') },
+    { value: "travel_tourism", label: t('Travel & Tourism') },
+    { value: "event_management", label: t('Event Management') },
+    { value: "recreation", label: t('Recreation & Leisure') },
+    { value: "catering", label: t('Catering Services') },
+    { value: "hospitality_technology", label: t('Hospitality Technology') },
+    { value: "food_beverage", label: t('Food & Beverage') },
     { value: "other", label: t('Other') }
   ];
 
-  const industryTypes = [
-    { value: "technology", label: t('Technology') },
-    { value: "finance", label: t('Finance') },
-    { value: "healthcare", label: t('Healthcare') },
-    { value: "education", label: t('Education') },
-    { value: "retail", label: t('Retail') },
-    { value: "manufacturing", label: t('Manufacturing') },
-    { value: "transportation", label: t('Transportation') },
-    { value: "energy", label: t('Energy') },
-    { value: "other", label: t('Other') }
-  ];
 
   return (
     <div className={`bg-white rounded-xl shadow-lg p-8 ${className}`}>

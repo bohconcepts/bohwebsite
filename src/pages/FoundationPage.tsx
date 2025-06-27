@@ -371,41 +371,67 @@ const FoundationPage: React.FC = () => {
       </section>
 
       {/* How to Help Section */}
-      <section className="help-section" ref={helpRef}>
-        <div className="container">
-          <h2 className="section-title uppercase font-normal">How to Help</h2>
-          <div className="section-divider"></div>
+      <section className="how-to-help py-12" ref={helpRef}>
+        <div className="container max-w-6xl mx-auto px-4">
+          <h2 className="text-center text-sm font-medium tracking-wider text-gray-600 uppercase mb-2">HOW TO HELP</h2>
+          <h3 className="text-center text-3xl md:text-4xl font-bold mb-4">JOIN OUR MISSION</h3>
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+            There are many ways to support our work and make a meaningful difference in the lives of those we serve.
+          </p>
           
-          <motion.div 
-            className="help-options"
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             variants={staggerContainerVariants}
             initial="hidden"
             animate={helpInView ? "visible" : "hidden"}
           >
-            <motion.div className="help-card" variants={itemVariants}>
-              <Heart size={32} />
-              <h3>Donate</h3>
-              <p>Your financial contribution directly supports our programs and the communities we serve.</p>
-              <Button className="help-button">Make a Donation</Button>
+            <motion.div className="bg-white rounded-lg shadow-md overflow-hidden" variants={itemVariants}>
+              <div className="h-44 overflow-hidden">
+                <img 
+                  src="/images/foundation/donate.jpeg" 
+                  alt="Donate to BOH Foundation" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-2 text-center">Donate</h3>
+                <p className="text-gray-600 text-sm mb-4">Your financial contribution directly supports our programs and helps us reach more people in need.</p>
+                <Button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white">Donate Now</Button>
+              </div>
             </motion.div>
             
-            <motion.div className="help-card" variants={itemVariants}>
-              <Users size={32} />
-              <h3>Volunteer</h3>
-              <p>Join our team of dedicated volunteers and make a hands-on difference in people's lives.</p>
-              <Button className="help-button" variant="outline">Join Our Team</Button>
+            <motion.div className="bg-white rounded-lg shadow-md overflow-hidden" variants={itemVariants}>
+              <div className="h-44 overflow-hidden">
+                <img 
+                  src="/images/foundation/volunteer.webp" 
+                  alt="Volunteer with BOH Foundation" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-2 text-center">Volunteer</h3>
+                <p className="text-gray-600 text-sm mb-4">Share your time and skills to make a difference. We have opportunities both locally and remotely.</p>
+                <Button className="w-full border border-brand-blue text-brand-blue hover:bg-brand-blue/10">Join Us</Button>
+              </div>
             </motion.div>
             
-            <motion.div className="help-card" variants={itemVariants}>
-              <Users size={32} />
-              <h3>Partner With Us</h3>
-              <p>Organizations and businesses can amplify our impact through strategic partnerships.</p>
-              <Button className="help-button" variant="outline">Contact Us</Button>
+            <motion.div className="bg-white rounded-lg shadow-md overflow-hidden" variants={itemVariants}>
+              <div className="h-44 overflow-hidden">
+                <img 
+                  src="/images/foundation/partner.avif" 
+                  alt="Partner with BOH Foundation" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-bold mb-2 text-center">Partner With Us</h3>
+                <p className="text-gray-600 text-sm mb-4">Organizations and businesses can partner with us to create sustainable impact through collaborative initiatives.</p>
+                <Button className="w-full border border-brand-blue text-brand-blue hover:bg-brand-blue/10">Learn More</Button>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
-
 
     </>
   );
