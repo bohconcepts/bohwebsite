@@ -52,42 +52,47 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const t = (key: string): string => {
     if (!key) return "";
 
-    // Check if the key exists in the current language
-    if (translations[language] && (translations as Translations)[language][key]) {
-      return (translations as Translations)[language][key];
-    }
-
-    // Check if the key exists in localizedConstants
-    if (localizedConstants[language] && localizedConstants[language][key as keyof typeof localizedConstants[typeof language]]) {
-      const value = localizedConstants[language][key as keyof typeof localizedConstants[typeof language]];
-      if (typeof value === 'string') {
-        return value;
+    try {
+      // Check if the key exists in localizedConstants (prioritize this)
+      if (localizedConstants[language] && key in localizedConstants[language]) {
+        const value = localizedConstants[language][key as keyof typeof localizedConstants[typeof language]];
+        if (typeof value === 'string') {
+          return value;
+        }
       }
-    }
 
-    // Fallback to English
-    if (translations.en && (translations as Translations).en[key]) {
-      return (translations as Translations).en[key];
-    }
-
-    // Fallback to English localizedConstants
-    if (localizedConstants.en && localizedConstants.en[key as keyof typeof localizedConstants.en]) {
-      const value = localizedConstants.en[key as keyof typeof localizedConstants.en];
-      if (typeof value === 'string') {
-        return value;
+      // Check if the key exists in the current language translations
+      if (translations[language] && key in (translations as Translations)[language]) {
+        return (translations as Translations)[language][key];
       }
-    }
 
-    // Format the key if no translation is found (convert underscores to spaces and capitalize words)
-    if (key.includes('_')) {
-      return key
-        .split('_')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-    }
+      // Fallback to English localizedConstants
+      if (localizedConstants.en && key in localizedConstants.en) {
+        const value = localizedConstants.en[key as keyof typeof localizedConstants.en];
+        if (typeof value === 'string') {
+          return value;
+        }
+      }
 
-    // Return the key itself if no translation is found and no formatting needed
-    return key;
+      // Fallback to English translations
+      if (translations.en && key in (translations as Translations).en) {
+        return (translations as Translations).en[key];
+      }
+
+      // Format the key if no translation is found (convert underscores to spaces and capitalize words)
+      if (key.includes('_')) {
+        return key
+          .split('_')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+
+      // Return the key itself if no translation is found and no formatting needed
+      return key;
+    } catch (error) {
+      console.error(`Translation error for key: ${key}`, error);
+      return key;
+    }
   };
 
   return (

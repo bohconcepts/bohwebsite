@@ -1,8 +1,10 @@
 import { useInView } from "react-intersection-observer";
 import { GraduationCap, Droplet, Shirt, Wallet } from "lucide-react";
 import OptimizedImage from "@/components/common/OptimizedImage";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const WhatWeDo = () => {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -10,26 +12,26 @@ const WhatWeDo = () => {
 
   const programs = [
     {
-      title: "College Scholarships",
-      description: "Supporting minority students with financial aid to pursue higher education and achieve their academic goals.",
+      titleKey: "foundation_program_scholarship_title",
+      descriptionKey: "foundation_program_scholarship_description",
       icon: <GraduationCap className="h-8 w-8 text-brand-earth" />,
       image: "/images/foundation/scholarship.JPG"
     },
     {
-      title: "Borehole Installations",
-      description: "Providing clean water access to communities through sustainable borehole installations and maintenance programs.",
+      titleKey: "foundation_program_borehole_title",
+      descriptionKey: "foundation_program_borehole_description",
       icon: <Droplet className="h-8 w-8 text-brand-earth" />,
       image: "/images/foundation/borehole.JPG"
     },
     {
-      title: "Clothing Donations",
-      description: "Distributing quality clothing to those in need while preserving dignity and offering choice in selection.",
+      titleKey: "foundation_program_clothing_title",
+      descriptionKey: "foundation_program_clothing_description",
       icon: <Shirt className="h-8 w-8 text-brand-earth" />,
       image: "/images/foundation/clothing.jpeg"
     },
     {
-      title: "Financial Assistance",
-      description: "Offering emergency financial support and resources to help individuals overcome temporary hardships.",
+      titleKey: "foundation_program_financial_title",
+      descriptionKey: "foundation_program_financial_description",
       icon: <Wallet className="h-8 w-8 text-brand-earth" />,
       image: "/images/foundation/financial.JPG"
     }
@@ -41,17 +43,16 @@ const WhatWeDo = () => {
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-4">
             <span className="bg-brand-earth/10 text-brand-earth px-3 py-1 rounded-md text-sm font-medium">
-              WHAT WE DO
+              {t('foundation_what_we_do_tag')}
             </span>
           </div>
           
           <h2 className="text-3xl md:text-4xl uppercase text-gray-900 mb-6">
-            Our Core Programs
+            {t('foundation_what_we_do_title')}
           </h2>
           
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Through our four focus areas, we provide comprehensive support to communities in need,
-            addressing both immediate necessities and long-term development goals.
+            {t('foundation_what_we_do_description')}
           </p>
         </div>
         
@@ -61,7 +62,7 @@ const WhatWeDo = () => {
         >
           {programs.map((program, index) => (
             <div 
-              key={program.title}
+              key={program.titleKey}
               className={`bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-1000 delay-${index * 150} transform ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
@@ -69,7 +70,7 @@ const WhatWeDo = () => {
               <div className="h-48 overflow-hidden">
                 <OptimizedImage
                   src={program.image}
-                  alt={program.title}
+                  alt={t(program.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   width={400}
                   height={300}
@@ -81,11 +82,11 @@ const WhatWeDo = () => {
                   <div className="bg-brand-blue-dark/5 p-3 rounded-full mr-4">
                     {program.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{program.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t(program.titleKey)}</h3>
                 </div>
                 
                 <p className="text-gray-700">
-                  {program.description}
+                  {t(program.descriptionKey)}
                 </p>
               </div>
             </div>

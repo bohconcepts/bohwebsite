@@ -49,6 +49,66 @@ export const frConstants: LocalizedConstants = {
   values_description:
     "Nos valeurs fondamentales constituent la base de tout ce que nous faisons chez BOH Concepts, guidant nos décisions, façonnant notre culture et définissant notre approche de l'excellence en matière de dotation en personnel pour l'hôtellerie.",
 
+  // Markets page
+  markets_page_title: "Marchés Mondiaux de l'Hôtellerie",
+  markets_meta_description:
+    "Découvrez les solutions de personnel hôtelier mondial de BOH Concepts à travers divers marchés et industries dans le monde entier.",
+  markets_hero_tag: "PORTÉE MONDIALE",
+  markets_section_tag: "NOTRE EXPERTISE",
+  markets_section_title: "Solutions de Personnel Premium",
+  markets_section_description:
+    "Nous fournissons des solutions complètes de personnel hôtelier adaptées aux besoins uniques de chaque marché que nous servons.",
+  markets_industries_tag: "INDUSTRIES QUE NOUS SERVONS",
+  markets_industries_title: "Secteurs Hôteliers Spécialisés",
+  markets_industries_description:
+    "Nous fournissons des solutions de personnel spécialisées pour divers secteurs de l'industrie hôtelière, connectant les meilleurs talents avec des opportunités premium.",
+
+  // Global Hospitality Market section
+  markets_hero_title: "Marché mondial de l'hôtellerie",
+  markets_hero_subtitle:
+    "Des solutions de recrutement premium à l'échelle mondiale. L'industrie hôtelière mondiale connaît une transformation dynamique, alimentée par la hausse du tourisme, le développement urbain et l'émergence de marques hôtelières internationales à travers le monde. Chez BOH Concepts, nous soutenons cette croissance en connectant les hôtels, complexes et groupes hôteliers de premier plan avec des talents de haut niveau provenant du monde entier.",
+
+  // Global Workforce Section
+  global_workforce_tag: "PRÉSENCE MONDIALE",
+  global_workforce_title: "Notre Main-d'Œuvre Mondiale",
+  global_workforce_description: "BOH Concepts opère avec une main-d'œuvre véritablement mondiale, attirant des talents d'Afrique, d'Asie, d'Europe, des Amériques et des Caraïbes pour fournir des services exceptionnels de personnel hôtelier sur les marchés clés du monde entier.",
+
+  // Markets Locations Section
+  markets_locations_tag: "PORTÉE GÉOGRAPHIQUE",
+  markets_locations_title: "Trouver des Talents et des Bureaux par Région",
+  markets_locations_description:
+    "Nous nous concentrons sur la mise en relation des meilleurs talents de l'hôtellerie avec des opportunités d'emploi premium à travers le monde.",
+    
+  // Markets Why Choose Us Section
+  markets_why_tag: "POURQUOI NOUS CHOISIR",
+  markets_why_title: "Expertise Inégalée en Recrutement Hôtelier",
+  markets_why_1_title: "Services de Recrutement de Bout en Bout",
+  markets_why_1_description: "Du personnel de niveau débutant aux directeurs exécutifs de l'hôtellerie, nous fournissons des solutions de recrutement personnalisées adaptées aux caractéristiques uniques des marchés mondiaux.",
+  markets_why_2_title: "Expertise sur le Terrain",
+  markets_why_2_description: "Avec des partenaires de recrutement locaux et des équipes de sourcing positionnées à travers le monde, nous avons une compréhension profonde de l'industrie, de la culture, des réglementations du travail et de la dynamique du marché qui caractérisent chaque pays.",
+  markets_why_3_title: "Vivier de Talents Multilingues",
+  markets_why_3_description: "Nous recrutons activement des talents qui parlent couramment plusieurs langues, notamment l'anglais, le français, l'espagnol, l'arabe, le portugais, le mandarin et plus encore, garantissant que les entreprises hôtelières peuvent servir en toute confiance une clientèle internationale diversifiée.",
+
+  // Industry descriptions
+  industry_hotels_resorts: "Hôtels et Centres de Villégiature",
+  industry_hotels_resorts_desc:
+    "Personnel expert pour les propriétés à service complet, les hôtels boutiques et les centres de villégiature de luxe.",
+  industry_safari_lodges: "Lodges Safari",
+  industry_safari_lodges_desc:
+    "Équipes talentueuses préparées pour offrir des expériences authentiques dans des environnements éloignés.",
+  industry_restaurants: "Restaurants",
+  industry_restaurants_desc:
+    "Professionnels de l'alimentation et des boissons qui élèvent chaque expérience culinaire.",
+  industry_conference_centers: "Centres de Conférence",
+  industry_conference_centers_desc:
+    "Personnel orienté vers les détails qui assure des événements sans accroc.",
+  industry_cruise: "Croisières",
+  industry_cruise_desc:
+    "Équipages polyvalents capables de fournir une hospitalité de premier ordre en mer.",
+  industry_airlines: "Compagnies Aériennes",
+  industry_airlines_desc:
+    "Talents de cabine et au sol avec un engagement ferme envers la sécurité et le service client.",
+
   // Team
   team_heading: "Notre Équipe",
   team_heading_color:
@@ -58,11 +118,11 @@ export const frConstants: LocalizedConstants = {
   team_description:
     "Notre équipe diversifiée de professionnels de l'hôtellerie apporte des décennies d'expérience et une passion pour l'excellence à chaque solution de personnel que nous fournissons.",
 
-  // Global Workforce Map
-  global_workforce_tag: "Main-d'œuvre Mondiale",
-  global_workforce_title: "Notre Présence Mondiale",
-  global_workforce_description:
-    "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
+  // // Global Workforce Map
+  // global_workforce_tag: "Main-d'œuvre Mondiale",
+  // global_workforce_title: "Notre Présence Mondiale",
+  // global_workforce_description:
+  //     "Découvrez la portée mondiale de notre main-d'œuvre, avec des professionnels talentueux d'Afrique et des États-Unis contribuant à notre succès.",
   workforce_distribution: "Distribution de la Main-d'œuvre",
   africa_workforce_count: "Main-d'œuvre basée en Afrique: {count} employés",
   us_workforce_count: "Main-d'œuvre basée aux États-Unis: {count} employés",
@@ -85,25 +145,33 @@ export const frConstants: LocalizedConstants = {
   "A TRUSTED PARTNER": "UN PARTENAIRE DE CONFIANCE",
   "Professional Hospitality Services": "Services Professionnels d'Hôtellerie",
   "Exceptional Hospitality Service": "Service Hôtelier Exceptionnel",
-  "Professional staff delivering impeccable table service and guest attention": "Personnel professionnel offrant un service de table impeccable et une attention particulière aux invités",
+  "Professional staff delivering impeccable table service and guest attention":
+    "Personnel professionnel offrant un service de table impeccable et une attention particulière aux invités",
   "Trusted by Industry Leaders": "Approuvé par les Leaders de l'Industrie",
-  "Partnering with top hotels and resorts across the nation": "En partenariat avec les meilleurs hôtels et centres de villégiature du pays",
+  "Partnering with top hotels and resorts across the nation":
+    "En partenariat avec les meilleurs hôtels et centres de villégiature du pays",
   "Streamlined Recruitment Process": "Processus de Recrutement Optimisé",
-  "From selection to onboarding, we handle every step with care": "De la sélection à l'intégration, nous gérons chaque étape avec soin",
+  "From selection to onboarding, we handle every step with care":
+    "De la sélection à l'intégration, nous gérons chaque étape avec soin",
   "Elevating Guest Experiences": "Améliorer l'Expérience des Invités",
-  "Professional hospitality staff that exceed expectations": "Personnel hôtelier professionnel qui dépasse les attentes",
+  "Professional hospitality staff that exceed expectations":
+    "Personnel hôtelier professionnel qui dépasse les attentes",
   "Premium Hospitality Staffing": "Personnel Hôtelier de Qualité Supérieure",
-  "Exceptional talent for luxury hotels and resorts": "Talents exceptionnels pour hôtels et centres de villégiature de luxe",
+  "Exceptional talent for luxury hotels and resorts":
+    "Talents exceptionnels pour hôtels et centres de villégiature de luxe",
   "Join Our Team": "Rejoignez Notre Équipe",
   "Our Approach": "Notre Approche",
-  
+
   // Services section text
   "Premium Staffing Solutions": "Solutions Premium de Dotation en Personnel",
-  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.": "Nous fournissons des services de dotation en personnel hôtelier sur mesure pour répondre à vos besoins spécifiques, que vous recherchiez des talents ou des opportunités.",
-  
+  "We provide tailored hospitality staffing services to meet your specific needs, whether you are seeking talent or opportunities.":
+    "Nous fournissons des services de dotation en personnel hôtelier sur mesure pour répondre à vos besoins spécifiques, que vous recherchiez des talents ou des opportunités.",
+
   // CTA section text
-  "Ready to Elevate Your Hospitality Career or Team?": "Prêt à Élever Votre Carrière ou Équipe Hôtelière ?",
-  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.": "Que vous recherchiez des opportunités exceptionnelles dans l'hôtellerie ou que vous vous efforciez de constituer votre équipe idéale, BOH Concepts propose des solutions sur mesure conçues pour répondre à vos besoins spécifiques.",
+  "Ready to Elevate Your Hospitality Career or Team?":
+    "Prêt à Élever Votre Carrière ou Équipe Hôtelière ?",
+  "Whether you are seeking exceptional hospitality opportunities or endeavoring to assemble your ideal team, BOH Concepts offers tailored solutions designed to meet your specific needs.":
+    "Que vous recherchiez des opportunités exceptionnelles dans l'hôtellerie ou que vous vous efforciez de constituer votre équipe idéale, BOH Concepts propose des solutions sur mesure conçues pour répondre à vos besoins spécifiques.",
   "Find Opportunities": "Trouver des Opportunités",
 
   // Service position descriptions
@@ -486,6 +554,7 @@ export const frConstants: LocalizedConstants = {
         "BOH Concepts renforce adéquatement nos besoins en personnel de 100 employés dans les domaines de l'intendance, de l'entretien ménager et de l'ingénierie. En raison de leur compréhension solide de nos besoins et du partenariat qu'ils favorisent, je ne nous vois pas changer de partenaires de dotation en personnel.",
       author: "John Smith",
       position: "Directeur Général, Hilton Atlanta",
+      location: "Atlanta, USA",
       image: "/images/clients/Waldorf.png",
     },
     {
@@ -494,6 +563,7 @@ export const frConstants: LocalizedConstants = {
         "Nous travaillons avec BOH Concepts depuis plus de trois ans maintenant, et ils nous ont constamment fourni du personnel de haute qualité qui comprend les normes de notre marque. Leur attention aux détails et leur service personnalisé les distinguent des autres agences de recrutement.",
       author: "Gouvernante Exécutive",
       position: "Maui, Hawaii",
+      location: "Maui, USA",
       image: "/images/clients/Hyatt.png",
     },
     {
@@ -502,6 +572,7 @@ export const frConstants: LocalizedConstants = {
         "Trouver du personnel fiable pour nos pics saisonniers a toujours été un défi jusqu'à ce que nous nous associions à BOH Concepts. Leurs solutions de dotation temporaire ont changé la donne pour notre complexe hôtelier, nous permettant de maintenir l'excellence du service même pendant nos périodes les plus chargées.",
       author: "Responsable des Ressources Humaines",
       position: "Maryland",
+      location: "Maryland, USA",
       image: "/images/clients/Hilton-Logo-4.png",
     },
     // {
@@ -526,7 +597,15 @@ export const frConstants: LocalizedConstants = {
         { title: "Fondation BOH", href: "/foundation" },
       ],
     },
-    { title: "Notre Approche", href: "/our-approach" },
+    {
+      title: "Services",
+      href: "/our-approach",
+      dropdown: [
+        { title: "Notre Approche", href: "/our-approach" },
+        { title: "Notre Processus", href: "/our-process" },
+        { title: "Marchés", href: "/markets" },
+      ],
+    },
     {
       title: "Pourquoi Nous Choisir",
       href: "/why-choose-us",
@@ -783,8 +862,63 @@ export const frConstants: LocalizedConstants = {
     linkedin: "https://www.linkedin.com/company/bohconcepts/",
     instagram:
       "https://www.instagram.com/bohconcepts_?igsh=MWt6bHo4cnM1cnZodw==",
-    youtube: "https://www.youtube.com/bohconcepts",
+    youtube: "https://www.youtube.com/",
   },
+
+  // Foundation page
+  foundation_meta_description:
+    "La Fondation BOH soutient les communautés défavorisées grâce à des bourses d'études, des initiatives d'eau potable, des dons de vêtements et une assistance financière.",
+  foundation_page_title:
+    "Fondation BOH | Autonomiser les Vies, Construire l'Espoir",
+  foundation_hero_tag: "FONDATION BOH",
+  foundation_hero_title: "Autonomiser les Vies, Construire l'Espoir",
+  foundation_hero_subtitle:
+    "Soutenir les communautés défavorisées grâce à l'éducation, l'eau potable, les vêtements et des programmes d'assistance financière",
+
+  // Foundation - Our Mission section
+  foundation_mission_tag: "NOTRE MISSION",
+  foundation_mission_title:
+    "Élever les Communautés par la Compassion et l'Action",
+  foundation_mission_paragraph_1:
+    "À la Fondation BOH, notre mission est de créer un changement positif durable dans les communautés défavorisées en fournissant des ressources essentielles, des opportunités éducatives et un soutien financier. Nous croyons en l'autonomisation des individus pour surmonter les barrières systémiques et atteindre leur plein potentiel.",
+  foundation_mission_paragraph_2:
+    "Grâce à nos quatre programmes principaux—bourses d'études, initiatives d'eau potable, dons de vêtements et assistance financière—nous répondons aux besoins fondamentaux tout en préservant la dignité et l'autonomie de ceux que nous servons. Notre approche est fondée sur le respect, la durabilité et le partenariat communautaire.",
+
+  // Foundation - What We Do section
+  foundation_what_we_do_tag: "CE QUE NOUS FAISONS",
+  foundation_what_we_do_title: "Nos Programmes Principaux",
+  foundation_what_we_do_description:
+    "Grâce à nos quatre domaines d'intervention, nous apportons un soutien complet aux communautés dans le besoin, en répondant à la fois aux nécessités immédiates et aux objectifs de développement à long terme.",
+  foundation_program_scholarship_title: "Bourses Universitaires",
+  foundation_program_scholarship_description:
+    "Soutenir les étudiants issus de minorités avec une aide financière pour poursuivre des études supérieures et atteindre leurs objectifs académiques.",
+  foundation_program_borehole_title: "Installations de Forages",
+  foundation_program_borehole_description:
+    "Fournir un accès à l'eau potable aux communautés grâce à des installations de forages durables et des programmes de maintenance.",
+  foundation_program_clothing_title: "Dons de Vêtements",
+  foundation_program_clothing_description:
+    "Distribuer des vêtements de qualité aux personnes dans le besoin tout en préservant leur dignité et en offrant un choix dans la sélection.",
+  foundation_program_financial_title: "Assistance Financière",
+  foundation_program_financial_description:
+    "Offrir un soutien financier d'urgence et des ressources pour aider les individus à surmonter des difficultés temporaires.",
+
+  // Foundation - How To Help section
+  foundation_how_to_help_tag: "COMMENT AIDER",
+  foundation_how_to_help_title: "REJOIGNEZ NOTRE MISSION",
+  foundation_how_to_help_description:
+    "Il existe de nombreuses façons de soutenir notre travail et de faire une différence significative dans la vie de ceux que nous servons.",
+  foundation_help_donate_title: "Faire un Don",
+  foundation_help_donate_description:
+    "Votre contribution financière soutient directement nos programmes et nous aide à atteindre plus de personnes dans le besoin.",
+  foundation_help_donate_button: "Donner Maintenant",
+  foundation_help_volunteer_title: "Devenir Bénévole",
+  foundation_help_volunteer_description:
+    "Partagez votre temps et vos compétences pour faire une différence. Nous avons des opportunités tant localement qu'à distance.",
+  foundation_help_volunteer_button: "Rejoignez-Nous",
+  foundation_help_partner_title: "Devenez Partenaire",
+  foundation_help_partner_description:
+    "Les organisations et entreprises peuvent s'associer à nous pour créer un impact durable grâce à des initiatives collaboratives.",
+  foundation_help_partner_button: "En Savoir Plus",
 
   CLIENTS: [
     {
