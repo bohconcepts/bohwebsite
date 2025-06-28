@@ -211,7 +211,7 @@ const DonatePage = () => {
             </blockquote>
             <div className="mt-6">
               <div className="font-medium text-gray-900">{t("donate.testimonial.name", "Emmanuel Osei")}</div>
-              <div className="mt-1 text-gray-500">{t("donate.testimonial.role", "Scholarship Recipient, 2022")}</div>
+              <div className="mt-1 text-gray-500">{t("donate.testimonial.role", "Scholarship Recipient, 2025")}</div>
             </div>
           </div>
         </div>
