@@ -38,7 +38,7 @@
     /* Let Tailwind classes control font-size; keep line-height for readability */
     line-height: 1.2;
   }
-  
+
   .hero-mobile-container p {
     font-size: 1rem;
     line-height: 1.4;
