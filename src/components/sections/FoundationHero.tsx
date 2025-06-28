@@ -33,8 +33,7 @@ const FoundationHero = () => {
       <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
         <div className="max-w-3xl">
           <div className="mb-3 animate-fade-in">
-
-            </span>
+            {/* Empty div - removed unclosed span */}
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow">
