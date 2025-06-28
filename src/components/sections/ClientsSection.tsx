@@ -57,7 +57,7 @@ const ClientsSection = () => {
                 x: {
                   repeat: isHovered ? 0 : Infinity,
                   repeatType: "loop",
-                  duration: 30,
+                  duration: 10,
                   ease: "linear"
                 },
               }}
