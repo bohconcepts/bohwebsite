@@ -1,0 +1,27 @@
+/* Lexend font styling for headings */
+
+.lexend-heading {
+  font-family: 'Lexend', 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+
+/* Apply Lexend to all headings */
+h1.lexend, h2.lexend, h3.lexend, h4.lexend, h5.lexend, h6.lexend {
+  font-family: 'Lexend', 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* Custom panel header style similar to the example */
+.cd-panel-header {
+  font-family: 'Lexend', 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: #4777;
+  padding-left: 5%;
+}

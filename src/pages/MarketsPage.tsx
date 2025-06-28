@@ -574,7 +574,7 @@ const MarketsPage: React.FC = () => {
               to="/contact" 
               className="inline-flex items-center px-6 py-3 bg-brand-blue text-white rounded-md hover:bg-blue-700 transition-colors duration-300"
             >
-              <span>Contact Our Regional Office</span>
+              <span>Contact Our Corporate Office</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
@@ -583,53 +583,9 @@ const MarketsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Partner With Us */}
-      <section className="py-12 bg-brand-blue text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
-              {t("markets_partnership_tag")}
-            </span>
-            <h2 className="text-3xl md:text-4xl uppercase mb-6">
-              {t("markets_partnership_title")}
-            </h2>
-          </div>
-          
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-lg text-white/90 mb-8">
-              {t("markets_partnership_description")}
-            </p>
-            
-            <Link to="/partnership" className="inline-block bg-brand-orange hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300">
-              {t("markets_contact_us_today")}
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl uppercase mb-8 text-gray-800">
-            {t("markets_cta_heading")}
-          </h2>
-          
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Link 
-              to="/contact" 
-              className="inline-block bg-brand-blue hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-md transition-colors duration-300"
-            >
-              {t("get_started")}
-            </Link>
-            {/* <Link
-              to="/contact" 
-              className="inline-block bg-white border-2 border-brand-blue text-brand-blue hover:bg-gray-50 font-medium py-3 px-8 rounded-md transition-colors duration-300"
-            >
-              {t("talk_to_specialist")}
-            </Link> */}
-          </div>
-        </div>
-      </section>
+
+
     </>
   );
 };

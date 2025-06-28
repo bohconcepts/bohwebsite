@@ -154,7 +154,7 @@ const WhoWeArePage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">Diversity and Inclusion </h3>
                 <p className="text-gray-700">
-                We advocate for diversity in all its forms, creating opportunities for underrepresented groups and fostering an inclusive environment across our operations
+                We advocate for diversity in all its forms, creating opportunities for underrepresented groups and fostering an inclusive environment across our operations.
                 </p>
               </motion.div>
             </div>
@@ -264,7 +264,7 @@ const WhoWeArePage: React.FC = () => {
               className="order-1"
             >
               <img
-                src="/images/whoweare/IMG_5281.jpeg"
+                src="/images/whoweare/blackhistory.jpeg"  
                 alt="Black History Month Celebration Banner"
                 className="w-full h-auto object-cover rounded-lg shadow-md"
               />
@@ -296,7 +296,7 @@ const WhoWeArePage: React.FC = () => {
                   href="/foundation"
                   className="inline-flex items-center text-brand-orange font-medium hover:underline"
                 >
-                  Learn more about BoH Foundation
+                  Learn more about BOH Foundation
                   <Globe className="ml-2 h-4 w-4" />
                 </a>
               </div>

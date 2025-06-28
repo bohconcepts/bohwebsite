@@ -45,19 +45,15 @@ const TrustBadgesSection: React.FC = () => {
             animate="visible"
             className="flex flex-col items-center"
           >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-3xl md:text-4xl uppercase text-center text-brand-blue mb-6"
-            >
-              {t('Trusted & Accredited')}
-            </motion.h2>
-            
-            <motion.p 
-              variants={itemVariants}
-              className="text-lg text-gray-600 max-w-2xl mx-auto text-center mb-8"
-            >
-              {t('We are proud to maintain the highest standards of service and business ethics')}
-            </motion.p>
+            <motion.div variants={itemVariants} className="section-title-container">
+              <h2 className="section-title">
+                {t('Trusted & Accredited')}
+              </h2>
+              <div className="section-title-underline"></div>
+              <p className="section-title-description">
+                {t('We are proud to maintain the highest standards of service and business ethics')}
+              </p>
+            </motion.div>
             
             <motion.div 
               variants={itemVariants}
