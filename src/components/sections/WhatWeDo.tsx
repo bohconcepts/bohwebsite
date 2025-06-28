@@ -67,11 +67,11 @@ const WhatWeDo = () => {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-56 sm:h-64 md:h-48 overflow-hidden">
                 <OptimizedImage
                   src={program.image}
                   alt={t(program.titleKey)}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-contain md:object-cover transition-transform duration-500 hover:scale-105"
                   width={400}
                   height={300}
                 />

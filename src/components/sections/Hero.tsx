@@ -74,9 +74,9 @@ const Hero = () => {
   const carousel = isMobile ? mobileCarousel : desktopCarousel;
 
   return (
-    <section className={`relative w-full overflow-hidden bg-gray-900 ${isMobile ? 'hero-mobile-container mt-[60px]' : 'h-screen'}`}>
+    <section className={`relative w-full overflow-hidden bg-gray-900 ${isMobile ? 'hero-mobile-container' : 'h-screen'}`}>
       {/* Background Carousel */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-gray-900">
         {/* Carousel Images */}
         {carousel.slides.map((slide, index) => (
           <div
@@ -86,7 +86,7 @@ const Hero = () => {
             }`}
           >
             <Suspense
-              fallback={<div className="w-full h-full bg-gray-800"></div>}
+              fallback={<div className="w-full h-full bg-gray-900"></div>}
             >
               <div className="w-full h-full">
                 {slide.image.endsWith('.mp4') ? (
@@ -124,7 +124,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl pt-24 md:pt-16">
           {/* Removed motion effects for better performance */}
           <div className="mb-3">
             <span className="bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium">
