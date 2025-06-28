@@ -36,11 +36,7 @@ const Hero = () => {
       title: t("Trusted by Industry Leaders"),
       subtitle: t("Partnering with top hotels and resorts across the nation"),
     },
-    // {
-    //   image: "/images/hero/pricing.png",
-    //   title: t("Transparent & Competitive Pricing"),
-    //   subtitle: t("Cost-effective staffing solutions tailored to your needs"),
-    // },
+
     {
       image: "/images/hero/process.png",
       title: t("Streamlined Recruitment Process"),
@@ -132,19 +128,19 @@ const Hero = () => {
       <div
         className={`container mx-auto px-4 relative z-10 ${
           isMobile
-            ? "flex flex-col justify-center items-center h-full text-center min-h-screen py-8"
+            ? "flex flex-col justify-center h-full min-h-screen py-8"
             : "flex items-center h-full"
         }`}
       >
         <div
           className={`${
             isMobile
-              ? "max-w-sm mx-auto flex flex-col items-center justify-center space-y-4"
+              ? "max-w-sm flex flex-col space-y-4"
               : "max-w-3xl pt-24 md:pt-16"
           }`}
         >
           {/* Badge */}
-          <div className={`${isMobile ? "mb-2 order-1" : "mb-3"}`}>
+          <div className={`${isMobile ? "mb-2" : "mb-3"}`}>
             <span className="bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium">
               {t("A TRUSTED PARTNER")}
             </span>
@@ -155,7 +151,7 @@ const Hero = () => {
             key={`title-${carousel.currentSlide}`}
             className={`${
               isMobile
-                ? "text-base uppercase font-semibold text-white mb-2 leading-snug animate-fade-in order-2"
+                ? "text-base uppercase font-semibold text-white mb-2 leading-snug animate-fade-in"
                 : "text-3xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow"
             }`}
           >
@@ -167,7 +163,7 @@ const Hero = () => {
             key={`subtitle-${carousel.currentSlide}`}
             className={`${
               isMobile
-                ? "text-white text-xs mb-3 font-medium animate-fade-in order-3"
+                ? "text-white text-xs mb-3 font-medium animate-fade-in"
                 : "text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow"
             }`}
           >
@@ -177,7 +173,7 @@ const Hero = () => {
           <div
             className={`${
               isMobile
-                ? "flex flex-row gap-3 w-full justify-center animate-fade-in order-4"
+                ? "flex flex-row gap-3 animate-fade-in"
                 : "flex flex-col sm:flex-row gap-4 animate-fade-in"
             }`}
           >
@@ -208,7 +204,7 @@ const Hero = () => {
           <div
             className={`${
               isMobile
-                ? "flex justify-center mt-4 gap-2 animate-fade-in order-5"
+                ? "flex mt-4 gap-2 animate-fade-in"
                 : "flex justify-center mt-6 md:mt-8 gap-2 animate-fade-in"
             }`}
           >
