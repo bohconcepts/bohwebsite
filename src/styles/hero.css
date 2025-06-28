@@ -22,9 +22,9 @@
   flex-direction: column;
 }
 
-/* Ensure images cover the full area while maintaining aspect ratio */
+/* Ensure images fill the entire hero section */
 .hero-mobile-image {
-  object-fit: contain;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   max-width: 100vw;
