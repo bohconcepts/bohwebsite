@@ -296,7 +296,7 @@ const WhoWeArePage: React.FC = () => {
                   href="/foundation"
                   className="inline-flex items-center text-brand-orange font-medium hover:underline"
                 >
-                  Learn more about BoH Foundation
+                  Learn more about BOH Foundation
                   <Globe className="ml-2 h-4 w-4" />
                 </a>
               </div>

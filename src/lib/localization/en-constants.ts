@@ -808,8 +808,8 @@ export const enConstants: LocalizedConstants = {
   mission_heading: "Mission and Vision",
   mission_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
-  mission_page_title: "OUR MISSION",
-  mission_page_tag: "MISSION",
+  mission_page_title: "OUR MISSION AND VISION",
+  mission_page_tag: "MISSION AND VISION",
   mission_title: "Mission",
   mission_description:
     "At BOH Staffing Solutions, our mission is to revolutionize the hospitality industry by providing exceptional staffing solutions that empower both businesses and professionals. We are committed to bridging the gap between talented hospitality workers and quality establishments, creating meaningful employment opportunities while helping businesses thrive.",
