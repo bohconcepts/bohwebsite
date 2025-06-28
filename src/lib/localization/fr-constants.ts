@@ -56,6 +56,12 @@ export const frConstants: LocalizedConstants = {
   markets_hero_tag: "PORTÉE MONDIALE",
   markets_section_tag: "NOTRE EXPERTISE",
   markets_section_title: "Solutions de Personnel Premium",
+  markets_service_recruitment_title: "Services de Recrutement de Bout en Bout",
+  markets_service_recruitment_description: "Du personnel hôtelier de niveau débutant aux directeurs exécutifs de l'hôtellerie, nous fournissons des solutions de recrutement personnalisées adaptées aux caractéristiques uniques des marchés mondiaux. Nous associons soigneusement les candidats en fonction de leur adéquation culturelle, de leurs compétences et de leur engagement envers l'excellence du service.",
+  markets_service_expertise_title: "Expertise sur le Terrain",
+  markets_service_expertise_description: "Avec des partenaires de recrutement locaux et des équipes de sourcing positionnées à travers le monde, nous avons une compréhension profonde des besoins uniques en matière de recrutement, des réglementations du travail et de la dynamique du marché qui caractérisent chaque pays.",
+  markets_service_multilingual_title: "Vivier de Talents Multilingues",
+  markets_service_multilingual_description: "Nous recrutons activement des talents qui parlent couramment plusieurs langues, notamment l'anglais, le français, l'espagnol, l'arabe, le portugais, le mandarin et plus encore, garantissant que les entreprises hôtelières peuvent servir en toute confiance une clientèle internationale diversifiée.",
   markets_section_description:
     "Nous fournissons des solutions complètes de personnel hôtelier adaptées aux besoins uniques de chaque marché que nous servons.",
   markets_industries_tag: "INDUSTRIES QUE NOUS SERVONS",

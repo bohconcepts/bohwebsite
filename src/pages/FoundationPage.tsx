@@ -121,7 +121,7 @@ const FoundationPage: React.FC = () => {
             className="max-w-3xl"
           >
             <span className="inline-block bg-brand-orange text-white px-4 py-2 rounded-md text-sm font-semibold mb-6 uppercase tracking-wider">
-              BOH FOUNDATION
+              FUNDACIÓN BOH
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
               Empowering Lives, Building Hope

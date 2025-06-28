@@ -56,6 +56,12 @@ export const esConstants: LocalizedConstants = {
   markets_hero_tag: "MERCADOS",
   markets_section_tag: "MERCADOS",
   markets_section_title: "Industrias que Servimos",
+  markets_service_recruitment_title: "Servicios de Reclutamiento de Principio a Fin",
+  markets_service_recruitment_description: "Desde personal de hotel de nivel básico hasta gerentes ejecutivos de hospitalidad, proporcionamos soluciones de reclutamiento personalizadas adaptadas a las características únicas de los mercados globales. Cuidadosamente emparejamos candidatos basados en ajuste cultural, conjunto de habilidades y compromiso con la excelencia en el servicio.",
+  markets_service_expertise_title: "Experiencia en el Terreno",
+  markets_service_expertise_description: "Con socios de reclutamiento local y equipos de abastecimiento posicionados en todo el mundo, tenemos un profundo entendimiento de las necesidades únicas de contratación, regulaciones laborales y dinámicas de mercado que caracterizan a cada país.",
+  markets_service_multilingual_title: "Grupo de Talento Multilingüe",
+  markets_service_multilingual_description: "Reclutamos activamente talento que domina múltiples idiomas, incluyendo inglés, francés, español, árabe, portugués, mandarín y más, asegurando que los negocios de hospitalidad puedan atender con confianza a diversos clientes internacionales.",
   markets_section_description:
     "Desde hoteles de lujo hasta aerolíneas internacionales, conectamos talento excepcional con cada segmento de la hospitalidad.",
   markets_industries_tag: "INDUSTRIAS",
