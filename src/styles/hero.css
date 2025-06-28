@@ -35,9 +35,8 @@
 /* Ensure text is visible on mobile */
 @media (max-width: 767px) {
   .hero-mobile-container h1 {
-    font-size: 2rem;
+    /* Let Tailwind classes control font-size; keep line-height for readability */
     line-height: 1.2;
-    margin-top: 1rem;
   }
   
   .hero-mobile-container p {
