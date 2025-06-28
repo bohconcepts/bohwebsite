@@ -163,6 +163,12 @@ export type LocalizedConstants = {
   markets_hero_tag: string;
   markets_section_tag: string;
   markets_section_title: string;
+  markets_service_recruitment_title: string;
+  markets_service_recruitment_description: string;
+  markets_service_expertise_title: string;
+  markets_service_expertise_description: string;
+  markets_service_multilingual_title: string;
+  markets_service_multilingual_description: string;
   markets_section_description: string;
   markets_industries_tag: string;
   markets_industries_title: string;

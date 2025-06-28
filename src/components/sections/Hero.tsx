@@ -18,8 +18,8 @@ const Hero = () => {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Carousel slides configuration
@@ -44,7 +44,9 @@ const Hero = () => {
     {
       image: "/images/hero/process.png",
       title: t("Streamlined Recruitment Process"),
-      subtitle: t("From selection to onboarding, we handle every step with care"),
+      subtitle: t(
+        "From selection to onboarding, we handle every step with care"
+      ),
     },
     {
       image: "/images/hero/main_new.mp4",
@@ -54,9 +56,7 @@ const Hero = () => {
     {
       image: "/images/hero/bedlay.png",
       title: t("Premium Hospitality Staffing"),
-      subtitle: t(
-        "Exceptional talent for luxury hotels and resorts"
-      ),
+      subtitle: t("Exceptional talent for luxury hotels and resorts"),
     },
     {
       image: "/images/hero/kate-townsend-hEC6zxdFF0M-unsplash.jpg",
@@ -70,11 +70,15 @@ const Hero = () => {
   // Use appropriate hook based on screen size
   const desktopCarousel = useDesktopCarousel(slides);
   const mobileCarousel = useMobileCarousel(slides);
-  
+
   const carousel = isMobile ? mobileCarousel : desktopCarousel;
 
   return (
-    <section className={`relative w-full overflow-hidden bg-gray-900 ${isMobile ? 'hero-mobile-container' : 'h-screen'}`}>
+    <section
+      className={`relative w-full overflow-hidden bg-gray-900 ${
+        isMobile ? "hero-mobile-container" : "h-screen"
+      }`}
+    >
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0 bg-gray-900">
         {/* Carousel Images */}
@@ -89,7 +93,7 @@ const Hero = () => {
               fallback={<div className="w-full h-full bg-gray-900"></div>}
             >
               <div className="w-full h-full">
-                {slide.image.endsWith('.mp4') ? (
+                {slide.image.endsWith(".mp4") ? (
                   <video
                     className={carousel.videoClassName}
                     autoPlay
@@ -105,7 +109,9 @@ const Hero = () => {
                   <OptimizedImage
                     src={slide.image}
                     alt={`BOH Concepts - ${index + 1}`}
-                    className={`${carousel.imageClassName} ${isMobile ? 'hero-mobile-image' : ''}`}
+                    className={`${carousel.imageClassName} ${
+                      isMobile ? "hero-mobile-image" : ""
+                    }`}
                     loading={index === 0 ? "eager" : "lazy"}
                     fetchPriority={index === 0 ? "high" : "auto"}
                     width={1920}
@@ -123,33 +129,61 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/30 via-brand-blue/20 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 flex items-center h-full">
-        <div className="max-w-3xl pt-24 md:pt-16">
-          {/* Removed motion effects for better performance */}
-          <div className="mb-3">
+      <div
+        className={`container mx-auto px-4 relative z-10 ${
+          isMobile
+            ? "flex flex-col justify-center items-center h-full text-center min-h-screen py-8"
+            : "flex items-center h-full"
+        }`}
+      >
+        <div
+          className={`${
+            isMobile
+              ? "max-w-sm mx-auto flex flex-col items-center justify-center space-y-4"
+              : "max-w-3xl pt-24 md:pt-16"
+          }`}
+        >
+          {/* Badge */}
+          <div className={`${isMobile ? "mb-2 order-1" : "mb-3"}`}>
             <span className="bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium">
               {t("A TRUSTED PARTNER")}
             </span>
           </div>
 
+          {/* Title */}
           <h1
             key={`title-${carousel.currentSlide}`}
-            className="text-3xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow"
+            className={`${
+              isMobile
+                ? "text-base uppercase font-semibold text-white mb-2 leading-snug animate-fade-in order-2"
+                : "text-3xl md:text-5xl lg:text-6xl uppercase text-white mb-4 md:mb-6 leading-tight animate-fade-in hero-title-shadow"
+            }`}
           >
             {carousel.slides[carousel.currentSlide].title}
           </h1>
 
+          {/* Subtitle */}
           <p
             key={`subtitle-${carousel.currentSlide}`}
-            className="text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow"
+            className={`${
+              isMobile
+                ? "text-white text-xs mb-3 font-medium animate-fade-in order-3"
+                : "text-white text-base md:text-lg mb-6 md:mb-8 max-w-2xl font-medium animate-fade-in hero-subtitle-shadow"
+            }`}
           >
             {carousel.slides[carousel.currentSlide].subtitle}
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+          {/* Buttons */}
+          <div
+            className={`${
+              isMobile
+                ? "flex flex-row gap-3 w-full justify-center animate-fade-in order-4"
+                : "flex flex-col sm:flex-row gap-4 animate-fade-in"
+            }`}
+          >
             <Button
               asChild
-              size="lg"
+              size={isMobile ? "default" : "lg"}
               variant="outline"
               className="text-white border-white hover:bg-white/10 bg-transparent"
             >
@@ -163,7 +197,7 @@ const Hero = () => {
             </Button>
             <Button
               asChild
-              size="lg"
+              size={isMobile ? "default" : "lg"}
               className="bg-brand-orange hover:bg-brand-orange/90 text-white"
             >
               <Link to="/our-approach">{t("Our Approach")}</Link>
@@ -171,13 +205,21 @@ const Hero = () => {
           </div>
 
           {/* Carousel Indicators */}
-          <div className="flex justify-center mt-6 md:mt-8 gap-2 animate-fade-in">
+          <div
+            className={`${
+              isMobile
+                ? "flex justify-center mt-4 gap-2 animate-fade-in order-5"
+                : "flex justify-center mt-6 md:mt-8 gap-2 animate-fade-in"
+            }`}
+          >
             {carousel.slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => carousel.setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  carousel.currentSlide === index ? "bg-brand-orange w-6" : "bg-white/50"
+                  carousel.currentSlide === index
+                    ? "bg-brand-orange w-6"
+                    : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

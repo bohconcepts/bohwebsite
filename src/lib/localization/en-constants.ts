@@ -808,7 +808,7 @@ export const enConstants: LocalizedConstants = {
   mission_heading: "Mission and Vision",
   mission_heading_color:
     "bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-blue",
-  // mission_page_title: "OUR MISSION AND VISION",
+  mission_page_title: "OUR MISSION AND VISION",
   mission_page_tag: "MISSION AND VISION",
   mission_title: "Mission",
   mission_description:
@@ -833,6 +833,12 @@ export const enConstants: LocalizedConstants = {
   markets_hero_tag: "GLOBAL REACH",
   markets_section_tag: "OUR EXPERTISE",
   markets_section_title: "Premium Staffing Solutions",
+  markets_service_recruitment_title: "End-to-End Recruitment Services",
+  markets_service_recruitment_description: "From entry-level hotel staff to executive hospitality managers, we provide customized recruitment solutions tailored to the unique characteristics of global markets. We carefully match candidates based on cultural fit, skill set, and a commitment to service excellence.",
+  markets_service_expertise_title: "On-the-Ground Expertise",
+  markets_service_expertise_description: "With local recruitment partners and sourcing teams positioned across the globe, we have a profound understanding of the unique hiring needs, labor regulations, and market dynamics that characterize each country.",
+  markets_service_multilingual_title: "Multilingual Talent Pool",
+  markets_service_multilingual_description: "We actively recruit talent who are fluent in multiple languages, including English, French, Spanish, Arabic, Portuguese, Mandarin, and more, ensuring that hospitality businesses can confidently serve diverse international clientele.",
   markets_section_description:
     "We provide comprehensive hospitality staffing solutions tailored to the unique needs of each market we serve.",
   markets_industries_tag: "INDUSTRIES WE SERVE",
