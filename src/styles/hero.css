@@ -12,9 +12,14 @@
 
 /* Mobile-specific styles for hero section */
 .hero-mobile-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   height: auto !important;
   padding-bottom: 2rem;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #111827 !important; /* Ensure dark navy background on mobile */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Ensure images cover the full area while maintaining aspect ratio */
@@ -25,4 +30,18 @@
   max-width: 100vw;
   object-position: center;
   background-color: #111827; /* dark background for letterboxing */
+}
+
+/* Ensure text is visible on mobile */
+@media (max-width: 767px) {
+  .hero-mobile-container h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 1rem;
+  }
+  
+  .hero-mobile-container p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
