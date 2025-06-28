@@ -113,7 +113,7 @@ const OurClientsPage: FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-600 italic">
-                  {t(testimonial.content)}
+                  "{t(testimonial.content)}"
                 </p>
               </div>
             ))}
