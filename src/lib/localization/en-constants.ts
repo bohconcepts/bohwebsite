@@ -505,7 +505,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Michael brings years of operational excellence to BOH Concepts, ensuring our staffing solutions meet the highest standards of efficiency and quality.",
       image: "/images/team/micheal.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://linkedin.com/in/michaelasnani",
       },
     },
     {
@@ -525,7 +525,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Myrna leads our people strategy, ensuring that our internal team and placed professionals receive the support and resources they need to excel.",
       image: "/images/team/myrna.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/myrna-harris-17b11a15/",
       },
     },
     {
@@ -535,7 +535,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Ayesa manages the financial operations of BOH Concepts, ensuring both our company and our partners benefit from cost-effective staffing solutions.",
       image: "/images/team/ayesa.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/ayesa-makatiani-1b460866/",
       },
     },
 
@@ -546,7 +546,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Linette oversees the company culture and ensures that all team members are aligned with BOH Concepts' values and mission.",
       image: "/images/team/linette.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/linette-baneth-a93030337/",
       },
     },
     {
@@ -556,7 +556,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Rafey manages the financial aspects of HR operations, ensuring efficient resource allocation and financial planning for our human capital.",
       image: "/images/team/rafey.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/abdul-rafey-askaryar-a7aa38aa/",
       },
     },
     {
@@ -566,7 +566,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Ana supports our HR team with recruitment, onboarding, and employee relations, ensuring smooth operations and positive employee experiences.",
       image: "/images/team/ana.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/ana-sauza-6b2b90178/",
       },
     },
     {
@@ -576,7 +576,7 @@ export const enConstants: LocalizedConstants = {
       bio: "Khalid provides high-level administrative support to our executive team, managing schedules, communications, and special projects with exceptional attention to detail.",
       image: "/images/team/khalid.jpg",
       social: {
-        linkedin: "https://linkedin.com/company/boh-concepts",
+        linkedin: "https://www.linkedin.com/in/khalidali123/",
       },
     },
     {

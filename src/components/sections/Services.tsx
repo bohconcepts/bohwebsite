@@ -171,7 +171,7 @@ const Services = () => {
                 variants={backgroundVariants}
                 className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
               >
-                <div className="w-full h-56 overflow-hidden bg-gray-100">
+                <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-100">
                   <img
                     src="/images/services/Professional Chefs.jpg"
                     alt="Professional Chefs"
@@ -179,7 +179,7 @@ const Services = () => {
                   />
                 </div>
                 
-                <div className="w-full p-6 flex flex-col justify-between h-64">
+                <div className="w-full p-6 flex flex-col justify-between h-auto">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Vetted Long-Term Talents")}</h3>
                   <motion.div
                     initial={{ width: "48px" }}
@@ -188,7 +188,7 @@ const Services = () => {
                     className="h-1 bg-brand-orange rounded-full mb-3"
                   ></motion.div>
                 
-                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed min-h-[6rem] max-h-28 sm:max-h-32 overflow-hidden">
                     {t("long_term_talents_description")}
                   </p>
                 
@@ -230,7 +230,7 @@ const Services = () => {
                 variants={backgroundVariants}
                 className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
               >
-                <div className="w-full h-56 overflow-hidden bg-gray-100">
+                <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-100">
                   <img
                     src="/images/services/Couple Checking In.jpg"
                     alt="Couple Checking In"
@@ -238,7 +238,7 @@ const Services = () => {
                   />
                 </div>
                 
-                <div className="w-full p-6 flex flex-col justify-between h-64">
+                <div className="w-full p-6 flex flex-col justify-between h-auto">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Vetted Seasonal Talents")}</h3>
                   <motion.div
                     initial={{ width: "48px" }}
@@ -247,7 +247,7 @@ const Services = () => {
                     className="h-1 bg-brand-orange rounded-full mb-3"
                   ></motion.div>
                 
-                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed min-h-[6rem] max-h-28 sm:max-h-32 overflow-hidden">
                     {t("seasonal_talents_description")}
                   </p>
                 
@@ -289,15 +289,15 @@ const Services = () => {
                 variants={backgroundVariants}
                 className="w-full h-full flex flex-col rounded-2xl border border-gray-100 overflow-hidden"
               >
-                <div className="w-full h-56 overflow-hidden bg-gray-100">
+                <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-100">
                   <img
                     src="/images/services/projects.png"
                     alt="Special Projects & Services"
-                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
                 
-                <div className="w-full p-6 flex flex-col justify-between h-64">
+                <div className="w-full p-6 flex flex-col justify-between h-auto">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{t("Special Projects & Services")}</h3>
                   <motion.div
                     initial={{ width: "48px" }}
@@ -306,7 +306,7 @@ const Services = () => {
                     className="h-1 bg-brand-orange rounded-full mb-3"
                   ></motion.div>
                 
-                  <p className="text-gray-600 mb-auto text-sm leading-relaxed h-24 overflow-hidden">
+                  <p className="text-gray-600 mb-auto text-sm leading-relaxed min-h-[6rem] max-h-28 sm:max-h-32 overflow-hidden">
                     {t("Specialized cleaning and maintenance solutions designed specifically for hospitality businesses. Our expert teams deliver high-quality project-based services to enhance your facility's appearance, functionality, and guest experience.")}
                   </p>
                 
