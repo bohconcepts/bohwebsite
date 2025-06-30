@@ -18,7 +18,7 @@ const defaultConfig: EmailServiceConfig = {
 /**
  * Response from the Netlify email service
  */
-interface EmailServiceResponse {
+export interface EmailServiceResponse {
   success: boolean;
   userEmailSent?: boolean;
   companyEmailSent?: boolean;

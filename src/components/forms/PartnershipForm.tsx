@@ -6,7 +6,7 @@ import { savePartnershipRequest } from "@/integrations/supabase/services/partner
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails } from '@/utils/email/netlifyEmailService';
+import { sendFormEmails, initEmailJS } from '@/utils/email/combinedEmailService';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,11 +75,14 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
       };
       
       try {
-        // Send emails using PHP email service
+        // Initialize EmailJS (only needed for fallback)
+        initEmailJS('YOUR_EMAILJS_PUBLIC_KEY'); // Replace with your actual EmailJS public key
+        
+        // Send emails using combined email service (tries Netlify first, then EmailJS)
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {
-          console.log('Emails sent successfully');
+          console.log('Emails sent successfully:', emailResult.message);
         } else {
           console.warn('Email sending failed but database save succeeded:', emailResult);
           // We'll still consider this a partial success since the data was saved to the database
