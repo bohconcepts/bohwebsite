@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCompanyInfo } from "@/hooks/useLocalizedConstants";
-import { Award, Eye } from "lucide-react";
+import { Award, Eye, Quote } from "lucide-react";
+import OptimizedImage from "@/components/common/OptimizedImage";
 
 const MissionPage = () => {
   const { t } = useLanguage();
@@ -41,6 +42,82 @@ const MissionPage = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* CEO Message Section */}
+      <section className="py-12 bg-white" id="ceo-message">
+        <div className="container px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-3xl md:text-4xl font-bold mb-10 inline-block"
+            >
+              <span className="text-gray-800">
+                FROM OUR CEO
+              </span>
+              <div className="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+            </motion.h2>
+
+            <div className="max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative overflow-hidden"
+              >
+                <div className="bg-gradient-to-br from-brand-blue to-brand-blue/90 p-5 sm:p-8 rounded-xl text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px]">
+                  <div className="absolute top-0 right-0 w-24 h-24 -mt-8 -mr-8 rounded-full bg-brand-orange/20 blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 -mb-10 -ml-10 rounded-full bg-brand-orange/10 blur-2xl"></div>
+
+                  <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-6 hover:bg-white/20 transition-all duration-300 about-icon-container">
+                        <motion.div
+                          initial={{ rotate: -10, scale: 0.9 }}
+                          animate={{ rotate: 0, scale: 1 }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                          <Quote className="w-8 h-8 text-brand-orange hover:scale-110 transition-transform duration-300" />
+                        </motion.div>
+                      </div>
+
+                      <h3 className="text-2xl font-bold mb-4 text-white hover:text-white/80 transition-colors duration-300 about-heading">
+                        Kelvis Quaynor
+                      </h3>
+                      <p className="text-sm text-white/80 mb-4">CEO & Founder</p>
+
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.7, delay: 0.5 }}
+                        className="text-white/90 leading-relaxed about-text italic"
+                      >
+                        "Our partnership and elevated level of service will allow you and your leaders to focus on what you do best: creating fantastic and memorable experiences for your guests"
+                      </motion.p>
+                    </div>
+                    
+                    <div className="flex justify-center items-center">
+                      <OptimizedImage
+                        src="/images/team/kelvis.jpg"
+                        alt="Kelvis Quaynor - CEO & Founder"
+                        className="rounded-lg shadow-lg object-cover w-full max-h-[300px]"
+                        width={400}
+                        height={300}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <section className="py-12 bg-white">
         <div className="container px-4">
