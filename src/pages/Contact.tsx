@@ -70,7 +70,8 @@ const Contact = () => {
       
       try {
         // Initialize EmailJS (only needed for fallback)
-        initEmailJS('YOUR_EMAILJS_PUBLIC_KEY'); // Replace with your actual EmailJS public key
+        // This will silently skip initialization if the key is invalid
+        initEmailJS(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
         
         // Send emails using combined email service (tries Netlify first, then EmailJS)
         const emailResult = await sendFormEmails(emailData);

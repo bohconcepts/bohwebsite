@@ -16,7 +16,19 @@ const EMAILJS_CONFIG = {
  * Initialize EmailJS with your public key
  */
 export const initEmailJS = (publicKey?: string) => {
-  emailjs.init(publicKey || EMAILJS_CONFIG.publicKey);
+  try {
+    const keyToUse = publicKey || EMAILJS_CONFIG.publicKey;
+    if (keyToUse && keyToUse !== 'YOUR_PUBLIC_KEY') {
+      emailjs.init(keyToUse);
+      return true;
+    } else {
+      console.warn('EmailJS initialization skipped: No valid public key provided');
+      return false;
+    }
+  } catch (error) {
+    console.error('EmailJS initialization failed:', error);
+    return false;
+  }
 };
 
 /**
@@ -37,56 +49,83 @@ export interface EmailServiceResponse {
  */
 export const sendFormEmails = async (formData: FormSubmissionData): Promise<EmailServiceResponse> => {
   try {
-    // Initialize EmailJS if not already initialized
-    if (!EMAILJS_CONFIG.publicKey) {
-      console.error('EmailJS public key not set');
+    // Check if EmailJS is properly configured
+    if (EMAILJS_CONFIG.serviceId === 'YOUR_SERVICE_ID' || 
+        EMAILJS_CONFIG.templateIdUser === 'YOUR_USER_TEMPLATE_ID' ||
+        EMAILJS_CONFIG.templateIdCompany === 'YOUR_COMPANY_TEMPLATE_ID') {
+      console.error('EmailJS not properly configured with real service/template IDs');
       return {
         success: false,
-        error: 'EmailJS configuration missing',
+        error: 'EmailJS not properly configured. Please update the configuration with real values.',
       };
     }
     
-    // Send confirmation email to user
-    const userEmailPromise = emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templateIdUser,
-      {
-        to_email: formData.email,
-        to_name: formData.name,
-        form_type: formData.formType,
+    // Skip sending if we know it will fail
+    if (!EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY') {
+      console.error('EmailJS public key not set or invalid');
+      return {
+        success: false,
+        error: 'EmailJS public key missing or invalid',
+      };
+    }
+    
+    try {
+      // Send confirmation email to user
+      const userEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateIdUser,
+        {
+          to_email: formData.email,
+          to_name: formData.name,
+          form_type: formData.formType,
+        }
+      );
+      
+      // Send notification email to company
+      const companyEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateIdCompany,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message || '',
+          form_type: formData.formType,
+          ...formData, // Include all form data
+        }
+      );
+      
+      // Wait for both emails to be sent
+      const [userResult, companyResult] = await Promise.allSettled([userEmailPromise, companyEmailPromise]);
+      
+      const userEmailSent = userResult.status === 'fulfilled';
+      const companyEmailSent = companyResult.status === 'fulfilled';
+      
+      // Log any specific errors
+      if (!userEmailSent && userResult.status === 'rejected') {
+        console.error('User email failed:', userResult.reason);
       }
-    );
-    
-    // Send notification email to company
-    const companyEmailPromise = emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templateIdCompany,
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message || '',
-        form_type: formData.formType,
-        ...formData, // Include all form data
+      if (!companyEmailSent && companyResult.status === 'rejected') {
+        console.error('Company email failed:', companyResult.reason);
       }
-    );
-    
-    // Wait for both emails to be sent
-    const [userResult, companyResult] = await Promise.allSettled([userEmailPromise, companyEmailPromise]);
-    
-    const userEmailSent = userResult.status === 'fulfilled';
-    const companyEmailSent = companyResult.status === 'fulfilled';
-    
-    return {
-      success: userEmailSent || companyEmailSent,
-      userEmailSent,
-      companyEmailSent,
-      message: 'Used EmailJS service',
-    };
+      
+      return {
+        success: userEmailSent || companyEmailSent,
+        userEmailSent,
+        companyEmailSent,
+        message: 'Used EmailJS service',
+      };
+    } catch (error) {
+      console.error('Error sending emails with EmailJS:', error);
+      return {
+        success: false,
+        error: error instanceof Error ? error.message : 'EmailJS sending error',
+      };
+    }
   } catch (error) {
-    console.error('Error sending emails with EmailJS:', error);
+    console.error('Error in EmailJS service:', error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: error instanceof Error ? error.message : 'EmailJS configuration error',
     };
   }
 };
