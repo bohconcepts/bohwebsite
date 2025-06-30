@@ -5,7 +5,9 @@ import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { savePartnershipRequest } from "@/integrations/supabase/services/partnershipService";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { FormSubmissionData } from "@/utils/email/types";
+import { FormSubmissionData } from '@/utils/email/types';
+import { sendFormEmails, initEmailJS } from '@/utils/email/emailJsService';
+import { EMAILJS_PUBLIC_KEY } from '@/utils/email/emailJsConfig';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -74,24 +76,20 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
       };
       
       try {
-        // Send the form data to our email API
-        const emailResponse = await fetch('/api/forms/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(emailData),
-        });
+        // Initialize EmailJS with the public key from config
+        initEmailJS(EMAILJS_PUBLIC_KEY);
         
-        if (emailResponse.ok) {
-          const emailResult = await emailResponse.json();
-          console.log('Email sending result:', emailResult);
+        // Send emails using EmailJS
+        const emailResult = await sendFormEmails(emailData);
+        
+        if (emailResult.success) {
+          console.log('Emails sent successfully');
         } else {
-          console.warn('Email sending failed but database save succeeded. Status:', emailResponse.status);
+          console.warn('Email sending failed but database save succeeded:', emailResult);
           // We'll still consider this a partial success since the data was saved to the database
         }
       } catch (error) {
-        console.warn('Email API not available yet:', error);
+        console.warn('Email sending failed:', error);
         // Continue with success flow since database save succeeded
       }
       
