@@ -16,6 +16,7 @@ import {
 
 import { saveContactMessage } from "@/integrations/supabase/services/contactService";
 import { useToast } from "@/hooks/use-toast";
+import { FormSubmissionData } from "@/utils/email/types";
 
 import { useCompanyInfo, useContactInfo, useSocialLinks } from "@/hooks/useLocalizedConstants";
 import { Button } from "@/components/ui/button";
@@ -53,38 +54,60 @@ const Contact = () => {
     setSubmitError(null);
     
     try {
-      // Save message to admin service using the contactService
-      const { success, error } = await saveContactMessage(formState);
+      // First save message to Supabase database
+      const { success: dbSuccess, error: dbError } = await saveContactMessage(formState);
       
-      if (success) {
-        // Show success toast notification
-        toast({
-          title: t('Message Sent'),
-          description: t('Thank You Message')
-          // Using default variant for success
-        });
-        
-        setIsSubmitted(true);
-        setFormState({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 5000);
-      } else {
-        // Show error message
-        setSubmitError(error || t('Something went wrong. Please try again.'));
-        toast({
-          title: t('Error'),
-          description: error || t('Something went wrong. Please try again.'),
-          variant: "destructive"
-        });
+      if (!dbSuccess) {
+        throw new Error(dbError || t('Failed to save your message'));
       }
+      
+      // Then send emails using our email service
+      const emailData: FormSubmissionData = {
+        ...formState,
+        formType: 'contact'
+      };
+      
+      try {
+        // Send the form data to our email API
+        const emailResponse = await fetch('/api/forms/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(emailData),
+        });
+        
+        if (emailResponse.ok) {
+          const emailResult = await emailResponse.json();
+          console.log('Email sending result:', emailResult);
+        } else {
+          console.warn('Email sending failed but database save succeeded. Status:', emailResponse.status);
+          // We'll still consider this a partial success since the data was saved to the database
+        }
+      } catch (error) {
+        console.warn('Email API not available yet:', error);
+        // Continue with success flow since database save succeeded
+      }
+      
+      // Show success toast notification
+      toast({
+        title: t('Message Sent'),
+        description: t('Thank You Message')
+        // Using default variant for success
+      });
+      
+      setIsSubmitted(true);
+      setFormState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitError(error instanceof Error ? error.message : t('Something went wrong. Please try again.'));
