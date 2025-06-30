@@ -6,6 +6,8 @@
   publish = "dist"
   # Default build command
   command = "npm run build"
+  # Functions directory
+  functions = "netlify/functions"
 
 # Environment variables (non-sensitive ones only)
 # For sensitive variables like API keys, use Netlify UI instead

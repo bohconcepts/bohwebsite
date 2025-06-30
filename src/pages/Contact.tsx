@@ -17,8 +17,7 @@ import {
 import { saveContactMessage } from "@/integrations/supabase/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails, initEmailJS } from '@/utils/email/emailJsService';
-import { EMAILJS_PUBLIC_KEY } from '@/utils/email/emailJsConfig';
+import { sendFormEmails } from '@/utils/email/netlifyEmailService';
 
 import { useCompanyInfo, useContactInfo, useSocialLinks } from "@/hooks/useLocalizedConstants";
 import { Button } from "@/components/ui/button";
@@ -70,10 +69,7 @@ const Contact = () => {
       };
       
       try {
-        // Initialize EmailJS with the public key from config
-        initEmailJS(EMAILJS_PUBLIC_KEY);
-        
-        // Send emails using EmailJS
+        // Send emails using PHP email service
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {

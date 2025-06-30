@@ -6,8 +6,7 @@ import { savePartnershipRequest } from "@/integrations/supabase/services/partner
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails, initEmailJS } from '@/utils/email/emailJsService';
-import { EMAILJS_PUBLIC_KEY } from '@/utils/email/emailJsConfig';
+import { sendFormEmails } from '@/utils/email/netlifyEmailService';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,10 +75,7 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
       };
       
       try {
-        // Initialize EmailJS with the public key from config
-        initEmailJS(EMAILJS_PUBLIC_KEY);
-        
-        // Send emails using EmailJS
+        // Send emails using PHP email service
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {
