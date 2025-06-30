@@ -8,10 +8,9 @@ interface EmailServiceConfig {
 }
 
 /**
- * Default configuration - automatically detects environment
+ * Default configuration - uses relative URL for local (netlify dev) and production
  */
 const defaultConfig: EmailServiceConfig = {
-  // Uses relative URL for both local (via netlify dev) and production
   functionUrl: '/.netlify/functions/send-email',
 };
 
@@ -37,7 +36,7 @@ export const sendFormEmails = async (
   config: Partial<EmailServiceConfig> = {}
 ): Promise<EmailServiceResponse> => {
   const finalConfig = { ...defaultConfig, ...config };
-  
+
   try {
     const response = await fetch(finalConfig.functionUrl, {
       method: 'POST',
@@ -47,12 +46,21 @@ export const sendFormEmails = async (
       body: JSON.stringify(formData),
     });
 
+    // Initialize an empty result
     let result: any = {};
 
-    // Check if response has a body to parse
+    // Check for valid JSON Content-Type
     const contentType = response.headers.get('content-type');
     if (contentType && contentType.includes('application/json')) {
-      result = await response.json();
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error('Failed to parse JSON from email function:', jsonError);
+        return {
+          success: false,
+          error: 'Invalid JSON returned from email function',
+        };
+      }
     } else {
       console.error('Email function returned non-JSON response');
       return {
@@ -62,19 +70,21 @@ export const sendFormEmails = async (
     }
 
     if (!response.ok) {
-      console.error('Email service error:', result);
+      console.error('Email service responded with error:', result);
       return {
         success: false,
-        error: result.error || 'Unknown error from email service',
+        error: result.error || result.message || 'Unknown error from email service',
       };
     }
-    
+
+    // Successful response
     return {
-      success: result.success,
+      success: result.success ?? true,
       userEmailSent: result.userEmailSent,
       companyEmailSent: result.companyEmailSent,
-      message: result.message,
+      message: result.message || 'Emails sent successfully',
     };
+
   } catch (error) {
     console.error('Error sending emails:', error);
     return {
