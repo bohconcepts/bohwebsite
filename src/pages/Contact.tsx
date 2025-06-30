@@ -17,7 +17,7 @@ import {
 import { saveContactMessage } from "@/integrations/supabase/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails, initEmailJS } from '@/utils/email/combinedEmailService';
+import { sendFormEmails } from '@/utils/email/netlifyEmailService';
 
 import { useCompanyInfo, useContactInfo, useSocialLinks } from "@/hooks/useLocalizedConstants";
 import { Button } from "@/components/ui/button";
@@ -69,11 +69,9 @@ const Contact = () => {
       };
       
       try {
-        // Initialize EmailJS (only needed for fallback)
-        // This will silently skip initialization if the key is invalid
-        initEmailJS(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
+        // Email service initialization is no longer needed
         
-        // Send emails using combined email service (tries Netlify first, then EmailJS)
+        // Send emails using Netlify serverless function
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {

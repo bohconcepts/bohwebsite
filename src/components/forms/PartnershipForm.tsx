@@ -6,7 +6,7 @@ import { savePartnershipRequest } from "@/integrations/supabase/services/partner
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails, initEmailJS } from '@/utils/email/combinedEmailService';
+import { sendFormEmails } from '@/utils/email/netlifyEmailService';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,11 +75,9 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
       };
       
       try {
-        // Initialize EmailJS (only needed for fallback)
-        // This will silently skip initialization if the key is invalid
-        initEmailJS(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
+        // Email service initialization is no longer needed
         
-        // Send emails using combined email service (tries Netlify first, then EmailJS)
+        // Send emails using Netlify serverless function
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {
