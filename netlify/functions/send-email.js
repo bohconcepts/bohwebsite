@@ -6,21 +6,17 @@ const createTransporter = () => {
     host: 'smtpout.secureserver.net',
     port: 587,
     secure: false, // true for 465, false for other ports
-    // For distribution email accounts that don't require authentication
-    // If your email requires authentication, uncomment these lines and add credentials
-    /*
     auth: {
-      user: process.env.EMAIL_USER, // add to Netlify environment variables
-      pass: process.env.EMAIL_PASSWORD, // add to Netlify environment variables
+      user: process.env.EMAIL_USER || 'contact@bohconcepts.com', // add to Netlify environment variables
+      pass: process.env.EMAIL_PASSWORD || '', // add to Netlify environment variables
     },
-    */
   });
 };
 
 // Company email address for receiving form submissions
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'info@bohconcepts.com';
 // Distribution email address for sending emails
-const DISTRIBUTION_EMAIL = 'contact@bohconcepts.com';
+const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'contact@bohconcepts.com';
 
 /**
  * Sends a confirmation email to the user
