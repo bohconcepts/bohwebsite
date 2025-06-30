@@ -1,0 +1,9 @@
+{
+  "name": "send-email",
+  "version": "1.0.0",
+  "description": "Netlify function for sending emails via GoDaddy SMTP",
+  "main": "send-email.js",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  }
+}
