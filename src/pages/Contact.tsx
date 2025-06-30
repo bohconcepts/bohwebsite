@@ -17,8 +17,7 @@ import {
 import { saveContactMessage } from "@/integrations/supabase/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails, initEmailJS } from '@/utils/email/emailJsService';
-import { EMAILJS_PUBLIC_KEY } from '@/utils/email/emailJsConfig';
+import { sendFormEmails, initEmailJS } from '@/utils/email/combinedEmailService';
 
 import { useCompanyInfo, useContactInfo, useSocialLinks } from "@/hooks/useLocalizedConstants";
 import { Button } from "@/components/ui/button";
@@ -70,14 +69,15 @@ const Contact = () => {
       };
       
       try {
-        // Initialize EmailJS with the public key from config
-        initEmailJS(EMAILJS_PUBLIC_KEY);
+        // Initialize EmailJS (only needed for fallback)
+        // This will silently skip initialization if the key is invalid
+        initEmailJS(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
         
-        // Send emails using EmailJS
+        // Send emails using combined email service (tries Netlify first, then EmailJS)
         const emailResult = await sendFormEmails(emailData);
         
         if (emailResult.success) {
-          console.log('Emails sent successfully');
+          console.log('Emails sent successfully:', emailResult.message);
         } else {
           console.warn('Email sending failed but database save succeeded:', emailResult);
           // We'll still consider this a partial success since the data was saved to the database
