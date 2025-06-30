@@ -1,3 +1,4 @@
+export const enConstantsTeamUpdate = {
   TEAM_MEMBERS: [
     {
       id: "1",
@@ -100,4 +101,5 @@
         linkedin: "https://linkedin.com/company/boh-concepts",
       },
     },
-  ],
+  ]
+};
