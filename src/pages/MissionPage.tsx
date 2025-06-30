@@ -36,6 +36,9 @@ const MissionPage = () => {
             <span className="inline-block bg-brand-orange text-white px-3 py-1 rounded-md text-sm font-medium mb-4">
               OUR MISSION
             </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              PROMOTING DIVERSITY AND GROWTH FOR ALL
+            </h2>
             <p className="text-lg text-white/90 max-w-2xl mb-6">
               {t("mission_overview_description")}
             </p>

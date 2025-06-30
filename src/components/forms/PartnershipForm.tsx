@@ -5,6 +5,9 @@ import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { savePartnershipRequest } from "@/integrations/supabase/services/partnershipService";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { FormSubmissionData } from '@/utils/email/types';
+import { sendFormEmails, initEmailJS } from '@/utils/email/emailJsService';
+import { EMAILJS_PUBLIC_KEY } from '@/utils/email/emailJsConfig';
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -50,42 +53,69 @@ export const PartnershipForm = ({ className = "" }: PartnershipFormProps) => {
     setSubmitError(null);
     
     try {
-      // Save partnership request using the partnershipService
-      const { success, error } = await savePartnershipRequest(formState);
+      // First save partnership request to Supabase database
+      const { success: dbSuccess, error: dbError } = await savePartnershipRequest(formState);
       
-      if (success) {
-        // Show success toast notification
-        toast({
-          title: t('Partnership Request Submitted'),
-          description: t('Thank you for your interest in partnering with us. We will contact you soon.')
-          // Using default variant for success
-        });
-        
-        setIsSubmitted(true);
-        setFormState({
-          company_name: "",
-          contact_person: "",
-          email: "",
-          phone: "",
-          website: "",
-          industry: "",
-          partnership_type: "",
-          message: "",
-        });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 5000);
-      } else {
-        // Show error message
-        setSubmitError(error || t('Something went wrong. Please try again.'));
-        toast({
-          title: t('Error'),
-          description: error || t('Something went wrong. Please try again.'),
-          variant: "destructive"
-        });
+      if (!dbSuccess) {
+        throw new Error(dbError || t('Failed to save your partnership request'));
       }
+      
+      // Then send emails using our email service
+      const emailData: FormSubmissionData = {
+        name: formState.contact_person,
+        email: formState.email,
+        subject: `Partnership Request from ${formState.company_name}`,
+        message: formState.message,
+        formType: 'partnership',
+        // Additional partnership-specific fields
+        company_name: formState.company_name,
+        phone: formState.phone,
+        website: formState.website,
+        industry: formState.industry,
+        partnership_type: formState.partnership_type
+      };
+      
+      try {
+        // Initialize EmailJS with the public key from config
+        initEmailJS(EMAILJS_PUBLIC_KEY);
+        
+        // Send emails using EmailJS
+        const emailResult = await sendFormEmails(emailData);
+        
+        if (emailResult.success) {
+          console.log('Emails sent successfully');
+        } else {
+          console.warn('Email sending failed but database save succeeded:', emailResult);
+          // We'll still consider this a partial success since the data was saved to the database
+        }
+      } catch (error) {
+        console.warn('Email sending failed:', error);
+        // Continue with success flow since database save succeeded
+      }
+      
+      // Show success toast notification
+      toast({
+        title: t('Partnership Request Submitted'),
+        description: t('Thank you for your interest in partnering with us. We will contact you soon.')
+        // Using default variant for success
+      });
+      
+      setIsSubmitted(true);
+      setFormState({
+        company_name: "",
+        contact_person: "",
+        email: "",
+        phone: "",
+        website: "",
+        industry: "",
+        partnership_type: "",
+        message: "",
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitError(error instanceof Error ? error.message : t('Something went wrong. Please try again.'));
