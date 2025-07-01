@@ -9,6 +9,12 @@
   # Functions directory
   functions = "netlify/functions"
 
+# Redirect rule for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Environment variables (non-sensitive ones only)
 # For sensitive variables like API keys, use Netlify UI instead
 [context.production.environment]

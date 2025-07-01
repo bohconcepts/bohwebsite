@@ -22,41 +22,38 @@ const createTransporter = () => {
 const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'michael@bohconcepts.com';
 const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'sefa@bohconcepts.com';
 
-/** * Sends a confirmation email to the user */
+/**
+ * Send confirmation email to the user who submitted the form
+ */
 const sendUserConfirmationEmail = async (formData) => {
   const transporter = createTransporter();
   const mailOptions = {
     from: `BOH Concepts <${DISTRIBUTION_EMAIL}>`,
     to: formData.email,
-    subject: `BOH Concepts - ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission`,
+    subject: `Thank you for your ${formData.formType} submission`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #333;">Thank you for your ${formData.formType} submission!</h2>
+        <h2>Thank you for reaching out!</h2>
         <p>Hello ${formData.name},</p>
-        <p>We've received your submission and will get back to you soon.</p>
-        <p>Best regards,<br>The BOH Concepts Team</p>
+        <p>We have received your ${formData.formType} submission and will get back to you shortly.</p>
+        <p>Best regards,</p>
+        <p>The BOH Concepts Team</p>
       </div>
     `,
   };
-
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log('User email sent:', info.response);
-    return { success: true, messageId: info.messageId };
-  } catch (error) {
-    console.error('Error sending user email:', error);
-    throw error;
-  }
+  return transporter.sendMail(mailOptions);
 };
 
-/** * Sends a notification email to the company */
+/**
+ * Send notification email to the company about the new form submission
+ */
 const sendCompanyNotificationEmail = async (formData) => {
   const transporter = createTransporter();
 
   // Build the email content
   let formFields = '';
   Object.keys(formData).forEach(key => {
-    if (!['formType'].includes(key)) {
+    if (key !== 'formType') {
       formFields += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}:</strong> ${formData[key]}</p>`;
     }
   });
@@ -64,62 +61,34 @@ const sendCompanyNotificationEmail = async (formData) => {
   const mailOptions = {
     from: `Website Form <${DISTRIBUTION_EMAIL}>`,
     to: COMPANY_EMAIL,
-    replyTo: formData.email,
-    subject: `New ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission from ${formData.name}`,
+    subject: `New ${formData.formType} Form Submission`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #333;">New ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission</h2>
+        <h2>New ${formData.formType} Form Submission</h2>
         ${formFields}
       </div>
     `,
   };
-
-  try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Company email sent:', info.response);
-    return { success: true, messageId: info.messageId };
-  } catch (error) {
-    console.error('Error sending company email:', error);
-    throw error;
-  }
+  return transporter.sendMail(mailOptions);
 };
 
-exports.handler = async (event, context) => {
-  // Set CORS headers
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Content-Type': 'application/json'
-  };
-
-  // Handle OPTIONS request (CORS preflight)
-  if (event.httpMethod === 'OPTIONS') {
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({ message: 'CORS preflight successful' })
-    };
-  }
-
-  // Only allow POST requests
+exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Method not allowed' }),
     };
   }
 
   try {
-    console.log('Received form submission:', event.body);
     const formData = JSON.parse(event.body);
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.formType) {
       return {
         statusCode: 400,
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           error: 'Missing required fields',
           requiredFields: ['name', 'email', 'formType'],
@@ -132,7 +101,7 @@ exports.handler = async (event, context) => {
     if (!emailRegex.test(formData.email)) {
       return {
         statusCode: 400,
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ error: 'Invalid email format' }),
       };
     }
@@ -145,24 +114,26 @@ exports.handler = async (event, context) => {
 
     try {
       const userResult = await sendUserConfirmationEmail(formData);
-      userEmailSent = userResult.success;
+      console.log('User email result:', userResult);
+      userEmailSent = true;
     } catch (error) {
       console.error('Error sending user confirmation email:', error);
-      userEmailError = error.message;
+      userEmailError = error.message || 'Unknown error sending user email';
     }
 
     try {
       const companyResult = await sendCompanyNotificationEmail(formData);
-      companyEmailSent = companyResult.success;
+      console.log('Company email result:', companyResult);
+      companyEmailSent = true;
     } catch (error) {
       console.error('Error sending company notification email:', error);
-      companyEmailError = error.message;
+      companyEmailError = error.message || 'Unknown error sending company email';
     }
 
     if (userEmailSent && companyEmailSent) {
       return {
         statusCode: 200,
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           success: true,
           userEmailSent,
@@ -173,7 +144,7 @@ exports.handler = async (event, context) => {
     } else {
       return {
         statusCode: 207, // Multi-Status
-        headers,
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           success: userEmailSent || companyEmailSent,
           userEmailSent,
@@ -188,10 +159,10 @@ exports.handler = async (event, context) => {
     console.error('Error processing form submission:', error);
     return {
       statusCode: 500,
-      headers,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         error: 'Internal server error',
-        details: error.message
+        details: error.message || String(error)
       }),
     };
   }
