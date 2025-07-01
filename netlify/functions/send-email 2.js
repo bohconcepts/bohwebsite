@@ -1,51 +1,54 @@
 const nodemailer = require('nodemailer');
 
-// Create a transporter using Office 365 SMTP settings
+// Create a transporter using GoDaddy SMTP settings
 const createTransporter = () => {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.office365.com',
+    host: process.env.SMTP_HOST || 'smtpout.secureserver.net',
     port: parseInt(process.env.SMTP_PORT) || 587,
     secure: process.env.SMTP_SECURE === 'true', // set SMTP_SECURE=true in Netlify if using port 465
     auth: {
-      user: process.env.EMAIL_USER || 'sefa@bohconcepts.com',
+      user: process.env.EMAIL_USER || 'contact@bohconcepts.com',
       pass: process.env.EMAIL_PASSWORD || '',
-    },
-    tls: {
-      ciphers: 'SSLv3',
-      rejectUnauthorized: true
     },
     debug: true, // Add debug flag to get more information
   });
 };
 
 // Company email address for receiving form submissions
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'michael@bohconcepts.com';
-const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'sefa@bohconcepts.com';
+const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'info@bohconcepts.com';
+const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'contact@bohconcepts.com';
 
 /**
- * Send confirmation email to the user who submitted the form
+ * Sends a confirmation email to the user
  */
 const sendUserConfirmationEmail = async (formData) => {
   const transporter = createTransporter();
   const mailOptions = {
     from: `BOH Concepts <${DISTRIBUTION_EMAIL}>`,
     to: formData.email,
-    subject: `Thank you for your ${formData.formType} submission`,
+    subject: `BOH Concepts - ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2>Thank you for reaching out!</h2>
+        <h2 style="color: #333;">Thank you for your ${formData.formType} submission!</h2>
         <p>Hello ${formData.name},</p>
-        <p>We have received your ${formData.formType} submission and will get back to you shortly.</p>
-        <p>Best regards,</p>
-        <p>The BOH Concepts Team</p>
+        <p>We've received your submission and will get back to you soon.</p>
+        <p>Best regards,<br>The BOH Concepts Team</p>
       </div>
     `,
   };
-  return transporter.sendMail(mailOptions);
+  
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('User email sent:', info.response);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('Error sending user email:', error);
+    throw error;
+  }
 };
 
 /**
- * Send notification email to the company about the new form submission
+ * Sends a notification email to the company
  */
 const sendCompanyNotificationEmail = async (formData) => {
   const transporter = createTransporter();
@@ -53,7 +56,7 @@ const sendCompanyNotificationEmail = async (formData) => {
   // Build the email content
   let formFields = '';
   Object.keys(formData).forEach(key => {
-    if (key !== 'formType') {
+    if (!['formType'].includes(key)) {
       formFields += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}:</strong> ${formData[key]}</p>`;
     }
   });
@@ -61,34 +64,62 @@ const sendCompanyNotificationEmail = async (formData) => {
   const mailOptions = {
     from: `Website Form <${DISTRIBUTION_EMAIL}>`,
     to: COMPANY_EMAIL,
-    subject: `New ${formData.formType} Form Submission`,
+    replyTo: formData.email,
+    subject: `New ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission from ${formData.name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2>New ${formData.formType} Form Submission</h2>
+        <h2 style="color: #333;">New ${formData.formType.charAt(0).toUpperCase() + formData.formType.slice(1)} Form Submission</h2>
         ${formFields}
       </div>
     `,
   };
-  return transporter.sendMail(mailOptions);
+  
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Company email sent:', info.response);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('Error sending company email:', error);
+    throw error;
+  }
 };
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
+  // Set CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Content-Type': 'application/json'
+  };
+  
+  // Handle OPTIONS request (CORS preflight)
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ message: 'CORS preflight successful' })
+    };
+  }
+  
+  // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify({ error: 'Method not allowed' }),
     };
   }
 
   try {
+    console.log('Received form submission:', event.body);
     const formData = JSON.parse(event.body);
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.formType) {
       return {
         statusCode: 400,
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           error: 'Missing required fields',
           requiredFields: ['name', 'email', 'formType'],
@@ -101,7 +132,10 @@ exports.handler = async (event) => {
     if (!emailRegex.test(formData.email)) {
       return {
         statusCode: 400,
-        headers: { 'Content-Type': 'application/json' },
+        headers,
+        body: JSON.stringify({ error: 'Invalid email format' }),
+      };
+    }
         body: JSON.stringify({ error: 'Invalid email format' }),
       };
     }
@@ -109,25 +143,19 @@ exports.handler = async (event) => {
     // Send emails
     let userEmailSent = false;
     let companyEmailSent = false;
-    let userEmailError = null;
-    let companyEmailError = null;
 
     try {
-      const userResult = await sendUserConfirmationEmail(formData);
-      console.log('User email result:', userResult);
+      await sendUserConfirmationEmail(formData);
       userEmailSent = true;
     } catch (error) {
       console.error('Error sending user confirmation email:', error);
-      userEmailError = error.message || 'Unknown error sending user email';
     }
 
     try {
-      const companyResult = await sendCompanyNotificationEmail(formData);
-      console.log('Company email result:', companyResult);
+      await sendCompanyNotificationEmail(formData);
       companyEmailSent = true;
     } catch (error) {
       console.error('Error sending company notification email:', error);
-      companyEmailError = error.message || 'Unknown error sending company email';
     }
 
     if (userEmailSent && companyEmailSent) {
@@ -146,11 +174,9 @@ exports.handler = async (event) => {
         statusCode: 207, // Multi-Status
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          success: userEmailSent || companyEmailSent,
+          success: false,
           userEmailSent,
           companyEmailSent,
-          userEmailError,
-          companyEmailError,
           message: 'Form processed with partial success',
         }),
       };
@@ -160,10 +186,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        error: 'Internal server error',
-        details: error.message || String(error)
-      }),
+      body: JSON.stringify({ error: 'Internal server error' }),
     };
   }
 };

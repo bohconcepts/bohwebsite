@@ -48,13 +48,30 @@ export const sendFormEmails = async (
     });
 
     let result: any = {};
-
+    
+    // Clone the response before reading its body
+    const responseClone = response.clone();
+    
     // Check if response has a body to parse
     const contentType = response.headers.get('content-type');
     if (contentType && contentType.includes('application/json')) {
-      result = await response.json();
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error('Failed to parse JSON response:', jsonError);
+        // If JSON parsing fails, try to get the text content
+        const textContent = await responseClone.text();
+        console.log('Response text content:', textContent);
+        return {
+          success: false,
+          error: 'Failed to parse response: ' + (jsonError instanceof Error ? jsonError.message : String(jsonError)),
+        };
+      }
     } else {
       console.error('Email function returned non-JSON response');
+      // Use the cloned response to get text content
+      const textContent = await responseClone.text();
+      console.log('Response text content:', textContent);
       return {
         success: false,
         error: 'Invalid response format from email function',
