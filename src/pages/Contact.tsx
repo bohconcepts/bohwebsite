@@ -62,13 +62,28 @@ const Contact = () => {
       }
       
       // Send emails via Netlify function (confirmation to user and notification to company)
-      const { success: emailSuccess, userEmailSent, companyEmailSent, error: emailError } = await sendEmailsViaNetlify({
-        ...formState,
-        formType: 'contact'
-      });
-      
-      if (!emailSuccess) {
-        console.warn('Email sending failed:', emailError);
+      try {
+        const { success: emailSuccess, userEmailSent, companyEmailSent, error: emailError } = await sendEmailsViaNetlify({
+          ...formState,
+          formType: 'contact'
+        });
+        
+        if (!emailSuccess) {
+          console.warn('Email sending failed:', emailError || 'Unknown error');
+          // Show toast notification about email issues but don't treat it as a complete failure
+          toast({
+            title: t('Message Saved'),
+            description: t('Your message has been saved, but there was an issue sending the email confirmation.'),
+            variant: "default"
+          });
+          // Continue execution even if email fails - we've already saved to database
+        } else if (userEmailSent && !companyEmailSent) {
+          console.info('Only user confirmation email was sent successfully');
+        } else if (!userEmailSent && companyEmailSent) {
+          console.info('Only company notification email was sent successfully');
+        }
+      } catch (emailSendError) {
+        console.error('Exception when sending email:', emailSendError);
         // Show toast notification about email issues but don't treat it as a complete failure
         toast({
           title: t('Message Saved'),
@@ -76,10 +91,6 @@ const Contact = () => {
           variant: "default"
         });
         // Continue execution even if email fails - we've already saved to database
-      } else if (userEmailSent && !companyEmailSent) {
-        console.info('Only user confirmation email was sent successfully');
-      } else if (!userEmailSent && companyEmailSent) {
-        console.info('Only company notification email was sent successfully');
       }
       
       // Show success toast notification

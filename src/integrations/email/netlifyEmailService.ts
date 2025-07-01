@@ -1,6 +1,6 @@
 /**
  * Email service for sending emails through Netlify Functions
- * This service uses the Netlify serverless function to send emails via GoDaddy SMTP
+ * This service uses the Netlify serverless function to send emails via Office 365 SMTP
  */
 
 export interface NetlifyEmailFormData {
@@ -11,6 +11,22 @@ export interface NetlifyEmailFormData {
   formType: 'contact' | 'partnership' | 'newsletter';
   [key: string]: any; // Allow any additional fields
 }
+
+/**
+ * Get the appropriate function URL based on environment
+ */
+const getFunctionUrl = (baseUrl: string): string => {
+  // Check if we're in development mode
+  const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  
+  // For local development with Vite (not using netlify dev)
+  if (isDev && window.location.port === '5173') {
+    // Try the Netlify Dev server on port 8888 by default
+    return `http://localhost:8888${baseUrl}`;
+  }
+  
+  return baseUrl;
+};
 
 /**
  * Send emails (both confirmation to user and notification to company) via Netlify function
@@ -25,8 +41,12 @@ export const sendEmailsViaNetlify = async (formData: NetlifyEmailFormData): Prom
   try {
     console.log('Sending emails via Netlify function:', formData);
     
+    // Get the appropriate URL for the current environment
+    const functionUrl = getFunctionUrl('/.netlify/functions/send-email');
+    console.log(`Using email function URL: ${functionUrl}`);
+    
     // Call the Netlify function endpoint
-    const response = await fetch('/.netlify/functions/send-email', {
+    const response = await fetch(functionUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -34,6 +54,9 @@ export const sendEmailsViaNetlify = async (formData: NetlifyEmailFormData): Prom
       body: JSON.stringify(formData),
     });
 
+    // Clone the response before reading its body (to avoid stream already read errors)
+    const responseClone = response.clone();
+    
     // Check if response is ok first
     if (!response.ok) {
       let errorData: any = {};
@@ -44,11 +67,27 @@ export const sendEmailsViaNetlify = async (formData: NetlifyEmailFormData): Prom
       } catch (parseError) {
         console.error('Failed to parse error response:', parseError);
         
-        // If JSON parsing fails, get text instead
-        const errorText = await response.text();
-        console.error('Raw error response:', errorText);
-        
-        errorData = { error: `HTTP error ${response.status}: ${errorText || 'No response body'}` };
+        // If JSON parsing fails, get text instead from the cloned response
+        try {
+          const errorText = await responseClone.text();
+          console.error('Raw error response:', errorText);
+          errorData = { error: `HTTP error ${response.status}: ${errorText || 'No response body'}` };
+        } catch (textError) {
+          console.error('Failed to get response text:', textError);
+          errorData = { error: `HTTP error ${response.status}: Unable to read response` };
+        }
+      }
+      
+      // Special handling for 404 errors which likely indicate function path issues
+      if (response.status === 404) {
+        console.error('Email function not found (404):', errorData);
+        return {
+          success: false,
+          userEmailSent: false,
+          companyEmailSent: false,
+          message: 'Email service not found',
+          error: 'Email service not found. If running locally, make sure to use the netlify:dev script instead of the regular dev script.',
+        };
       }
       
       console.error(`Email sending failed (HTTP ${response.status}):`, errorData);
@@ -67,6 +106,14 @@ export const sendEmailsViaNetlify = async (formData: NetlifyEmailFormData): Prom
       data = await response.json();
     } catch (parseError) {
       console.error('Failed to parse success response:', parseError);
+      
+      // Try to get the text content from the cloned response
+      try {
+        const textContent = await responseClone.text();
+        console.log('Success response text content:', textContent);
+      } catch (textError) {
+        console.error('Failed to get response text:', textError);
+      }
       
       // If we can't parse the JSON, create a default success response
       // This shouldn't normally happen, but it's good to be defensive
