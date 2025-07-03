@@ -791,7 +791,7 @@ export const esConstants: LocalizedConstants = {
       id: "5",
       title: "Innovador",
       description:
-        "Construir asociaciones que promuevan la diversidad para todos.",
+        "Somos curiosos y creativos en nuestro enfoque de prestación de servicios. Los errores genuinos están bien si aprendes algo de ellos.",
     },
     {
       id: "6",

@@ -48,6 +48,23 @@ const App = () => {
   );
 };
 
+// Utility function to only log in development environment
+const devLog = (...args: any[]): void => {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    console.log(...args);
+  }
+};
+
+// Environment detection
+const getEnvironment = () => {
+  const isProduction = !['localhost', '127.0.0.1'].includes(window.location.hostname);
+  return {
+    isProduction,
+    hostname: window.location.hostname,
+    origin: window.location.origin
+  };
+};
+
 // Separate component to access route information
 const AppContent = () => {
   const location = useLocation();
@@ -58,15 +75,28 @@ const AppContent = () => {
   useEffect(() => {
     // Set up global link tracking to catch any links that might be missed
     const cleanup = initializeGlobalLinkTracking();
+    
+    // Import and setup iframe lazy loading dynamically to avoid SSR issues
+    import('@/utils/iframeLazyLoad').then(module => {
+      const { setupIframeLazyLoading } = module;
+      // Setup iframe lazy loading after component mounts
+      setupIframeLazyLoading();
+    }).catch(err => {
+      // Use devLog for error logging
+      devLog('Failed to load iframe lazy loading utility:', err);
+    });
+    
     return cleanup;
   }, []);
   
-  console.log('AppContent rendered, current path:', currentPath);
-  console.log('Is admin route:', isAdminRoute);
+  // Only log in development environment
+  devLog('AppContent rendered, current path:', currentPath);
+  devLog('Is admin route:', isAdminRoute);
+  devLog('Environment:', getEnvironment());
 
   // For admin routes, don't use the main Layout
   if (isAdminRoute) {
-    console.log('Rendering admin routes');
+    devLog('Rendering admin routes');
     return (
       // We don't need TrackableLinksProvider here as AdminLayout already has it
       <div className="admin-routes-container">

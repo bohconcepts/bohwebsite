@@ -59,7 +59,7 @@ const ValuesPage = () => {
               <div className="flex items-center justify-center mb-4">
                 <Heart className="text-brand-orange w-8 h-8 mr-3" />
                 <h2 className="text-3xl uppercase text-center">
-                  <span className={t("values_heading_color")}>COMPANY CORE VALUES</span>
+                  <span className={t("values_heading_color")}>{t("company_core_values")}</span>
                 </h2>
               </div>
               <div className="h-1 w-24 bg-brand-blue mx-auto"></div>

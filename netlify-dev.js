@@ -1,9 +1,11 @@
 // netlify-dev.js - Helper script to run Vite with Netlify functions
-const { execSync } = require('child_process');
-const path = require('path');
+import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 // Get the project directory
-const projectDir = __dirname;
+const __filename = fileURLToPath(import.meta.url);
+const projectDir = dirname(__filename);
 
 // Run the netlify dev command
 console.log('Starting Netlify Dev environment with Vite...');

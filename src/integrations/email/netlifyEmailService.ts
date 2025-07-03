@@ -13,11 +13,27 @@ export interface NetlifyEmailFormData {
 }
 
 /**
+ * Check if we're in development mode
+ */
+const isDevelopment = (): boolean => {
+  return window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+};
+
+/**
+ * Safe console log that only logs in development
+ */
+const devLog = (...args: any[]): void => {
+  if (isDevelopment()) {
+    console.log(...args);
+  }
+};
+
+/**
  * Get the appropriate function URL based on environment
  */
 const getFunctionUrl = (baseUrl: string): string => {
   // Check if we're in development mode
-  const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const isDev = isDevelopment();
   
   // For local development with Vite (not using netlify dev)
   if (isDev && window.location.port === '5173') {

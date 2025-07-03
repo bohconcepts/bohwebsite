@@ -432,18 +432,19 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.0738732237!2d-122.13915732376517!3d47.62756197118547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c8e35fad2d3%3A0x7b4d1c9c5e7f0c7a!2s2018%20156th%20Ave%20NE%2C%20Bellevue%2C%20WA%2098007!5e0!3m2!1sen!2sus!4v1653508234567!5m2!1sen!2sus" 
+              src="about:blank"
+              data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.0738732237!2d-122.13915732376517!3d47.62756197118547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c8e35fad2d3%3A0x7b4d1c9c5e7f0c7a!2s2018%20156th%20Ave%20NE%2C%20Bellevue%2C%20WA%2098007!5e0!3m2!1sen!2sus!4v1653508234567!5m2!1sen!2sus" 
               width="100%" 
               height="100%" 
               className="border-0" 
               allowFullScreen 
               /* 
-                The loading="lazy" attribute improves performance in supported browsers
-                but isn't supported in Safari on iOS < 16.4. This is acceptable as the
-                attribute is a progressive enhancement - browsers that don't support it
-                will still load the iframe normally.
+                We use data-loading="lazy" and data-src instead of loading="lazy"
+                to ensure compatibility with Safari on iOS < 16.4.
+                Our custom iframeLazyLoad.ts utility will handle this attribute
+                and apply the appropriate loading strategy based on browser support.
               */
-              loading="lazy" 
+              data-loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="BOH Concepts Location"
             ></iframe>

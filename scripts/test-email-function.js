@@ -1,5 +1,17 @@
 // Simple script to test the email function directly
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
+
+// Determine if we're in a development environment
+const isDevelopment = () => {
+  return process.env.NODE_ENV === 'development' || !process.env.NODE_ENV || process.env.NODE_ENV === 'test';
+};
+
+// Safe logging function that only logs sensitive data in development
+const devLog = (...args) => {
+  if (isDevelopment()) {
+    console.log(...args);
+  }
+};
 
 // Replace with your actual test data
 const testData = {
@@ -10,13 +22,24 @@ const testData = {
   phone: '123-456-7890'
 };
 
-// Function to test local endpoint
+// Choose environment to test
+const environment = process.argv[2] || 'local';
+let endpointUrl;
+
+if (environment === 'production') {
+  endpointUrl = 'https://bohwebsitedemo.netlify.app/.netlify/functions/send-email';
+  console.log('Testing PRODUCTION endpoint');
+} else {
+  endpointUrl = 'http://localhost:8888/.netlify/functions/send-email';
+  console.log('Testing LOCAL endpoint');
+}
+
+// Main test function
 async function testEmailFunction() {
   try {
-    console.log('Sending test request to email function...');
+    console.log(`Sending test request to: ${endpointUrl}`);
     
-    // Use localhost:8888 for testing with netlify dev
-    const response = await fetch('http://localhost:8888/.netlify/functions/send-email', {
+    const response = await fetch(endpointUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,16 +52,22 @@ async function testEmailFunction() {
     if (contentType && contentType.includes('application/json')) {
       const result = await response.json();
       console.log('Response status:', response.status);
-      console.log('Response body:', JSON.stringify(result, null, 2));
+      // Use devLog for potentially sensitive response data
+      devLog('Response body:', JSON.stringify(result, null, 2));
+      // Always log success/failure status
+      console.log('Email sent successfully:', result.success === true);
     } else {
       const text = await response.text();
       console.log('Response status:', response.status);
-      console.log('Response text:', text);
+      // Use devLog for potentially sensitive response data
+      devLog('Response text:', text);
     }
   } catch (error) {
     console.error('Error testing email function:', error);
   }
 }
 
-// Run the test
-testEmailFunction();
+// Execute the test
+testEmailFunction()
+  .then(() => console.log('Test completed'))
+  .catch(err => console.error('Test failed:', err.message || String(err)));
