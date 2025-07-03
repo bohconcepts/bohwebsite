@@ -1,21 +1,26 @@
 const nodemailer = require('nodemailer');
 
-// Create a transporter using GoDaddy SMTP settings
+// Create a transporter using Office 365 SMTP settings
 const createTransporter = () => {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtpout.secureserver.net',
+    host: process.env.SMTP_HOST || 'smtp.office365.com',
     port: parseInt(process.env.SMTP_PORT) || 587,
     secure: process.env.SMTP_SECURE === 'true', // set SMTP_SECURE=true in Netlify if using port 465
     auth: {
-      user: process.env.EMAIL_USER || 'contact@bohconcepts.com',
+      user: process.env.EMAIL_USER || 'sefa@bohconcepts.com',
       pass: process.env.EMAIL_PASSWORD || '',
     },
+    tls: {
+      ciphers: 'SSLv3',
+      rejectUnauthorized: true
+    },
+    debug: true, // Add debug flag to get more information
   });
 };
 
 // Company email address for receiving form submissions
-const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'info@bohconcepts.com';
-const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'contact@bohconcepts.com';
+const COMPANY_EMAIL = process.env.COMPANY_EMAIL || 'michael@bohconcepts.com';
+const DISTRIBUTION_EMAIL = process.env.EMAIL_USER || 'sefa@bohconcepts.com';
 
 /**
  * Send confirmation email to the user who submitted the form
@@ -104,19 +109,25 @@ exports.handler = async (event) => {
     // Send emails
     let userEmailSent = false;
     let companyEmailSent = false;
+    let userEmailError = null;
+    let companyEmailError = null;
 
     try {
-      await sendUserConfirmationEmail(formData);
+      const userResult = await sendUserConfirmationEmail(formData);
+      console.log('User email result:', userResult);
       userEmailSent = true;
     } catch (error) {
       console.error('Error sending user confirmation email:', error);
+      userEmailError = error.message || 'Unknown error sending user email';
     }
 
     try {
-      await sendCompanyNotificationEmail(formData);
+      const companyResult = await sendCompanyNotificationEmail(formData);
+      console.log('Company email result:', companyResult);
       companyEmailSent = true;
     } catch (error) {
       console.error('Error sending company notification email:', error);
+      companyEmailError = error.message || 'Unknown error sending company email';
     }
 
     if (userEmailSent && companyEmailSent) {
@@ -135,9 +146,11 @@ exports.handler = async (event) => {
         statusCode: 207, // Multi-Status
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          success: false,
+          success: userEmailSent || companyEmailSent,
           userEmailSent,
           companyEmailSent,
+          userEmailError,
+          companyEmailError,
           message: 'Form processed with partial success',
         }),
       };
@@ -147,7 +160,10 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Internal server error' }),
+      body: JSON.stringify({
+        error: 'Internal server error',
+        details: error.message || String(error)
+      }),
     };
   }
 };

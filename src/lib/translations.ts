@@ -80,6 +80,7 @@ const translations = {
 
     // About Page
     "About Us": "About Us",
+    "company_core_values": "COMPANY CORE VALUES",
     "ABOUT US": "ABOUT US",
     about_meta_description:
       "Learn about BOH Concepts, our mission, values, and team.",
@@ -345,6 +346,7 @@ const translations = {
   es: {
     // Contact Page
     "Contact Us": "Contáctenos",
+    "company_core_values": "VALORES FUNDAMENTALES DE LA EMPRESA",
     contact_meta_description:
       "Póngase en contacto con BOH Concepts para soluciones de personal de hospitalidad adaptadas a sus necesidades.",
     "Contact Page Message":
@@ -652,6 +654,7 @@ const translations = {
   fr: {
     // Contact Page
     "Contact Us": "Contactez-Nous",
+    "company_core_values": "VALEURS FONDAMENTALES DE L'ENTREPRISE",
     contact_meta_description:
       "Contactez BOH Concepts pour des solutions de personnel hôtelier adaptées à vos besoins.",
     "Contact Page Message":

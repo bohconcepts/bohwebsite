@@ -814,7 +814,7 @@ export const frConstants: LocalizedConstants = {
       id: "5",
       title: "Innovants",
       description:
-        "Construire des partenariats qui favorisent la diversité pour tous.",
+        "Nous sommes curieux et créatifs dans notre approche de la prestation de services. Les erreurs sincères sont même acceptables si vous en tirez des leçons.",
     },
     {
       id: "6",

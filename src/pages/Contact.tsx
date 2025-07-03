@@ -15,9 +15,8 @@ import {
 } from "lucide-react";
 
 import { saveContactMessage } from "@/integrations/supabase/services/contactService";
+import { sendEmailsViaNetlify } from "@/integrations/email/netlifyEmailService";
 import { useToast } from "@/hooks/use-toast";
-import { FormSubmissionData } from '@/utils/email/types';
-import { sendFormEmails } from '@/utils/email/netlifyEmailService';
 
 import { useCompanyInfo, useContactInfo, useSocialLinks } from "@/hooks/useLocalizedConstants";
 import { Button } from "@/components/ui/button";
@@ -62,27 +61,36 @@ const Contact = () => {
         throw new Error(dbError || t('Failed to save your message'));
       }
       
-      // Then send emails using our email service
-      const emailData: FormSubmissionData = {
-        ...formState,
-        formType: 'contact'
-      };
-      
+      // Send emails via Netlify function (confirmation to user and notification to company)
       try {
-        // Email service initialization is no longer needed
+        const { success: emailSuccess, userEmailSent, companyEmailSent, error: emailError } = await sendEmailsViaNetlify({
+          ...formState,
+          formType: 'contact'
+        });
         
-        // Send emails using Netlify serverless function
-        const emailResult = await sendFormEmails(emailData);
-        
-        if (emailResult.success) {
-          console.log('Emails sent successfully:', emailResult.message);
-        } else {
-          console.warn('Email sending failed but database save succeeded:', emailResult);
-          // We'll still consider this a partial success since the data was saved to the database
+        if (!emailSuccess) {
+          console.warn('Email sending failed:', emailError || 'Unknown error');
+          // Show toast notification about email issues but don't treat it as a complete failure
+          toast({
+            title: t('Message Saved'),
+            description: t('Your message has been saved, but there was an issue sending the email confirmation.'),
+            variant: "default"
+          });
+          // Continue execution even if email fails - we've already saved to database
+        } else if (userEmailSent && !companyEmailSent) {
+          console.info('Only user confirmation email was sent successfully');
+        } else if (!userEmailSent && companyEmailSent) {
+          console.info('Only company notification email was sent successfully');
         }
-      } catch (error) {
-        console.warn('Email sending failed:', error);
-        // Continue with success flow since database save succeeded
+      } catch (emailSendError) {
+        console.error('Exception when sending email:', emailSendError);
+        // Show toast notification about email issues but don't treat it as a complete failure
+        toast({
+          title: t('Message Saved'),
+          description: t('Your message has been saved, but there was an issue sending the email confirmation.'),
+          variant: "default"
+        });
+        // Continue execution even if email fails - we've already saved to database
       }
       
       // Show success toast notification
@@ -424,18 +432,19 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.0738732237!2d-122.13915732376517!3d47.62756197118547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c8e35fad2d3%3A0x7b4d1c9c5e7f0c7a!2s2018%20156th%20Ave%20NE%2C%20Bellevue%2C%20WA%2098007!5e0!3m2!1sen!2sus!4v1653508234567!5m2!1sen!2sus" 
+              src="about:blank"
+              data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.0738732237!2d-122.13915732376517!3d47.62756197118547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c8e35fad2d3%3A0x7b4d1c9c5e7f0c7a!2s2018%20156th%20Ave%20NE%2C%20Bellevue%2C%20WA%2098007!5e0!3m2!1sen!2sus!4v1653508234567!5m2!1sen!2sus" 
               width="100%" 
               height="100%" 
               className="border-0" 
               allowFullScreen 
               /* 
-                The loading="lazy" attribute improves performance in supported browsers
-                but isn't supported in Safari on iOS < 16.4. This is acceptable as the
-                attribute is a progressive enhancement - browsers that don't support it
-                will still load the iframe normally.
+                We use data-loading="lazy" and data-src instead of loading="lazy"
+                to ensure compatibility with Safari on iOS < 16.4.
+                Our custom iframeLazyLoad.ts utility will handle this attribute
+                and apply the appropriate loading strategy based on browser support.
               */
-              loading="lazy" 
+              data-loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="BOH Concepts Location"
             ></iframe>

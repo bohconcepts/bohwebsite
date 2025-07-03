@@ -688,7 +688,7 @@ export const enConstants: LocalizedConstants = {
     {
       id: "5",
       title: "Innovative",
-      description: "To Build Partnerships that Promote Diversity for All",
+      description: "We are curious and creative in our approach to our service delivery. Genuine mistakes are even ok if you learn something from them.",
     },
     {
       id: "6",
